@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import NavBar from "./components/NavBar";
+import Vision from "./components/Vision";
+import ValueProp from "./components/ValueProp";
+import Features from "./components/Features";
+import SocialProof from "./components/SocialProof";
+import Team from "./components/Team";
+import Reports from "./components/Reports";
+import GetInTouch from "./components/GetInTouch";
+import Footer from "./components/Footer";
 
-function App() {
+export default function Example() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-white">
+      <div className="relative overflow-hidden">
+        <NavBar />
+        <main>
+          <Vision />
+          <ValueProp />
+          <Features />
+          <SocialProof />
+          <Team />
+          <Reports />
+          <GetInTouch />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }
-
-export default App;
