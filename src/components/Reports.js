@@ -1,59 +1,43 @@
+import report1Img from '../images/report1.jpeg'
+
 const blogPosts = [
   {
     id: 1,
-    title: "Boost your conversion rate",
-    href: "#",
-    date: "Mar 16, 2020",
-    datetime: "2020-03-16",
-    category: { name: "Article", href: "#" },
-    imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
+    title: "Trees as Infrastructure Report 1",
+    href: "https://provocations.darkmatterlabs.org/trees-as-infrastructure-1dd94e1cfedf",
+    date: "Feb 10, 2020",
+    datetime: "2020-02-10",
+    category: { name: "Report"},
+    imageUrl: "https://miro.medium.com/max/2000/1*gEpd55UAV-i1GUi3rFTr7g.jpeg",
     preview:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
-    author: {
-      name: "Roel Aufderehar",
-      imageUrl:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      href: "#",
-    },
-    readingLength: "6 min",
+      "Why municipalities are struggling to reach tree-planting targets",
+    readingLength: "15 min",
   },
   {
     id: 2,
-    title: "How to use search engine optimization to drive sales",
-    href: "#",
-    date: "Mar 10, 2020",
-    datetime: "2020-03-10",
-    category: { name: "Video", href: "#" },
+    title: "Trees as Infrastructure Report 2",
+    href: "https://provocations.darkmatterlabs.org/trees-as-infrastructure-aa141acdf227",
+    date: "Mar 6, 2020",
+    datetime: "2020-03-6",
+    category: { name: "Report" },
     imageUrl:
-      "https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
+      "https://miro.medium.com/max/3840/1*_tUcwA67m11u_UI54xR15Q.jpeg",
     preview:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
-    author: {
-      name: "Brenna Goyette",
-      imageUrl:
-        "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      href: "#",
-    },
-    readingLength: "4 min",
+      "A proposition for supporting cities to transition towards resilient urban forest infrastructures",
+    readingLength: "15 min",
   },
+  //TODO: update image URL
   {
     id: 3,
-    title: "Improve your customer experience",
-    href: "#",
-    date: "Feb 12, 2020",
+    title: "Delivering urban Nature-based Solutions in Scotland at Scale: Growing regenerative cities",
+    href: "https://drive.google.com/file/d/1OdtF45v59Zh7TDDrNRifnp4e6Cl4OIK0/view",
+    date: "Nov 27, 2020",
     datetime: "2020-02-12",
-    category: { name: "Case Study", href: "#" },
+    category: { name: "Report" },
     imageUrl:
-      "https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
+      "https://freight.cargo.site/w/1500/q/75/i/fc4cc05c67582e7ee24644e63ac10fc40e666f6a593024c51251c013a61b6dca/27.11.20_Nature.Scot_developing-urban-nature-based-solutions-in-scotland-at-scale.jpg",
     preview:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
-    author: {
-      name: "Daniela Metz",
-      imageUrl:
-        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      href: "#",
-    },
+      "Growing regenerative cities",
     readingLength: "11 min",
   },
 ];
@@ -97,21 +81,7 @@ export default function Reports() {
                   </a>
                 </div>
                 <div className="mt-6 flex items-center">
-                  <div className="flex-shrink-0">
-                    <a href={post.author.href}>
-                      <img
-                        className="h-10 w-10 rounded-full"
-                        src={post.author.imageUrl}
-                        alt={post.author.name}
-                      />
-                    </a>
-                  </div>
                   <div className="ml-3">
-                    <p className="text-sm font-medium text-gray-900">
-                      <a href={post.author.href} className="hover:underline">
-                        {post.author.name}
-                      </a>
-                    </p>
                     <div className="flex space-x-1 text-sm text-gray-500">
                       <time dateTime={post.datetime}>{post.date}</time>
                       <span aria-hidden="true">&middot;</span>
