@@ -5,10 +5,9 @@ const blogPosts = [
     href: "https://provocations.darkmatterlabs.org/trees-as-infrastructure-1dd94e1cfedf",
     date: "Feb 10, 2020",
     datetime: "2020-02-10",
-    category: { name: "Report"},
+    category: { name: "Report" },
     imageUrl: "https://miro.medium.com/max/2000/1*gEpd55UAV-i1GUi3rFTr7g.jpeg",
-    preview:
-      "Why municipalities are struggling to reach tree-planting targets",
+    preview: "Why municipalities are struggling to reach tree-planting targets",
     readingLength: "15 min",
   },
   {
@@ -18,8 +17,7 @@ const blogPosts = [
     date: "Mar 6, 2020",
     datetime: "2020-03-6",
     category: { name: "Report" },
-    imageUrl:
-      "https://miro.medium.com/max/3840/1*_tUcwA67m11u_UI54xR15Q.jpeg",
+    imageUrl: "https://miro.medium.com/max/3840/1*_tUcwA67m11u_UI54xR15Q.jpeg",
     preview:
       "A proposition for supporting cities to transition towards resilient urban forest infrastructures",
     readingLength: "15 min",
@@ -27,15 +25,15 @@ const blogPosts = [
   //TODO: update image URL
   {
     id: 3,
-    title: "Delivering urban Nature-based Solutions in Scotland at Scale: Growing regenerative cities",
+    title:
+      "Delivering urban Nature-based Solutions in Scotland at Scale: Growing regenerative cities",
     href: "https://drive.google.com/file/d/1OdtF45v59Zh7TDDrNRifnp4e6Cl4OIK0/view",
     date: "Nov 27, 2020",
     datetime: "2020-02-12",
     category: { name: "Report" },
     imageUrl:
       "https://freight.cargo.site/w/1500/q/75/i/fc4cc05c67582e7ee24644e63ac10fc40e666f6a593024c51251c013a61b6dca/27.11.20_Nature.Scot_developing-urban-nature-based-solutions-in-scotland-at-scale.jpg",
-    preview:
-      "Growing regenerative cities",
+    preview: "Growing regenerative cities",
     readingLength: "11 min",
   },
 ];
