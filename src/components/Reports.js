@@ -1,5 +1,3 @@
-import report1Img from '../images/report1.jpeg'
-
 const blogPosts = [
   {
     id: 1,
