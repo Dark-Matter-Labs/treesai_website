@@ -1,39 +1,45 @@
 const people = [
   {
-    name: "Leslie Alexander",
-    role: "Co-Founder / CEO",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    name: "Aaron Gillett",
+    role: "Service and interaction design",
+    imageUrl: "images/team/Aaron.jpg"
   },
   {
-    name: "Leslie Alexander",
-    role: "Co-Founder / CTO",
+    name: "Axel Nilsson",
+    role: "Data science",
     imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "images/team/Axel.png",
   },
   {
-    name: "Leslie Alexander",
-    role: "Manager, Business Relations",
+    name: "Bulent Ozel",
+    role: "Impact modelling",
     imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "images/team/Roni.jpg",
   },
   {
-    name: "Leslie Alexander",
-    role: "Front-end Developer",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    name: "Carlotta Conte",
+    role: "Stakeholder engagement",
+    imageUrl: "images/team/Carlotta.jpg",
   },
   {
-    name: "Leslie Alexander",
-    role: "Designer",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    name: "Gurden Batra",
+    role: "Full stack development",
+    imageUrl: "images/team/Gurden.png",
   },
   {
-    name: "Leslie Alexander",
-    role: "Director, Product Development",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    name: "Konstantina Koulouri",
+    role: "Green imapct & finance research",
+    imageUrl: "images/team/Kosta.jpg",
+  },
+  {
+    name: "Oguzhan Yayla",
+    role: "Data infrastructure",
+    imageUrl: "images/team/Oz.png",
+  },
+  {
+    name: "Raj Kalia",
+    role: "Financial structuring",
+    imageUrl: "images/team/Raj.png",
   },
 ];
 
