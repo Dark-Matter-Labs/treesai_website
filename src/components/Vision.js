@@ -45,7 +45,7 @@ export default function Vision() {
                   </div>
                   <p className="mt-3 text-sm text-gray-300 sm:mt-4">
                     We hate spam too. By providing your email, you agree to our{" "}
-                    <a href="#" className="font-medium text-white">
+                    <a href="https://treesai.netlify.app/" className="font-medium text-white">
                       terms or service
                     </a>
                     .
