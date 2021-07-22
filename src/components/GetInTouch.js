@@ -13,27 +13,16 @@ export default function GetInTouch() {
               Get in touch
             </h2>
             <p className="mt-3 text-lg leading-6 text-gray-500">
-              Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat
-              massa dictumst amet. Sapien tortor lacus arcu.
+            Are you a municipality? <br />
+            TreesAI can help solve your urban infrastructure issues.<br /><br />
+
+            Do you have talent or resources to help us?<br />
+            Become a partner of TreesAI.<br /><br />
+
+            Are you a beneficiary of green infrastructure?<br />
+            We are currently developing the tools to help you invest in trees as assets and can answer your questions.<br /><br />
             </p>
             <dl className="mt-8 text-base text-gray-500">
-              <div>
-                <dt className="sr-only">Postal address</dt>
-                <dd>
-                  <p>742 Evergreen Terrace</p>
-                  <p>Springfield, OR 12345</p>
-                </dd>
-              </div>
-              <div className="mt-6">
-                <dt className="sr-only">Phone number</dt>
-                <dd className="flex">
-                  <PhoneIcon
-                    className="flex-shrink-0 h-6 w-6 text-gray-400"
-                    aria-hidden="true"
-                  />
-                  <span className="ml-3">+1 (555) 123-4567</span>
-                </dd>
-              </div>
               <div className="mt-3">
                 <dt className="sr-only">Email</dt>
                 <dd className="flex">
@@ -41,7 +30,7 @@ export default function GetInTouch() {
                     className="flex-shrink-0 h-6 w-6 text-gray-400"
                     aria-hidden="true"
                   />
-                  <span className="ml-3">support@example.com</span>
+                  <span className="ml-3">treesai@darkmatterlabs.org</span>
                 </dd>
               </div>
             </dl>
