@@ -1,60 +1,64 @@
 import {
-  CloudUploadIcon,
-  LockClosedIcon,
-  RefreshIcon,
   ShieldCheckIcon,
+  CashIcon,
+  ChartPieIcon,
+  GlobeIcon,
+  ChartBarIcon,
+  LibraryIcon,
+  SparklesIcon,
+  GlobeAltIcon
 } from "@heroicons/react/outline";
 
 const features = [
   {
     name: "Attract stable, long-term finance",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. ",
-    icon: CloudUploadIcon,
+      "",
+    icon: CashIcon,
   },
   {
     name: "Manage your natural assets",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. ",
-    icon: LockClosedIcon,
+      "",
+    icon: ChartPieIcon,
   },
   {
     name: "Reduce operational costs",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. ",
-    icon: RefreshIcon,
+      "",
+    icon: GlobeIcon,
   },
   {
     name: "Plan and forecast climate targets",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. ",
-    icon: ShieldCheckIcon,
+      "",
+    icon: ChartBarIcon,
   },
 ];
 const features2 = [
   {
     name: "Voluntary carbon credits backed by governments",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. ",
-    icon: CloudUploadIcon,
+      "",
+    icon: LibraryIcon,
   },
   {
     name: "Transparent and verifiable",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. ",
-    icon: LockClosedIcon,
+      "",
+    icon: SparklesIcon,
   },
   {
     name: "Support multiple benefits including health outcomes, water filtration and flood mitigation",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. ",
-    icon: RefreshIcon,
+      "",
+    icon: ShieldCheckIcon,
   },
   {
     name: "Make a local impact",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. ",
-    icon: ShieldCheckIcon,
+      "",
+    icon: GlobeAltIcon,
   },
 ];
 
