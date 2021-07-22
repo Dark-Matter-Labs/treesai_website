@@ -1,4 +1,3 @@
-import bgImage from "../images/main-bg.jpg";
 import "../App.css";
 
 export default function Vision() {
