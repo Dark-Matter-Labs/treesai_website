@@ -12,22 +12,36 @@ export default function ValueProp() {
               <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
                 <img
                   className="h-12"
-                  src="https://tailwindui.com/img/logos/workcation-logo-indigo-900.svg"
-                  alt="Workcation"
+                  src="images/partner_logos/google.org_logo.png"
+                  alt="Google.org logo"
                 />
               </div>
               <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
                 <img
                   className="h-12"
-                  src="https://tailwindui.com/img/logos/tuple-logo-indigo-900.svg"
-                  alt="Tuple"
+                  src="images/partner_logos/Morgan_Stanley.png"
+                  alt="Morgan Stanley logo"
                 />
               </div>
               <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
                 <img
                   className="h-12"
-                  src="https://tailwindui.com/img/logos/level-logo-indigo-900.svg"
-                  alt="Level"
+                  src="images/partner_logos/NatureScot.png"
+                  alt="NatureScot logo"
+                />
+              </div>
+              <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
+                <img
+                  className="h-12"
+                  src="images/partner_logos/world_economic_forum.png"
+                  alt="World Economic Forum logo"
+                />
+              </div>
+              <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
+                <img
+                  className="h-12"
+                  src="images/partner_logos/eit-climatekic.png"
+                  alt="EIT Climate KIC logo"
                 />
               </div>
             </div>
