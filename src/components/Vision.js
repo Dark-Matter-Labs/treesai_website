@@ -1,4 +1,5 @@
 import bgImage from "../images/main-bg.jpg";
+import "../App.css";
 
 export default function Vision() {
   return (
@@ -56,12 +57,9 @@ export default function Vision() {
           </div>
           <div className="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
             <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
-              {/* Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ */}
-              <img
-                className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                src={bgImage}
-                alt=""
-              />
+              <video playsInline autoPlay muted loop id="bgvid">
+                <source src="back.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
