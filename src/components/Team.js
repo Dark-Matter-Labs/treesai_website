@@ -28,7 +28,7 @@ const people = [
   },
   {
     name: "Konstantina Koulouri",
-    role: "Green imapct & finance research",
+    role: "Green impact & finance research",
     imageUrl: "images/team/Kosta.jpg",
   },
   {
@@ -52,11 +52,6 @@ export default function Team() {
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
               Meet our team of architects, data scientists and ecologists
             </h2>
-            <p className="text-xl text-gray-500">
-              Libero fames augue nisl porttitor nisi, quis. Id ac elit odio
-              vitae elementum enim vitae ullamcorper suspendisse. Vivamus
-              fringilla.
-            </p>
           </div>
           <div className="lg:col-span-2">
             <ul className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-12 sm:space-y-0 lg:gap-x-8">
