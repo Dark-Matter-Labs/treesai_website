@@ -2,19 +2,17 @@ const people = [
   {
     name: "Aaron Gillett",
     role: "Service and interaction design",
-    imageUrl: "images/team/Aaron.jpg"
+    imageUrl: "images/team/Aaron.jpg",
   },
   {
     name: "Axel Nilsson",
     role: "Data science",
-    imageUrl:
-      "images/team/Axel.png",
+    imageUrl: "images/team/Axel.png",
   },
   {
     name: "Bulent Ozel",
     role: "Impact modelling",
-    imageUrl:
-      "images/team/Roni.jpg",
+    imageUrl: "images/team/Roni.jpg",
   },
   {
     name: "Carlotta Conte",
@@ -28,7 +26,7 @@ const people = [
   },
   {
     name: "Konstantina Koulouri",
-    role: "Green impact & finance research",
+    role: "Natural capital innovation research",
     imageUrl: "images/team/Kosta.jpg",
   },
   {
