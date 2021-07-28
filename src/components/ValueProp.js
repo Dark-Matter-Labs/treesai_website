@@ -1,4 +1,15 @@
 export default function ValueProp() {
+  const logos = [
+    { name: "Google.org", url: "images/partner_logos/google.org_logo.svg" },
+    { name: "Morgan Stanley", url: "images/partner_logos/Morgan_Stanley.svg" },
+    { name: "NatureScot", url: "images/partner_logos/NatureScot.svg" },
+    {
+      name: "World Economic Forum",
+      url: "images/partner_logos/world_economic_forum.svg",
+    },
+    { name: "EIT Climate-KIC", url: "images/partner_logos/eit-climatekic.svg" },
+  ];
+
   return (
     <div className="bg-indigo-200 bg-opacity-25">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
@@ -7,44 +18,15 @@ export default function ValueProp() {
             Trusted by government agencies, supported by technology and finance
             leaders
           </h2>
-          <div className="flow-root self-center mt-8 lg:mt-0">
-            <div className="-mt-4 -ml-8 flex flex-wrap justify-between lg:-ml-4">
-              <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
-                <img
-                  className="h-12"
-                  src="images/partner_logos/google.org_logo.png"
-                  alt="Google.org logo"
-                />
+          <div className="mt-12 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
+            {logos.map((logo) => (
+              <div
+                key={logo.name}
+                className="col-span-1 flex justify-center py-8 px-8 bg-gray-50"
+              >
+                <img className="max-h-12" src={logo.url} alt={logo.name} />
               </div>
-              <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
-                <img
-                  className="h-12"
-                  src="images/partner_logos/Morgan_Stanley.png"
-                  alt="Morgan Stanley logo"
-                />
-              </div>
-              <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
-                <img
-                  className="h-12"
-                  src="images/partner_logos/NatureScot.png"
-                  alt="NatureScot logo"
-                />
-              </div>
-              <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
-                <img
-                  className="h-12"
-                  src="images/partner_logos/world_economic_forum.png"
-                  alt="World Economic Forum logo"
-                />
-              </div>
-              <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 justify-center lg:flex-grow-0 lg:ml-4">
-                <img
-                  className="h-12"
-                  src="images/partner_logos/eit-climatekic.png"
-                  alt="EIT Climate KIC logo"
-                />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

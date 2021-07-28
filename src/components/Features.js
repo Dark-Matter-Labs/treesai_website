@@ -6,59 +6,59 @@ import {
   ChartBarIcon,
   LibraryIcon,
   SparklesIcon,
-  GlobeAltIcon
+  GlobeAltIcon,
 } from "@heroicons/react/outline";
 
-const features = [
-  {
-    name: "Attract stable, long-term finance",
-    description:
-      "",
-    icon: CashIcon,
-  },
+const councilFeatures = [
   {
     name: "Manage your natural assets",
     description:
-      "",
-    icon: ChartPieIcon,
+      "Digital inventories provide information on the performance and state of urban trees. ",
+    icon: GlobeIcon,
   },
   {
-    name: "Reduce operational costs",
+    name: "Attract stable, long-term finance",
     description:
-      "",
-    icon: GlobeIcon,
+      "Outcomes-based financial instruments based on environmental performance, generate revenue and support long-term ecological maintenance.",
+    icon: CashIcon,
   },
   {
     name: "Plan and forecast climate targets",
     description:
-      "",
+      "AI-backed modelling enables near real-time environmental impact assessments.",
     icon: ChartBarIcon,
   },
+  {
+    name: "Reduce operational costs",
+    description:
+      "Digital contracting mechanisms reduce cumbersome bureaucratic processes.",
+    icon: ChartPieIcon,
+  },
 ];
-const features2 = [
+const investorFeatures = [
   {
     name: "Voluntary carbon credits backed by governments",
     description:
-      "",
+      "Carbon Plus are verified credits, linked to local projects and validated by city authorities.",
     icon: LibraryIcon,
-  },
-  {
-    name: "Transparent and verifiable",
-    description:
-      "",
-    icon: SparklesIcon,
-  },
-  {
-    name: "Support multiple benefits including health outcomes, water filtration and flood mitigation",
-    description:
-      "",
-    icon: ShieldCheckIcon,
   },
   {
     name: "Make a local impact",
     description:
-      "",
+      "Your investments achieve visibility by supporting local initiatives and communities.",
     icon: GlobeAltIcon,
+  },
+  {
+    name: "Support multiple impacts",
+    description:
+      "Carbon Plus accounts for carbon-related benefits and estimates additional environmental impacts such as air quality improvements, water management, and human health benefits.",
+    icon: SparklesIcon,
+  },
+  {
+    name: "Transparent and verifiable",
+    description:
+      "Trusted satellite and ground data map, monitor and account for urban tree outcomes.",
+    icon: ShieldCheckIcon,
   },
 ];
 
@@ -74,11 +74,17 @@ export default function Features() {
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               Reach the climate targets for your city
             </p>
+            <p className="mt-3 text-lg leading-6 text-gray-500">
+              TreesAI helps secure private funding by capturing the
+              environmental,
+              <br /> social and economic benefits delivered by trees in
+              metropolitan areas
+            </p>
           </div>
 
           <div className="mt-10">
             <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-              {features.map((feature) => (
+              {councilFeatures.map((feature) => (
                 <div key={feature.name} className="relative">
                   <dt>
                     <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
@@ -105,13 +111,19 @@ export default function Features() {
               FOR INVESTORS
             </h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Buy local government-backed carbon credits that go beyond carbon
+              Invest in government-backed carbon credits and support local
+              impacts
+            </p>
+            <p className="mt-3 text-lg leading-6 text-gray-500">
+              TreesAI issues Carbon <i>Plus</i> Credits, a new crediting system
+              beyond carbon,
+              <br /> for delivering and sustaining urban trees.
             </p>
           </div>
 
           <div className="mt-10">
             <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-              {features2.map((feature) => (
+              {investorFeatures.map((feature) => (
                 <div key={feature.name} className="relative">
                   <dt>
                     <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
@@ -130,6 +142,7 @@ export default function Features() {
           </div>
         </div>
       </div>
+      <div className="tree-services"></div>
     </>
   );
 }

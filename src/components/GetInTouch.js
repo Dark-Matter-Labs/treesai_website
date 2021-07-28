@@ -13,14 +13,21 @@ export default function GetInTouch() {
               Get in touch
             </h2>
             <p className="mt-3 text-lg leading-6 text-gray-500">
-            Are you a municipality? <br />
-            TreesAI can help solve your urban infrastructure issues.<br /><br />
-
-            Do you have talent or resources to help us?<br />
-            Become a partner of TreesAI.<br /><br />
-
-            Are you a beneficiary of green infrastructure?<br />
-            We are currently developing the tools to help you invest in trees as assets and can answer your questions.<br /><br />
+              Are you a municipality? <br />
+              TreesAI can help solve your urban infrastructure issues.
+              <br />
+              <br />
+              Do you have talent or resources to help us?
+              <br />
+              Become a partner of TreesAI.
+              <br />
+              <br />
+              Are you a beneficiary of green infrastructure?
+              <br />
+              We are currently developing the tools to help you invest in trees
+              as assets and can answer your questions.
+              <br />
+              <br />
             </p>
             <dl className="mt-8 text-base text-gray-500">
               <div className="mt-3">

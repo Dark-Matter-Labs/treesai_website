@@ -8,6 +8,8 @@ import Reports from "./components/Reports";
 import GetInTouch from "./components/GetInTouch";
 import Footer from "./components/Footer";
 
+import "./App.css";
+
 export default function Example() {
   return (
     <div className="bg-white">

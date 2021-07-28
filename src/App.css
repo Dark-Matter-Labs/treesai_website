@@ -1,7 +1,16 @@
-video {
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
+.section-bg {
+  background: url(images/main-bg.png) /* image */ center / contain no-repeat
+    /* repeat */ black;
+}
+
+.tree-services {
+  background: url(images/tree-services.png) /* image */ center / contain
+    no-repeat /* repeat */ white;
+  height: 1000px;
+}
+
+.lets-invest {
+  background: url(images/letsinvest.png) /* image */ center / contain no-repeat
+    /* repeat */ white;
+  height: 850px;
 }
