@@ -13,7 +13,41 @@ export default function NavBar() {
     <Popover as="header" className="relative">
       {({ open }) => (
         <>
-          <div className="bg-gray-900 pt-6">
+          <div className="relative bg-indigo-600">
+            <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+              <div className="pr-16 sm:text-center sm:px-16">
+                <p className="font-medium text-white">
+                  <span className="md:hidden">
+                    TreesAI is a proud recipient of Google.org’s Impact
+                    Challenge on Climate
+                  </span>
+                  <span className="hidden md:inline">
+                    TreesAI is a proud recipient of Google.org’s Impact
+                    Challenge on Climate
+                  </span>
+                  <span className="block sm:ml-2 sm:inline-block">
+                    <a
+                      href="https://blog.google/outreach-initiatives/sustainability/these-11-organizations-are-building-greener-europe/"
+                      className="text-white font-bold underline"
+                    >
+                      {" "}
+                      Learn more <span aria-hidden="true">&rarr;</span>
+                    </a>
+                  </span>
+                </p>
+              </div>
+              <div className="absolute inset-y-0 right-0 pt-1 pr-1 flex items-start sm:pt-1 sm:pr-2 sm:items-start">
+                <button
+                  type="button"
+                  className="flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white"
+                >
+                  <span className="sr-only">Dismiss</span>
+                  <XIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="bg-black pt-6">
             <nav
               className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
               aria-label="Global"
@@ -121,7 +155,10 @@ export default function NavBar() {
                   <div className="mt-6 px-5">
                     <p className="text-center text-base font-medium text-gray-500">
                       Existing customer?{" "}
-                      <a href="https://treesai.netlify.app/" className="text-gray-900 hover:underline">
+                      <a
+                        href="https://treesai.netlify.app/"
+                        className="text-gray-900 hover:underline"
+                      >
                         Learn more
                       </a>
                     </p>
