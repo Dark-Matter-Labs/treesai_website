@@ -1,3 +1,5 @@
+import SignUpForm from "./SignUpForm";
+
 export default function Vision() {
   return (
     <div className="pt-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden section-bg">
@@ -22,6 +24,7 @@ export default function Vision() {
                 <form action="#" className="sm:max-w-xl sm:mx-auto lg:mx-0">
                   <div className="sm:flex">
                     <div className="min-w-0 flex-1">
+                      <SignUpForm />
                       <label htmlFor="email" className="sr-only">
                         Email address
                       </label>
