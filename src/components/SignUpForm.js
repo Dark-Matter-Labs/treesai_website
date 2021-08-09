@@ -1,12 +1,10 @@
 const CustomForm = ({ status, message, onValidated }) => {
-    let email, name;
+    let email;
     const submit = () =>
       email &&
-      name &&
       email.value.indexOf("@") > -1 &&
       onValidated({
         EMAIL: email.value,
-        NAME: name.value
       });
   
     return (
