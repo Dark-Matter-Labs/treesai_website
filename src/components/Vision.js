@@ -1,4 +1,8 @@
-import SignUpForm from "./SignUpForm";
+import MailchimpSubscribe from "react-mailchimp-subscribe"
+import CustomForm from "./SignUpForm";
+
+const url =
+      "https://treesasinfrastructure.us5.list-manage.com/subscribe/post?u=79b921b3858895873082cb61b&amp;id=5861f9779c";
 
 export default function Vision() {
   return (
@@ -24,7 +28,16 @@ export default function Vision() {
                 <form action="#" className="sm:max-w-xl sm:mx-auto lg:mx-0">
                   <div className="sm:flex">
                     <div className="min-w-0 flex-1">
-                      <SignUpForm />
+                    <MailchimpSubscribe
+                      url={url}
+                      render={({ subscribe, status, message }) => (
+                        <CustomForm
+                          status={status}
+                          message={message}
+                          onValidated={formData => subscribe(formData)}
+                        />
+                      )}
+                    />
                       <label htmlFor="email" className="sr-only">
                         Email address
                       </label>

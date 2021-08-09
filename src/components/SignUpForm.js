@@ -1,31 +1,48 @@
-import Mailchimp from "react-mailchimp-form"
+const CustomForm = ({ status, message, onValidated }) => {
+    let email, name;
+    const submit = () =>
+      email &&
+      name &&
+      email.value.indexOf("@") > -1 &&
+      onValidated({
+        EMAIL: email.value,
+        NAME: name.value
+      });
+  
+    return (
+      <div
+        style={{
+          background: "#efefef",
+          borderRadius: 2,
+          padding: 10,
+          display: "inline-block"
+        }}
+      >
+        {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
+        {status === "error" && (
+          <div
+            style={{ color: "red" }}
+            dangerouslySetInnerHTML={{ __html: message }}
+          />
+        )}
+        {status === "success" && (
+          <div
+            style={{ color: "green" }}
+            dangerouslySetInnerHTML={{ __html: message }}
+          />
+        )}
+        <input
+          style={{ fontSize: "2em", padding: 5 }}
+          ref={node => (email = node)}
+          type="email"
+          placeholder="Your email"
+        />
+        <br />
+        <button style={{ fontSize: "2em", padding: 5 }} onClick={submit}>
+          Submit
+        </button>
+      </div>
+    );
+  };
 
-export default function SignUpForm() {
-    return(
-        <div>
-            <Mailchimp
-                action="https://treesasinfrastructure.us5.list-manage.com/subscribe/post?u=79b921b3858895873082cb61b&amp;id=5861f9779c"
-                className=""
-                fields={[
-                    {
-                        name: "EMAIL",
-                        placeholder: "email",
-                        type: "email",
-                        required: true
-                    }
-                ]}
-                messages = {
-                    {
-                      sending: "Sending...",
-                      success: "Thank you for subscribing!",
-                      error: "An unexpected internal error has occurred.",
-                      empty: "You must write an e-mail.",
-                      duplicate: "Too many subscribe attempts for this email address",
-                      button: "Subscribe!"
-                    }
-                  }
-            />
-        </div>
-    )
-}
-
+  export default CustomForm;
