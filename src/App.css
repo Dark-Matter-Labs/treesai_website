@@ -3,14 +3,42 @@
     /* repeat */ black;
 }
 
+#Container {
+  position: relative;
+  overflow: hidden;
+}
+
+#Container video {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* The following will size the video to fit the full container. Not necessary, just nice.*/
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+#Container div {
+  position: relative;
+  z-index: 1;
+}
+
 .tree-services {
   background: url(images/tree-services.png) /* image */ center / contain
-    no-repeat /* repeat */ white;
-  height: 1000px;
+    no-repeat white;
+  height: 200vh;
 }
 
 .lets-invest {
   background: url(images/letsinvest.png) /* image */ center / contain no-repeat
     /* repeat */ white;
   height: 850px;
+}
+
+.heading-padd {
+  padding-top: 40px;
 }
