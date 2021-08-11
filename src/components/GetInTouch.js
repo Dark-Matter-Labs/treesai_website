@@ -1,9 +1,4 @@
 import { MailIcon } from "@heroicons/react/outline";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
-import CustomForm from "./SignUpForm";
-
-const url =
-  "https://treesasinfrastructure.us5.list-manage.com/subscribe/post?u=79b921b3858895873082cb61b&amp;id=5861f9779c";
 
 export default function GetInTouch() {
   return (
@@ -42,27 +37,24 @@ export default function GetInTouch() {
                     className="flex-shrink-0 h-6 w-6 text-gray-400"
                     aria-hidden="true"
                   />
-                  <span className="ml-3">treesai@darkmatterlabs.org</span>
+                  <span className="ml-3">
+                    <a href="mailto:treesai@darkmatterlabs.org">
+                      treesai@darkmatterlabs.org
+                    </a>
+                  </span>
                 </dd>
               </div>
             </dl>
-          </div>
-        </div>
-        <div className="bg-black py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
-          <h2 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-            Get notified when we launch
-          </h2>
-          <div className="max-w-lg mx-auto lg:max-w-none">
-            <MailchimpSubscribe
-              url={url}
-              render={({ subscribe, status, message }) => (
-                <CustomForm
-                  status={status}
-                  message={message}
-                  onValidated={(formData) => subscribe(formData)}
-                />
-              )}
-            />
+            <dl className="mt-8 text-base text-gray-500">
+              <a
+                href="http://eepurl.com/hFsY1n"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700"
+              >
+                Get notified when we launch
+              </a>
+            </dl>
           </div>
         </div>
       </div>
