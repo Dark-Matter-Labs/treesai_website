@@ -4,6 +4,11 @@ import glasgowLogo from "../images/glasgowlogo.jpeg";
 export default function SocialProof() {
   return (
     <section className="bg-indigo-800">
+      <div className="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8 heading-padd">
+        <h2 className="max-w-md text-3xl font-extrabold text-white text-left lg:max-w-xl lg:text-left">
+          Testimonials
+        </h2>
+      </div>
       <div className="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
         <div className="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 md:border-r md:border-indigo-900 lg:pr-16">
           <blockquote className="mt-6 md:flex-grow md:flex md:flex-col">
@@ -55,13 +60,9 @@ export default function SocialProof() {
                 be addressed by our cities and Nature-based Solutions are
                 absolutely critical within that. Urban forests deliver
                 significant ecological, environmental and social gains, creating
-                safer, more resilient and more liveable places. The road to Net
-                Zero must also be delivered in a way that resonates with
-                ordinary citizens and is relevant to their everyday lives. The
-                transformation of the look and feel of our communities whilst
-                addressing greenhouse gases does just that. Our status as COP
-                host has given us a tremendous opportunity to attract some of
-                the most pioneering approaches and interventions within the
+                safer, more resilient and more liveable places. Our status as
+                COP host has given us a tremendous opportunity to attract some
+                of the most pioneering approaches and interventions within the
                 climate agenda. Our selection as a location for one of the
                 projects supported by the Google.org Impact Challenge on Climate
                 underlines that.
