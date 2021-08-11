@@ -43,8 +43,8 @@ const pilotPosts = [
     title:
       "TreesAI is developing novel investment opportunities, to help meet Glasgow’s climate targets",
     href: "images/01.07.21_TreesAI in Glasgow Synopsis.pdf",
-    date: "Feb 10, 2020",
-    datetime: "2020-02-10",
+    date: "July 20, 2020",
+    datetime: "2020-07-20",
     category: { name: "Partnership" },
     imageUrl: "images/synopsis.png",
     preview:
