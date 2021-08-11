@@ -103,6 +103,8 @@ export default function Footer() {
               <div className="flex space-x-6">
                 {footerNavigation.social.map((item) => (
                   <a
+                    target="_blank"
+                    rel="noreferrer noopener"
                     key={item.name}
                     href={item.href}
                     className="text-gray-400 hover:text-gray-500"
@@ -124,6 +126,8 @@ export default function Footer() {
                       <li key={item.name}>
                         <a
                           href={item.href}
+                          target="_blank"
+                          rel="noreferrer noopener"
                           className="text-base text-gray-500 hover:text-gray-900"
                         >
                           {item.name}
@@ -138,8 +142,21 @@ export default function Footer() {
           <div className="mt-12 border-t border-gray-200 py-8">
             <p className="text-base text-gray-400 xl:text-center">
               TreesAI is powered by{" "}
-              <a href="https://darkmatterlabs.org/">Dark Matter Labs</a> and{" "}
-              <a href="https://lucidminds.ai/">Lucidminds</a>
+              <a
+                href="https://darkmatterlabs.org/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Dark Matter Labs
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://lucidminds.ai/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Lucidminds
+              </a>
             </p>
           </div>
         </div>
