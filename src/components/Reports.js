@@ -43,8 +43,8 @@ const pilotPosts = [
     title:
       "TreesAI is developing novel investment opportunities, to help meet Glasgow’s climate targets",
     href: "images/01.07.21_TreesAI in Glasgow Synopsis.pdf",
-    date: "July 20, 2020",
-    datetime: "2020-07-20",
+    date: "July 20, 2021",
+    datetime: "2021-07-20",
     category: { name: "Partnership" },
     imageUrl: "images/synopsis.png",
     preview:
@@ -70,20 +70,32 @@ export default function Reports() {
                 className="flex flex-col rounded-lg shadow-lg overflow-hidden"
               >
                 <div className="flex-shrink-0">
-                  <img
-                    className="h-48 w-full object-cover"
-                    src={post.imageUrl}
-                    alt=""
-                  />
+                  <a target="_blank" rel="noreferrer noopener" href={post.href}>
+                    <img
+                      className="h-48 w-full object-cover"
+                      src={post.imageUrl}
+                      alt=""
+                    />
+                  </a>
                 </div>
                 <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                   <div className="flex-1">
                     <p className="text-sm font-medium text-cyan-600">
-                      <a href={post.category.href} className="hover:underline">
+                      <a
+                        href={post.href}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="hover:underline"
+                      >
                         {post.category.name}
                       </a>
                     </p>
-                    <a href={post.href} className="block mt-2">
+                    <a
+                      href={post.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="block mt-2"
+                    >
                       <p className="text-xl font-semibold text-gray-900">
                         {post.title}
                       </p>
@@ -125,20 +137,32 @@ export default function Reports() {
                 className="flex flex-col rounded-lg shadow-lg overflow-hidden"
               >
                 <div className="flex-shrink-0">
-                  <img
-                    className="h-48 w-full object-cover"
-                    src={post.imageUrl}
-                    alt=""
-                  />
+                  <a target="_blank" rel="noreferrer noopener" href={post.href}>
+                    <img
+                      className="h-48 w-full object-cover"
+                      src={post.imageUrl}
+                      alt=""
+                    />
+                  </a>
                 </div>
                 <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                   <div className="flex-1">
                     <p className="text-sm font-medium text-cyan-600">
-                      <a href={post.category.href} className="hover:underline">
+                      <a
+                        href={post.href}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="hover:underline"
+                      >
                         {post.category.name}
                       </a>
                     </p>
-                    <a href={post.href} className="block mt-2">
+                    <a
+                      href={post.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="block mt-2"
+                    >
                       <p className="text-xl font-semibold text-gray-900">
                         {post.title}
                       </p>
