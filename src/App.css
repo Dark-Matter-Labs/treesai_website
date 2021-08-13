@@ -1,8 +1,3 @@
-.section-bg {
-  background: url(images/main-bg.png) /* image */ center / contain no-repeat
-    /* repeat */ black;
-}
-
 #Container {
   position: relative;
   overflow: hidden;
