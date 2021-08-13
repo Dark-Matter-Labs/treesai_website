@@ -1,12 +1,14 @@
 import { Fragment, Component } from "react";
+import { Link } from "react-scroll";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const navigation = [
-  { name: "Product", href: "#products" },
-  { name: "Testimonials", href: "#" },
-  { name: "Team", href: "#" },
-  { name: "Reports", href: "#" },
+  { name: "Product", href: "products" },
+  { name: "Testimonials", href: "testimonials" },
+  { name: "Team", href: "team" },
+  { name: "Reports", href: "reports" },
+  { name: "Get in touch", href: "contact" },
 ];
 
 export default class NavBar extends Component {
@@ -92,13 +94,14 @@ export default class NavBar extends Component {
                   </div>
                   <div className="hidden space-x-8 md:flex md:ml-10">
                     {navigation.map((item) => (
-                      <a
+                      <Link
+                        to={item.href}
+                        smooth={true}
                         key={item.name}
-                        href={item.href}
-                        className="text-base font-medium text-white hover:text-gray-300"
+                        className="text-base font-medium text-white hover:text-gray-300 pointer-cursor"
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>

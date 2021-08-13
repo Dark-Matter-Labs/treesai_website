@@ -49,3 +49,7 @@
 .py-12-edit {
   padding-top: 3em;
 }
+
+.pointer-cursor {
+  cursor: pointer;
+}
