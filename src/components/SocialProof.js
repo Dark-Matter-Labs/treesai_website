@@ -3,7 +3,7 @@ import glasgowLogo from "../images/glasgowlogo.jpg";
 
 export default function SocialProof() {
   return (
-    <section className="bg-indigo-800">
+    <section className="bg-indigo-800" id="testimonials">
       <div className="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8 heading-padd">
         <h2 className="max-w-md text-3xl font-extrabold text-white text-left lg:max-w-xl lg:text-left">
           Testimonials
