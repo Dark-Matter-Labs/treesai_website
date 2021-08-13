@@ -10,7 +10,7 @@ export default function Vision() {
           autoPlay
           muted
           loop
-          poster="polina.jpg" //TO:DO update poster pic!
+          poster="images/poster.png"
           id="background-video"
         >
           <source src="images/short.mp4" type="video/mp4" />
