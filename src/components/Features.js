@@ -65,7 +65,7 @@ const investorFeatures = [
 export default function Features() {
   return (
     <>
-      <div className="py-12 bg-white">
+      <div className="py-12 bg-white" id="#products">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
@@ -104,7 +104,7 @@ export default function Features() {
         </div>
       </div>
 
-      <div className="py-12 bg-white">
+      <div className="py-12-edit bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
