@@ -28,9 +28,9 @@
 }
 
 .tree-services {
-  background: url(images/tree-services.png) /* image */ center / contain
-    no-repeat white;
-  height: 200vh;
+  background: url(images/tree-services.png) no-repeat center center;
+  background-size: cover;
+  height: 100vh;
 }
 
 .lets-invest {
@@ -41,4 +41,16 @@
 
 .heading-padd {
   padding-top: 40px;
+}
+
+.glasgow-text {
+  padding-top: 20px;
+}
+
+.glasgow-ceo-text {
+  padding-top: 20px;
+}
+
+.py-12-edit {
+  padding-top: 3em;
 }
