@@ -1,5 +1,5 @@
 import googleLogo from "../images/google.org_logo.png";
-import glasgowLogo from "../images/glasgowlogo.jpeg";
+import glasgowLogo from "../images/glasgowlogo.jpg";
 
 export default function SocialProof() {
   return (
@@ -12,7 +12,7 @@ export default function SocialProof() {
       <div className="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
         <div className="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 md:border-r md:border-indigo-900 lg:pr-16">
           <blockquote className="mt-6 md:flex-grow md:flex md:flex-col">
-            <div className="relative text-lg font-medium text-white md:flex-grow">
+            <div className="relative text-lg font-medium text-white md:flex-grow google-text">
               <svg
                 className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-indigo-600"
                 fill="currentColor"
@@ -21,24 +21,40 @@ export default function SocialProof() {
               >
                 <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
               </svg>
-              <p className="relative">
-                Among the many applications for our Google.org Impact Challenge
-                on Climate, Dark Matter Labs stood out. With their ambitious
-                open-source 'Trees As Infrastructure' initiative, they aim to
-                address the critical problem of facilitating and financing urban
-                tree restoration at scale, helping to address the gap between
-                urban tree-planting targets, their sustainable delivery and
-                long-term maintenance of urban forests.
-              </p>
+              <a
+                href="https://www.google.org/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <p className="relative">
+                  Among the many applications for our Google.org Impact
+                  Challenge on Climate, Dark Matter Labs stood out. With their
+                  ambitious open-source 'Trees As Infrastructure' initiative,
+                  they aim to address the critical problem of facilitating and
+                  financing urban tree restoration at scale, helping to address
+                  the gap between urban tree-planting targets, their sustainable
+                  delivery and long-term maintenance of urban forests.
+                </p>
+              </a>
             </div>
             <div className="md:flex-shrink-0">
-              <img className="h-12" src={googleLogo} alt="Google.org logo" />
+              <a
+                href="https://www.google.org/"
+                className="text-white font-bold underline"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <img className="h-12" src={googleLogo} alt="Google.org logo" />
+              </a>
             </div>
             <footer className="mt-8">
               <div className="flex items-start">
                 <div>
                   <div className="text-base font-medium text-white">
                     Google.org
+                  </div>
+                  <div className="text-base font-medium text-indigo-200">
+                    Impact Challenge on Climate
                   </div>
                 </div>
               </div>
@@ -55,28 +71,36 @@ export default function SocialProof() {
               >
                 <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
               </svg>
-              <p className="relative">
-                So many of the challenges surrounding the climate emergency will
-                be addressed by our cities and Nature-based Solutions are
-                absolutely critical within that. Urban forests deliver
-                significant ecological, environmental and social gains, creating
-                safer, more resilient and more liveable places. Our status as
-                COP host has given us a tremendous opportunity to attract some
-                of the most pioneering approaches and interventions within the
-                climate agenda. Our selection as a location for one of the
-                projects supported by the Google.org Impact Challenge on Climate
-                underlines that.
-              </p>
+              <a
+                href="https://www.glasgow.gov.uk/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <p className="relative">
+                  So many of the challenges surrounding the climate emergency
+                  will be addressed by our cities and Nature-based Solutions are
+                  absolutely critical within that. Urban forests deliver
+                  significant ecological, environmental and social gains,
+                  creating safer, more resilient and more liveable places.
+                </p>
+              </a>
             </div>
             <footer className="mt-8">
-              <div className="md:flex-shrink-0">
-                <img
-                  className="h-28"
-                  src={glasgowLogo}
-                  alt="City of Glasgow logo"
-                />
+              <div className="md:flex-shrink-0 glasgow-text">
+                <a
+                  href="https://www.glasgow.gov.uk/"
+                  target="_blank"
+                  className="text-white font-bold underline"
+                  rel="noreferrer noopener"
+                >
+                  <img
+                    className="h-28"
+                    src={glasgowLogo}
+                    alt="City of Glasgow logo"
+                  />
+                </a>
               </div>
-              <div className="flex items-start">
+              <div className="flex items-start glasgow-ceo-text">
                 <div>
                   <div className="text-base font-medium text-white">
                     Susan Aitken
