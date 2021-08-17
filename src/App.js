@@ -1,4 +1,3 @@
-import NavBar from "./components/NavBar";
 import Vision from "./components/Vision";
 import ValueProp from "./components/ValueProp";
 import Features from "./components/Features";
@@ -10,11 +9,10 @@ import Footer from "./components/Footer";
 
 import "./App.css";
 
-export default function Example() {
+export default function TreesAIWebsite() {
   return (
     <div className="bg-white">
       <div className="relative overflow-hidden">
-        <NavBar />
         <main>
           <Vision />
           <ValueProp />
