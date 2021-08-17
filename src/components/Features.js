@@ -12,24 +12,28 @@ import {
 const councilFeatures = [
   {
     name: "Manage your natural assets",
+    plus: false,
     description:
       "Digital inventories provide information on the performance and state of urban trees. ",
     icon: GlobeIcon,
   },
   {
     name: "Attract stable, long-term finance",
+    plus: false,
     description:
       "Outcomes-based financial instruments based on environmental performance, generate revenue and support long-term ecological maintenance.",
     icon: CashIcon,
   },
   {
     name: "Plan and forecast climate targets",
+    plus: false,
     description:
       "AI-backed modelling enables near real-time environmental impact assessments.",
     icon: ChartBarIcon,
   },
   {
     name: "Reduce operational costs",
+    plus: false,
     description:
       "Digital contracting mechanisms reduce cumbersome bureaucratic processes.",
     icon: ChartPieIcon,
@@ -38,24 +42,28 @@ const councilFeatures = [
 const investorFeatures = [
   {
     name: "Voluntary carbon credits backed by governments",
+    plus: true,
     description:
-      "Carbon Plus are verified credits, linked to local projects and validated by city authorities.",
+      "are verified credits, linked to local projects and validated by city authorities.",
     icon: LibraryIcon,
   },
   {
     name: "Make a local impact",
+    plus: false,
     description:
       "Your investments achieve visibility by supporting local initiatives and communities.",
     icon: GlobeAltIcon,
   },
   {
     name: "Support multiple impacts",
+    plus: true,
     description:
-      "Carbon Plus accounts for carbon-related benefits and estimates additional environmental impacts such as air quality improvements, water management, and human health benefits.",
+      "accounts for carbon-related benefits and estimates additional environmental impacts such as air quality improvements, water management, and human health benefits.",
     icon: SparklesIcon,
   },
   {
     name: "Transparent and verifiable",
+    plus: false,
     description:
       "Trusted satellite and ground data map, monitor and account for urban tree outcomes.",
     icon: ShieldCheckIcon,
@@ -123,21 +131,42 @@ export default function Features() {
 
           <div className="mt-10">
             <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-              {investorFeatures.map((feature) => (
-                <div key={feature.name} className="relative">
-                  <dt>
-                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                      <feature.icon className="h-6 w-6" aria-hidden="true" />
+              {investorFeatures.map((feature) => {
+                if (feature.plus)
+                  return (
+                    <div key={feature.name} className="relative">
+                      <dt>
+                        <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                          <feature.icon
+                            className="h-6 w-6"
+                            aria-hidden="true"
+                          />
+                        </div>
+                        <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
+                          {feature.name}
+                        </p>
+                      </dt>
+                      <dd className="mt-2 ml-16 text-base text-gray-500">
+                        Carbon <i>Plus</i> {feature.description}
+                      </dd>
                     </div>
-                    <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
-                      {feature.name}
-                    </p>
-                  </dt>
-                  <dd className="mt-2 ml-16 text-base text-gray-500">
-                    {feature.description}
-                  </dd>
-                </div>
-              ))}
+                  );
+                return (
+                  <div key={feature.name} className="relative">
+                    <dt>
+                      <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                        <feature.icon className="h-6 w-6" aria-hidden="true" />
+                      </div>
+                      <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
+                        {feature.name}
+                      </p>
+                    </dt>
+                    <dd className="mt-2 ml-16 text-base text-gray-500">
+                      {feature.description}
+                    </dd>
+                  </div>
+                );
+              })}
             </dl>
           </div>
         </div>
