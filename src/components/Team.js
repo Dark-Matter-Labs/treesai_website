@@ -16,7 +16,7 @@ const people = [
   },
   {
     name: "Carlotta Conte",
-    role: "Stakeholder engagement",
+    role: "Urban researcher and system designer",
     imageUrl: "images/team/Carlotta.jpg",
   },
   {
