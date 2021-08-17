@@ -16,7 +16,7 @@ const people = [
   },
   {
     name: "Carlotta Conte",
-    role: "Urban researcher and system designer",
+    role: "Urban research and system design",
     imageUrl: "images/team/Carlotta.jpg",
   },
   {
