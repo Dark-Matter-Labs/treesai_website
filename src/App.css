@@ -57,3 +57,7 @@
 .pointer-cursor {
   cursor: pointer;
 }
+
+.navbar {
+  padding-bottom: 20px;
+}

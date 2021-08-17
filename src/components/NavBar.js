@@ -70,7 +70,7 @@ export default class NavBar extends Component {
             )}
             <div className="bg-black pt-6">
               <nav
-                className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
+                className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 navbar"
                 aria-label="Global"
               >
                 <div className="flex items-center flex-1">
