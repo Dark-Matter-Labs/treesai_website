@@ -46,7 +46,7 @@ const pilotPosts = [
     date: "July 20, 2021",
     datetime: "2021-07-20",
     category: { name: "Partnership" },
-    imageUrl: "images/synopsis.png",
+    imageUrl: "images/synopsis.jpg",
     preview:
       "Exploring radical new approaches to financing urban tree planting and maintenance",
     readingLength: "15 min",
