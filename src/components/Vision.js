@@ -74,6 +74,13 @@ export default class Vision extends Component {
             <div className="lg:grid lg:grid-cols-2 lg:gap-8">
               <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
                 <div className="lg:py-24">
+                  <div className="flex items-center justify-between w-full md:w-auto">
+                    <img
+                      className="h-24"
+                      src="../images/TreesAI_logo.svg"
+                      alt=""
+                    />
+                  </div>
                   <h1 className="mt-4 text-4xl tracking-tight font-bold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
                     <span className="block">
                       A platform to value and invest in nature beyond carbon
