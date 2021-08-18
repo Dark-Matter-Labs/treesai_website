@@ -2,7 +2,7 @@ export default function ValueProp() {
   const logos = [
     { name: "Google.org", url: "images/partner_logos/google.org_logo.svg" },
     { name: "Morgan Stanley", url: "images/partner_logos/Morgan_Stanley.svg" },
-    { name: "NatureScot", url: "images/partner_logos/NatureScot.png" },
+    { name: "NatureScot", url: "images/partner_logos/NatureScot.svg" },
     {
       name: "World Economic Forum",
       url: "images/partner_logos/world_economic_forum.svg",
