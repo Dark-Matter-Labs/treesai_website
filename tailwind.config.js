@@ -10,7 +10,7 @@ module.exports = {
         body: ['"Work Sans"', "sans-serif"],
       },
       colors: {
-        primary: "#6601FF",
+        primary: "#47B881",
         green: "#47B881",
         dark: "#414141",
         gray: "#909090",
