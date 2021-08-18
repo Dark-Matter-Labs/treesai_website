@@ -45,12 +45,12 @@ export default function GetInTouch() {
                 </dd>
               </div>
             </dl>
-            <dl className="mt-8 text-base text-gray-500">
+            <dl className="mt-8 text-base">
               <a
                 href="http://eepurl.com/hFsY1n"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700"
+                className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-green hover:bg-gray-700"
               >
                 Get notified when we launch
               </a>
