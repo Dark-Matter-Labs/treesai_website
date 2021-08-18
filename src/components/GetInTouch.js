@@ -12,23 +12,27 @@ export default function GetInTouch() {
             <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
               Get in touch
             </h2>
-            <p className="mt-3 text-lg leading-6 text-gray-500 font-body">
-              Are you a municipality? <br />
+            <p className="mt-3 text-lg font-semibold leading-6 text-gray-500 font-body">
+              Are you a municipality?
+            </p>
+            <p className="text-lg leading-6 text-gray-500 font-body">
               TreesAI can help solve your urban infrastructure issues.
-              <br />
-              <br />
+            </p>
+            <p className="mt-3 text-lg font-semibold leading-6 text-gray-500 font-body">
               Do you have talent or resources to help us?
-              <br />
+            </p>
+            <p className="text-lg leading-6 text-gray-500 font-body">
               Become a partner of TreesAI.
-              <br />
-              <br />
+            </p>
+
+            <p className="mt-3 text-lg font-semibold leading-6 text-gray-500 font-body">
               Are you a beneficiary of green infrastructure?
-              <br />
+            </p>
+            <p className="text-lg leading-6 text-gray-500 font-body">
               We are currently developing the tools to help you invest in trees
               as assets and can answer your questions.
-              <br />
-              <br />
             </p>
+
             <dl className="mt-8 text-base text-gray-500">
               <div className="mt-3">
                 <dt className="sr-only">Email</dt>
