@@ -33,9 +33,13 @@
 }
 
 .lets-invest {
-  background: url(images/letsinvest.png) /* image */ center / contain no-repeat
-    /* repeat */ white;
-  height: 850px;
+  background: url(images/letsinvest.png) no-repeat center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 0;
+  padding-top: 55%;
 }
 
 .heading-padd {
