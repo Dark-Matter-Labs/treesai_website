@@ -1,8 +1,7 @@
+import { Link } from "react-router-dom";
+
 const footerNavigation = {
-  legal: [
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
-  ],
+  legal: [{ name: "Privacy", href: "/privacy" }],
   social: [
     {
       name: "Twitter",
@@ -124,14 +123,12 @@ export default function Footer() {
                   <ul className="mt-4 space-y-4">
                     {footerNavigation.legal.map((item) => (
                       <li key={item.name}>
-                        <a
-                          href={item.href}
-                          target="_blank"
-                          rel="noreferrer noopener"
+                        <Link
+                          to={item.href}
                           className="text-base text-gray-500 hover:text-gray-900"
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
