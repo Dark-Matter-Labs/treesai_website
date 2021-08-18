@@ -26,7 +26,7 @@ export default function SocialProof() {
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                <p className="relative">
+                <p className="relative font-body">
                   Among the many applications for our Google.org Impact
                   Challenge on Climate, Dark Matter Labs stood out. With their
                   ambitious open-source 'Trees As Infrastructure' initiative,
@@ -76,7 +76,7 @@ export default function SocialProof() {
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                <p className="relative">
+                <p className="relative font-body">
                   So many of the challenges surrounding the climate emergency
                   will be addressed by our cities and Nature-based Solutions are
                   absolutely critical within that. Urban forests deliver

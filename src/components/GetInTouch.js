@@ -12,7 +12,7 @@ export default function GetInTouch() {
             <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
               Get in touch
             </h2>
-            <p className="mt-3 text-lg leading-6 text-gray-500">
+            <p className="mt-3 text-lg leading-6 text-gray-500 font-body">
               Are you a municipality? <br />
               TreesAI can help solve your urban infrastructure issues.
               <br />
