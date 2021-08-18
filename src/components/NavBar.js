@@ -80,13 +80,14 @@ export default class NavBar extends Component {
                   <div className="pt-5 pb-6">
                     <div className="px-2 space-y-1">
                       {navigation.map((item) => (
-                        <a
+                        <Link
                           key={item.name}
-                          href={item.href}
+                          to={item.href}
+                          smooth={true}
                           className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50"
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
