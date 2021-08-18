@@ -32,13 +32,10 @@ export default class NavBar extends Component {
                     <a href="https://treesai.netlify.app/">
                       <img
                         className="h-8 w-auto sm:h-10"
-                        src="https://tailwindui.com/img/logos/workflow-mark-teal-200-cyan-400.svg"
+                        src="../images/TreesAI_logo.svg"
                         alt=""
                       />
                     </a>
-                    <h2 className="text-2xl font-bold leading-7 text-white sm:text-3xl sm:truncate">
-                      TreesAI
-                    </h2>
                     <div className="-mr-2 flex items-center md:hidden">
                       <Popover.Button className="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white">
                         <span className="sr-only">Open main menu</span>
@@ -82,7 +79,7 @@ export default class NavBar extends Component {
                     <div>
                       <img
                         className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/workflow-mark-teal-500-cyan-600.svg"
+                        src="../images/TreesAI_logo.svg"
                         alt=""
                       />
                     </div>

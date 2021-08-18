@@ -11,10 +11,10 @@ export default function ValueProp() {
   ];
 
   return (
-    <div className="bg-indigo-200 bg-opacity-25">
+    <div className="bg-light bg-opacity-25">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8">
-          <h2 className="max-w-md mx-auto text-3xl font-extrabold text-indigo-900 text-center lg:max-w-xl lg:text-left">
+          <h2 className="max-w-md mx-auto text-3xl font-bold text-primary text-center lg:max-w-xl lg:text-left">
             Trusted by government agencies, supported by technology and finance
             leaders
           </h2>
@@ -22,7 +22,7 @@ export default function ValueProp() {
             {logos.map((logo) => (
               <div
                 key={logo.name}
-                className="col-span-1 flex justify-center py-8 px-8 bg-gray-50"
+                className="col-span-1 flex justify-center py-8 px-8 bg-white"
               >
                 <img className="max-h-12" src={logo.url} alt={logo.name} />
               </div>

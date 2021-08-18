@@ -1,4 +1,4 @@
-import { Fragment, Component } from "react";
+import { Component } from "react";
 import { XIcon } from "@heroicons/react/outline";
 
 import NavBar from "./NavBar";
@@ -13,7 +13,7 @@ export default class Vision extends Component {
     return (
       <>
         {this.state.show && (
-          <div className="relative bg-indigo-600 fix-position">
+          <div className="relative bg-primary fix-position">
             <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
               <div className="pr-16 sm:text-center sm:px-16">
                 <p className="font-medium text-white">
@@ -74,7 +74,7 @@ export default class Vision extends Component {
             <div className="lg:grid lg:grid-cols-2 lg:gap-8">
               <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
                 <div className="lg:py-24">
-                  <h1 className="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+                  <h1 className="mt-4 text-4xl tracking-tight font-bold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
                     <span className="block">
                       A platform to value, and invest in nature, beyond carbon
                     </span>
@@ -82,7 +82,7 @@ export default class Vision extends Component {
                       ship web apps
                     </span>
                   </h1>
-                  <p className="text-base text-gray-300 sm:text-xl lg:text-lg xl:text-xl">
+                  <p className="text-base text-white sm:text-xl lg:text-lg xl:text-xl">
                     TreesAI establishes nature as a critical part of urban
                     infrastructure, alongside bridges, roads and rail, enabling
                     investment, profitability and sustainability.
@@ -92,7 +92,7 @@ export default class Vision extends Component {
                       href="http://eepurl.com/hFsY1n"
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-gray-700"
+                      className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-gray-700"
                     >
                       Get notified when we launch
                     </a>

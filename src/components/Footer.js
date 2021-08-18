@@ -88,7 +88,7 @@ export default function Footer() {
   return (
     <>
       <div className="lets-invest"></div>
-      <footer className="bg-gray-50" aria-labelledby="footer-heading">
+      <footer className="bg-extraLight" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
@@ -97,7 +97,7 @@ export default function Footer() {
             <div className="space-y-8 xl:col-span-1">
               <img
                 className="h-10"
-                src="https://tailwindui.com/img/logos/workflow-mark-gray-300.svg"
+                src="../images/TreesAI_logo_black.svg"
                 alt="Company name"
               />
               <div className="flex space-x-6">

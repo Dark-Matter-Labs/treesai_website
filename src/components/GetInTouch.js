@@ -9,7 +9,7 @@ export default function GetInTouch() {
       <div className="relative max-w-7xl mx-auto lg:grid lg:grid-cols-5">
         <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
           <div className="max-w-lg mx-auto">
-            <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
               Get in touch
             </h2>
             <p className="mt-3 text-lg leading-6 text-gray-500">
@@ -34,10 +34,10 @@ export default function GetInTouch() {
                 <dt className="sr-only">Email</dt>
                 <dd className="flex">
                   <MailIcon
-                    className="flex-shrink-0 h-6 w-6 text-gray-400"
+                    className="flex-shrink-0 h-6 w-6 text-green"
                     aria-hidden="true"
                   />
-                  <span className="ml-3">
+                  <span className="ml-3 text-green font-bold">
                     <a href="mailto:treesai@darkmatterlabs.org">
                       treesai@darkmatterlabs.org
                     </a>

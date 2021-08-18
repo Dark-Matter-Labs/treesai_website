@@ -47,7 +47,7 @@ export default function Team() {
       <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
           <div className="space-y-5 sm:space-y-4">
-            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Meet our team of architects, data scientists and ecologists
             </h2>
           </div>
@@ -63,7 +63,7 @@ export default function Team() {
                     />
                     <div className="font-medium text-lg leading-6 space-y-1">
                       <h3>{person.name}</h3>
-                      <p className="text-indigo-600">{person.role}</p>
+                      <p className="text-primary">{person.role}</p>
                     </div>
                   </div>
                 </li>
