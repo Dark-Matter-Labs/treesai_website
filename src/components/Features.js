@@ -73,66 +73,69 @@ const investorFeatures = [
 export default function Features() {
   return (
     <>
-      <div className="py-12 bg-white" id="products">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:text-center">
-            <h2 className="text-base text-primary font-semibold tracking-wide uppercase">
-              FOR COUNCILS
-            </h2>
-            <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Reach the climate targets for your city
-            </p>
-            <p className="mt-3 text-lg leading-6 text-gray-500">
-              TreesAI helps secure private funding by capturing the
-              environmental,
-              <br /> social and economic benefits delivered by trees in
-              metropolitan areas
-            </p>
-          </div>
+      <div className="m-20 grid grid-cols-1 gap-1 md:grid-cols-1 sm:grid-cols-1 lg:grid-cols-2">
+        <div className="py-12 bg-white" id="products">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="lg:text-center">
+              <h2 className="text-base text-primary font-semibold tracking-wide uppercase">
+                FOR COUNCILS
+              </h2>
+              <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Reach the climate targets for your city<br></br>
+                <br></br>
+              </p>
+            </div>
 
-          <div className="mt-10">
-            <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-              {councilFeatures.map((feature) => (
-                <div key={feature.name} className="relative">
-                  <dt>
-                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
-                      <feature.icon className="h-6 w-6" aria-hidden="true" />
-                    </div>
-                    <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
-                      {feature.name}
-                    </p>
-                  </dt>
-                  <dd className="mt-2 ml-16 text-base text-gray-500 font-body">
-                    {feature.description}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+            <div className="mt-10">
+              <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                {councilFeatures.map((feature) => (
+                  <div key={feature.name} className="relative">
+                    <dt>
+                      <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                        <feature.icon className="h-6 w-6" aria-hidden="true" />
+                      </div>
+                      <p className="ml-16 py-3 text-lg leading-6 font-medium text-gray-900">
+                        {feature.name}
+                      </p>
+                    </dt>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="py-12-edit bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:text-center">
-            <h2 className="text-base text-primary font-semibold tracking-wide uppercase">
-              FOR INVESTORS
-            </h2>
-            <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Invest in government-backed carbon credits and support local
-              impacts
-            </p>
-            <p className="mt-3 text-lg leading-6 text-gray-500">
-              TreesAI issues Carbon <i>Plus</i> Credits, a new crediting system
-              beyond carbon,
-              <br /> for delivering and sustaining urban trees.
-            </p>
-          </div>
+        <div className="py-12-edit bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="lg:text-center">
+              <h2 className="text-base text-primary font-semibold tracking-wide uppercase">
+                FOR INVESTORS
+              </h2>
+              <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Invest in government-backed carbon credits and support local
+                impacts
+              </p>
+            </div>
 
-          <div className="mt-10">
-            <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-              {investorFeatures.map((feature) => {
-                if (feature.plus)
+            <div className="mt-10">
+              <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                {investorFeatures.map((feature) => {
+                  if (feature.plus)
+                    return (
+                      <div key={feature.name} className="relative">
+                        <dt>
+                          <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                            <feature.icon
+                              className="h-6 w-6"
+                              aria-hidden="true"
+                            />
+                          </div>
+                          <p className="ml-16 py-3 text-lg leading-6 font-medium text-gray-900">
+                            {feature.name}
+                          </p>
+                        </dt>
+                      </div>
+                    );
                   return (
                     <div key={feature.name} className="relative">
                       <dt>
@@ -142,32 +145,15 @@ export default function Features() {
                             aria-hidden="true"
                           />
                         </div>
-                        <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
+                        <p className="ml-16 py-3 text-lg leading-6 font-medium text-gray-900">
                           {feature.name}
                         </p>
                       </dt>
-                      <dd className="mt-2 ml-16 text-base text-gray-500 font-body">
-                        Carbon <i>Plus</i> {feature.description}
-                      </dd>
                     </div>
                   );
-                return (
-                  <div key={feature.name} className="relative">
-                    <dt>
-                      <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
-                        <feature.icon className="h-6 w-6" aria-hidden="true" />
-                      </div>
-                      <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
-                        {feature.name}
-                      </p>
-                    </dt>
-                    <dd className="mt-2 ml-16 text-base text-gray-500 font-body">
-                      {feature.description}
-                    </dd>
-                  </div>
-                );
-              })}
-            </dl>
+                })}
+              </dl>
+            </div>
           </div>
         </div>
       </div>
