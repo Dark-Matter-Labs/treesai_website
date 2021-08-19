@@ -1,16 +1,79 @@
-.section-bg {
-  background: url(images/main-bg.png) /* image */ center / contain no-repeat
-    /* repeat */ black;
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+
+#Container {
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+}
+
+#Container video {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  min-width: 100%;
+  height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+#Container div {
+  position: relative;
+  z-index: 1;
 }
 
 .tree-services {
-  background: url(images/tree-services.png) /* image */ center / contain
-    no-repeat /* repeat */ white;
-  height: 1000px;
+  background: url(images/tree-services.png) no-repeat center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 0;
+  padding: 40%;
+}
+
+.heading-padd {
+  padding-top: 40px;
+}
+
+.py-12-edit {
+  padding-top: 3em;
+}
+
+.pointer-cursor {
+  cursor: pointer;
 }
 
 .lets-invest {
-  background: url(images/letsinvest.png) /* image */ center / contain no-repeat
-    /* repeat */ white;
-  height: 850px;
+  background: url(images/letsinvest.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 0;
+  padding: 40%;
+}
+
+.lets-invest p {
+  display: inline;
+  padding: 0.5rem;
+
+  /* Needs prefixing */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.grid-center {
+  place-items: center;
+}
+
+.right-float {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.mobile-image {
+  margin: 0 auto;
 }
