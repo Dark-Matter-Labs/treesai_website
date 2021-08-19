@@ -1,6 +1,6 @@
 export default function Privacy() {
   return (
-    <div className="relative bg-white" id="contact">
+    <div className="relative bg-gray" id="contact">
       <div className="relative max-w-7xl mx-auto lg:grid lg:grid-cols-2">
         <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
           <div className="">
