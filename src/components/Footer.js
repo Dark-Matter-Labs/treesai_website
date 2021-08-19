@@ -86,7 +86,6 @@ const footerNavigation = {
 export default function Footer() {
   return (
     <>
-      <div className="lets-invest"></div>
       <footer className="bg-extraLight" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
           Footer
