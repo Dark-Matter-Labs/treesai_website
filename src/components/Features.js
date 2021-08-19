@@ -108,7 +108,7 @@ export default function Features() {
         <div className="py-12-edit bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="lg:text-center">
-              <h2 className="text-base text-primary font-semibold tracking-wide uppercase">
+              <h2 className="text-base font-semibold tracking-wide uppercase text-blue">
                 FOR INVESTORS
               </h2>
               <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -124,7 +124,7 @@ export default function Features() {
                     return (
                       <div key={feature.name} className="relative">
                         <dt>
-                          <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                          <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue text-white">
                             <feature.icon
                               className="h-6 w-6"
                               aria-hidden="true"
@@ -139,7 +139,7 @@ export default function Features() {
                   return (
                     <div key={feature.name} className="relative">
                       <dt>
-                        <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                        <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue text-white">
                           <feature.icon
                             className="h-6 w-6"
                             aria-hidden="true"
