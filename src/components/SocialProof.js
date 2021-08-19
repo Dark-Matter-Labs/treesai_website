@@ -44,7 +44,7 @@ export default function SocialProof() {
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                <img className="h-12" src={googleLogo} alt="Google.org logo" />
+                <img className="h-10" src={googleLogo} alt="Google.org logo" />
               </a>
             </div>
             <footer className="mt-8">
