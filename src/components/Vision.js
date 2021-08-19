@@ -68,6 +68,7 @@ export default class Vision extends Component {
             poster="images/poster.png"
             id="background-video"
           >
+            <source src="images/short.webm" type="video/webm" />
             <source src="images/short.mp4" type="video/mp4" />
           </video>
           <div className="mx-auto max-w-7xl lg:px-8">
