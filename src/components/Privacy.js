@@ -16,7 +16,8 @@ export default function Privacy() {
 
             <p className="mt-3 text-lg leading-6 text-gray-500">
               If you have additional questions or require more information about
-              our Privacy Policy, do not hesitate to contact us.
+              our Privacy Policy, do not hesitate to contact us at
+              treesai@darkmatterlabs.org or info@darkmatterlabs.org
             </p>
 
             <p className="mt-3 text-lg leading-6 text-gray-500">
