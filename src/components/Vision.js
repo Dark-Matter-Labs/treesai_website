@@ -56,7 +56,7 @@ export default class Vision extends Component {
           </div>
         )}
         <div
-          className="pt-10 bg-gray-900 sm:pb-18 lg:pt-8 lg:pb-14 pb-10 lg:overflow-hidden"
+          className="pt-10 bg-gray-900 sm:pb-18 lg:pt-8 lg:pb-14 md:p-20 pb-10 lg:overflow-hidden"
           id="Container"
         >
           <NavBar />
