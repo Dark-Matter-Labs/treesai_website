@@ -15,9 +15,9 @@ export default function Home() {
         <main>
           <Vision />
           <Features />
+          <Pilot />
           <ValueProp />
           <SocialProof />
-          <Pilot />
           <Team />
           <Reports />
           <GetInTouch />
