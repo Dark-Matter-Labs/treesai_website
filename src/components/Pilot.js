@@ -2,7 +2,7 @@ import glasgowImage from "../images/glasgow.jpg";
 
 export default function Pilot() {
   return (
-    <div className="relative py-16 bg-gray">
+    <div className="relative py-16 bg-gray" id="pilot">
       <div
         className="hidden absolute top-0 inset-x-0 h-1/2 lg:block"
         aria-hidden="true"
