@@ -3,18 +3,18 @@ import glasgowLogo from "../images/glasgowlogo.jpg";
 
 export default function SocialProof() {
   return (
-    <section className="bg-primary" id="testimonials">
-      <div className="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8 heading-padd">
-        <h2 className="max-w-md text-3xl font-bold text-white text-left lg:max-w-xl lg:text-left">
+    <section className="bg-green2" id="testimonials">
+      <div className="text-center mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl heading-padd">
+        <p className="mt-2 text-3xl font-bold text-gray tracking-tight sm:text-4xl">
           Testimonials
-        </h2>
+        </p>
       </div>
       <div className="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
-        <div className="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 md:border-r md:border-light lg:pr-16">
+        <div className="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 lg:pr-16">
           <blockquote className="mt-6 md:flex-grow md:flex md:flex-col">
             <div className="relative text-lg font-medium text-white md:flex-grow google-text">
               <svg
-                className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-light"
+                className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-green3"
                 fill="currentColor"
                 viewBox="0 0 32 32"
                 aria-hidden="true"
@@ -26,7 +26,7 @@ export default function SocialProof() {
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                <p className="relative font-body">
+                <p className="relative text-gray">
                   Among the many applications for our Google.org Impact
                   Challenge on Climate, Dark Matter Labs stood out. With their
                   ambitious open-source 'Trees As Infrastructure' initiative,
@@ -53,7 +53,7 @@ export default function SocialProof() {
                   <div className="text-base font-medium text-white">
                     Google.org
                   </div>
-                  <div className="text-base font-medium text-extraLight">
+                  <div className="text-base font-medium text-green1">
                     Impact Challenge on Climate
                   </div>
                 </div>
@@ -61,11 +61,11 @@ export default function SocialProof() {
             </footer>
           </blockquote>
         </div>
-        <div className="py-12 px-4 border-t-2 border-light sm:px-6 md:py-16 md:pr-0 md:pl-10 md:border-t-0 md:border-l lg:pl-16">
+        <div className="py-12 px-4 sm:px-6 md:py-16 md:pr-0 md:pl-10 lg:pl-16">
           <blockquote className="mt-6 md:flex-grow md:flex md:flex-col">
             <div className="relative text-lg font-medium text-white md:flex-grow">
               <svg
-                className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-light"
+                className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-green3"
                 fill="currentColor"
                 viewBox="0 0 32 32"
               >
@@ -86,7 +86,7 @@ export default function SocialProof() {
               </a>
             </div>
             <footer className="mt-8">
-              <div className="md:flex-shrink-0 glasgow-text">
+              <div className="md:flex-shrink-0">
                 <a
                   href="https://www.glasgow.gov.uk/"
                   target="_blank"
@@ -100,12 +100,12 @@ export default function SocialProof() {
                   />
                 </a>
               </div>
-              <div className="flex items-start glasgow-ceo-text">
+              <div className="flex items-start">
                 <div>
                   <div className="text-base font-medium text-white">
                     Susan Aitken
                   </div>
-                  <div className="text-base font-medium text-extraLight">
+                  <div className="text-base font-medium text-green1">
                     CEO of Glasgow City Council
                   </div>
                 </div>
