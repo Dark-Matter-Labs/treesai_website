@@ -19,10 +19,10 @@ export default function ValueProp() {
               Supported by
             </p>
           </div>
-          <div className="mt-12 grid grid-cols-5 gap-12 sm:grid-cols-2 md:grid-cols-3 lg:mt-0 lg:grid-cols-5 justify-center grid-center">
+          <div className="mt-12 lg:grid md:grid gap-12 md:grid-cols-3 lg:mt-0 lg:grid-cols-5 justify-center grid-center">
             {logos.map((logo) => (
               <div key={logo.name} className="flex py-8 px-4 bg-transparent">
-                <img className="" src={logo.url} alt={logo.name} />
+                <img className="mobile-image" src={logo.url} alt={logo.name} />
               </div>
             ))}
           </div>
