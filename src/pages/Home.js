@@ -14,8 +14,8 @@ export default function Home() {
       <div className="relative overflow-hidden">
         <main>
           <Vision />
-          <ValueProp />
           <Features />
+          <ValueProp />
           <SocialProof />
           <Pilot />
           <Team />
