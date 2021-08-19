@@ -38,10 +38,10 @@ export default function GetInTouch() {
                 <dt className="sr-only">Email</dt>
                 <dd className="flex">
                   <MailIcon
-                    className="flex-shrink-0 h-6 w-6 text-green"
+                    className="flex-shrink-0 h-6 w-6 text-primary"
                     aria-hidden="true"
                   />
-                  <span className="ml-3 text-green font-bold">
+                  <span className="ml-3 text-primary font-bold">
                     <a href="mailto:treesai@darkmatterlabs.org">
                       treesai@darkmatterlabs.org
                     </a>
@@ -54,7 +54,7 @@ export default function GetInTouch() {
                 href="http://eepurl.com/hFsY1n"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-green hover:bg-gray-700"
+                className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-gray-700"
               >
                 Get notified when we launch
               </a>
