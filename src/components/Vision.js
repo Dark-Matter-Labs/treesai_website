@@ -46,7 +46,7 @@ export default class Vision extends Component {
                   type="button"
                   href="#hide"
                   id="close"
-                  className="flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white"
+                  className="flex p-2 rounded-md hover:bg-green2 focus:outline-none focus:ring-2 focus:ring-white"
                 >
                   <span className="sr-only">Dismiss</span>
                   <XIcon className="h-6 w-6 text-white" aria-hidden="true" />
@@ -56,7 +56,7 @@ export default class Vision extends Component {
           </div>
         )}
         <div
-          className="pt-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden"
+          className="pt-10 bg-gray-900 sm:pb-18 lg:pt-8 lg:pb-14 lg:overflow-hidden"
           id="Container"
         >
           <NavBar />
@@ -74,13 +74,6 @@ export default class Vision extends Component {
             <div className="lg:grid lg:grid-cols-2 lg:gap-8">
               <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
                 <div className="lg:py-24">
-                  <div className="flex items-center justify-between w-full md:w-auto">
-                    <img
-                      className="h-24"
-                      src="../images/TreesAI_logo.svg"
-                      alt=""
-                    />
-                  </div>
                   <h1 className="mt-4 text-4xl tracking-tight font-bold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
                     <span className="block">
                       A platform to value and invest in nature beyond carbon
@@ -94,12 +87,12 @@ export default class Vision extends Component {
                     part of urban infrastructure, alongside bridges, roads and
                     rail, enabling investment, profitability and sustainability.
                   </p>
-                  <div className="mt-10 sm:mt-12">
+                  <div className="mt-10 sm:mt-12 sm:mb-12">
                     <a
                       href="http://eepurl.com/hFsY1n"
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-gray-700"
+                      className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-green2"
                     >
                       Get notified when we launch
                     </a>
@@ -107,6 +100,11 @@ export default class Vision extends Component {
                 </div>
               </div>
             </div>
+            <p className="text-sm text-white">
+              Image: screenshot from video by our partners: Phil Wilkes and Mat
+              Disney, UCL Geography and NERC National Centre for Earth
+              Observation
+            </p>
           </div>
         </div>
       </>
