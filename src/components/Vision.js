@@ -100,8 +100,8 @@ export default class Vision extends Component {
                 </div>
               </div>
             </div>
-            <p className="text-sm text-white pt-10">
-              Image: screenshot from video by our partners: Phil Wilkes and Mat
+            <p className="text-sm text-white pt-10 sm:p-10">
+              Video by our partners: Phil Wilkes and Mat
               Disney, UCL Geography and NERC National Centre for Earth
               Observation
             </p>
