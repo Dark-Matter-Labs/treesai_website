@@ -38,14 +38,6 @@
   padding-top: 40px;
 }
 
-.glasgow-text {
-  padding-top: 20px;
-}
-
-.glasgow-ceo-text {
-  padding-top: 20px;
-}
-
 .py-12-edit {
   padding-top: 3em;
 }
@@ -55,17 +47,11 @@
 }
 
 .lets-invest {
-  background: linear-gradient(
-      rgba(151, 224, 155, 0.5),
-      rgba(151, 224, 155, 0.5)
-    ),
-    url(images/letsinvest.jpeg);
+  background: url(images/letsinvest.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  padding: 25%;
   width: 100%;
-  margin: 20px auto;
 }
 .lets-invest p {
   display: inline;
@@ -78,4 +64,9 @@
 
 .grid-center {
   place-items: center;
+}
+
+.right-float {
+  margin-left: auto;
+  margin-right: 0;
 }
