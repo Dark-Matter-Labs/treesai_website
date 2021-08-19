@@ -3,6 +3,7 @@
 #Container {
   position: relative;
   overflow: hidden;
+  background-color: black;
 }
 
 #Container video {
@@ -10,7 +11,7 @@
   left: 50%;
   top: 50%;
   min-width: 100%;
-  min-height: 100%;
+  height: 100%;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -33,16 +34,6 @@
   padding-top: 95%;
 }
 
-.lets-invest {
-  background: url(images/letsinvest.png) no-repeat center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 0;
-  padding-top: 55%;
-}
-
 .heading-padd {
   padding-top: 40px;
 }
@@ -61,4 +52,30 @@
 
 .pointer-cursor {
   cursor: pointer;
+}
+
+.lets-invest {
+  background: linear-gradient(
+      rgba(151, 224, 155, 0.5),
+      rgba(151, 224, 155, 0.5)
+    ),
+    url(images/letsinvest.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 25%;
+  width: 100%;
+  margin: 20px auto;
+}
+.lets-invest p {
+  display: inline;
+  padding: 0.5rem;
+
+  /* Needs prefixing */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.grid-center {
+  place-items: center;
 }
