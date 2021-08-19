@@ -76,7 +76,7 @@ export default function SocialProof() {
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                <p className="relative font-body">
+                <p className="relative">
                   So many of the challenges surrounding the climate emergency
                   will be addressed by our cities and Nature-based Solutions are
                   absolutely critical within that. Urban forests deliver
