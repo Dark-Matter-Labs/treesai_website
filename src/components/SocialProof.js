@@ -101,7 +101,7 @@ export default function SocialProof() {
                 </a>
               </div>
               <div className="flex items-start">
-                <div>
+                <div className="pt-8">
                   <div className="text-base font-medium text-white">
                     Susan Aitken
                   </div>

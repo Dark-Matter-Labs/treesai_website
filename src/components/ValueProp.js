@@ -1,13 +1,13 @@
 export default function ValueProp() {
   const logos = [
-    { name: "EIT Climate-KIC", url: "images/partner_logos/eit-climatekic.svg" },
-    { name: "NatureScot", url: "images/partner_logos/NatureScot.svg" },
-    { name: "Morgan Stanley", url: "images/partner_logos/Morgan_Stanley.svg" },
+    { name: "EIT Climate-KIC", url: "assets/partner_logos/eit-climatekic.svg" },
+    { name: "NatureScot", url: "assets/partner_logos/NatureScot.svg" },
+    { name: "Morgan Stanley", url: "assets/partner_logos/Morgan_Stanley.svg" },
     {
       name: "World Economic Forum",
-      url: "images/partner_logos/world_economic_forum.svg",
+      url: "assets/partner_logos/world_economic_forum.svg",
     },
-    { name: "Google.org", url: "images/partner_logos/google.org_logo.svg" },
+    { name: "Google.org", url: "assets/partner_logos/google.org_logo.svg" },
   ];
 
   return (
@@ -20,11 +20,40 @@ export default function ValueProp() {
             </p>
           </div>
           <div className="mt-12 lg:grid md:grid gap-12 md:grid-cols-3 lg:mt-0 lg:grid-cols-5 justify-center grid-center">
-            {logos.map((logo) => (
-              <div key={logo.name} className="flex py-8 px-4 bg-transparent">
-                <img className="mobile-image" src={logo.url} alt={logo.name} />
-              </div>
-            ))}
+            {logos.map((logo) => {
+              if (logo.name === "World Economic Forum")
+                return (
+                  <div
+                    key={logo.name}
+                    className="flex py-8 px-8 bg-transparent"
+                  >
+                    <img
+                      className="mobile-image"
+                      src={logo.url}
+                      alt={logo.name}
+                    />
+                  </div>
+                );
+              else if (logo.name === "Morgan Stanley")
+                return (
+                  <div key={logo.name} className="flex bg-transparent">
+                    <img
+                      className="mobile-image"
+                      src={logo.url}
+                      alt={logo.name}
+                    />
+                  </div>
+                );
+              return (
+                <div key={logo.name} className="flex py-8 px-4 bg-transparent">
+                  <img
+                    className="mobile-image"
+                    src={logo.url}
+                    alt={logo.name}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

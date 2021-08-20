@@ -19,7 +19,7 @@ export default function Pilot() {
                 <img
                   className="object-cover object-center shadow-2xl"
                   src={glasgowImage}
-                  alt=""
+                  alt="Glasgow city landscape"
                 />
               </div>
             </div>
@@ -40,7 +40,7 @@ export default function Pilot() {
               </p>
               <a
                 className="block w-full py-3 px-5 text-center bg-white border border-transparent rounded-md shadow-md text-base font-medium text-primary hover:text-green2 sm:inline-block sm:w-auto"
-                href="images/01.07.21_TreesAI in Glasgow Synopsis.pdf"
+                href="assets/01.07.21_TreesAI in Glasgow Synopsis.pdf"
                 target="_blank"
                 rel="noreferrer noopener"
               >

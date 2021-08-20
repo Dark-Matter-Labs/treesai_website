@@ -31,7 +31,7 @@ const blogPosts = [
     date: "Nov 27, 2020",
     datetime: "2020-02-12",
     category: { name: "Report" },
-    imageUrl: "images/nature_scot.jpg",
+    imageUrl: "assets/nature_scot.jpg",
     preview: "Growing regenerative cities",
     readingLength: "11 min",
   },
@@ -43,7 +43,7 @@ export default function Reports() {
       <div className="relative">
         <div className="text-center mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
           <p className="mt-2 text-3xl font-bold text-gray-900 tracking-tight sm:text-4xl">
-            Reports
+            Publications
           </p>
         </div>
         <div className="mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl">

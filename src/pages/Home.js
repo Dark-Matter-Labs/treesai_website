@@ -18,8 +18,8 @@ export default function Home() {
           <Pilot />
           <ValueProp />
           <SocialProof />
-          <Team />
           <Reports />
+          <Team />
           <GetInTouch />
           <Footer />
         </main>
