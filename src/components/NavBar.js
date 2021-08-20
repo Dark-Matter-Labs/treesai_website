@@ -42,7 +42,7 @@ export default class NavBar extends Component {
                       </Popover.Button>
                     </div>
                   </div>
-                  <div className="hidden md:hidden space-x-8 md:flex right-float">
+                  <div className="hidden md:hidden lg:block space-x-8 md:flex right-float">
                     {navigation.map((item) => (
                       <Link
                         to={item.href}
