@@ -54,9 +54,7 @@ export default function GetInTouch() {
             </dl>
           </div>
         </div>
-        <div className="lets-invest">
-          <img src="../images/letsinvest.jpeg" alt=""></img>
-        </div>
+        <div className="lets-invest"></div>
       </div>
     </div>
   );

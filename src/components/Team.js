@@ -2,42 +2,42 @@ const people = [
   {
     name: "Aaron Gillett",
     role: "Service and interaction design",
-    imageUrl: "images/team/Aaron.jpg",
+    imageUrl: "assets/team/Aaron.jpg",
   },
   {
     name: "Axel Nilsson",
     role: "Data science",
-    imageUrl: "images/team/Axel.png",
+    imageUrl: "assets/team/Axel.png",
   },
   {
     name: "Bulent Ozel",
     role: "Impact modelling",
-    imageUrl: "images/team/Roni.jpg",
+    imageUrl: "assets/team/Roni.jpg",
   },
   {
     name: "Carlotta Conte",
     role: "Mission holder and Nature-based Solutions innovation",
-    imageUrl: "images/team/Carlotta.jpg",
+    imageUrl: "assets/team/Carlotta.jpg",
   },
   {
     name: "Gurden Batra",
     role: "Full stack development",
-    imageUrl: "images/team/Gurden.png",
+    imageUrl: "assets/team/Gurden.png",
   },
   {
     name: "Konstantina Koulouri",
     role: "Natural capital innovation research",
-    imageUrl: "images/team/Kosta.jpg",
+    imageUrl: "assets/team/Kosta.jpg",
   },
   {
     name: "Oguzhan Yayla",
     role: "Data infrastructure",
-    imageUrl: "images/team/Oz.png",
+    imageUrl: "assets/team/Oz.png",
   },
   {
     name: "Raj Kalia",
     role: "Financial structuring",
-    imageUrl: "images/team/Raj.png",
+    imageUrl: "assets/team/Raj.png",
   },
 ];
 
@@ -45,7 +45,7 @@ export default function Team() {
   return (
     <div className="bg-gray" id="team">
       <div className="text-center mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-        <p className="mt-2 text-3xl font-bold text-gray-900 tracking-tight sm:text-4xl pt-20">
+        <p className="text-3xl font-bold text-gray-900 tracking-tight sm:text-4xl pt-20">
           Team
         </p>
       </div>
@@ -64,7 +64,7 @@ export default function Team() {
                     <img
                       className="w-16 h-16 rounded-full lg:w-20 lg:h-20"
                       src={person.imageUrl}
-                      alt=""
+                      alt="TreesAI team member"
                     />
                     <div className="font-medium text-lg leading-6 space-y-1">
                       <h3>{person.name}</h3>

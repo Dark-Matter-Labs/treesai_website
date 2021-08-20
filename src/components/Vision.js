@@ -65,10 +65,10 @@ export default class Vision extends Component {
             autoPlay
             muted
             loop
-            poster="images/poster.png"
+            poster="assets/poster.png"
             id="background-video"
           >
-            <source src="images/short.mp4" type="video/mp4" />
+            <source src="assets/short.mp4" type="video/mp4" />
           </video>
           <div className="mx-auto max-w-7xl lg:px-8">
             <div className="lg:grid lg:grid-cols-2 lg:gap-8">
