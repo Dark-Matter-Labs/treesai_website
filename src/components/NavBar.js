@@ -32,7 +32,7 @@ export default class NavBar extends Component {
                   <div className="flex items-center justify-between w-full md:w-auto">
                     <img
                       className="h-8 w-auto sm:h-10"
-                      src="../images/TreesAI_logo.svg"
+                      src="assets/TreesAI_logo.svg"
                       alt="TreesAI logo"
                     />
                     <div className="-mr-2 flex items-center md:hidden">
