@@ -101,9 +101,8 @@ export default class Vision extends Component {
               </div>
             </div>
             <p className="text-sm text-white pt-10">
-              Video by our partners: Phil Wilkes and Mat
-              Disney, UCL Geography and NERC National Centre for Earth
-              Observation
+              A pair of ~200 year old Oaks, scanned by the UCL Geography TLS
+              group (M. Disney, P. Wilkes, A. Burt, W. Yang).
             </p>
           </div>
         </div>
