@@ -44,11 +44,11 @@ const people = [
 export default function Team() {
   return (
     <div className="bg-gray" id="team">
-       <div className="text-center mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-          <p className="mt-2 text-3xl font-bold text-gray-900 tracking-tight sm:text-4xl pt-20">
-            Team
-          </p>
-        </div>
+      <div className="text-center mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
+        <p className="mt-2 text-3xl font-bold text-gray-900 tracking-tight sm:text-4xl pt-20">
+          Team
+        </p>
+      </div>
       <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
           <div className="space-y-5 sm:space-y-4">
