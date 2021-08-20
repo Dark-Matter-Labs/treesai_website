@@ -91,10 +91,13 @@ export default function Features() {
                 {councilFeatures.map((feature) => (
                   <div key={feature.name} className="relative">
                     <dt>
-                      <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
-                        <feature.icon className="h-6 w-6" aria-hidden="true" />
+                      <div className="absolute flex items-center justify-center h-12 w-12 md:h-10 md:w-10 rounded-md bg-primary text-white">
+                        <feature.icon
+                          className="h-6 w-6 md:h-5 md:w-5"
+                          aria-hidden="true"
+                        />
                       </div>
-                      <p className="ml-16 lg:py-3 md:py-2 sm:py-1 text-lg leading-6 font-medium text-gray-900">
+                      <p className="ml-16 lg:py-2 md:py-2 sm:py-2 text-lg leading-6 font-medium text-gray-900">
                         {feature.name}
                       </p>
                     </dt>
@@ -124,13 +127,13 @@ export default function Features() {
                     return (
                       <div key={feature.name} className="relative">
                         <dt>
-                          <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue text-white">
+                          <div className="absolute flex items-center justify-center h-12 w-12 md:h-10 md:w-10 rounded-md bg-blue text-white">
                             <feature.icon
-                              className="h-6 w-6"
+                              className="h-6 w-6 md:h-5 md:w-5"
                               aria-hidden="true"
                             />
                           </div>
-                          <p className="ml-16 lg:py-3 md:py-2 sm:py-1 text-lg leading-6 font-medium text-gray-900">
+                          <p className="ml-16 lg:py-2 md:py-2 sm:py-2 text-lg leading-6 font-medium text-gray-900">
                             {feature.name}
                           </p>
                         </dt>
@@ -139,9 +142,9 @@ export default function Features() {
                   return (
                     <div key={feature.name} className="relative">
                       <dt>
-                        <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue text-white">
+                        <div className="absolute flex items-center justify-center h-12 w-12 md:h-10 md:w-10 rounded-md bg-blue text-white">
                           <feature.icon
-                            className="h-6 w-6"
+                            className="h-6 w-6 md:h-5 md:w-5"
                             aria-hidden="true"
                           />
                         </div>
