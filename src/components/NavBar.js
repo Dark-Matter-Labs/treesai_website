@@ -33,7 +33,7 @@ export default class NavBar extends Component {
                     <img
                       className="h-8 w-auto sm:h-10"
                       src="../images/TreesAI_logo.svg"
-                      alt=""
+                      alt="TreesAI logo"
                     />
                     <div className="-mr-2 flex items-center md:hidden">
                       <Popover.Button className="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white">
@@ -42,7 +42,7 @@ export default class NavBar extends Component {
                       </Popover.Button>
                     </div>
                   </div>
-                  <div className="hidden space-x-8 md:flex md:ml-10 right-float">
+                  <div className="hidden md:hidden space-x-8 md:flex right-float">
                     {navigation.map((item) => (
                       <Link
                         to={item.href}
