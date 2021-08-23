@@ -20,7 +20,7 @@ export default class NavBar extends Component {
 
   render() {
     return (
-      <Popover as="header" className="relative">
+      <Popover as="header" className="relative video-overlay">
         {({ close }) => (
           <>
             <div className="bg-transparent pt-6">
