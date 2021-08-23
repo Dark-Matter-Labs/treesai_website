@@ -1,29 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
-
-#Container {
-  position: relative;
-  overflow: hidden;
-  background-color: black;
-}
-
-#Container video {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  min-width: 100%;
-  height: 100%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  z-index: 0;
-}
-
-#Container div {
-  position: relative;
-  z-index: 1;
-}
-
 .tree-services {
   background: url(images/tree-services.png) no-repeat center center;
   background-size: cover;
@@ -76,4 +50,28 @@
 
 .mobile-image {
   margin: 0 auto;
+}
+
+.vimeo-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: black;
+}
+iframe {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  min-width: 100%;
+  height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.video-overlay {
+  position: relative;
+  z-index: 3;
 }
