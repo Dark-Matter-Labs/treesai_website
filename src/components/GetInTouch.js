@@ -56,7 +56,7 @@ export default function GetInTouch() {
         </div>
         <div className="lets-invest"></div>
         <p className="text-sm text-black"></p>
-        <p className="text-sm text-black pt-2 sm:pl-2">
+        <p className="text-sm text-black pt-2">
           Image from{" "}
           <a
             href="https://www.facebook.com/likenprojekt/"
