@@ -55,6 +55,17 @@ export default function GetInTouch() {
           </div>
         </div>
         <div className="lets-invest"></div>
+        <p className="text-sm text-black"></p>
+        <p className="text-sm text-black pt-2">
+          Image from{" "}
+          <a
+            href="https://www.facebook.com/likenprojekt/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            LIKEN project
+          </a>
+        </p>
       </div>
     </div>
   );
