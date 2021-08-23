@@ -55,22 +55,15 @@ export default class Vision extends Component {
             </div>
           </div>
         )}
-        <div
-          className="pt-10 bg-gray-900 sm:pb-18 lg:pt-8 lg:pb-14 md:p-20 pb-10 lg:overflow-hidden"
-          id="Container"
-        >
+        <div className="pt-10 bg-gray-900 sm:pb-18 lg:pt-8 lg:pb-14 md:p-20 pb-10 lg:overflow-hidden vimeo-container">
           <NavBar />
-          <video
-            playsInline
-            autoPlay
-            muted
-            loop
-            poster="assets/poster.png"
-            id="background-video"
-          >
-            <source src="assets/short.mp4" type="video/mp4" />
-          </video>
-          <div className="mx-auto max-w-7xl lg:px-8">
+          <iframe
+            title="banner video"
+            src="https://player.vimeo.com/video/590882809?h=2d4c9e1a57?api=1&background=1&autoplay=1&loop=1&dnt=1&muted=1"
+            allowFullScreen
+            frameBorder="0"
+          ></iframe>
+          <div className="mx-auto max-w-7xl lg:px-8 video-overlay">
             <div className="lg:grid lg:grid-cols-2 lg:gap-8">
               <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
                 <div className="lg:py-24">
@@ -100,7 +93,7 @@ export default class Vision extends Component {
                 </div>
               </div>
             </div>
-            <p className="text-sm text-white pt-10">
+            <p className="text-sm text-white sm:pt-40 pt-10 md:pt-5">
               A pair of ~200 year old Oaks, scanned by the UCL Geography TLS
               group (M. Disney, P. Wilkes, A. Burt, W. Yang).
             </p>
