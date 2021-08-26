@@ -27,6 +27,15 @@ export default function Privacy() {
               applicable to any information collected offline or via channels
               other than this website.
             </p>
+            <div className="pt-5 pb-5">
+              <img
+                src="https://simpleanalyticsbadge.com/treesasinfrastructure.com"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+                crossorigin="anonymous"
+                alt="privacy centric analytics badge"
+              />
+            </div>
 
             <h3 className="mt-4 text-xl font-semibold text-gray-900 sm:text-2xl">
               Consent
