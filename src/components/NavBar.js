@@ -8,7 +8,7 @@ const navigation = [
   { name: "Pilot", href: "pilot" },
   { name: "Testimonials", href: "testimonials" },
   { name: "Team", href: "team" },
-  { name: "Reports", href: "reports" },
+  { name: "Publications", href: "reports" },
   { name: "Get in touch", href: "contact" },
 ];
 
