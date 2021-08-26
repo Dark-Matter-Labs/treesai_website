@@ -2,6 +2,8 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9c77ddda-679e-496f-a2af-f827dd080587/deploy-status)](https://app.netlify.com/sites/treesai/deploys)
 
+Trees as Infrastructure project website.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
