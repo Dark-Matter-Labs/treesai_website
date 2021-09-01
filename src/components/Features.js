@@ -78,7 +78,7 @@ export default function Features() {
               <h2 className="text-base text-primary font-semibold tracking-wide uppercase">
                 FOR COUNCILS
               </h2>
-              <p className="font-grotesk mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">
+              <p className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
                 Reach the climate targets for your city<br></br>
                 <br></br>
               </p>
@@ -114,7 +114,7 @@ export default function Features() {
               <h2 className="text-base font-semibold tracking-wide uppercase text-blue">
                 FOR INVESTORS
               </h2>
-              <p className="font-grotesk mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">
+              <p className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
                 Invest in government-backed carbon credits and support local
                 impacts
               </p>

@@ -93,7 +93,7 @@ export default class Vision extends Component {
                 </div>
               </div>
             </div>
-            <p className="text-sm text-gray2 sm:pt-40 pt-10 md:pt-5">
+            <p className="text-sm text-gray2 sm:pt-40 pt-10 md:pt-5 sm:pl-4">
               A pair of ~200 year old Oaks, scanned by the UCL Geography TLS
               group (M. Disney, P. Wilkes, A. Burt, W. Yang).
             </p>

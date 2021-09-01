@@ -5,7 +5,7 @@ export default function SocialProof() {
   return (
     <section className="bg-green2" id="testimonials">
       <div className="text-center mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl heading-padd">
-        <p className="font-grotesk mt-2 text-3xl font-bold text-gray tracking-tight sm:text-4xl">
+        <p className="font-grotesk mt-2 text-3xl text-gray sm:text-4xl">
           Testimonials
         </p>
       </div>
@@ -37,7 +37,7 @@ export default function SocialProof() {
                 </p>
               </a>
             </div>
-            <div className="md:flex-shrink-0">
+            <div className="md:flex-shrink-0 sm:pt-5">
               <a
                 href="https://www.google.org/"
                 className="text-white font-bold underline"

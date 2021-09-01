@@ -14,12 +14,12 @@ export default function ValueProp() {
     <div className="bg-gray">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-2">
         <div className="">
-          <div className="text-center mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-            <p className="font-grotesk mt-2 text-3xl font-bold text-gray-900 tracking-tight sm:text-4xl">
+          <div className="text-center mx-auto max-w-md px-4 sm:max-w-3xl lg:px-8 lg:max-w-7xl">
+            <p className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
               Supported by
             </p>
           </div>
-          <div className="mt-12 lg:grid md:grid gap-12 md:grid-cols-3 lg:mt-0 lg:grid-cols-5 justify-center grid-center">
+          <div className="mt-12 grid gap-12 md:grid-cols-2 sm:grid-cols-2 lg:mt-0 lg:grid-cols-5 justify-center grid-center">
             {logos.map((logo) => {
               if (logo.name === "World Economic Forum")
                 return (

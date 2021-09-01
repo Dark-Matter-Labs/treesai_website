@@ -7,4 +7,6 @@
   src: local("Founders Grotesk Bold"), local("FoundersGrotesk-Bold"),
     url("./fonts/FoundersGrotesk-Bold.woff2") format("woff2"),
     url("./fonts/FoundersGrotesk-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
 }

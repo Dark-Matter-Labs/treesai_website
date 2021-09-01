@@ -6,7 +6,7 @@ export default function GetInTouch() {
       <div className="relative max-w-7xl mx-auto md:grid-cols-2 lg:grid lg:grid-cols-2 sm:grid-cols-1">
         <div className="bg-gray-50 py-16 px-4">
           <div className="max-w-lg mx-auto">
-            <h2 className="font-grotesk text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className="font-grotesk text-3xl text-gray-900 sm:text-4xl">
               Get in touch
             </h2>
             <div className="pt-2 pb-2">
@@ -56,7 +56,7 @@ export default function GetInTouch() {
         </div>
         <div className="lets-invest"></div>
         <p className="text-sm text-black"></p>
-        <p className="text-sm text-black pt-2">
+        <p className="text-sm text-black pt-2 sm:pl-4 md:pl-4 lg:pl-0">
           Image from{" "}
           <a
             href="https://www.facebook.com/likenprojekt/"
