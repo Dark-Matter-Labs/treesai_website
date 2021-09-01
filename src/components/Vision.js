@@ -55,7 +55,7 @@ export default class Vision extends Component {
             </div>
           </div>
         )}
-        <div className="pt-10 bg-gray-900 sm:pb-18 lg:pt-8 lg:pb-14 md:p-20 pb-10 lg:overflow-hidden vimeo-container">
+        <div className="pt-10 bg-gray-900 sm: lg:pt-8 lg:pb-14 md:p-20 pb-10 lg:overflow-hidden vimeo-container">
           <NavBar />
           <iframe
             title="banner video"
@@ -67,15 +67,12 @@ export default class Vision extends Component {
             <div className="lg:grid lg:grid-cols-2 lg:gap-8">
               <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
                 <div className="lg:py-24">
-                  <h1 className="font-grotesk mt-4 text-4xl tracking-tight font-bold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+                  <h1 className="font-grotesk mt-4 text-4xl tracking-tight font-bold text-white sm:mt-5 sm:text-5xl lg:mt-6 xl:text-6xl">
                     <span className="block">
                       A platform to value and invest in nature beyond carbon
                     </span>
-                    <span className="pb-3 block bg-clip-text text-transparent bg-gradient-to-r from-teal-200 to-cyan-400 sm:pb-5">
-                      ship web apps
-                    </span>
                   </h1>
-                  <p className="text-base text-white sm:text-xl lg:text-lg xl:text-xl">
+                  <p className="text-base text-white sm:text-lg lg:text-lg xl:text-xl pt-5">
                     Trees As Infrastructure establishes nature as a critical
                     part of urban infrastructure, alongside bridges, roads and
                     rail, enabling investment, profitability and sustainability.
@@ -93,7 +90,7 @@ export default class Vision extends Component {
                 </div>
               </div>
             </div>
-            <p className="text-sm text-gray2 sm:pt-40 pt-10 md:pt-5 sm:pl-4">
+            <p className="text-sm text-gray2 md:pt-40 lg:pt-40 sm:pl-4">
               A pair of ~200 year old Oaks, scanned by the UCL Geography TLS
               group (M. Disney, P. Wilkes, A. Burt, W. Yang).
             </p>

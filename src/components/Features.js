@@ -85,7 +85,7 @@ export default function Features() {
             </div>
 
             <div className="mt-10">
-              <dl className="mt-10 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 lg:mt-0 lg:col-span-2">
+              <dl className="mt-10 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-1 sm:gap-x-10 sm:gap-y-10 lg:mt-0 lg:col-span-2">
                 {councilFeatures.map((feature) => (
                   <div key={feature.name}>
                     <dt>
@@ -121,7 +121,7 @@ export default function Features() {
             </div>
 
             <div className="mt-10">
-              <dl className="mt-10 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 lg:mt-0 lg:col-span-2">
+              <dl className="mt-10 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-1 sm:gap-x-8 sm:gap-y-10 lg:mt-0 lg:col-span-2">
                 {investorFeatures.map((feature) => (
                   <div key={feature.name}>
                     <dt>
