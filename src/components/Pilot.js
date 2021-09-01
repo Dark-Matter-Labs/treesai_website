@@ -28,7 +28,7 @@ export default function Pilot() {
           <div className="relative bg-green4 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:grid lg:grid-cols-10 lg:items-center">
             <div className="relative max-w-md mx-auto py-8 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:p-0 lg:col-start-4 lg:col-span-6">
               <h2
-                className="font-grotesk text-3xl font-extrabold text-gray"
+                className="font-grotesk text-3xl text-gray"
                 id="join-heading"
               >
                 TreesAI Pilot with <br />
