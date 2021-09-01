@@ -19,7 +19,7 @@ export default function ValueProp() {
               Supported by
             </p>
           </div>
-          <div className="mt-12 lg:grid md:grid gap-12 md:grid-cols-3 lg:mt-0 lg:grid-cols-5 justify-center grid-center">
+          <div className="mt-12 grid gap-12 md:grid-cols-2 sm:grid-cols-2 lg:mt-0 lg:grid-cols-5 justify-center grid-center">
             {logos.map((logo) => {
               if (logo.name === "World Economic Forum")
                 return (
