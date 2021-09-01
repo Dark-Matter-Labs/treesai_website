@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 
 const footerNavigation = {
-  legal: [{ name: "Privacy", href: "/privacy" }],
+  legal: [
+    { name: "Privacy", local: true, href: "/privacy" },
+    {
+      name: "Press Assets",
+      local: false,
+      href: "https://drive.google.com/drive/folders/1BwEQmn_I9-xFzjiJdLy9d8JJnkya5Gb4?usp=sharing",
+    },
+  ],
   social: [
     {
       name: "Twitter",
@@ -99,16 +106,32 @@ export default function Footer() {
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div className="mt-12 md:mt-0">
                   <ul className="mt-4 space-y-4">
-                    {footerNavigation.legal.map((item) => (
-                      <li key={item.name}>
-                        <Link
-                          to={item.href}
-                          className="text-base text-dark hover:text-black"
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
+                    {footerNavigation.legal.map((item) => {
+                      if (item.local)
+                        return (
+                          <li key={item.name}>
+                            <Link
+                              to={item.href}
+                              className="text-base text-dark hover:text-black"
+                            >
+                              {item.name}
+                            </Link>
+                          </li>
+                        );
+                      else
+                        return (
+                          <li key={item.name}>
+                            <a
+                              href={item.href}
+                              target="_blank"
+                              rel="noreferrer noopener"
+                              className="text-base text-dark hover:text-black"
+                            >
+                              {item.name}
+                            </a>
+                          </li>
+                        );
+                    })}
                   </ul>
                 </div>
               </div>
