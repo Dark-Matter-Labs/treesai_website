@@ -57,7 +57,7 @@ export default function Team() {
             </h2>
           </div>
           <div className="lg:col-span-2">
-            <ul className="space-y-12 sm:grid sm:grid-cols-1 sm:gap-12 sm:space-y-0 lg:gap-x-8">
+            <ul className="space-y-12 sm:grid sm:grid-cols-1 lg:grid-cols-2 md:grid-cols-2 sm:gap-12 sm:space-y-0 lg:gap-x-8">
               {people.map((person) => (
                 <li key={person.name}>
                   <div className="flex items-center space-x-4 lg:space-x-6">
