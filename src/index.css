@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Founders Grotesk Bold";
+  src: local("Founders Grotesk Bold"), local("FoundersGrotesk-Bold"),
+    url("./fonts/FoundersGrotesk-Bold.woff2") format("woff2"),
+    url("./fonts/FoundersGrotesk-Bold.woff") format("woff");
+}
