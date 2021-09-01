@@ -1,6 +1,7 @@
 import Vision from "../components/Vision";
 import ValueProp from "../components/ValueProp";
 import Features from "../components/Features";
+import HowItWorks from "../components/HowItWorks";
 import SocialProof from "../components/SocialProof";
 import Pilot from "../components/Pilot";
 import Team from "../components/Team";
@@ -16,6 +17,7 @@ export default function Home() {
           <Vision />
           <Features />
           <Pilot />
+          <HowItWorks />
           <ValueProp />
           <SocialProof />
           <Reports />
