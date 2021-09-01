@@ -100,19 +100,19 @@ export default function Footer() {
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
-        <div className="max-w-md mx-auto pt-12 px-4 sm:max-w-7xl sm:px-6 lg:pt-16 lg:px-8">
-          <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-            <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
-              <div className="md:grid md:grid-cols-2 md:gap-8">
-                <div className="mt-12 md:mt-0">
-                  <ul className="mt-4 space-y-4">
+        <div className="max-w-md mx-auto pt-12 px-4 sm:max-w-7xl sm:px-6 lg:pt-16 lg:px-8 text-center">
+          <div className="">
+            <div className="mt-12">
+              <div className="">
+                <div className="mt-12 md:mt-0 pb-10">
+                  <ul className="mt-4 space-y-4 ">
                     {footerNavigation.legal.map((item) => {
                       if (item.local)
                         return (
                           <li key={item.name}>
                             <Link
                               to={item.href}
-                              className="text-base text-dark hover:text-black"
+                              className="text-base text-gray2 hover:text-black "
                             >
                               {item.name}
                             </Link>
@@ -125,7 +125,7 @@ export default function Footer() {
                               href={item.href}
                               target="_blank"
                               rel="noreferrer noopener"
-                              className="text-base text-dark hover:text-black"
+                              className="text-base text-gray2 hover:text-black"
                             >
                               {item.name}
                             </a>
@@ -137,14 +137,14 @@ export default function Footer() {
               </div>
             </div>
             <div className="space-y-8 xl:col-span-1">
-              <div className="flex space-x-6">
+              <div className="flex space-x-8 flex-space">
                 {footerNavigation.social.map((item) => (
                   <a
                     target="_blank"
                     rel="noreferrer noopener"
                     key={item.name}
                     href={item.href}
-                    className="text-dark hover:text-black"
+                    className="text-gray2 hover:text-black"
                   >
                     <span className="sr-only">{item.name}</span>
                     <item.icon className="h-6 w-6" aria-hidden="true" />
@@ -153,8 +153,8 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="mt-12 border-t border-dark py-8">
-            <p className="text-base text-dark xl:text-center">
+          <div className="mt-12 border-t border-gray2 py-8">
+            <p className="text-base text-gray2 xl:text-center">
               TreesAI is powered by{" "}
               <a
                 href="https://darkmatterlabs.org/"

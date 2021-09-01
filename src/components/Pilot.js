@@ -14,7 +14,7 @@ export default function Pilot() {
               className="absolute inset-x-0 h-1/2 bg-gray-50 lg:hidden"
               aria-hidden="true"
             />
-            <div className="max-w-md mx-auto px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:p-0">
+            <div className="max-w-md mx-auto px-4 sm:max-w-3xl sm:px-0 lg:max-w-none lg:p-0">
               <div className="aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1">
                 <img
                   className="object-cover object-center shadow-2xl"
@@ -27,10 +27,7 @@ export default function Pilot() {
 
           <div className="relative bg-green4 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:grid lg:grid-cols-10 lg:items-center">
             <div className="relative max-w-md mx-auto py-8 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:p-0 lg:col-start-4 lg:col-span-6">
-              <h2
-                className="font-grotesk text-3xl text-gray"
-                id="join-heading"
-              >
+              <h2 className="font-grotesk text-3xl text-gray" id="join-heading">
                 TreesAI Pilot with <br />
                 Glasgow City Council
               </h2>

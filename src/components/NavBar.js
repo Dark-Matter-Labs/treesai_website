@@ -23,18 +23,20 @@ export default class NavBar extends Component {
       <Popover as="header" className="relative video-overlay">
         {({ close }) => (
           <>
-            <div className="bg-transparent pt-6">
+            <div className="bg-transparent lg:pt-6 md:pt-2 sm:pt-2">
               <nav
                 className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
                 aria-label="Global"
               >
                 <div className="flex items-center flex-1">
                   <div className="flex items-center justify-between w-full md:w-auto">
-                    <img
-                      className="h-8 w-auto sm:h-10"
-                      src="assets/TreesAI_logo.svg"
-                      alt="TreesAI logo"
-                    />
+                    <div className="sm:mb-10 lg:m-0 md:mb-4">
+                      <img
+                        className="h-8 w-auto sm:h-10"
+                        src="assets/TreesAI_logo.svg"
+                        alt="TreesAI logo"
+                      />
+                    </div>
                     <div className="-mr-2 flex items-center md:hidden">
                       <Popover.Button className="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white">
                         <span className="sr-only">Open main menu</span>

@@ -37,7 +37,7 @@ export default function SocialProof() {
                 </p>
               </a>
             </div>
-            <div className="md:flex-shrink-0">
+            <div className="md:flex-shrink-0 sm:pt-5">
               <a
                 href="https://www.google.org/"
                 className="text-white font-bold underline"

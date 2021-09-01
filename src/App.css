@@ -76,6 +76,10 @@ iframe {
   z-index: 3;
 }
 
-.text-center {
-  text-align: center;
+.text-start {
+  text-align: left;
+}
+
+.flex-space {
+  justify-content: center;
 }
