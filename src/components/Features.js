@@ -71,7 +71,7 @@ const investorFeatures = [
 export default function Features() {
   return (
     <>
-      <div className="m-20 grid grid-cols-1 gap-1 md:grid-cols-1 sm:grid-cols-1 lg:grid-cols-2">
+      <div className="lg:m-20 md:m-20 sm:m-5 grid grid-cols-1 gap-1 md:grid-cols-1 sm:grid-cols-1 lg:grid-cols-2">
         <div className="py-12 bg-white" id="products">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="lg:text-center">
@@ -85,7 +85,7 @@ export default function Features() {
             </div>
 
             <div className="mt-10">
-              <dl className="mt-10 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 lg:mt-0 lg:col-span-2">
+              <dl className="mt-10 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:gap-x-10 sm:gap-y-10 lg:mt-0 lg:col-span-2">
                 {councilFeatures.map((feature) => (
                   <div key={feature.name}>
                     <dt>
@@ -121,7 +121,7 @@ export default function Features() {
             </div>
 
             <div className="mt-10">
-              <dl className="mt-10 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 lg:mt-0 lg:col-span-2">
+              <dl className="mt-10 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:gap-x-8 sm:gap-y-10 lg:mt-0 lg:col-span-2">
                 {investorFeatures.map((feature) => (
                   <div key={feature.name}>
                     <dt>

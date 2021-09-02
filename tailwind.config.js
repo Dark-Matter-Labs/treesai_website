@@ -10,7 +10,7 @@ module.exports = {
         grotesk: ['"Founders Grotesk Bold"', "sans-serif"],
       },
       screens: {
-        sm: "497px",
+        sm: "360px",
         md: "768px",
         lg: "1024px",
         xl: "1280px",
