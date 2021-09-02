@@ -96,7 +96,7 @@ iframe {
 
 /* gradient */
 .yt-lite::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0;
@@ -118,7 +118,6 @@ iframe {
   padding-bottom: calc(100% / (16 / 9));
 }
 .yt-lite > iframe {
-
 }
 
 /* play button */
@@ -132,12 +131,12 @@ iframe {
   transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
 }
 .yt-lite:hover > .lty-playbtn {
-  background-color: #10B981;
+  background-color: #10b981;
   opacity: 1;
 }
 /* play button triangle */
 .yt-lite > .lty-playbtn:before {
-  content: '';
+  content: "";
   border-style: solid;
   border-width: 11px 0 11px 19px;
   border-color: transparent transparent transparent #fff;
