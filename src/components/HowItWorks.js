@@ -27,7 +27,6 @@ export default function HowItWorks() {
               playerClass="lty-playbtn" // Default as "lty-playbtn" to control player button styles
               wrapperClass="yt-lite" 
             />
-            
           </div>
         </div>
       </div>
