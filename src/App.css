@@ -132,7 +132,7 @@ iframe {
   transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
 }
 .yt-lite:hover > .lty-playbtn {
-  background-color: #f00022;
+  background-color: #10B981;
   opacity: 1;
 }
 /* play button triangle */
