@@ -16,7 +16,7 @@ const videos = [
   {
     id: 2,
     title:
-      "What technology can do for sustainability” The Google.org Impact Challenge on Climate",
+      "What technology can do for sustainability - The Google.org Impact Challenge on Climate",
     href: "https://www.youtube.com/watch?t=75&v=Y1X3BzuNgdA&feature=youtu.be",
     date: "Jul 6, 2021",
     datetime: "2021-7-6",
