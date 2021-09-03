@@ -1,4 +1,3 @@
-import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import howItWorksDiagram from "../images/howitworks.png";
 
 export default function HowItWorks() {
@@ -13,20 +12,6 @@ export default function HowItWorks() {
           </div>
           <div className="mt-12 justify-center">
             <img src={howItWorksDiagram} alt="How TreesAI works diagram" />
-          </div>
-          <div className="mt-12 justify-center">
-            <LiteYouTubeEmbed
-              id="Y1X3BzuNgdA"
-              adNetwork={false}
-              params="start=76"
-              playlist={false}
-              title="What technology can do for sustainability"
-              noCookie={false}
-              activeClass="lyt-activated" // Default as "lyt-activated", gives control to wrapper once clicked
-              iframeClass="" // Default none, gives control to add a class to iframe element itself
-              playerClass="lty-playbtn" // Default as "lty-playbtn" to control player button styles
-              wrapperClass="yt-lite"
-            />
           </div>
         </div>
       </div>
