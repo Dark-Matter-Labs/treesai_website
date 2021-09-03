@@ -26,17 +26,49 @@ const videos = [
       "The Google.org Impact Challenge on Climate commits €10M to fund bold ideas that aim to use technology to accelerate Europe’s progress toward a greener, more resilient future.",
     readingLength: "Euractiv",
   },
-  //TODO: update image URL
   {
     id: 3,
     title: "Interview with Kate Raworth at Trees as Infrastructure Workshop",
     href: "https://vimeo.com/showcase/6628565/video/377023491",
-    date: "Dec 3, 2019",
+    date: "2019",
     datetime: "2019-12-3",
     category: { name: "45:43" },
     imageUrl: "assets/video-3.png",
     preview:
       "This is the first public workshop of the research project ‘Trees as Infrastructure’ by Dark Matter Labs in partnership with EIT Climate-KIC.",
+    readingLength: "Dark Matter Labs",
+  },
+  {
+    id: 4,
+    title: "Interview with Mathias Disney at Trees as Infrastructure Workshop",
+    href: "https://vimeo.com/showcase/6628565/video/377020523",
+    date: "2019",
+    datetime: "2019-12-3",
+    category: { name: "5:31" },
+    imageUrl: "assets/video-4.png",
+    preview: "",
+    readingLength: "Dark Matter Labs",
+  },
+  {
+    id: 5,
+    title: "Interview with Michelle Zucker at Trees as Infrastructure Workshop",
+    href: "https://vimeo.com/showcase/6628565/video/379088421",
+    date: "2019",
+    datetime: "2019-12-3",
+    category: { name: "2:05" },
+    imageUrl: "assets/video-5.png",
+    preview: "",
+    readingLength: "Dark Matter Labs",
+  },
+  {
+    id: 6,
+    title: "Interview with Jim C. Smith at Trees as Infrastructure Workshop",
+    href: "https://vimeo.com/showcase/6628565/video/381168491",
+    date: "2019",
+    datetime: "2019-12-3",
+    category: { name: "3:25" },
+    imageUrl: "assets/video-6.png",
+    preview: "",
     readingLength: "Dark Matter Labs",
   },
 ];
@@ -267,13 +299,16 @@ export default function Reports() {
                               </a>
                             </div>
                             <div className="mt-6 flex items-center">
-                              <div className="ml-3">
-                                <div className="flex space-x-1 text-sm text-gray-500">
-                                  <time dateTime={post.datetime}>
+                              <div className="ml-3 text-gray-500">
+                                <div className="flex space-x-1">
+                                  <p className="text-sm text-gray-900">
+                                    {post.readingLength}
+                                  </p>
+                                </div>
+                                <div className="flex space-x-1">
+                                  <p className="text-sm text-dark">
                                     {post.date}
-                                  </time>
-                                  <span aria-hidden="true">&middot;</span>
-                                  <span>{post.readingLength}</span>
+                                  </p>
                                 </div>
                               </div>
                             </div>
@@ -333,7 +368,10 @@ export default function Reports() {
                             </div>
                             <div className="mt-6 flex items-center">
                               <div className="ml-3">
-                                <div className="flex space-x-1 text-sm text-gray-900">
+                                <span className="text-sm">
+                                  Trees as Infrastructure
+                                </span>
+                                <div className="flex space-x-1 text-sm text-dark">
                                   <time dateTime={post.datetime}>
                                     {post.date}
                                   </time>
