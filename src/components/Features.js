@@ -71,7 +71,7 @@ const investorFeatures = [
 export default function Features() {
   return (
     <>
-      <div className="lg:m-20 md:m-20 sm:m-5 grid grid-cols-1 gap-1 md:grid-cols-1 sm:grid-cols-1 lg:grid-cols-2">
+      <div className="lg:m-20 md:m-20 lg:px-16 sm:m-5 grid grid-cols-1 gap-1 md:grid-cols-1 sm:grid-cols-1 lg:grid-cols-2">
         <div className="py-12 bg-white" id="products">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="lg:text-center">
