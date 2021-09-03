@@ -55,7 +55,7 @@ export default class Vision extends Component {
             </div>
           </div>
         )}
-        <div className="pt-10 bg-gray-900 sm: lg:pt-8 lg:pb-14 md:p-20 pb-10 lg:overflow-hidden vimeo-container">
+        <div className="pt-10 bg-gray-900 lg:pt-8 lg:pb-14 md:p-20 pb-10 lg:overflow-hidden vimeo-container heightFull">
           <NavBar />
           <iframe
             title="banner video"
@@ -90,10 +90,12 @@ export default class Vision extends Component {
                 </div>
               </div>
             </div>
-            <p className="text-sm text-gray2 md:pt-40 lg:pt-40 sm:pl-4">
-              A pair of ~200 year old Oaks, scanned by the UCL Geography TLS
-              group (M. Disney, P. Wilkes, A. Burt, W. Yang).
-            </p>
+            <div className="md:pt-40 lg:pt-40 sm:pl-4">
+              <p className="text-sm text-gray2">
+                A pair of ~200 year old Oaks, scanned by the UCL Geography TLS
+                group (M. Disney, P. Wilkes, A. Burt, W. Yang).
+              </p>
+            </div>
           </div>
         </div>
       </>
