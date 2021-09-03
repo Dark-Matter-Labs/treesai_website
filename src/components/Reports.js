@@ -226,7 +226,7 @@ export default function Reports() {
                   Articles
                 </a>
               </li>
-              <li className="-mb-px mr-8 last:mr-0">
+              <li className="-mb-px mr-8 last:mr-0 sm:pt-4">
                 <a
                   className={
                     "px-3 py-2 font-medium text-sm rounded-md block" +
