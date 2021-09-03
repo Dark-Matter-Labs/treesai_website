@@ -16,8 +16,8 @@ export default function Home() {
         <main>
           <Vision />
           <Features />
-          <Pilot />
           <HowItWorks />
+          <Pilot />
           <ValueProp />
           <SocialProof />
           <Reports />
