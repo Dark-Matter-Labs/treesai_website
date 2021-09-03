@@ -169,7 +169,7 @@ export default function Reports() {
               className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row border-b border-gray3 mx-auto mt-4 max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl"
               role="tablist"
             >
-              <li className="-mb-px mr-8 last:mr-0">
+              <li className="-mb-px lg:mr-8 md:mr-8 sm:mr-2 last:mr-0">
                 <a
                   className={
                     "px-3 py-2 font-medium text-sm rounded-md block" +
@@ -188,7 +188,7 @@ export default function Reports() {
                   Videos
                 </a>
               </li>
-              <li className="-mb-px mr-8 last:mr-0">
+              <li className="-mb-px lg:mr-8 md:mr-8 sm:mr-2 last:mr-0">
                 <a
                   className={
                     "px-3 py-2 font-medium text-sm rounded-md block" +
@@ -207,7 +207,7 @@ export default function Reports() {
                   Reports
                 </a>
               </li>
-              <li className="-mb-px mr-8 last:mr-0">
+              <li className="-mb-px lg:mr-8 md:mr-8 sm:mr-2  last:mr-0">
                 <a
                   className={
                     "px-3 py-2 font-medium text-sm rounded-md block" +
@@ -226,7 +226,7 @@ export default function Reports() {
                   Articles
                 </a>
               </li>
-              <li className="-mb-px mr-8 last:mr-0">
+              <li className="-mb-px lg:mr-8 md:mr-8 sm:mr-2  last:mr-0">
                 <a
                   className={
                     "px-3 py-2 font-medium text-sm rounded-md block" +
