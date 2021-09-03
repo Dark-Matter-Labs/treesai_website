@@ -73,7 +73,7 @@ export default class Vision extends Component {
                     </span>
                   </h1>
                   <p className="text-base text-white sm:text-lg lg:text-lg xl:text-xl pt-5">
-                    Trees As Infrastructure establishes nature as a critical
+                    Trees as Infrastructure establishes nature as a critical
                     part of urban infrastructure, alongside bridges, roads and
                     rail, enabling investment, profitability and sustainability.
                   </p>

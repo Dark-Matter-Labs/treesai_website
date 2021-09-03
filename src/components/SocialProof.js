@@ -29,7 +29,7 @@ export default function SocialProof() {
                 <p className="relative text-gray">
                   Among the many applications for our Google.org Impact
                   Challenge on Climate, Dark Matter Labs stood out. With their
-                  ambitious open-source 'Trees As Infrastructure' initiative,
+                  ambitious open-source 'Trees as Infrastructure' initiative,
                   they aim to address the critical problem of facilitating and
                   financing urban tree restoration at scale, helping to address
                   the gap between urban tree-planting targets, their sustainable
