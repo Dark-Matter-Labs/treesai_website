@@ -226,7 +226,7 @@ export default function Reports() {
                   Articles
                 </a>
               </li>
-              <li className="-mb-px lg:mr-8 md:mr-8 sm:mr-2  last:mr-0">
+              {/* <li className="-mb-px lg:mr-8 md:mr-8 sm:mr-2  last:mr-0">
                 <a
                   className={
                     "px-3 py-2 font-medium text-sm rounded-md block" +
@@ -244,7 +244,7 @@ export default function Reports() {
                 >
                   Press
                 </a>
-              </li>
+              </li> */}
             </ul>
             <div className="relative flex flex-col min-w-0 break-words w-full mb-6 rounded">
               <div className="px-4 py-5 flex-auto">
