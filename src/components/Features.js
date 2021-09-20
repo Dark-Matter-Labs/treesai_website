@@ -39,28 +39,28 @@ const councilFeatures = [
 ];
 const investorFeatures = [
   {
-    name: "Voluntary carbon credits backed by governments",
+    name: "Support Nature-based Solutions projects",
     plus: true,
     description:
       "are verified credits, linked to local projects and validated by city authorities.",
     icon: CarbonCreditsIcon,
   },
   {
-    name: "Make a local impact",
+    name: "Invest in natural hedging strategies",
     plus: false,
     description:
       "Your investments achieve visibility by supporting local initiatives and communities.",
     icon: AdvocateIcon,
   },
   {
-    name: "Support multiple impacts",
+    name: "Meet your ESG targets",
     plus: true,
     description:
       "accounts for carbon-related benefits and estimates additional environmental impacts such as air quality improvements, water management, and human health benefits.",
     icon: FarmIcon,
   },
   {
-    name: "Transparent and verifiable",
+    name: "Transparent and verifiable impact certification",
     plus: false,
     description:
       "Trusted satellite and ground data map, monitor and account for urban tree outcomes.",
