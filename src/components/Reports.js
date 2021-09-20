@@ -223,28 +223,9 @@ export default function Reports() {
                   href="#link3"
                   role="tablist"
                 >
-                  Articles
-                </a>
-              </li>
-              {/* <li className="-mb-px lg:mr-8 md:mr-8 sm:mr-2  last:mr-0">
-                <a
-                  className={
-                    "px-3 py-2 font-medium text-sm rounded-md block" +
-                    (openTab === 4
-                      ? "text-gray4 bg-gray3"
-                      : "text-gray5 hover:text-gray4")
-                  }
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setOpenTab(4);
-                  }}
-                  data-toggle="tab"
-                  href="#link4"
-                  role="tablist"
-                >
                   Press
                 </a>
-              </li> */}
+              </li>
             </ul>
             <div className="relative flex flex-col min-w-0 break-words w-full mb-6 rounded">
               <div className="px-4 py-5 flex-auto">
@@ -422,14 +403,6 @@ export default function Reports() {
                           </div>
                         </div>
                       ))}
-                    </div>
-                  </div>
-                  <div
-                    className={openTab === 4 ? "block" : "hidden"}
-                    id="link4"
-                  >
-                    <div className="mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl">
-                      <p>Coming soon!</p>
                     </div>
                   </div>
                 </div>
