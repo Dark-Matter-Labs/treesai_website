@@ -39,7 +39,7 @@ const councilFeatures = [
 ];
 const investorFeatures = [
   {
-    name: "Support Nature-based Solutions projects",
+    name: "Support nature-based solutions projects",
     plus: true,
     description:
       "are verified credits, linked to local projects and validated by city authorities.",
@@ -79,7 +79,7 @@ export default function Features() {
                 FOR DEVELOPERS
               </h2>
               <p className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
-              Fund your Nature-based Solutions projects<br></br>
+              Fund your nature-based solutions projects<br></br>
                 <br></br>
               </p>
             </div>
@@ -115,7 +115,7 @@ export default function Features() {
                 FOR INVESTORS
               </h2>
               <p className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
-                Invest in Nature to reduce your climate risks
+                Invest in nature to reduce your climate risks
               </p>
             </div>
 
