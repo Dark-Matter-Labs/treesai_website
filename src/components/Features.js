@@ -79,8 +79,7 @@ export default function Features() {
                 FOR DEVELOPERS
               </h2>
               <p className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
-              Fund your Nature-based Solutions (NbS) projects<br></br>
-                <br></br>
+                Fund your Nature-based Solutions (NbS) projects
               </p>
             </div>
 
