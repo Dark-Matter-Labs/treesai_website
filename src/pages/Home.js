@@ -15,10 +15,10 @@ export default function Home() {
       <div className="relative overflow-hidden">
         <main>
           <Vision />
+          <ValueProp />
           <Features />
           <HowItWorks />
           <Pilot />
-          <ValueProp />
           <SocialProof />
           <Reports />
           <Team />
