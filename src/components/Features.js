@@ -53,7 +53,7 @@ const investorFeatures = [
     icon: AdvocateIcon,
   },
   {
-    name: "Meet your ESG targets",
+    name: "Meet your ESG and CSR targets",
     plus: true,
     description:
       "accounts for carbon-related benefits and estimates additional environmental impacts such as air quality improvements, water management, and human health benefits.",
@@ -79,7 +79,7 @@ export default function Features() {
                 FOR DEVELOPERS
               </h2>
               <p className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
-                Fund your Nature-based Solutions (NbS) projects
+                Fund your Nature-based Solutions projects
               </p>
             </div>
 
@@ -114,7 +114,7 @@ export default function Features() {
                 FOR INVESTORS
               </h2>
               <p className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
-                Invest in nature to reduce your climate risks
+                Invest in Nature to reduce your climate risks
               </p>
             </div>
 
