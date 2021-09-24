@@ -69,7 +69,7 @@ export default class Vision extends Component {
                 <div className="lg:py-24">
                   <h1 className="font-grotesk mt-4 text-4xl tracking-tight font-bold text-white sm:mt-5 sm:text-5xl lg:mt-6 xl:text-6xl">
                     <span className="block">
-                      A platform to value and invest in nature beyond carbon
+                      A platform to value and invest in nature beyond carbon.
                     </span>
                   </h1>
                   <p className="text-base text-white sm:text-lg lg:text-lg xl:text-xl pt-5">
@@ -92,8 +92,9 @@ export default class Vision extends Component {
             </div>
             <div className="md:pt-40 lg:pt-40 sm:pl-4">
               <p className="text-sm text-gray2">
-                A pair of ~200 year old Oaks, scanned by the UCL Geography TLS
-                group (M. Disney, P. Wilkes, A. Burt, W. Yang).
+                Image: screenshot from video by our partners: Phil Wilkes and
+                Mat Disney, UCL Geography and NERC National Centre for Earth
+                Observation.
               </p>
             </div>
           </div>
