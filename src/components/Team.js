@@ -52,9 +52,21 @@ export default function Team() {
       <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
           <div className="space-y-5 sm:space-y-4">
-            <h2 className="font-grotesk text-3xl sm:text-4xl sm:text-center text-start">
-              Meet our team of urban planning, technology and finance experts
-            </h2>
+            <p className="mt-3 text-lg font-regular text-gray-500">
+              We are a team of urban planning, technology and finance experts
+              part of{" "}
+              <a
+                href="https://darkmatterlabs.org/"
+                target="_blank"
+                className="hover:text-black"
+                rel="noreferrer noopener"
+              >
+                <b>Dark Matter Labs</b>
+              </a>
+              , a multidisciplinary ecosystem of discovery, design and
+              development, working with partners and collaborators across the
+              world to develop new working methods for system change.
+            </p>
           </div>
           <div className="lg:col-span-2">
             <ul className="space-y-12 sm:grid sm:grid-cols-1 lg:grid-cols-2 md:grid-cols-2 sm:gap-12 sm:space-y-0 lg:gap-x-8">
