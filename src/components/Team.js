@@ -11,13 +11,18 @@ const people = [
   },
   {
     name: "Bulent Ozel",
-    role: "Impact modelling",
+    role: "Scenario analyses modelling",
     imageUrl: "assets/team/Roni.jpg",
   },
   {
     name: "Carlotta Conte",
     role: "Mission holder and Nature-based Solutions innovation",
     imageUrl: "assets/team/Carlotta.jpg",
+  },
+  {
+    name: "Carolina Christiansen",
+    role: "Financial analysis",
+    imageUrl: "assets/team/Carolina.JPG",
   },
   {
     name: "Gurden Batra",
@@ -28,6 +33,11 @@ const people = [
     name: "Konstantina Koulouri",
     role: "Natural capital innovation research",
     imageUrl: "assets/team/Kosta.jpg",
+  },
+  {
+    name: "Marko Petrovic",
+    role: "Impact modelling",
+    imageUrl: "assets/team/Marko.JPG",
   },
   {
     name: "Oguzhan Yayla",
