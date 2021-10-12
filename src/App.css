@@ -87,3 +87,7 @@ iframe {
 .heightFull {
   height: 100%;
 }
+
+.panel-w {
+  width: 800px;
+}
