@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import Vision from "../components/Vision";
 import ValueProp from "../components/ValueProp";
 import Features from "../components/Features";
@@ -24,6 +26,7 @@ export default function Home() {
           <Team />
           <GetInTouch />
           <Footer />
+          <Link to="/impact-planner">Demo page</Link>
         </main>
       </div>
     </div>
