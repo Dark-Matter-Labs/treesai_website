@@ -9,10 +9,11 @@ import map from "../images/map.png";
 
 export default function ImpactPlanner() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
   const [newTreesOpen, setNewTreesOpen] = useState(false);
-
   const [resultsOpen, setResultsOpen] = useState(false);
+  const [numberOfTrees, setNumberOfTrees] = useState(0);
+  const [dbh, setDBH] = useState(0);
+  const [seq, setSeq] = useState(0);
 
   const maintenance_forcaset_line1 = [
     {
@@ -31,10 +32,12 @@ export default function ImpactPlanner() {
 
   const maintenance_forcaset_line2 = [
     {
+      id: 1,
       stat: "£200k",
       change: "over 50 years",
     },
     {
+      id: 2,
       stat: "£20–40k",
       change: "over 50 years",
     },
@@ -154,6 +157,44 @@ export default function ImpactPlanner() {
         fill: true,
       },
     ],
+  };
+
+  const get_co2 = (senescence, cm) => {
+    if (!senescence || !cm) {
+      return 0;
+    }
+    if (senescence === "evergreen") {
+      //perennifolio
+      return 0.16155 * Math.pow(cm, 2.310647) * 0.5 * 3.67;
+    }
+    if (senescence === "deciduous") {
+      //caducifolio
+      return 0.035702 * Math.pow(cm, 2.580671) * 0.5 * 3.67;
+    }
+  };
+
+  const calculate_button_click = (e) => {
+    e.preventDefault();
+    const co2_initial_conifer = get_co2("evergreen", dbh) * numberOfTrees;
+    //const co2_initial_broadleaf = get_co2("deciduous", dbh) * numberOfTrees;
+    const co2_initial = co2_initial_conifer;
+
+    const get_t1 = (diameter_t0) => {
+      if (!diameter_t0) {
+        return 0;
+      }
+      return diameter_t0 + (-0.5425 + 0.3189 * Math.log(diameter_t0));
+    };
+
+    const co2_final_conifer = get_co2("evergreen", get_t1(dbh)) * numberOfTrees;
+
+    // const co2_final_broadleaf =get_co2("deciduous", get_t1(broadleafCm)) * broadleafNumber;
+
+    const co2_final = co2_final_conifer;
+
+    const sequestrationValue = co2_final - co2_initial;
+    setSeq(Math.round(sequestrationValue), 2);
+    setResultsOpen(true);
   };
 
   return (
@@ -308,6 +349,9 @@ export default function ImpactPlanner() {
                             <div className="mt-1">
                               <input
                                 type="number"
+                                onChange={(e) =>
+                                  setNumberOfTrees(e.target.value)
+                                }
                                 name="tree-number"
                                 id="tree-number"
                                 className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
@@ -325,6 +369,7 @@ export default function ImpactPlanner() {
                             <div className="mt-1 flex rounded-md shadow-sm">
                               <input
                                 type="number"
+                                onChange={(e) => setDBH(e.target.value)}
                                 name="DBH"
                                 id="DBH"
                                 className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-l-md sm:text-sm border-gray-300"
@@ -731,8 +776,7 @@ export default function ImpactPlanner() {
                           Cancel
                         </button>
                         <button
-                          type="submit"
-                          onClick={() => setResultsOpen(true)}
+                          onClick={(e) => calculate_button_click(e)}
                           className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                           Calculate
@@ -762,7 +806,7 @@ export default function ImpactPlanner() {
                       </dt>
                       <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                         <p className="text-2xl font-semibold text-green-600 ">
-                          80 tCO2e
+                          {seq} tCO2e
                         </p>
                         <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
                           over 50 years
