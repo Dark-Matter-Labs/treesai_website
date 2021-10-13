@@ -18,7 +18,7 @@ export default function TreesAIWebsite() {
         <Route path="/privacy">
           <PrivacyPolicy />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <Home />
         </Route>
       </Switch>
