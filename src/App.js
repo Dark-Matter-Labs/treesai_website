@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import ImpactPlanner from "./pages/ImpactPlanner";
@@ -9,7 +9,7 @@ import "./App.css";
 
 export default function TreesAIWebsite() {
   return (
-    <Router>
+    <HashRouter>
       <ScrollToTop />
       <Switch>
         <Route path="/impact-planner">
@@ -18,10 +18,10 @@ export default function TreesAIWebsite() {
         <Route path="/privacy">
           <PrivacyPolicy />
         </Route>
-        <Route exact path="/">
+        <Route path="/">
           <Home />
         </Route>
       </Switch>
-    </Router>
+    </HashRouter>
   );
 }
