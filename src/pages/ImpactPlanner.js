@@ -13,6 +13,8 @@ export default function ImpactPlanner() {
   const [resultsOpen, setResultsOpen] = useState(false);
   const [numberOfTrees, setNumberOfTrees] = useState(0);
   const [dbh, setDBH] = useState(0);
+  const [newNumberOfTrees, setNewNumberOfTrees] = useState(0);
+  const [newDBH, setNewDBH] = useState(0);
   const [seq, setSeq] = useState(0);
 
   const maintenance_forcaset_line1 = [
@@ -175,25 +177,57 @@ export default function ImpactPlanner() {
 
   const calculate_button_click = (e) => {
     e.preventDefault();
-    const co2_initial_conifer = get_co2("evergreen", dbh) * numberOfTrees;
-    //const co2_initial_broadleaf = get_co2("deciduous", dbh) * numberOfTrees;
-    const co2_initial = co2_initial_conifer;
 
-    const get_t1 = (diameter_t0) => {
-      if (!diameter_t0) {
-        return 0;
-      }
-      return diameter_t0 + (-0.5425 + 0.3189 * Math.log(diameter_t0));
-    };
+    if (!newTreesOpen) {
+      const co2_initial_conifer = get_co2("evergreen", dbh) * numberOfTrees;
+      //const co2_initial_broadleaf = get_co2("deciduous", dbh) * numberOfTrees;
+      const co2_initial = co2_initial_conifer;
 
-    const co2_final_conifer = get_co2("evergreen", get_t1(dbh)) * numberOfTrees;
+      const get_t1 = (diameter_t0) => {
+        if (!diameter_t0) {
+          return 0;
+        }
+        return diameter_t0 + (-0.5425 + 0.3189 * Math.log(diameter_t0));
+      };
 
-    // const co2_final_broadleaf =get_co2("deciduous", get_t1(broadleafCm)) * broadleafNumber;
+      const co2_final_conifer =
+        get_co2("evergreen", get_t1(dbh)) * numberOfTrees;
 
-    const co2_final = co2_final_conifer;
+      // const co2_final_broadleaf =get_co2("deciduous", get_t1(broadleafCm)) * broadleafNumber;
 
-    const sequestrationValue = co2_final - co2_initial;
-    setSeq(Math.round(sequestrationValue), 2);
+      const co2_final = co2_final_conifer;
+
+      const sequestrationValue = co2_final - co2_initial;
+      setSeq((sequestrationValue / 1000).toFixed(2).replace(/\./g, ",")); //converting kg to Tn,  use comma instead of decimal point
+    } else {
+      let avg_dbh = (dbh + newDBH) / 2;
+      let total_trees = numberOfTrees + newNumberOfTrees;
+
+      const co2_initial_conifer = get_co2("evergreen", avg_dbh) * total_trees;
+      //const co2_initial_broadleaf = get_co2("deciduous", dbh) * numberOfTrees;
+      const co2_initial = co2_initial_conifer;
+
+      const get_t1 = (diameter_t0) => {
+        if (!diameter_t0) {
+          return 0;
+        }
+        return diameter_t0 + (-0.5425 + 0.3189 * Math.log(diameter_t0));
+      };
+
+      const co2_final_conifer =
+        get_co2("evergreen", get_t1(avg_dbh)) * total_trees;
+
+      // const co2_final_broadleaf =get_co2("deciduous", get_t1(broadleafCm)) * broadleafNumber;
+
+      const co2_final = co2_final_conifer;
+
+      const sequestrationValue = co2_final - co2_initial;
+      setSeq(
+        Math.round(sequestrationValue / 1000)
+          .toFixed(2)
+          .replace(/\./g, ",")
+      ); //converting kg to Tn, use comma instead of decimal point
+    }
     setResultsOpen(true);
   };
 
@@ -562,6 +596,9 @@ export default function ImpactPlanner() {
                             <div className="mt-1">
                               <input
                                 type="number"
+                                onChange={(e) =>
+                                  setNewNumberOfTrees(e.target.value)
+                                }
                                 name="tree-number"
                                 id="tree-number"
                                 className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
@@ -580,6 +617,7 @@ export default function ImpactPlanner() {
                               <input
                                 type="number"
                                 name="DBH"
+                                onChange={(e) => setNewDBH(e.target.value)}
                                 id="DBH"
                                 className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-l-md sm:text-sm border-gray-300"
                               />
