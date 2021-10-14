@@ -180,7 +180,10 @@ export default function ImpactPlanner() {
     if (!diameter_t0) {
       return 0;
     }
-    return diameter_t0 + (-0.5425 + 0.3189 * Math.log(diameter_t0));
+    let out =
+      parseFloat(diameter_t0) +
+      parseFloat(-0.5425 + 0.3189 * Math.log(diameter_t0));
+    return out;
   };
 
   const get_yearly_seq = (diameter_t0) => {
@@ -193,31 +196,33 @@ export default function ImpactPlanner() {
     let d0 = diameter_t0;
     var seq_array = [];
 
-    for (let i; i < years; i++) {
+    for (let i = 0; i < years; i++) {
       seq_array.push(get_yearly_seq(d0));
-      d0 = year_growth(d0);
+      d0 = get_t1(d0);
     }
 
     return seq_array;
   };
 
+  function sum_arr(arr) {
+    return arr.reduce((a, b) => a + b, 0);
+  }
+
   const calculate_button_click = (e) => {
     e.preventDefault();
 
     if (!newTreesOpen) {
-      const sequestrationValue = get_yearly_seq(dbh) * numberOfTrees;
+      let sequestration_arr = calc_seq_years(dbh, 50);
+
+      const sequestrationValue = numberOfTrees * sum_arr(sequestration_arr);
 
       setSeq((sequestrationValue / 1000).toFixed(2).replace(/\./g, ",")); //converting kg to Tn,  use comma instead of decimal point
     } else {
       const sequestrationValue =
-        get_yearly_seq(dbh) * numberOfTrees +
-        get_yearly_seq(newDBH) * newNumberOfTrees;
+        parseFloat(numberOfTrees * sum_arr(calc_seq_years(dbh, 50))) +
+        parseFloat(newNumberOfTrees * sum_arr(calc_seq_years(newDBH, 50)));
 
-      setSeq(
-        Math.round(sequestrationValue / 1000)
-          .toFixed(2)
-          .replace(/\./g, ",")
-      ); //converting kg to Tn, use comma instead of decimal point
+      setSeq((sequestrationValue / 1000).toFixed(2).replace(/\./g, ",")); //converting kg to Tn, use comma instead of decimal point
     }
     setResultsOpen(true);
   };
