@@ -161,7 +161,7 @@ export default function ImpactPlanner() {
     ],
   };
 
-  const get_stock = (cm, senescence = "evergreen" ) => {
+  const get_stock = (cm, senescence = "evergreen") => {
     if (!senescence || !cm) {
       return 0;
     }
@@ -198,21 +198,20 @@ export default function ImpactPlanner() {
       d0 = year_growth(d0);
     }
 
-    return seq_array
+    return seq_array;
   };
- 
+
   const calculate_button_click = (e) => {
     e.preventDefault();
 
     if (!newTreesOpen) {
-
       const sequestrationValue = get_yearly_seq(dbh) * numberOfTrees;
 
       setSeq((sequestrationValue / 1000).toFixed(2).replace(/\./g, ",")); //converting kg to Tn,  use comma instead of decimal point
-
     } else {
-
-      const sequestrationValue = get_yearly_seq(dbh) * numberOfTrees + get_yearly_seq(newDBH) * newNumberOfTrees ;
+      const sequestrationValue =
+        get_yearly_seq(dbh) * numberOfTrees +
+        get_yearly_seq(newDBH) * newNumberOfTrees;
 
       setSeq(
         Math.round(sequestrationValue / 1000)
