@@ -161,7 +161,7 @@ export default function ImpactPlanner() {
     ],
   };
 
-  const get_co2 = (senescence, cm) => {
+  const get_stock = (cm, senescence = "evergreen" ) => {
     if (!senescence || !cm) {
       return 0;
     }
@@ -175,53 +175,45 @@ export default function ImpactPlanner() {
     }
   };
 
+  const get_t1 = (diameter_t0) => {
+    // This function estimates the growth in diameter of one tree
+    if (!diameter_t0) {
+      return 0;
+    }
+    return diameter_t0 + (-0.5425 + 0.3189 * Math.log(diameter_t0));
+  };
+
+  const get_yearly_seq = (diameter_t0) => {
+    // This function estimates the sequestration over one year given an initial tree diameter
+    return get_stock(get_t1(diameter_t0)) - get_stock(diameter_t0);
+  };
+
+  const calc_seq_years = (diameter_t0, years = 50) => {
+    // This function calculates the total sequestration over several years and produces an array with the cumulative sum over the given number of years
+    let d0 = diameter_t0;
+    var seq_array = [];
+
+    for (let i; i < years; i++) {
+      seq_array.push(get_yearly_seq(d0));
+      d0 = year_growth(d0);
+    }
+
+    return seq_array
+  };
+ 
   const calculate_button_click = (e) => {
     e.preventDefault();
 
     if (!newTreesOpen) {
-      const co2_initial_conifer = get_co2("evergreen", dbh) * numberOfTrees;
-      //const co2_initial_broadleaf = get_co2("deciduous", dbh) * numberOfTrees;
-      const co2_initial = co2_initial_conifer;
 
-      const get_t1 = (diameter_t0) => {
-        if (!diameter_t0) {
-          return 0;
-        }
-        return diameter_t0 + (-0.5425 + 0.3189 * Math.log(diameter_t0));
-      };
+      const sequestrationValue = get_yearly_seq(dbh) * numberOfTrees;
 
-      const co2_final_conifer =
-        get_co2("evergreen", get_t1(dbh)) * numberOfTrees;
-
-      // const co2_final_broadleaf =get_co2("deciduous", get_t1(broadleafCm)) * broadleafNumber;
-
-      const co2_final = co2_final_conifer;
-
-      const sequestrationValue = co2_final - co2_initial;
       setSeq((sequestrationValue / 1000).toFixed(2).replace(/\./g, ",")); //converting kg to Tn,  use comma instead of decimal point
+
     } else {
-      let avg_dbh = (dbh + newDBH) / 2;
-      let total_trees = numberOfTrees + newNumberOfTrees;
 
-      const co2_initial_conifer = get_co2("evergreen", avg_dbh) * total_trees;
-      //const co2_initial_broadleaf = get_co2("deciduous", dbh) * numberOfTrees;
-      const co2_initial = co2_initial_conifer;
+      const sequestrationValue = get_yearly_seq(dbh) * numberOfTrees + get_yearly_seq(newDBH) * newNumberOfTrees ;
 
-      const get_t1 = (diameter_t0) => {
-        if (!diameter_t0) {
-          return 0;
-        }
-        return diameter_t0 + (-0.5425 + 0.3189 * Math.log(diameter_t0));
-      };
-
-      const co2_final_conifer =
-        get_co2("evergreen", get_t1(avg_dbh)) * total_trees;
-
-      // const co2_final_broadleaf =get_co2("deciduous", get_t1(broadleafCm)) * broadleafNumber;
-
-      const co2_final = co2_final_conifer;
-
-      const sequestrationValue = co2_final - co2_initial;
       setSeq(
         Math.round(sequestrationValue / 1000)
           .toFixed(2)
