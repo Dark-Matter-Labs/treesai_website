@@ -4,7 +4,7 @@ import { Bar, Line } from "react-chartjs-2";
 import { PlusSmIcon as PlusSmIconSolid } from "@heroicons/react/solid";
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import mapboxgl from 'mapbox-gl'; 
+import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 
 export default function ImpactPlanner() {
   const [newTreesOpen, setNewTreesOpen] = useState(false);
