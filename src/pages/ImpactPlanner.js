@@ -1,14 +1,12 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Fragment, useState, useEffect, useRef } from "react";
 import { Bar, Line } from "react-chartjs-2";
 import { PlusSmIcon as PlusSmIconSolid } from "@heroicons/react/solid";
-
-import map from "../images/map.png";
+import { Disclosure } from '@headlessui/react'
+import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import mapboxgl from 'mapbox-gl'; 
 
 export default function ImpactPlanner() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [newTreesOpen, setNewTreesOpen] = useState(false);
   const [resultsOpen, setResultsOpen] = useState(false);
   const [numberOfTrees, setNumberOfTrees] = useState(0);
@@ -16,6 +14,25 @@ export default function ImpactPlanner() {
   const [newNumberOfTrees, setNewNumberOfTrees] = useState(0);
   const [newDBH, setNewDBH] = useState(0);
   const [seq, setSeq] = useState(0);
+  const [seqArr, setArrSeq] = useState([]);
+
+  mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+  const [lng, setLng] = useState(-4.2568);
+  const [lat, setLat] = useState(55.8508);
+  const [zoom, setZoom] = useState(13);
+
+  useEffect(() => {
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [lng, lat],
+      zoom: zoom
+    });
+  });
 
   const maintenance_forcaset_line1 = [
     {
@@ -49,7 +66,7 @@ export default function ImpactPlanner() {
     labels: ["0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
     datasets: [
       {
-        data: [0, 2, 4, 8, 16, 24, 28, 30, 35, 40],
+        data: seqArr,
         fill: false,
         backgroundColor: "#10B981",
         borderColor: "#10B981",
@@ -214,6 +231,8 @@ export default function ImpactPlanner() {
     if (!newTreesOpen) {
       let sequestration_arr = calc_seq_years(dbh, 50);
 
+      setArrSeq(sequestration_arr);
+
       const sequestrationValue = numberOfTrees * sum_arr(sequestration_arr);
 
       setSeq((sequestrationValue / 1000).toFixed(2).replace(/\./g, ",")); //converting kg to Tn,  use comma instead of decimal point
@@ -222,112 +241,155 @@ export default function ImpactPlanner() {
         parseFloat(numberOfTrees * sum_arr(calc_seq_years(dbh, 50))) +
         parseFloat(newNumberOfTrees * sum_arr(calc_seq_years(newDBH, 50)));
 
+
       setSeq((sequestrationValue / 1000).toFixed(2).replace(/\./g, ",")); //converting kg to Tn, use comma instead of decimal point
     }
     setResultsOpen(true);
   };
 
   return (
-    <div className="h-screen flex overflow-hidden bg-white">
-      <Transition.Root show={sidebarOpen} as={Fragment}>
-        <Dialog
-          as="div"
-          className="fixed inset-0 flex z-40 lg:hidden"
-          onClose={setSidebarOpen}
-        >
-          <Transition.Child
-            as={Fragment}
-            enter="transition-opacity ease-linear duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="transition-opacity ease-linear duration-300"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <Dialog.Overlay className="fixed inset-0 bg-gray-600 bg-opacity-75" />
-          </Transition.Child>
-          <Transition.Child
-            as={Fragment}
-            enter="transition ease-in-out duration-300 transform"
-            enterFrom="-translate-x-full"
-            enterTo="translate-x-0"
-            leave="transition ease-in-out duration-300 transform"
-            leaveFrom="translate-x-0"
-            leaveTo="-translate-x-full"
-          >
-            <div className="relative flex-1 flex flex-col max-w-xs w-full bg-white focus:outline-none">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-in-out duration-300"
-                enterFrom="opacity-0"
-                enterTo="opacity-100"
-                leave="ease-in-out duration-300"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-              >
-                <div className="absolute top-0 right-0 -mr-12 pt-2">
-                  <button
-                    type="button"
-                    className="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                    onClick={() => setSidebarOpen(false)}
-                  >
-                    <span className="sr-only">Close sidebar</span>
-                    <XIcon className="h-6 w-6 text-white" aria-hidden="true" />
-                  </button>
-                </div>
-              </Transition.Child>
-              <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
-                <div className="flex-shrink-0 flex items-center px-4">
+    <>
+    <Disclosure as="nav" className="bg-white shadow">
+      {({ open }) => (
+        <>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between h-16">
+              <div className="flex">
+                <div className="flex-shrink-0 flex items-center">
                   <img
-                    className="h-8 w-auto"
+                    className="block lg:hidden h-8 w-auto"
                     src="assets/TreesAI_logo_black.svg"
-                    alt="Workflow"
+                    alt="TreesAI Logo"
+                  />
+                  <img
+                    className="hidden lg:block h-8 w-auto"
+                    src="assets/TreesAI_logo_black.svg"
+                    alt="TreesAI Logo"
                   />
                 </div>
-                <nav aria-label="Sidebar" className="mt-5">
-                  <div className="px-2 space-y-1"></div>
-                </nav>
-              </div>
-              <div className="flex-shrink-0 flex border-t border-gray-200 p-4">
-                <div className="flex items-center">
-                  <div>
-                    <img
-                      className="inline-block h-10 w-10 rounded-full"
-                      src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
-                      alt=""
-                    />
-                  </div>
-                  <div className="ml-3">
-                    <p className="text-base font-medium text-gray-700 group-hover:text-gray-900">
-                      Whitney Francis
-                    </p>
-                    <p className="text-sm font-medium text-gray-500 group-hover:text-gray-700">
-                      View profile
-                    </p>
-                  </div>
+                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                  {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
+                  <a
+                    href="#"
+                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  >
+                    About
+                  </a>
+                  <a
+                    href="#"
+                    className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  >
+                    Impact calculator
+                  </a>
+                  <a
+                    href="#"
+                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  >
+                    Demo 2
+                  </a>
+                  <a
+                    href="#"
+                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  >
+                    Contact
+                  </a>
                 </div>
               </div>
+              <div className="-mr-2 flex items-center sm:hidden">
+                {/* Mobile menu button */}
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
+              </div>
             </div>
-          </Transition.Child>
-          <div className="flex-shrink-0 w-14" aria-hidden="true">
-            {/* Force sidebar to shrink to fit close icon */}
           </div>
-        </Dialog>
-      </Transition.Root>
 
+          <Disclosure.Panel className="sm:hidden">
+            <div className="pt-2 pb-3 space-y-1">
+              {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
+              <a
+                href="#"
+                className="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+              >
+                Dashboard
+              </a>
+              <a
+                href="#"
+                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+              >
+                Team
+              </a>
+              <a
+                href="#"
+                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+              >
+                Projects
+              </a>
+              <a
+                href="#"
+                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+              >
+                Calendar
+              </a>
+            </div>
+            <div className="pt-4 pb-3 border-t border-gray-200">
+              <div className="flex items-center px-4">
+                <div className="flex-shrink-0">
+                  <img
+                    className="h-10 w-10 rounded-full"
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt=""
+                  />
+                </div>
+                <div className="ml-3">
+                  <div className="text-base font-medium text-gray-800">Tom Cook</div>
+                  <div className="text-sm font-medium text-gray-500">tom@example.com</div>
+                </div>
+                <button
+                  type="button"
+                  className="ml-auto flex-shrink-0 bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  <span className="sr-only">View notifications</span>
+                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                </button>
+              </div>
+              <div className="mt-3 space-y-1">
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+                >
+                  Your Profile
+                </a>
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+                >
+                  Settings
+                </a>
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+                >
+                  Sign out
+                </a>
+              </div>
+            </div>
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
+    <div className="h-screen flex overflow-hidden bg-white">
       {/* Static sidebar for desktop */}
       <div className="flex flex-shrink-0">
         <div className="flex flex-col panel-w">
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-gray-100">
             <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-              <div className="flex items-center flex-shrink-0 px-4">
-                <img
-                  className="h-8 w-auto"
-                  src="assets/TreesAI_logo_black.svg"
-                  alt="Workflow"
-                />
-              </div>
               <nav className="mt-5 flex-1" aria-label="Sidebar">
                 <div className="px-2 space-y-1">
                   <form className="space-y-8 divide-y divide-gray-200">
@@ -995,33 +1057,12 @@ export default function ImpactPlanner() {
         </div>
       </div>
       <div className="flex flex-col min-w-0 flex-1 overflow-hidden">
-        <div className="lg:hidden">
-          <div className="flex items-center justify-between bg-gray-50 border-b border-gray-200 px-4 py-1.5">
-            <div>
-              <img
-                className="h-8 w-auto"
-                src="assets/TreesAI_logo_black.svg"
-                alt="Workflow"
-              />
-            </div>
-            <div>
-              <button
-                type="button"
-                className="-mr-3 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900"
-                onClick={() => setSidebarOpen(true)}
-              >
-                <span className="sr-only">Open sidebar</span>
-                <MenuIcon className="h-6 w-6" aria-hidden="true" />
-              </button>
-            </div>
-          </div>
-        </div>
         <div className="flex-1 relative z-0 flex overflow-hidden">
           <main className="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last">
             {/* Start main area*/}
             <div className="absolute inset-0">
               <div className="h-full w-full rounded-lg">
-                <img src={map} alt="map" />
+                <div ref={mapContainer} className="map-container" />
               </div>
             </div>
             {/* End main area */}
@@ -1029,5 +1070,6 @@ export default function ImpactPlanner() {
         </div>
       </div>
     </div>
+    </>
   );
 }
