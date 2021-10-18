@@ -9,8 +9,8 @@ import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-load
 export default function ImpactPlanner() {
   const [newTreesOpen, setNewTreesOpen] = useState(false);
   const [resultsOpen, setResultsOpen] = useState(false);
-  const [numberOfTrees, setNumberOfTrees] = useState(0);
-  const [dbh, setDBH] = useState(0);
+  const [numberOfTrees, setNumberOfTrees] = useState(104);
+  const [dbh, setDBH] = useState(13);
   const [newNumberOfTrees, setNewNumberOfTrees] = useState(0);
   const [newDBH, setNewDBH] = useState(0);
   const [seq, setSeq] = useState(0);
@@ -32,10 +32,6 @@ export default function ImpactPlanner() {
       center: [lng, lat],
       zoom: zoom
     });
-    
-    //initialize variables for Laurieston
-    setNumberOfTrees(104);
-    setDBH(13);
   });
 
   const maintenance_forecast_line1 = [
