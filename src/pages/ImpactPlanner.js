@@ -1036,9 +1036,13 @@ export default function ImpactPlanner() {
                     mapboxApiAccessToken={MAPBOX_TOKEN}
                   >
                     <Marker latitude={55.8508} longitude={-4.2568}>
-                    <img className="marker" src="assets/mapbox-icon.png" alt="map marker icon"/>
-      </Marker>
-      </ReactMapGL>
+                      <img
+                        className="marker"
+                        src="assets/mapbox-icon.png"
+                        alt="map marker icon"
+                      />
+                    </Marker>
+                  </ReactMapGL>
                 </div>
               </div>
               {/* End main area */}
