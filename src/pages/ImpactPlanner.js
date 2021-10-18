@@ -1,10 +1,10 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect, useRef } from "react";
 import { Bar, Line } from "react-chartjs-2";
 import { PlusSmIcon as PlusSmIconSolid } from "@heroicons/react/solid";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import ReactMapGL, { Marker } from "!react-map-gl"; // eslint-disable-line import/no-webpack-loader-syntax
+import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 
 export default function ImpactPlanner() {
   const [newTreesOpen, setNewTreesOpen] = useState(false);
@@ -16,13 +16,23 @@ export default function ImpactPlanner() {
   const [seq, setSeq] = useState(0);
   const [seqArr, setArrSeq] = useState([]);
 
-  const [viewport, setViewport] = useState({
-    latitude: 55.8503,
-    longitude: -4.2368,
-    zoom: 14,
-  });
+  mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
-  const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+  const [lng] = useState(-4.2568);
+  const [lat] = useState(55.8508);
+  const [zoom] = useState(14);
+
+  useEffect(() => {
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: "mapbox://styles/mapbox/outdoors-v11",
+      center: [lng, lat],
+      zoom: zoom,
+    });
+  });
 
   const maintenance_forecast_line1 = [
     {
@@ -1015,6 +1025,12 @@ export default function ImpactPlanner() {
                       data={maintenance_forecast_data}
                       options={maintenance_forecast_options}
                     />
+
+                    <div className="flex justify-end">
+                      <button className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Next
+                      </button>
+                    </div>
                   </div>
                 )}
               </div>
@@ -1027,22 +1043,7 @@ export default function ImpactPlanner() {
               {/* Start main area*/}
               <div className="absolute inset-0">
                 <div className="h-full w-full rounded-lg">
-                  <ReactMapGL
-                    {...viewport}
-                    width="100vw"
-                    height="100vh"
-                    mapStyle="mapbox://styles/mapbox/outdoors-v11"
-                    onViewportChange={setViewport}
-                    mapboxApiAccessToken={MAPBOX_TOKEN}
-                  >
-                    <Marker latitude={55.8508} longitude={-4.2568}>
-                      <img
-                        className="marker"
-                        src="assets/mapbox-icon.png"
-                        alt="map marker icon"
-                      />
-                    </Marker>
-                  </ReactMapGL>
+                  <div ref={mapContainer} className="map-container" />
                 </div>
               </div>
               {/* End main area */}
