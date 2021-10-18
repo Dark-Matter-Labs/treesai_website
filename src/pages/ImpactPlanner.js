@@ -231,7 +231,9 @@ export default function ImpactPlanner() {
     if (!newTreesOpen) {
       let sequestration_arr = calc_seq_years(dbh, 50);
 
-      setArrSeq(sequestration_arr);
+      // multiplying each array value by number of trees and converting to Tn
+      let sequestration_arr_for_graph = sequestration_arr.map(x => (x*numberOfTrees)/1000)
+      setArrSeq(sequestration_arr_for_graph);
 
       const sequestrationValue = numberOfTrees * sum_arr(sequestration_arr);
 
@@ -240,6 +242,11 @@ export default function ImpactPlanner() {
       const sequestrationValue =
         parseFloat(numberOfTrees * sum_arr(calc_seq_years(dbh, 50))) +
         parseFloat(newNumberOfTrees * sum_arr(calc_seq_years(newDBH, 50)));
+
+        // multiplying each array value by number of trees and converting to Tn
+        let sequestration_arr_for_graph = calc_seq_years(dbh, 50).concat(calc_seq_years(newDBH, 50));
+        sequestration_arr_for_graph = sequestration_arr_for_graph.map(x => (x*(numberOfTrees+newNumberOfTrees))/1000);
+        setArrSeq(sequestration_arr_for_graph);
 
 
       setSeq((sequestrationValue / 1000).toFixed(2).replace(/\./g, ",")); //converting kg to Tn, use comma instead of decimal point
