@@ -34,7 +34,7 @@ export default function ImpactPlanner() {
     });
   });
 
-  const maintenance_forcaset_line1 = [
+  const maintenance_forecast_line1 = [
     {
       id: 1,
       name: "Current costs",
@@ -49,7 +49,7 @@ export default function ImpactPlanner() {
     },
   ];
 
-  const maintenance_forcaset_line2 = [
+  const maintenance_forecast_line2 = [
     {
       id: 1,
       stat: "£200k",
@@ -121,7 +121,7 @@ export default function ImpactPlanner() {
     },
   };
 
-  const maintenance_forcaset_options = {
+  const maintenance_forecast_options = {
     responsive: true,
     plugins: {
       title: {
@@ -150,7 +150,7 @@ export default function ImpactPlanner() {
     },
   };
 
-  const maintenance_forcaset_data = {
+  const maintenance_forecast_data = {
     labels: ["0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
     datasets: [
       {
@@ -969,7 +969,7 @@ export default function ImpactPlanner() {
                   </div>
 
                   <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                    {maintenance_forcaset_line1.map((item) => (
+                    {maintenance_forecast_line1.map((item) => (
                       <div
                         key={item.id}
                         className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
@@ -993,7 +993,7 @@ export default function ImpactPlanner() {
                   </dl>
 
                   <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                    {maintenance_forcaset_line2.map((item) => (
+                    {maintenance_forecast_line2.map((item) => (
                       <div
                         key={item.id}
                         className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
@@ -1012,8 +1012,8 @@ export default function ImpactPlanner() {
                   </dl>
 
                   <Line
-                    data={maintenance_forcaset_data}
-                    options={maintenance_forcaset_options}
+                    data={maintenance_forecast_data}
+                    options={maintenance_forecast_options}
                   />
                 </div>
               )}
