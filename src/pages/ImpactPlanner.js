@@ -17,10 +17,15 @@ export default function ImpactPlanner() {
   const [newNumberOfTrees, setNewNumberOfTrees] = useState(0);
   const [newDBH, setNewDBH] = useState(0);
   const [seq, setSeq] = useState(0);
-  const [maintenanceCost, setMaintenanceCost] = useState(0);
+  const [maintenanceCost, setMaintenanceCost] = useState(1000);
   const [seqArr, setArrSeq] = useState([]);
 
   mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+
+  var formatter = new Intl.NumberFormat("en-UK", {
+    style: "currency",
+    currency: "GBP",
+  });
 
   const mapContainer = useRef(null);
   const map = useRef(null);
@@ -425,7 +430,7 @@ export default function ImpactPlanner() {
                                   }
                                   name="tree-number"
                                   id="tree-number"
-                                  value="104"
+                                  defaultValue="104"
                                   className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                                 />
                               </div>
@@ -444,7 +449,7 @@ export default function ImpactPlanner() {
                                   onChange={(e) => setDBH(e.target.value)}
                                   name="DBH"
                                   id="DBH"
-                                  value="13"
+                                  defaultValue="13"
                                   className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-l-md sm:text-sm border-gray-300"
                                 />
                                 <span className="inline-flex items-center px-3 rounded-r-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
@@ -471,6 +476,7 @@ export default function ImpactPlanner() {
                                 <input
                                   type="number"
                                   name="cost"
+                                  defaultValue="1000"
                                   onChange={(e) =>
                                     setMaintenanceCost(e.target.value)
                                   }
@@ -765,18 +771,18 @@ export default function ImpactPlanner() {
 
                     {maintenanceCost !== 0 && (
                       <div>
-                        <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                          <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                        <dl className="mt-5 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                          <div className="relative bg-white pt-2 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                             <dt>
-                              <p className="ml-16 text-sm font-medium text-gray-500 truncate">
+                              <p className="ml-2 text-sm font-medium text-gray-500 truncate">
                                 Current costs
                               </p>
                             </dt>
-                            <dd className="ml-16 pb-6 flex items-baseline sm:pb-7">
+                            <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                               <p className="text-2xl font-semibold text-gray-900">
-                                £{maintenanceCost}
+                                {formatter.format(maintenanceCost)}
                               </p>
-                              <p className="text-green-600 ml-2 flex items-baseline text-sm font-semibold">
+                              <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
                                 <span className="sr-only">by</span>
                                 per year
                               </p>
@@ -784,15 +790,15 @@ export default function ImpactPlanner() {
                           </div>
                           <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                             <dt>
-                              <p className="ml-16 text-sm font-medium text-gray-500 truncate">
+                              <p className="ml-2 text-sm font-medium text-gray-500 truncate">
                                 Savings estimate
                               </p>
                             </dt>
-                            <dd className="ml-16 pb-6 flex items-baseline sm:pb-7">
+                            <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                               <p className="text-2xl font-semibold text-gray-900">
-                                £{maintenanceCost * 0.08}
+                                {formatter.format(maintenanceCost * 0.08)}
                               </p>
-                              <p className="text-green-600 ml-2 flex items-baseline text-sm font-semibold">
+                              <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
                                 <span className="sr-only">by</span>
                                 per year
                               </p>
@@ -802,22 +808,22 @@ export default function ImpactPlanner() {
 
                         <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                           <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                            <dd className="ml-16 pb-6 flex items-baseline sm:pb-7">
+                            <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                               <p className="text-2xl font-semibold text-green-600">
-                                £{maintenanceCost * 50}
+                                {formatter.format(maintenanceCost * 50)}
                               </p>
-                              <p className="text-green-600 ml-2 flex items-baseline text-sm font-semibold">
+                              <p className="ml-1 text-gray-900ml-2 flex items-baseline text-sm font-semibold">
                                 <span className="sr-only">by</span>
                                 over 50 years
                               </p>
                             </dd>
                           </div>
                           <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                            <dd className="ml-16 pb-6 flex items-baseline sm:pb-7">
+                            <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                               <p className="text-2xl font-semibold text-green-600">
-                                £{maintenanceCost * 0.08 * 50}
+                                {formatter.format(maintenanceCost * 0.08 * 50)}
                               </p>
-                              <p className="text-green-600 ml-2 flex items-baseline text-sm font-semibold">
+                              <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
                                 <span className="sr-only">by</span>
                                 over 50 years
                               </p>
