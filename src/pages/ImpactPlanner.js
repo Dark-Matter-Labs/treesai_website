@@ -17,6 +17,7 @@ export default function ImpactPlanner() {
   const [newNumberOfTrees, setNewNumberOfTrees] = useState(0);
   const [newDBH, setNewDBH] = useState(0);
   const [seq, setSeq] = useState(0);
+  const [maintenanceCost, setMaintenanceCost] = useState(0);
   const [seqArr, setArrSeq] = useState([]);
 
   mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
@@ -37,34 +38,6 @@ export default function ImpactPlanner() {
     });
     calculate_initial();
   });
-
-  const maintenance_forecast_line1 = [
-    {
-      id: 1,
-      name: "Current costs",
-      stat: "£4k",
-      change: "per year",
-    },
-    {
-      id: 2,
-      name: "Savings estimate",
-      stat: "£400–800",
-      change: "per year",
-    },
-  ];
-
-  const maintenance_forecast_line2 = [
-    {
-      id: 1,
-      stat: "£200k",
-      change: "over 50 years",
-    },
-    {
-      id: 2,
-      stat: "£20–40k",
-      change: "over 50 years",
-    },
-  ];
 
   const co2data = {
     labels: ["0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
@@ -462,7 +435,7 @@ export default function ImpactPlanner() {
                                 htmlFor="username"
                                 className="block text-sm font-medium text-gray-700"
                               >
-                                Maintenance costs
+                                Maintenance costs(optional)
                               </label>
                               <div className="mt-1 flex rounded-md shadow-sm">
                                 <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
@@ -471,6 +444,9 @@ export default function ImpactPlanner() {
                                 <input
                                   type="number"
                                   name="cost"
+                                  onChange={(e) =>
+                                    setMaintenanceCost(e.target.value)
+                                  }
                                   id="cost"
                                   min="0.01"
                                   step="0.01"
@@ -688,7 +664,7 @@ export default function ImpactPlanner() {
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                         <dt>
                           <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                            Biodiversity
+                            Flood control
                           </p>
                         </dt>
                         <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
@@ -701,7 +677,7 @@ export default function ImpactPlanner() {
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                         <dt>
                           <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                            Air quality
+                            Air quality improvement
                           </p>
                         </dt>
                         <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
@@ -714,7 +690,7 @@ export default function ImpactPlanner() {
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                         <dt>
                           <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                            Noise reduction
+                            Heat island effect
                           </p>
                         </dt>
                         <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
@@ -742,22 +718,17 @@ export default function ImpactPlanner() {
                       <h3 className="text-lg leading-6 font-medium text-gray-900">
                         Maintenance forecast estimate
                       </h3>
-                      <p className="mt-1 text-sm text-gray-500">
-                        You may be able to reduce your £4,000 annual costs by
-                        10–20%, or £400–800 per year by selling ecosystem
-                        services. This may save you
-                      </p>
                     </div>
 
                     <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg">
                       <dt>
                         <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                          Cost reduction estimate
+                          Maintenance coverage by TreesAI platform
                         </p>
                       </dt>
                       <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                         <p className="text-2xl font-semibold text-green-600">
-                          10–20%
+                          5–10%
                         </p>
                         <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
                           Based on our methodology
@@ -765,49 +736,69 @@ export default function ImpactPlanner() {
                       </dd>
                     </div>
 
-                    <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                      {maintenance_forecast_line1.map((item) => (
-                        <div
-                          key={item.id}
-                          className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
-                        >
-                          <dt>
-                            <p className="ml-16 text-sm font-medium text-gray-500 truncate">
-                              {item.name}
-                            </p>
-                          </dt>
-                          <dd className="ml-16 pb-6 flex items-baseline sm:pb-7">
-                            <p className="text-2xl font-semibold text-gray-900">
-                              {item.stat}
-                            </p>
-                            <p className="text-green-600 ml-2 flex items-baseline text-sm font-semibold">
-                              <span className="sr-only">by</span>
-                              {item.change}
-                            </p>
-                          </dd>
-                        </div>
-                      ))}
-                    </dl>
+                    {maintenanceCost !== 0 && (
+                      <div>
+                        <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                          <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                            <dt>
+                              <p className="ml-16 text-sm font-medium text-gray-500 truncate">
+                                Current costs
+                              </p>
+                            </dt>
+                            <dd className="ml-16 pb-6 flex items-baseline sm:pb-7">
+                              <p className="text-2xl font-semibold text-gray-900">
+                                £{maintenanceCost}
+                              </p>
+                              <p className="text-green-600 ml-2 flex items-baseline text-sm font-semibold">
+                                <span className="sr-only">by</span>
+                                per year
+                              </p>
+                            </dd>
+                          </div>
+                          <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                            <dt>
+                              <p className="ml-16 text-sm font-medium text-gray-500 truncate">
+                                Savings estimate
+                              </p>
+                            </dt>
+                            <dd className="ml-16 pb-6 flex items-baseline sm:pb-7">
+                              <p className="text-2xl font-semibold text-gray-900">
+                                £{maintenanceCost * 0.08}
+                              </p>
+                              <p className="text-green-600 ml-2 flex items-baseline text-sm font-semibold">
+                                <span className="sr-only">by</span>
+                                per year
+                              </p>
+                            </dd>
+                          </div>
+                        </dl>
 
-                    <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                      {maintenance_forecast_line2.map((item) => (
-                        <div
-                          key={item.id}
-                          className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden"
-                        >
-                          <dd className="ml-16 pb-6 flex items-baseline sm:pb-7">
-                            <p className="text-2xl font-semibold text-green-600">
-                              {item.stat}
-                            </p>
-                            <p className="text-green-600 ml-2 flex items-baseline text-sm font-semibold">
-                              <span className="sr-only">by</span>
-                              {item.change}
-                            </p>
-                          </dd>
-                        </div>
-                      ))}
-                    </dl>
-
+                        <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                          <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                            <dd className="ml-16 pb-6 flex items-baseline sm:pb-7">
+                              <p className="text-2xl font-semibold text-green-600">
+                                £{maintenanceCost * 50}
+                              </p>
+                              <p className="text-green-600 ml-2 flex items-baseline text-sm font-semibold">
+                                <span className="sr-only">by</span>
+                                over 50 years
+                              </p>
+                            </dd>
+                          </div>
+                          <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                            <dd className="ml-16 pb-6 flex items-baseline sm:pb-7">
+                              <p className="text-2xl font-semibold text-green-600">
+                                £{maintenanceCost * 0.08 * 50}
+                              </p>
+                              <p className="text-green-600 ml-2 flex items-baseline text-sm font-semibold">
+                                <span className="sr-only">by</span>
+                                over 50 years
+                              </p>
+                            </dd>
+                          </div>
+                        </dl>
+                      </div>
+                    )}
                     <Line
                       data={maintenance_forecast_data}
                       options={maintenance_forecast_options}
