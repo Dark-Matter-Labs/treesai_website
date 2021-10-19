@@ -367,7 +367,7 @@ export default function ImpactPlanner() {
           </>
         )}
       </Disclosure>
-      <div className="h-screen flex overflow-hidden bg-white">
+      <div className="h-screen flex overflow-hidden bg-white ml-2">
         {/* Static sidebar for desktop */}
         <div className="flex flex-shrink-0">
           <div className="flex flex-col panel-w">
