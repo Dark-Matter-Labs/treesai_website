@@ -97,8 +97,10 @@ iframe {
 }
 
 .marker {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  background-image: url(images/map-marker.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 10%;
+  height: 10%;
   cursor: pointer;
 }

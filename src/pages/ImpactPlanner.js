@@ -29,6 +29,8 @@ export default function ImpactPlanner() {
   const [zoom] = useState(14);
 
   useEffect(() => {
+    calculate_initial();
+
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
@@ -36,8 +38,14 @@ export default function ImpactPlanner() {
       center: [lng, lat],
       zoom: zoom,
     });
-    calculate_initial();
-  });
+
+    const el = document.createElement("div");
+    el.className = "marker";
+
+    new mapboxgl.Marker(el).setLngLat([-4.2568, 55.8508]).addTo(map.current); // add the marker to the map
+
+    // eslint-disable-next-line
+  }, []);
 
   const co2data = {
     labels: ["0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
