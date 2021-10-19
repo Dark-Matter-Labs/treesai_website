@@ -59,6 +59,16 @@ export default function ImpactPlanner() {
             return value + "t";
           },
         },
+        title: {
+          display: true,
+          text: "Carbon removed (tCO₂e)",
+        },
+      },
+      x: {
+        title: {
+          display: true,
+          text: "Years",
+        },
       },
     },
     plugins: {
@@ -82,12 +92,22 @@ export default function ImpactPlanner() {
 
   const stormwater_options = {
     scales: {
-      yAxes: {
+      y: {
         ticks: {
           beginAtZero: true,
           callback: function (value, index, values) {
             return value + "m3";
           },
+        },
+        title: {
+          display: true,
+          text: "Stormwater retained (m³)",
+        },
+      },
+      x: {
+        title: {
+          display: true,
+          text: "Years",
         },
       },
     },
@@ -114,14 +134,14 @@ export default function ImpactPlanner() {
         display: true,
         title: {
           display: true,
-          text: "Month",
+          text: "Costs over 25 years, assuming maintenance costs remain the same, at 0% inflation.",
         },
       },
       y: {
         display: true,
         title: {
           display: true,
-          text: "Value",
+          text: "Maintenance cost reduction estimate",
         },
       },
     },
@@ -131,23 +151,22 @@ export default function ImpactPlanner() {
     labels: ["0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
     datasets: [
       {
-        label: "Unfilled",
-        fill: false,
-        backgroundColor: "#10B981",
+        label: "Current maintenance costs",
+        fill: true,
+        backgroundColor: "#0010B981",
         borderColor: "#10B981",
         data: [2, 4, 8, 10, 12, 16, 22, 26, 30, 34, 36],
       },
       {
-        label: "Dashed",
-        fill: false,
-        backgroundColor: "#3B82F6",
+        label: "Stormwater retention",
+        fill: true,
+        backgroundColor: "#033B82F6",
         borderColor: "#3B82F6",
-        borderDash: [5, 5],
         data: [1, 2, 4, 8, 10, 12, 16, 20, 24, 30, 32],
       },
       {
-        label: "Filled",
-        backgroundColor: "#6B7280",
+        label: "Other ecosystem  services(coming soon)",
+        backgroundColor: "#FF00000",
         borderColor: "#6B7280",
         data: [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 20],
         fill: true,
