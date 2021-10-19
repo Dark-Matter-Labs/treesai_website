@@ -1,14 +1,17 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useState, useEffect, useRef } from "react";
 import { Bar, Line } from "react-chartjs-2";
-import { PlusSmIcon as PlusSmIconSolid } from "@heroicons/react/solid";
+import {
+  PlusSmIcon as PlusSmIconSolid,
+  MinusSmIcon as MinusSmIconSolid,
+} from "@heroicons/react/solid";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 
 export default function ImpactPlanner() {
   const [newTreesOpen, setNewTreesOpen] = useState(false);
-  const [resultsOpen, setResultsOpen] = useState(false);
+  const [resultsOpen, setResultsOpen] = useState(true);
   const [numberOfTrees, setNumberOfTrees] = useState(104);
   const [dbh, setDBH] = useState(13);
   const [newNumberOfTrees, setNewNumberOfTrees] = useState(0);
@@ -32,6 +35,7 @@ export default function ImpactPlanner() {
       center: [lng, lat],
       zoom: zoom,
     });
+    calculate_initial();
   });
 
   const maintenance_forecast_line1 = [
@@ -209,6 +213,10 @@ export default function ImpactPlanner() {
   };
 
   const calc_seq_years = (diameter_t0, years = 50) => {
+    if (diameter_t0 < 6) {
+      diameter_t0 = 6;
+    }
+
     // This function calculates the total sequestration over several years and produces an array with the cumulative sum over the given number of years
     let d0 = diameter_t0;
     var seq_array = [];
@@ -225,37 +233,38 @@ export default function ImpactPlanner() {
     return arr.reduce((a, b) => a + b, 0);
   }
 
+  const calculate_initial = () => {
+    let sequestration_arr = calc_seq_years(dbh, 50);
+
+    // multiplying each array value by number of trees and converting to Tn
+    let sequestration_arr_for_graph = sequestration_arr.map(
+      (x) => (x * numberOfTrees) / 1000
+    );
+
+    setArrSeq(sequestration_arr_for_graph);
+
+    const sequestrationValue = numberOfTrees * sum_arr(sequestration_arr);
+
+    setSeq((sequestrationValue / 1000).toFixed(2).replace(/\./g, ",")); //converting kg to Tn,  use comma instead of decimal point
+  };
+
   const calculate_button_click = (e) => {
     e.preventDefault();
 
-    if (!newTreesOpen) {
-      let sequestration_arr = calc_seq_years(dbh, 50);
+    const sequestrationValue =
+      parseFloat(numberOfTrees * sum_arr(calc_seq_years(dbh, 50))) +
+      parseFloat(newNumberOfTrees * sum_arr(calc_seq_years(newDBH, 50)));
 
-      // multiplying each array value by number of trees and converting to Tn
-      let sequestration_arr_for_graph = sequestration_arr.map(
-        (x) => (x * numberOfTrees) / 1000
-      );
-      setArrSeq(sequestration_arr_for_graph);
+    // multiplying each array value by number of trees and converting to Tn
+    let sequestration_arr_for_graph = calc_seq_years(dbh, 50).concat(
+      calc_seq_years(newDBH, 50)
+    );
+    sequestration_arr_for_graph = sequestration_arr_for_graph.map(
+      (x) => (x * (numberOfTrees + newNumberOfTrees)) / 1000
+    );
+    setArrSeq(sequestration_arr_for_graph);
 
-      const sequestrationValue = numberOfTrees * sum_arr(sequestration_arr);
-
-      setSeq((sequestrationValue / 1000).toFixed(2).replace(/\./g, ",")); //converting kg to Tn,  use comma instead of decimal point
-    } else {
-      const sequestrationValue =
-        parseFloat(numberOfTrees * sum_arr(calc_seq_years(dbh, 50))) +
-        parseFloat(newNumberOfTrees * sum_arr(calc_seq_years(newDBH, 50)));
-
-      // multiplying each array value by number of trees and converting to Tn
-      let sequestration_arr_for_graph = calc_seq_years(dbh, 50).concat(
-        calc_seq_years(newDBH, 50)
-      );
-      sequestration_arr_for_graph = sequestration_arr_for_graph.map(
-        (x) => (x * (numberOfTrees + newNumberOfTrees)) / 1000
-      );
-      setArrSeq(sequestration_arr_for_graph);
-
-      setSeq((sequestrationValue / 1000).toFixed(2).replace(/\./g, ",")); //converting kg to Tn, use comma instead of decimal point
-    }
+    setSeq((sequestrationValue / 1000).toFixed(2).replace(/\./g, ",")); //converting kg to Tn, use comma instead of decimal point
     setResultsOpen(true);
   };
 
@@ -447,124 +456,6 @@ export default function ImpactPlanner() {
                         </div>
 
                         <div className="pt-8">
-                          <div className="mt-6">
-                            <fieldset>
-                              <legend className="text-base font-medium text-gray-900">
-                                Species
-                              </legend>
-                              <div className="mt-4 space-y-4">
-                                <div className="relative flex items-start">
-                                  <div className="flex items-center h-5">
-                                    <input
-                                      id="comments"
-                                      name="comments"
-                                      type="checkbox"
-                                      className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                    />
-                                  </div>
-                                  <div className="ml-3 text-sm">
-                                    <label
-                                      htmlFor="comments"
-                                      className="font-medium text-gray-700"
-                                    >
-                                      Pine
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="relative flex items-start">
-                                  <div className="flex items-center h-5">
-                                    <input
-                                      id="comments"
-                                      name="comments"
-                                      type="checkbox"
-                                      className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                    />
-                                  </div>
-                                  <div className="ml-3 text-sm">
-                                    <label
-                                      htmlFor="comments"
-                                      className="font-medium text-gray-700"
-                                    >
-                                      Alder
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="relative flex items-start">
-                                  <div className="flex items-center h-5">
-                                    <input
-                                      id="comments"
-                                      name="comments"
-                                      type="checkbox"
-                                      className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                    />
-                                  </div>
-                                  <div className="ml-3 text-sm">
-                                    <label
-                                      htmlFor="comments"
-                                      className="font-medium text-gray-700"
-                                    >
-                                      Oak
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="relative flex items-start">
-                                  <div className="flex items-center h-5">
-                                    <input
-                                      id="comments"
-                                      name="comments"
-                                      type="checkbox"
-                                      className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                    />
-                                  </div>
-                                  <div className="ml-3 text-sm">
-                                    <label
-                                      htmlFor="comments"
-                                      className="font-medium text-gray-700"
-                                    >
-                                      Ash
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="relative flex items-start">
-                                  <div className="flex items-center h-5">
-                                    <input
-                                      id="candidates"
-                                      name="candidates"
-                                      type="checkbox"
-                                      className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                    />
-                                  </div>
-                                  <div className="ml-3 text-sm">
-                                    <label
-                                      htmlFor="candidates"
-                                      className="font-medium text-gray-700"
-                                    >
-                                      Hazel
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="relative flex items-start">
-                                  <div className="flex items-center h-5">
-                                    <input
-                                      id="offers"
-                                      name="offers"
-                                      type="checkbox"
-                                      className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                    />
-                                  </div>
-                                  <div className="ml-3 text-sm">
-                                    <label
-                                      htmlFor="offers"
-                                      className="font-medium text-gray-700"
-                                    >
-                                      Willow
-                                    </label>
-                                  </div>
-                                </div>
-                              </div>
-                            </fieldset>
-                          </div>
-
                           <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
                             <div className="sm:col-span-4">
                               <label
@@ -595,27 +486,47 @@ export default function ImpactPlanner() {
                           </div>
                         </div>
 
-                        <div className="sm:col-span-4">
-                          <h3 className="pt-5 text-lg leading-6 font-medium text-gray-900">
-                            New trees
-                          </h3>
-                          <div className="pt-5 flex justify-end">
-                            <button
-                              type="button"
-                              onClick={() => setNewTreesOpen(true)}
-                              className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                            >
-                              Add
-                              <PlusSmIconSolid
-                                className="h-5 w-5"
-                                aria-hidden="true"
-                              />
-                            </button>
+                        {!newTreesOpen && (
+                          <div className="sm:col-span-4">
+                            <h3 className="pt-5 text-lg leading-6 font-medium text-gray-900">
+                              New trees
+                            </h3>
+                            <div className="pt-5 flex justify-end">
+                              <button
+                                type="button"
+                                onClick={() => setNewTreesOpen(true)}
+                                className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                              >
+                                Add
+                                <PlusSmIconSolid
+                                  className="h-5 w-5"
+                                  aria-hidden="true"
+                                />
+                              </button>
+                            </div>
                           </div>
-                        </div>
+                        )}
 
                         {newTreesOpen && (
                           <div>
+                            <div className="sm:col-span-4">
+                              <h3 className="pt-5 text-lg leading-6 font-medium text-gray-900">
+                                New trees
+                              </h3>
+                              <div className="pt-5 flex justify-end">
+                                <button
+                                  type="button"
+                                  onClick={() => setNewTreesOpen(false)}
+                                  className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                >
+                                  Close
+                                  <MinusSmIconSolid
+                                    className="h-5 w-5"
+                                    aria-hidden="true"
+                                  />
+                                </button>
+                              </div>
+                            </div>
                             <div className="sm:col-span-3">
                               <label
                                 htmlFor="tree-number"
@@ -658,124 +569,6 @@ export default function ImpactPlanner() {
                             </div>
 
                             <div className="pt-8">
-                              <div className="mt-6">
-                                <fieldset>
-                                  <legend className="text-base font-medium text-gray-900">
-                                    Species
-                                  </legend>
-                                  <div className="mt-4 space-y-4">
-                                    <div className="relative flex items-start">
-                                      <div className="flex items-center h-5">
-                                        <input
-                                          id="comments"
-                                          name="comments"
-                                          type="checkbox"
-                                          className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        />
-                                      </div>
-                                      <div className="ml-3 text-sm">
-                                        <label
-                                          htmlFor="comments"
-                                          className="font-medium text-gray-700"
-                                        >
-                                          Pine
-                                        </label>
-                                      </div>
-                                    </div>
-                                    <div className="relative flex items-start">
-                                      <div className="flex items-center h-5">
-                                        <input
-                                          id="comments"
-                                          name="comments"
-                                          type="checkbox"
-                                          className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        />
-                                      </div>
-                                      <div className="ml-3 text-sm">
-                                        <label
-                                          htmlFor="comments"
-                                          className="font-medium text-gray-700"
-                                        >
-                                          Alder
-                                        </label>
-                                      </div>
-                                    </div>
-                                    <div className="relative flex items-start">
-                                      <div className="flex items-center h-5">
-                                        <input
-                                          id="comments"
-                                          name="comments"
-                                          type="checkbox"
-                                          className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        />
-                                      </div>
-                                      <div className="ml-3 text-sm">
-                                        <label
-                                          htmlFor="comments"
-                                          className="font-medium text-gray-700"
-                                        >
-                                          Oak
-                                        </label>
-                                      </div>
-                                    </div>
-                                    <div className="relative flex items-start">
-                                      <div className="flex items-center h-5">
-                                        <input
-                                          id="comments"
-                                          name="comments"
-                                          type="checkbox"
-                                          className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        />
-                                      </div>
-                                      <div className="ml-3 text-sm">
-                                        <label
-                                          htmlFor="comments"
-                                          className="font-medium text-gray-700"
-                                        >
-                                          Ash
-                                        </label>
-                                      </div>
-                                    </div>
-                                    <div className="relative flex items-start">
-                                      <div className="flex items-center h-5">
-                                        <input
-                                          id="candidates"
-                                          name="candidates"
-                                          type="checkbox"
-                                          className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        />
-                                      </div>
-                                      <div className="ml-3 text-sm">
-                                        <label
-                                          htmlFor="candidates"
-                                          className="font-medium text-gray-700"
-                                        >
-                                          Hazel
-                                        </label>
-                                      </div>
-                                    </div>
-                                    <div className="relative flex items-start">
-                                      <div className="flex items-center h-5">
-                                        <input
-                                          id="offers"
-                                          name="offers"
-                                          type="checkbox"
-                                          className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        />
-                                      </div>
-                                      <div className="ml-3 text-sm">
-                                        <label
-                                          htmlFor="offers"
-                                          className="font-medium text-gray-700"
-                                        >
-                                          Willow
-                                        </label>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </fieldset>
-                              </div>
-
                               <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
                                 <div className="sm:col-span-4">
                                   <label
@@ -831,25 +624,19 @@ export default function ImpactPlanner() {
                                 </div>
                               </div>
                             </div>
+
+                            <div className="pt-5">
+                              <div className="flex justify-end">
+                                <button
+                                  onClick={(e) => calculate_button_click(e)}
+                                  className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                >
+                                  Recalculate
+                                </button>
+                              </div>
+                            </div>
                           </div>
                         )}
-                      </div>
-                      <div className="pt-5">
-                        <div className="flex justify-end">
-                          <button
-                            type="button"
-                            onClick={() => setResultsOpen(false)}
-                            className="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                          >
-                            Cancel
-                          </button>
-                          <button
-                            onClick={(e) => calculate_button_click(e)}
-                            className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                          >
-                            Calculate
-                          </button>
-                        </div>
                       </div>
                     </form>
                   </div>
@@ -857,7 +644,7 @@ export default function ImpactPlanner() {
 
                 {resultsOpen && (
                   <div>
-                    <div className="flex-shrink-0 ">
+                    <div className="flex-shrink-0 pt-10">
                       <h3 className="text-lg leading-6 font-medium text-gray-900">
                         Impact result
                       </h3>
