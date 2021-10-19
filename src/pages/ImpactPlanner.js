@@ -237,7 +237,7 @@ export default function ImpactPlanner() {
 
     const sequestrationValue = numberOfTrees * sum_arr(sequestration_arr);
 
-    setSeq((sequestrationValue / 1000).toFixed(2).replace(/\./g, ",")); //converting kg to Tn,  use comma instead of decimal point
+    setSeq((sequestrationValue / 1000).toFixed(2)); //converting kg to Tn,  use comma instead of decimal point
   };
 
   const calculate_button_click = (e) => {
@@ -256,7 +256,7 @@ export default function ImpactPlanner() {
     );
     setArrSeq(sequestration_arr_for_graph);
 
-    setSeq((sequestrationValue / 1000).toFixed(2).replace(/\./g, ",")); //converting kg to Tn, use comma instead of decimal point
+    setSeq((sequestrationValue / 1000).toFixed(2)); //converting kg to Tn, use comma instead of decimal point
     setResultsOpen(true);
   };
 
