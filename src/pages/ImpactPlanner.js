@@ -430,7 +430,7 @@ export default function ImpactPlanner() {
                                   }
                                   name="tree-number"
                                   id="tree-number"
-                                  defaultValue="104"
+                                  value="104"
                                   className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                                 />
                               </div>
@@ -449,7 +449,7 @@ export default function ImpactPlanner() {
                                   onChange={(e) => setDBH(e.target.value)}
                                   name="DBH"
                                   id="DBH"
-                                  defaultValue="13"
+                                  value="13"
                                   className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-l-md sm:text-sm border-gray-300"
                                 />
                                 <span className="inline-flex items-center px-3 rounded-r-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
