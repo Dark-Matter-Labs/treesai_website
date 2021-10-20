@@ -305,13 +305,13 @@ export default function ImpactPlanner() {
                       href="#impact-planner"
                       className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                     >
-                      Impact calculator
+                      Impact Planner
                     </a>
                     <a
                       href="#impact-planner"
                       className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                     >
-                      Demo 2
+                      Impact Manager
                     </a>
                     <a
                       href="#impact-planner"
