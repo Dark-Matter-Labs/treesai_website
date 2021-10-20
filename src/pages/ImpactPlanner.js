@@ -53,7 +53,7 @@ export default function ImpactPlanner() {
   }, []);
 
   const co2data = {
-    labels: ["0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
+    labels: ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
     datasets: [
       {
         data: seqArr,
@@ -235,7 +235,7 @@ export default function ImpactPlanner() {
   };
 
   function sum_arr(arr) {
-    return arr.reduce((a, b) => parseFloat(a) + parseFloat(b), 0);
+    return arr.reduce((a, b) => a + b, 0);
   }
 
   function reduce_arr(arr) {
@@ -258,42 +258,43 @@ export default function ImpactPlanner() {
     return out;
   }
 
-  function chart_update(seq_arr) {
-    co2data.datasets.data = reduce_arr(seq_arr).map(x => (x * numberOfTrees / 1000).toFixed(2));
-  }
-
   const calculate_initial = () => {
-    let sequestration_arr = calc_seq_years(dbh, 50);
-
-    // multiplying each array value by number of trees and converting to Tn
-    let sequestration_arr_for_graph = sequestration_arr.map(
+    let sequestration_arr = calc_seq_years(dbh, 50).map(
       (x) => (x * numberOfTrees) / 1000
     );
 
+    const sequestrationValue = sum_arr(sequestration_arr);
+
+    // multiplying each array value by number of trees and converting to Tn
+    let sequestration_arr_for_graph = reduce_arr(sequestration_arr);
     setArrSeq(sequestration_arr_for_graph);
 
-    const sequestrationValue = numberOfTrees * sum_arr(sequestration_arr);
-
-    setSeq((sequestrationValue / 1000).toFixed(2)); //converting kg to Tn,  use comma instead of decimal point
+    setSeq((sequestrationValue).toFixed(2)); //converting kg to Tn, use comma instead of decimal point
+    setResultsOpen(true);
   };
 
   const calculate_button_click = (e) => {
     e.preventDefault();
 
-    const sequestrationValue =
-      parseFloat(numberOfTrees * sum_arr(calc_seq_years(dbh, 50))) +
-      parseFloat(newNumberOfTrees * sum_arr(calc_seq_years(newDBH, 50)));
-
     // multiplying each array value by number of trees and converting to Tn
-    let sequestration_arr_for_graph = calc_seq_years(dbh, 50).concat(
-      calc_seq_years(newDBH, 50)
+    let seq_arr1 = calc_seq_years(dbh, 50).map(
+      (x) => (x * numberOfTrees) / 1000
     );
-    sequestration_arr_for_graph = sequestration_arr_for_graph.map(
-      (x) => (x * (numberOfTrees + newNumberOfTrees)) / 1000
+    let seq_arr2 = calc_seq_years(newDBH, 50).map(
+      (x) => (x * newNumberOfTrees) / 1000
     );
+
+    // Add both arrays elemntwise
+    let joined_seq = seq_arr1.map(function (num, idx) {
+      return num + seq_arr2[idx];
+    });
+
+    const sequestrationValue = sum_arr(joined_seq);
+
+    let sequestration_arr_for_graph = reduce_arr(joined_seq);
     setArrSeq(sequestration_arr_for_graph);
 
-    setSeq((sequestrationValue / 1000).toFixed(2)); //converting kg to Tn, use comma instead of decimal point
+    setSeq((sequestrationValue).toFixed(2)); //converting kg to Tn, use comma instead of decimal point
     setResultsOpen(true);
   };
 
