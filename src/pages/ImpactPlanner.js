@@ -269,7 +269,7 @@ export default function ImpactPlanner() {
     let sequestration_arr_for_graph = reduce_arr(sequestration_arr);
     setArrSeq(sequestration_arr_for_graph);
 
-    setSeq((sequestrationValue).toFixed(2)); //converting kg to Tn, use comma instead of decimal point
+    setSeq(sequestrationValue.toFixed(2));
     setResultsOpen(true);
   };
 
@@ -294,7 +294,7 @@ export default function ImpactPlanner() {
     let sequestration_arr_for_graph = reduce_arr(joined_seq);
     setArrSeq(sequestration_arr_for_graph);
 
-    setSeq((sequestrationValue).toFixed(2)); //converting kg to Tn, use comma instead of decimal point
+    setSeq(sequestrationValue.toFixed(2)); 
     setResultsOpen(true);
   };
 
