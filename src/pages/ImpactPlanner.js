@@ -228,6 +228,10 @@ export default function ImpactPlanner() {
     return out;
   }
 
+  function chart_update(seq_arr) {
+    co2data.datasets.data = reduce_arr(seq_arr).map(x => (x * numberOfTrees / 1000).toFixed(2));
+  }
+
   const calculate_button_click = (e) => {
     e.preventDefault();
 
@@ -235,6 +239,7 @@ export default function ImpactPlanner() {
       let sequestration_arr = calc_seq_years(dbh, 50);
 
       const sequestrationValue = numberOfTrees * sum_arr(sequestration_arr);
+      chart_update(sequestration_arr);
 
       setSeq((sequestrationValue / 1000).toFixed(2).replace(/\./g, ",")); //converting kg to Tn,  use comma instead of decimal point
     } else {
