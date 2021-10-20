@@ -205,7 +205,27 @@ export default function ImpactPlanner() {
   };
 
   function sum_arr(arr) {
-    return arr.reduce((a, b) => a + b, 0);
+    return arr.reduce((a, b) => parseFloat(a) + parseFloat(b), 0);
+  }
+
+  function reduce_arr(arr) {
+    // function that sums elements of an array 5 by 5
+
+    // Create a new array
+    const out = [];
+
+    // While there are elements remaining
+    while (arr.length > 0) {
+      // `splice` off 5 elements from the array
+      const next = arr.splice(0, 5);
+
+      const sum = sum_arr(next);
+
+      // Push the stringified sum to the output array.
+      out.push(sum);
+    }
+
+    return out;
   }
 
   const calculate_button_click = (e) => {
@@ -224,6 +244,7 @@ export default function ImpactPlanner() {
 
       setSeq((sequestrationValue / 1000).toFixed(2).replace(/\./g, ",")); //converting kg to Tn, use comma instead of decimal point
     }
+
     setResultsOpen(true);
   };
 
