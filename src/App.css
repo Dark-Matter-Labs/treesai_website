@@ -91,3 +91,16 @@ iframe {
 .panel-w {
   width: 800px;
 }
+
+.map-container {
+  height: 100%;
+}
+
+.marker {
+  background-image: url(images/map-marker.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 10%;
+  height: 10%;
+  cursor: pointer;
+}
