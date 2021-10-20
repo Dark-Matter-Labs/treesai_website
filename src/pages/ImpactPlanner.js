@@ -381,7 +381,7 @@ export default function ImpactPlanner() {
                         <div>
                           <div>
                             <h3 className="text-lg leading-6 font-medium text-gray-900">
-                              Impact calculator
+                              Impact Planner
                             </h3>
                             <p className="mt-1 text-sm text-gray-500">
                               Get started by filling in the information below to
