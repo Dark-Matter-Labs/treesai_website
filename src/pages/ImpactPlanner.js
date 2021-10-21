@@ -450,12 +450,14 @@ export default function ImpactPlanner() {
                               <div className="mt-1">
                                 <input
                                   type="number"
-                                  onChange={(e) =>
-                                    setNumberOfTrees(e.target.value)
+                                  onChange={(e) => {
+                                    setNumberOfTrees(e.target.value);
+                                    calculate_initial();
+                                  }
                                   }
                                   name="tree-number"
                                   id="tree-number"
-                                  value="104"
+                                  defaultValue="104"
                                   className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                                 />
                               </div>
@@ -471,10 +473,15 @@ export default function ImpactPlanner() {
                               <div className="mt-1 flex rounded-md shadow-sm">
                                 <input
                                   type="number"
-                                  onChange={(e) => setDBH(e.target.value)}
+                                  onChange={(e) => {
+                                    setDBH(e.target.value);
+                                    calculate_initial();
+                                  
+                                  }
+                                  }
                                   name="DBH"
                                   id="DBH"
-                                  value="13"
+                                  defaultValue="13"
                                   className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-l-md sm:text-sm border-gray-300"
                                 />
                                 <span className="inline-flex items-center px-3 rounded-r-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
@@ -550,7 +557,12 @@ export default function ImpactPlanner() {
                               <div className="pt-5 flex justify-end">
                                 <button
                                   type="button"
-                                  onClick={() => setNewTreesOpen(false)}
+                                  onClick={() => {
+                                    setNewTreesOpen(false);
+                                    calculate_initial();
+                                  
+                                  }
+                                  }
                                   className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                 >
                                   Close
