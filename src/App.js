@@ -2,6 +2,7 @@ import { HashRouter, Switch, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import ImpactPlanner from "./pages/ImpactPlanner";
+import AddToMarketplace from "./pages/AddToMarketplace";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -14,6 +15,9 @@ export default function TreesAIWebsite() {
       <Switch>
         <Route path="/impact-planner">
           <ImpactPlanner />
+        </Route>
+        <Route path="/add-to-marketplace">
+          <AddToMarketplace />
         </Route>
         <Route path="/privacy">
           <PrivacyPolicy />

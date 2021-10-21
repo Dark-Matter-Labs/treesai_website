@@ -1,9 +1,11 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { Bar, Line } from "react-chartjs-2";
 import {
   PlusSmIcon as PlusSmIconSolid,
   MinusSmIcon as MinusSmIconSolid,
+  InformationCircleIcon,
 } from "@heroicons/react/solid";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
@@ -294,7 +296,7 @@ export default function ImpactPlanner() {
     let sequestration_arr_for_graph = reduce_arr(joined_seq);
     setArrSeq(sequestration_arr_for_graph);
 
-    setSeq(sequestrationValue.toFixed(2)); 
+    setSeq(sequestrationValue.toFixed(2));
     setResultsOpen(true);
   };
 
@@ -414,6 +416,14 @@ export default function ImpactPlanner() {
                             </p>
                           </div>
 
+                          <div className="flex justify-end">
+                            <Link to="/add-to-marketplace">
+                              <button className="ml-3 mr-4 inline-flex justify-center py-2 px-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                Add to marketplace
+                              </button>
+                            </Link>
+                          </div>
+
                           <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
                             <div className="sm:col-span-3">
                               <label
@@ -453,8 +463,7 @@ export default function ImpactPlanner() {
                                   onChange={(e) => {
                                     setNumberOfTrees(e.target.value);
                                     calculate_initial();
-                                  }
-                                  }
+                                  }}
                                   name="tree-number"
                                   id="tree-number"
                                   defaultValue="104"
@@ -476,9 +485,7 @@ export default function ImpactPlanner() {
                                   onChange={(e) => {
                                     setDBH(e.target.value);
                                     calculate_initial();
-                                  
-                                  }
-                                  }
+                                  }}
                                   name="DBH"
                                   id="DBH"
                                   defaultValue="13"
@@ -560,9 +567,7 @@ export default function ImpactPlanner() {
                                   onClick={() => {
                                     setNewTreesOpen(false);
                                     calculate_initial();
-                                  
-                                  }
-                                  }
+                                  }}
                                   className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                 >
                                   Close
@@ -690,6 +695,22 @@ export default function ImpactPlanner() {
 
                 {resultsOpen && (
                   <div>
+                    <div className="rounded-md bg-green-50 p-4 mt-10">
+                      <div className="flex">
+                        <div className="flex-shrink-0">
+                          <InformationCircleIcon
+                            className="h-5 w-5 text-green-400"
+                            aria-hidden="true"
+                          />
+                        </div>
+                        <div className="ml-3">
+                          <h3 className="text-sm font-medium text-green-800">
+                            This is an estimate. Learn about our{" "}
+                            <u>methodology</u>
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
                     <div className="flex-shrink-0 pt-10">
                       <h3 className="text-lg leading-6 font-medium text-gray-900">
                         Impact result
@@ -873,12 +894,6 @@ export default function ImpactPlanner() {
                       data={maintenance_forecast_data}
                       options={maintenance_forecast_options}
                     />
-
-                    <div className="flex justify-end">
-                      <button className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        Next
-                      </button>
-                    </div>
                   </div>
                 )}
               </div>
