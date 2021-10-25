@@ -183,7 +183,6 @@ export default function Cities() {
                 <div className="lg:self-center">
                   <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
                     <span className="block">Try becoming a nature steward</span>
-                    <span className="block">Start your free trial today.</span>
                   </h2>
                   <p className="mt-4 text-lg leading-6 text-indigo-200">
                     Cover up to 10% of your maintenance costs by preserving
