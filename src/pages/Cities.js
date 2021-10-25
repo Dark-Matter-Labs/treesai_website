@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 
 import NavBar from "../components/demo/NavBar";
+import letsInvestImage from "../images/letsinvest.jpeg"
 
 const cities = [
   {
@@ -105,7 +106,7 @@ export default function Cities() {
             </li>
           </ol>
         </nav>
-        <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
+        <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
           <div className="mt-10">
             <h2 className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
               Find places to invest in nature
@@ -119,7 +120,7 @@ export default function Cities() {
             </p>
             <div className="mt-5">
               <h3 className="text-l text-gray-900 sm:text-xl py-5">Cities</h3>
-              <div class="grid gap-y-10 gap-x-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+              <div className="grid gap-y-10 gap-x-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
                 {cities.map((city) => (
                   <div key={city.id} className="group relative">
                     <div className="">
@@ -154,6 +155,37 @@ export default function Cities() {
             <div ref={mapContainer} className="map-container" />
           </div>
         </div>
+        <div className="bg-white">
+      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <div className="bg-indigo-700 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+          <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
+            <div className="lg:self-center">
+              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+                <span className="block">Try becoming a nature steward</span>
+                <span className="block">Start your free trial today.</span>
+              </h2>
+              <p className="mt-4 text-lg leading-6 text-indigo-200">
+              Cover up to 10% of your maintenance costs by preserving 
+street trees, rewilding your local park or replenishing the urban forest.
+              </p>
+              <a
+                href="/nature-steward"
+                className="mt-8 bg-white border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
+              >
+                Learn more
+              </a>
+            </div>
+          </div>
+          <div className="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
+            <img
+              className="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
+              src={letsInvestImage}
+              alt="Nature stewards"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
       </div>
     </>
   );
