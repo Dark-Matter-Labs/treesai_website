@@ -87,3 +87,7 @@ iframe {
 .heightFull {
   height: 100%;
 }
+
+.map-container {
+  height: 800px;
+}
