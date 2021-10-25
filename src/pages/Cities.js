@@ -9,7 +9,7 @@ const cities = [
   {
     id: 1,
     name: "Glasgow",
-    href: "#",
+    href: "/invest-in-nature/glasgow",
     imageSrc: "assets/Glasgow.png",
     imageAlt: "Glasgow city",
   },
@@ -119,7 +119,7 @@ export default function Cities() {
               <div>
                 <Link
                   to="/invest-in-nature"
-                  className="text-gray-400 hover:text-gray-500"
+                  className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
                 >
                   Invest
                 </Link>
@@ -154,13 +154,13 @@ export default function Cities() {
                     <div className="mt-0 flex justify-between">
                       <div>
                         <h3 className="text-sm text-gray-700">
-                          <a href={city.href}>
+                          <Link to={city.href}>
                             <span
                               aria-hidden="true"
                               className="absolute inset-0"
                             />
                             {city.name}
-                          </a>
+                          </Link>
                         </h3>
                         <p className="mt-1 text-sm text-gray2">
                           {city.progressText}

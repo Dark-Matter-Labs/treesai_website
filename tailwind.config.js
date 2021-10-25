@@ -33,6 +33,7 @@ module.exports = {
         light: "#D4D4D4",
         extraLight: "#F2F2F2",
         white: "#FFFFFF",
+        gcc: "#035D51",
       },
     },
   },
