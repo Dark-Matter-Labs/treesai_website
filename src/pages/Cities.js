@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 
 import NavBar from "../components/demo/NavBar";
-import letsInvestImage from "../images/letsinvest.jpeg"
+import letsInvestImage from "../images/letsinvest.jpeg";
 
 const cities = [
   {
@@ -50,6 +50,26 @@ const cities = [
   },
 ];
 
+const faqs = [
+  {
+    id: 1,
+    question: "What are climate-related liabilities?",
+    answer:
+      "We live in an increasingly fragile world where climate change and biodiversity loss are having a detrimental impact on all, from individuals to businesses. By pooling our resources to invest in nature, restoring and growing strong ecosystems and habitats we can reverse this cycle and support thriving and resilient communities.",
+  },
+  {
+    id: 2,
+    question: "What do we mean by nature?",
+    answer:
+      "We use nature as a shorthand for Nature-based Solutions. While TreesAI aims to fund most Nature-based Solutions, we are currently focusing on Urban Forests. ",
+  },
+  {
+    id: 3,
+    question: "What do we mean by invest?",
+    answer: "tbc",
+  },
+];
+
 export default function Cities() {
   mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
@@ -85,6 +105,7 @@ export default function Cities() {
       .setLngLat([13.405, 52.52])
       .addTo(map.current); //Berlin
 
+    map.current.scrollZoom.disable();
     // eslint-disable-next-line
   }, []);
 
@@ -155,37 +176,62 @@ export default function Cities() {
             <div ref={mapContainer} className="map-container" />
           </div>
         </div>
-        <div className="bg-white">
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div className="bg-indigo-700 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
-          <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
-            <div className="lg:self-center">
-              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                <span className="block">Try becoming a nature steward</span>
-                <span className="block">Start your free trial today.</span>
-              </h2>
-              <p className="mt-4 text-lg leading-6 text-indigo-200">
-              Cover up to 10% of your maintenance costs by preserving 
-street trees, rewilding your local park or replenishing the urban forest.
-              </p>
-              <a
-                href="/nature-steward"
-                className="mt-8 bg-white border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
-              >
-                Learn more
-              </a>
+        <div className="bg-gray">
+          <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <div className="bg-indigo-700 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+              <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
+                <div className="lg:self-center">
+                  <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+                    <span className="block">Try becoming a nature steward</span>
+                    <span className="block">Start your free trial today.</span>
+                  </h2>
+                  <p className="mt-4 text-lg leading-6 text-indigo-200">
+                    Cover up to 10% of your maintenance costs by preserving
+                    street trees, rewilding your local park or replenishing the
+                    urban forest.
+                  </p>
+                  <a
+                    href="/nature-steward"
+                    className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
+                  >
+                    Learn more
+                  </a>
+                </div>
+              </div>
+              <div className="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
+                <img
+                  className="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
+                  src={letsInvestImage}
+                  alt="Nature stewards"
+                />
+              </div>
             </div>
           </div>
-          <div className="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
-            <img
-              className="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
-              src={letsInvestImage}
-              alt="Nature stewards"
-            />
+        </div>
+        <div className="bg-gray">
+          <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
+            <div className="mt-6 pt-10">
+              <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12">
+                {faqs.map((faq) => (
+                  <div key={faq.id}>
+                    <dt className="text-lg leading-6 font-medium text-gray-900">
+                      {faq.question}
+                    </dt>
+                    <dd className="mt-2 text-base text-gray-500">
+                      {faq.answer}
+                    </dd>
+                    <button
+                      type="button"
+                      className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    >
+                      Learn more
+                    </button>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
       </div>
     </>
   );
