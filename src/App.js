@@ -1,16 +1,20 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ScrollToTop from "./components/ScrollToTop";
+import Cities from "./pages/Cities";
 
 import "./App.css";
 
 export default function TreesAIWebsite() {
   return (
-    <Router>
+    <HashRouter>
       <ScrollToTop />
       <Switch>
+        <Route path="/invest-in-nature">
+          <Cities />
+        </Route>
         <Route path="/privacy">
           <PrivacyPolicy />
         </Route>
@@ -18,6 +22,6 @@ export default function TreesAIWebsite() {
           <Home />
         </Route>
       </Switch>
-    </Router>
+    </HashRouter>
   );
 }
