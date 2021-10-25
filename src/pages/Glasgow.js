@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { ChevronRightIcon } from "@heroicons/react/solid";
+import {
+  ChevronRightIcon,
+  InformationCircleIcon,
+} from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 
@@ -183,6 +186,105 @@ export default function Glasgow() {
                       Learn more
                     </a>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="px-40 center">
+            <div className="rounded-md bg-green-50 p-4 mt-10">
+              <div className="flex">
+                <div className="flex-shrink-0">
+                  <InformationCircleIcon
+                    className="h-5 w-5 text-green-400"
+                    aria-hidden="true"
+                  />
+                </div>
+                <div className="ml-3">
+                  <h3 className="text-sm font-medium text-green-800">
+                    This is an estimate. Learn about our <u>methodology</u>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="flex-shrink-0 pt-10">
+              <h3 className="text-lg leading-6 font-medium text-gray-900">
+                Environmental Services
+              </h3>
+
+              <h4 className="text-md leading-6 font-medium text-gray-900 m-2">
+                Physical Flows
+              </h4>
+
+              <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2">
+                <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                  <dt>
+                    <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                      CO2 removal
+                    </p>
+                  </dt>
+                  <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                    <p className="text-2xl font-semibold text-green-600 ">
+                      8,140 tCO2e
+                    </p>
+                    <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
+                      per year
+                    </p>
+                  </dd>
+                </div>
+                <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                  <dt>
+                    <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                      Avoided runoff
+                    </p>
+                  </dt>
+                  <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                    <p className="text-2xl font-semibold text-blue2 ">
+                      812,000m³
+                    </p>
+                    <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
+                      per year
+                    </p>
+                  </dd>
+                </div>
+                <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                  <dt>
+                    <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                      Air quality improvement
+                    </p>
+                  </dt>
+                  <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                    <p className="text-2xl font-semibold text-green-600 ">
+                      44.38(PM2.5)
+                    </p>
+                    <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
+                      per year
+                    </p>
+                  </dd>
+                </div>
+                <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                  <dt>
+                    <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                      Flood control
+                    </p>
+                  </dt>
+                  <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
+                      Coming soon
+                    </span>
+                  </dd>
+                </div>
+
+                <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                  <dt>
+                    <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                      Heat island effect reduction
+                    </p>
+                  </dt>
+                  <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
+                      Coming soon
+                    </span>
+                  </dd>
                 </div>
               </div>
             </div>
