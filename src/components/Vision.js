@@ -84,7 +84,7 @@ export default class Vision extends Component {
                       rel="noreferrer noopener"
                       className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-green2"
                     >
-                       Register to join the demo launch at COP26
+                      Register to join the demo launch at COP26
                     </a>
                   </div>
                 </div>
