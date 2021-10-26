@@ -91,3 +91,7 @@ iframe {
 .map-container {
   height: 800px;
 }
+
+.pie {
+  width: 30%;
+}

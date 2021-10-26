@@ -5,13 +5,13 @@ import {
 } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
-import { Pie } from "react-chartjs-2";
+import { Bar, Pie } from "react-chartjs-2";
 
 import NavBarGlasgow from "../components/demo/NavBarGlasgow";
 
 const pages = [{ name: "Glasgow", href: "#", current: true }];
 
-const data = {
+const pieChartData = {
   labels: [
     "Carbon sequestration",
     "Stormwater retention",
@@ -26,6 +26,43 @@ const data = {
       borderWidth: 1,
     },
   ],
+};
+
+const barChartData = {
+  labels: [
+    "Planting",
+    "Maintenance",
+    "Preservation",
+    "Restoration",
+    "Seedling",
+    "Upcycling",
+  ],
+  datasets: [
+    {
+      label: "Active trees",
+      data: [367500, 470400, 176400, 20000, 20000, 20000],
+      backgroundColor: [
+        "#47B881",
+        "#47B881",
+        "#47B881",
+        "#C4C4C4",
+        "#C4C4C4",
+        "#C4C4C4",
+      ],
+    },
+  ],
+};
+
+const barChartOptions = {
+  scales: {
+    yAxes: [
+      {
+        ticks: {
+          beginAtZero: true,
+        },
+      },
+    ],
+  },
 };
 
 export default function Glasgow() {
@@ -305,18 +342,123 @@ export default function Glasgow() {
                   </dd>
                 </div>
               </div>
-              <div className="mt-5 flex flex-wrap content-center bg-white">
+              <div className="mt-5 flex flex-wrap content-around bg-white flex-space">
                 <div>
                   <h4 className="text-md leading-6 font-medium text-gray-900">
-                    Portfolio
+                    Indicative valuation
                   </h4>
                 </div>
-                <div>
-                  <p>£5m</p>
+                <div className="pie">
+                  <Pie data={pieChartData} />
+                </div>
+                <div className="">
+                  <p>£7.1m</p>
+                </div>
+              </div>
+
+              <h3 className="text-lg leading-6 font-medium text-gray-900 mt-10">
+                Highlights
+              </h3>
+              <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2">
+                <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                  <dt>
+                    <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                      Trees
+                    </p>
+                  </dt>
+                  <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                    <p className="text-2xl font-semibold text-green-600 ">
+                      2,100,000
+                    </p>
+                  </dd>
+                </div>
+                <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                  <dt>
+                    <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                      Canopy Cover
+                    </p>
+                  </dt>
+                  <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                    <p className="text-2xl font-semibold text-blue2 ">15%</p>
+                  </dd>
+                </div>
+                <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                  <dt>
+                    <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                      Forest Density
+                    </p>
+                  </dt>
+                  <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                    <p className="text-2xl font-semibold text-green-600 ">
+                      112
+                    </p>
+                    <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
+                      per hectares
+                    </p>
+                  </dd>
+                </div>
+                <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                  <dt>
+                    <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                      Located in parks
+                    </p>
+                  </dt>
+                  <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                    <p className="text-2xl font-semibold text-green-600 ">
+                      55%
+                    </p>
+                    <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
+                      of all trees
+                    </p>
+                  </dd>
+                </div>
+                <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                  <dt>
+                    <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                      Most Common Species
+                    </p>
+                  </dt>
+                  <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
+                      ash, hawthorn and alder
+                    </span>
+                  </dd>
                 </div>
 
-                <div>
-                  <Pie data={data} />
+                <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                  <dt>
+                    <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                      Tree Story of the month
+                    </p>
+                  </dt>
+                  <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                    <p className="text-2xl font-semibold text-gray-500">
+                      “And I watered it in fears. Night and morning with my
+                      tears: And I sunned it with smiles. And with soft
+                      deceitful wiles.”
+                    </p>
+                  </dd>
+                </div>
+              </div>
+              <div>
+                <div className="mt-5 bg-white">
+                  <div className="rounded-md bg-green-50 p-4 mt-10">
+                    <div className="flex">
+                      <div className="flex-shrink-0">
+                        <InformationCircleIcon
+                          className="h-5 w-5 text-green-400"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="ml-3">
+                        <h3 className="text-sm font-medium text-green-800">
+                          Activities in progrees. Give us feedabck and learn
+                          about our <u>methodology</u>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <Bar data={barChartData} options={barChartOptions} />
                 </div>
               </div>
             </div>
