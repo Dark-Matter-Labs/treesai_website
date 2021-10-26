@@ -8,6 +8,9 @@ import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-load
 import { Bar, Pie } from "react-chartjs-2";
 
 import NavBarGlasgow from "../components/demo/NavBarGlasgow";
+import banner1 from "../images/banner1.png";
+import banner2 from "../images/banner2.png";
+import banner3 from "../images/banner3.png";
 
 const pages = [{ name: "Glasgow", href: "#", current: true }];
 
@@ -64,6 +67,66 @@ const barChartOptions = {
     ],
   },
 };
+
+const projects = [
+  {
+    id: 1,
+    name: "Camlachie Tiny Forest",
+    imageSrc: "assets/project1.png",
+    imageAlt: "Project picture",
+    activity: "Preservation",
+    progress: "In progress",
+  },
+  {
+    id: 2,
+    name: "River Clyde Bank ",
+    imageSrc: "assets/project2.png",
+    imageAlt: "Project picture",
+    activity: "Reforestation",
+    progress: "In progress",
+  },
+  {
+    id: 3,
+    name: "Port Dundas Tiny Project",
+    imageSrc: "assets/project3.png",
+    imageAlt: "Project picture",
+    activity: "Restoration",
+    progress: "Completed",
+  },
+  {
+    id: 4,
+    name: "Camlachie Tiny Forest",
+    imageSrc: "assets/project1.png",
+    imageAlt: "Project picture",
+    activity: "Restoration",
+    progress: "Completed",
+  },
+  {
+    id: 5,
+    name: "River Clyde Bank Reforestation",
+    imageSrc: "assets/project2.png",
+    imageAlt: "Project picture",
+    activity: "Maintenance",
+    progress: "In progress",
+  },
+  {
+    id: 6,
+    name: "Port Dundas Tiny Project",
+    imageSrc: "assets/project3.png",
+    imageAlt: "Project picture",
+    activity: "Planting",
+    progress: "Completed",
+  },
+];
+
+const faqs = [
+  {
+    id: 1,
+    question: "What are Environmental Services?",
+    answer:
+      "Environments services refers to the qualitative functions of natural assets of land, water and air. The three basic types of environmental services are disposal services, which reflect the functions of the natural environment as an absorptive sink for residuals, productive services, which reflect economic functions, and consumer or consumptive services, which provide for the physiological and recreational needs of humans.",
+  },
+];
 
 export default function Glasgow() {
   mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
@@ -440,26 +503,199 @@ export default function Glasgow() {
                   </dd>
                 </div>
               </div>
-              <div>
-                <div className="mt-5 bg-white">
-                  <div className="rounded-md bg-green-50 p-4 mt-10">
-                    <div className="flex">
-                      <div className="flex-shrink-0">
-                        <InformationCircleIcon
-                          className="h-5 w-5 text-green-400"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <div className="ml-3">
-                        <h3 className="text-sm font-medium text-green-800">
-                          Activities in progrees. Give us feedabck and learn
-                          about our <u>methodology</u>
-                        </h3>
-                      </div>
+              <div className="mt-5 bg-white">
+                <div className="rounded-md bg-green-50 p-4 mt-10">
+                  <div className="flex">
+                    <div className="flex-shrink-0">
+                      <InformationCircleIcon
+                        className="h-5 w-5 text-green-400"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <div className="ml-3">
+                      <h3 className="text-sm font-medium text-green-800">
+                        Activities in progrees. Give us feedabck and learn about
+                        our <u>methodology</u>
+                      </h3>
                     </div>
                   </div>
-                  <Bar data={barChartData} options={barChartOptions} />
                 </div>
+                <Bar data={barChartData} options={barChartOptions} />
+              </div>
+              <div className="mt-5">
+                <h3 className="text-l text-gray-900 sm:text-xl py-5">
+                  Projects
+                </h3>
+                <div className="grid gap-y-10 gap-x-8 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-6">
+                  {projects.map((project) => (
+                    <div key={project.id} className="group relative">
+                      <div className="">
+                        <img
+                          src={project.imageSrc}
+                          alt={project.imageAlt}
+                          className=""
+                        />
+                      </div>
+                      <div className="mt-0 flex justify-between">
+                        <div>
+                          <h3 className="text-sm text-gray-700">
+                            <span
+                              aria-hidden="true"
+                              className="absolute inset-0"
+                            />
+                            {project.name}
+                          </h3>
+                          <p className="mt-1 text-sm text-gray2">
+                            {project.activity}
+                          </p>
+                          <p className="mt-1 text-sm text-gray2">
+                            {project.progress}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+                  <div className="bg-indigo-700 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+                    <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
+                      <div className="lg:self-center">
+                        <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+                          <span className="block">
+                            Get rewarded to care for Glasgow’s Nature
+                          </span>
+                        </h2>
+                        <p className="mt-4 text-lg leading-6 text-indigo-200">
+                          - Find out all about Glasgow’s Nature.
+                          <br />
+                          - Forecast the performance of trees. <br />
+                          - List a new projects on a city’s atlas.
+                          <br />
+                          - Access to finance.
+                          <br />
+                          - Cover your maintenance costs.
+                          <br />
+                          - Share the value of your environmental services.
+                          <br />
+                        </p>
+                        <a
+                          href="/nature-steward"
+                          className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
+                        >
+                          Get started
+                        </a>
+                      </div>
+                    </div>
+                    <div className="-mt-6">
+                      <img
+                        className="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
+                        src={banner1}
+                        alt="Nature stewards"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+                  <div className="bg-green3 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+                    <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
+                      <div className="lg:self-center">
+                        <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+                          <span className="block">
+                            Invest in Glasgow’s environmental services
+                          </span>
+                        </h2>
+                        <p className="mt-4 text-lg leading-6 text-green1">
+                          - Offset your emissions and meet your 2030 net zero
+                          targets.
+                          <br />
+                          - Mitigate your strategic and climate related risks.
+                          <br />
+                          - Restore your historical emissions and impact.
+                          <br />
+                          - Customisable and trusted impact reports.
+                          <br />
+                          - Landscape scale NbS portfolio management.
+                          <br />
+                          - Secure municipality backed investment. <br />
+                        </p>
+                        <a
+                          href="/nature-steward"
+                          className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
+                        >
+                          Get started
+                        </a>
+                      </div>
+                    </div>
+                    <div className="-mt-6">
+                      <img
+                        className="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
+                        src={banner2}
+                        alt="Nature stewards"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="max-w-8xl mx-auto py-16 px-2 sm:px-6 lg:px-2">
+                  <div className="bg-blue rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+                    <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
+                      <div className="lg:self-center">
+                        <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+                          <span className="block">
+                            Be the first one to gift your garden’s environmental
+                            services to future generations!
+                          </span>
+                        </h2>
+                        <p className="mt-4 text-lg leading-6 text-indigo-200">
+                          - Scan your trees.
+                          <br />
+                          - Understand the environmental services of the trees
+                          in your property.
+                          <br />
+                          - Share the environmental services with future
+                          Glaswegians.
+                          <br />
+                        </p>
+                        <a
+                          href="/nature-steward"
+                          className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
+                        >
+                          Get started
+                        </a>
+                      </div>
+                    </div>
+                    <div className="-mt-6">
+                      <img
+                        className="transform rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
+                        src={banner3}
+                        alt="Nature stewards"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-gray">
+            <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
+              <div className="mt-6 pt-10">
+                <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12">
+                  {faqs.map((faq) => (
+                    <div key={faq.id}>
+                      <dt className="text-lg leading-6 font-medium text-gray-900">
+                        {faq.question}
+                      </dt>
+                      <dd className="mt-2 text-base text-gray-500">
+                        {faq.answer}
+                      </dd>
+                      <button
+                        type="button"
+                        className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      >
+                        Learn more
+                      </button>
+                    </div>
+                  ))}
+                </dl>
               </div>
             </div>
           </div>
