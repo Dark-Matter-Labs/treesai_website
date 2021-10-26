@@ -5,10 +5,28 @@ import {
 } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
+import { Pie } from "react-chartjs-2";
 
 import NavBarGlasgow from "../components/demo/NavBarGlasgow";
 
 const pages = [{ name: "Glasgow", href: "#", current: true }];
+
+const data = {
+  labels: [
+    "Carbon sequestration",
+    "Stormwater retention",
+    "Flood control",
+    "Air quality improvement",
+  ],
+  datasets: [
+    {
+      data: [54, 30, 3, 5],
+      backgroundColor: ["#10B981", "#00000", "#ACB9FF", "#065F46"],
+      borderColor: ["#10B981", "#00000", "#ACB9FF", "#065F46"],
+      borderWidth: 1,
+    },
+  ],
+};
 
 export default function Glasgow() {
   mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
@@ -285,6 +303,20 @@ export default function Glasgow() {
                       Coming soon
                     </span>
                   </dd>
+                </div>
+              </div>
+              <div className="mt-5 flex flex-wrap content-center bg-white">
+                <div>
+                  <h4 className="text-md leading-6 font-medium text-gray-900">
+                    Portfolio
+                  </h4>
+                </div>
+                <div>
+                  <p>£5m</p>
+                </div>
+
+                <div>
+                  <Pie data={data} />
                 </div>
               </div>
             </div>
