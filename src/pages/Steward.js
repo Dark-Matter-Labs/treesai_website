@@ -315,12 +315,14 @@ export default function Steward() {
   const calculate_button_click = (e) => {
     e.preventDefault();
 
+    let n_trees = numberOfTrees + newNumberOfTrees;
+
     // multiplying each array value by number of trees and converting to Tn
     let seq_arr_evergreen = calc_seq_years(dbh, 50, "evergreen").map(
-      (x) => (x * (numberOfTrees + newNumberOfTrees) * evergreenPercent/100) / 1000
+      (x) => (x * n_trees * evergreenPercent) / 100 / 1000
     );
     let seq_arr_deciduous = calc_seq_years(dbh, 50, "deciduous").map(
-      (x) => (x * (numberOfTrees + newNumberOfTrees) * decidiousPercent/100) / 1000
+      (x) => (x * n_trees * decidiousPercent) / 100 / 1000
     );
 
     // Add both arrays elemntwise
