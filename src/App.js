@@ -5,6 +5,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ScrollToTop from "./components/ScrollToTop";
 import Cities from "./pages/Cities";
 import Glasgow from "./pages/Glasgow";
+import Steward from "./pages/Steward";
 
 import "./App.css";
 
@@ -13,6 +14,9 @@ export default function TreesAIWebsite() {
     <HashRouter>
       <ScrollToTop />
       <Switch>
+        <Route exact path="/invest-in-nature/glasgow/steward">
+          <Steward />
+        </Route>
         <Route exact path="/invest-in-nature/glasgow">
           <Glasgow />
         </Route>
