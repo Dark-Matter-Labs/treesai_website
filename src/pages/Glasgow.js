@@ -11,6 +11,7 @@ import NavBarGlasgow from "../components/demo/NavBarGlasgow";
 import banner1 from "../images/banner1.png";
 import banner2 from "../images/banner2.png";
 import banner3 from "../images/banner3.png";
+import Tollcross_Park from "../data/Tollcross_Park.json";
 
 const pages = [{ name: "Glasgow", href: "#", current: true }];
 
@@ -54,18 +55,6 @@ const barChartData = {
       ],
     },
   ],
-};
-
-const barChartOptions = {
-  scales: {
-    yAxes: [
-      {
-        ticks: {
-          beginAtZero: true,
-        },
-      },
-    ],
-  },
 };
 
 const projects = [
@@ -135,7 +124,7 @@ export default function Glasgow() {
   const map = useRef(null);
   const [lng] = useState(-4.2518);
   const [lat] = useState(55.8642);
-  const [zoom] = useState(12);
+  const [zoom] = useState(11);
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
@@ -146,7 +135,19 @@ export default function Glasgow() {
       zoom: zoom,
     });
 
-    map.current.scrollZoom.disable();
+    console.log("ye");
+
+    for (const feature of Tollcross_Park.features) {
+      new mapboxgl.Marker({ color: "green" })
+        .setLngLat(feature.geometry.coordinates)
+        .setPopup(
+          new mapboxgl.Popup({ offset: 25 }) // add popups
+            .setHTML(`<b>${feature.properties.Species}</p>`)
+        )
+        .addTo(map.current);
+    }
+
+    //map.current.scrollZoom.disable();
     // eslint-disable-next-line
   }, []);
 
@@ -234,12 +235,12 @@ export default function Glasgow() {
                 </h2>
                 <div className="mt-8 flex justify-center">
                   <div className="inline-flex rounded-md shadow">
-                    <a
-                      href="/"
+                    <Link
+                      to="/invest-in-nature/glasgow/steward"
                       className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-indigo-700"
                     >
                       Steward
-                    </a>
+                    </Link>
                   </div>
                   <div className="ml-3 inline-flex">
                     <a
@@ -514,13 +515,13 @@ export default function Glasgow() {
                     </div>
                     <div className="ml-3">
                       <h3 className="text-sm font-medium text-green-800">
-                        Activities in progrees. Give us feedabck and learn about
-                        our <u>methodology</u>
+                        Activities are in progrees. Give us feedabck and learn
+                        about our <u>methodology</u>
                       </h3>
                     </div>
                   </div>
                 </div>
-                <Bar data={barChartData} options={barChartOptions} />
+                <Bar data={barChartData} />
               </div>
               <div className="mt-5">
                 <h3 className="text-l text-gray-900 sm:text-xl py-5">
@@ -578,12 +579,12 @@ export default function Glasgow() {
                           - Share the value of your environmental services.
                           <br />
                         </p>
-                        <a
-                          href="/nature-steward"
+                        <Link
+                          to="/invest-in-nature/glasgow/steward"
                           className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
                         >
                           Get started
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="-mt-6">
