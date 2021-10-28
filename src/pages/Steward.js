@@ -156,8 +156,10 @@ export default function Steward() {
   const [maintenanceCost, setMaintenanceCost] = useState(1000);
   const [seqArr, setArrSeq] = useState([]);
   const [selected, setSelected] = useState(settings[0]);
-  const [imperviousPercent, setImperviousPercent] = useState(0);
+  const [imperviousPercent, setImperviousPercent] = useState(50);
   const [perviousPercent, setPerviousPercent] = useState(0);
+  const [stormwater, setStormwater] = useState(0);
+  const [stormwaterArray, setStormwaterArray] = useState([]);
 
   const co2data = {
     labels: ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
@@ -199,10 +201,10 @@ export default function Steward() {
   };
 
   const stormwater_data = {
-    labels: ["0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
+    labels: ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
     datasets: [
       {
-        data: [2, 4, 8, 10, 12, 16, 22, 26, 30, 34, 36],
+        data: stormwaterArray,
         backgroundColor: ["#DBEAFE"],
         borderColor: ["#3B82F6"],
         borderWidth: 1,
@@ -312,10 +314,14 @@ export default function Steward() {
     return out;
   }
 
-  const calculate_button_click = (e) => {
-    e.preventDefault();
+  function get_n_trees() {
+    // Added a dedicated function to avoid concatenation errors
+    return Number(numberOfTrees) + Number(newNumberOfTrees);
+  }
 
-    let n_trees = numberOfTrees + newNumberOfTrees;
+  function update_seq() {
+    // Calculate and update CO2 seq retention chart
+    let n_trees = get_n_trees();
 
     // multiplying each array value by number of trees and converting to Tn
     let seq_arr_evergreen = calc_seq_years(dbh, 50, "evergreen").map(
@@ -336,6 +342,67 @@ export default function Steward() {
     setArrSeq(sequestration_arr_for_graph);
 
     setSeq(sequestrationValue.toFixed(2));
+  }
+
+  function get_yearly_water(n_trees, diameter) {
+    let tree_area_base = 5;
+    let yearly_avg_precipitation = 1079; // mm/year = liter per m2 per year said Google
+    let tree_efficiency = 0.2;
+    let tree_area = (tree_area_base * Math.log(diameter)) / Math.log(dbh * 1.3);
+
+    let estimate =
+      (n_trees *
+        tree_area *
+        yearly_avg_precipitation *
+        tree_efficiency *
+        (imperviousPercent / 100)) /
+      1000;
+
+    return estimate;
+  }
+
+  function update_water() {
+    // // Calculate and update water retention chart
+
+    // Variables to be used later
+    // let cost_per_m2_of_water = 1.3464; // £ per sq. meter
+    // let ret_per_tree = 0.406; //m2 per tree
+    // let money_per_tree = 0.55; //£ per tree
+    // let tree_area = 13.3; // Roni back of the envelope estimation https://darkmatterlabs.slack.com/archives/C02ET8M2UTG/p1635337783037800?thread_ts=1635155720.033900&cid=C02ET8M2UTG
+    // // -------------------------------
+    // // Equations crafter by Marko
+    //
+    // let runoff_tree =
+    //   precipitation - canopy_storage - imper_cover_storage - evaporation;
+    // let runoff_ground = precipitation - imper_cover_storage - evaporation;
+    // let avoided_runoff =
+    //   (imperviousPercent / 100) * tree_area * (runoff_ground - runoff_tree);
+
+    let n_trees = get_n_trees();
+
+    let years = 50;
+    let d0 = dbh;
+    var water_array = [];
+
+    for (let i = 0; i < years; i++) {
+      water_array.push(get_yearly_water(n_trees, d0));
+      d0 = get_t1(d0);
+    }
+
+    const waterRetentionValue = sum_arr(water_array);
+
+    let water_arr_for_graph = reduce_arr(water_array);
+
+    setStormwaterArray(water_arr_for_graph);
+
+    setStormwater(waterRetentionValue.toFixed(2));
+  }
+
+  const calculate_button_click = (e) => {
+    e.preventDefault();
+
+    update_seq();
+    update_water();
 
     setPageState(1);
   };
@@ -885,7 +952,7 @@ export default function Steward() {
                         </dt>
                         <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                           <p className="text-2xl font-semibold text-blue2 ">
-                            27,300 m3
+                            {stormwater} m3
                           </p>
                           <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
                             over 50 years
