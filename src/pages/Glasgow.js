@@ -1,17 +1,23 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import {
   ChevronRightIcon,
   InformationCircleIcon,
 } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
-import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
+import ReactMapGL, { Source, Layer } from "react-map-gl";
 import { Bar, Pie } from "react-chartjs-2";
+
+import {
+  clusterLayer,
+  clusterCountLayer,
+  unclusteredPointLayer,
+} from "./layers";
 
 import NavBarGlasgow from "../components/demo/NavBarGlasgow";
 import banner1 from "../images/banner1.png";
 import banner2 from "../images/banner2.png";
 import banner3 from "../images/banner3.png";
-import Tollcross_Park from "../data/Tollcross_Park.json";
+import Combined from "../data/Combined.json";
 
 const pages = [{ name: "Glasgow", href: "#", current: true }];
 
@@ -118,38 +124,38 @@ const faqs = [
 ];
 
 export default function Glasgow() {
-  mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+  const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
-  const mapContainer = useRef(null);
-  const map = useRef(null);
-  const [lng] = useState(-4.2518);
-  const [lat] = useState(55.8642);
-  const [zoom] = useState(11);
+  const [viewport, setViewport] = useState({
+    latitude: 55.8642,
+    longitude: -4.2518,
+    zoom: 11,
+    bearing: 0,
+    pitch: 0,
+    width: "100%",
+    height: "80vh",
+  });
+  const mapRef = useRef(null);
+  const onClick = (event) => {
+    const feature = event.features[0];
+    console.log(event);
+    const clusterId = feature.properties.cluster_id;
 
-  useEffect(() => {
-    if (map.current) return; // initialize map only once
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: "mapbox://styles/mapbox/outdoors-v11",
-      center: [lng, lat],
-      zoom: zoom,
+    const mapboxSource = mapRef.current.getMap().getSource("trees");
+
+    mapboxSource.getClusterExpansionZoom(clusterId, (err, zoom) => {
+      if (err) {
+        return;
+      }
+      setViewport({
+        ...viewport,
+        longitude: feature.geometry.coordinates[0],
+        latitude: feature.geometry.coordinates[1],
+        zoom,
+        transitionDuration: 500,
+      });
     });
-
-    console.log("ye");
-
-    for (const feature of Tollcross_Park.features) {
-      new mapboxgl.Marker({ color: "green" })
-        .setLngLat(feature.geometry.coordinates)
-        .setPopup(
-          new mapboxgl.Popup({ offset: 25 }) // add popups
-            .setHTML(`<b>${feature.properties.Species}</p>`)
-        )
-        .addTo(map.current);
-    }
-
-    //map.current.scrollZoom.disable();
-    // eslint-disable-next-line
-  }, []);
+  };
 
   return (
     <>
@@ -222,7 +228,28 @@ export default function Glasgow() {
             </button>
           </div>
           <div className="h-full w-full">
-            <div ref={mapContainer} className="map-container" />
+            <ReactMapGL
+              {...viewport}
+              mapStyle="mapbox://styles/mapbox/light-v10"
+              onViewportChange={setViewport}
+              mapboxApiAccessToken={MAPBOX_TOKEN}
+              interactiveLayerIds={[clusterLayer.id]}
+              onClick={onClick}
+              ref={mapRef}
+            >
+              <Source
+                id="trees"
+                type="geojson"
+                data={Combined}
+                cluster={true}
+                clusterMaxZoom={14}
+                clusterRadius={50}
+              >
+                <Layer {...clusterLayer} />
+                <Layer {...clusterCountLayer} />
+                <Layer {...unclusteredPointLayer} />
+              </Source>
+            </ReactMapGL>
           </div>
 
           <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-2">
