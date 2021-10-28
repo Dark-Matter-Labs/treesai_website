@@ -238,7 +238,7 @@ export default function Steward() {
     },
   };
 
-  const get_stock = (cm, senescence = "evergreen") => {
+  const get_stock = (cm, senescence) => {
     if (!senescence || !cm) {
       return 0;
     }
@@ -263,12 +263,15 @@ export default function Steward() {
     return out;
   };
 
-  const get_yearly_seq = (diameter_t0) => {
+  const get_yearly_seq = (diameter_t0, senescence) => {
     // This function estimates the sequestration over one year given an initial tree diameter
-    return get_stock(get_t1(diameter_t0)) - get_stock(diameter_t0);
+    return (
+      get_stock(get_t1(diameter_t0), senescence) -
+      get_stock(diameter_t0, senescence)
+    );
   };
 
-  const calc_seq_years = (diameter_t0, years = 50) => {
+  const calc_seq_years = (diameter_t0, years = 50, senescence) => {
     if (diameter_t0 < 6) {
       diameter_t0 = 6;
     }
@@ -278,7 +281,7 @@ export default function Steward() {
     var seq_array = [];
 
     for (let i = 0; i < years; i++) {
-      seq_array.push(get_yearly_seq(d0));
+      seq_array.push(get_yearly_seq(d0, senescence));
       d0 = get_t1(d0);
     }
 
@@ -312,14 +315,24 @@ export default function Steward() {
   const calculate_button_click = (e) => {
     e.preventDefault();
 
+    let n_trees = numberOfTrees + newNumberOfTrees;
+
     // multiplying each array value by number of trees and converting to Tn
-    let seq_arr1 = calc_seq_years(dbh, 50).map(
-      (x) => (x * (numberOfTrees + newNumberOfTrees)) / 1000
+    let seq_arr_evergreen = calc_seq_years(dbh, 50, "evergreen").map(
+      (x) => (x * n_trees * evergreenPercent) / 100 / 1000
+    );
+    let seq_arr_deciduous = calc_seq_years(dbh, 50, "deciduous").map(
+      (x) => (x * n_trees * decidiousPercent) / 100 / 1000
     );
 
-    const sequestrationValue = sum_arr(seq_arr1);
+    // Add both arrays elemntwise
+    let joined_seq = seq_arr_evergreen.map(function (num, idx) {
+      return num + seq_arr_deciduous[idx];
+    });
 
-    let sequestration_arr_for_graph = reduce_arr(seq_arr1);
+    const sequestrationValue = sum_arr(joined_seq);
+
+    let sequestration_arr_for_graph = reduce_arr(joined_seq);
     setArrSeq(sequestration_arr_for_graph);
 
     setSeq(sequestrationValue.toFixed(2));
