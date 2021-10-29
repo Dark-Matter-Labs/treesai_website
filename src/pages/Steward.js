@@ -347,7 +347,7 @@ export default function Steward() {
   function get_yearly_water(n_trees, diameter) {
     let tree_area_base = 5;
     let yearly_avg_precipitation = 1079; // mm/year = liter per m2 per year said Google
-    let tree_efficiency = 0.2;
+    let tree_efficiency = 0.125;
     let tree_area = (tree_area_base * Math.log(diameter)) / Math.log(dbh * 1.3);
 
     let estimate =
@@ -369,6 +369,7 @@ export default function Steward() {
     // let ret_per_tree = 0.406; //m2 per tree
     // let money_per_tree = 0.55; //£ per tree
     // let tree_area = 13.3; // Roni back of the envelope estimation https://darkmatterlabs.slack.com/archives/C02ET8M2UTG/p1635337783037800?thread_ts=1635155720.033900&cid=C02ET8M2UTG
+    // iTREE - 403 L per Tree per Year
     // // -------------------------------
     // // Equations crafter by Marko
     //
