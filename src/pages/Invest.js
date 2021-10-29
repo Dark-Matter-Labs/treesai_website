@@ -745,9 +745,12 @@ export default function Invest() {
                   </div>
                   <div className="pt-40">
                     <div className="flex justify-start">
-                      <button className="ml-3 inline-flex justify-center py-2 px-4 border border-black shadow-sm text-sm font-medium rounded-md text-black bg-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      <Link
+                        to="/faq"
+                        className="ml-3 inline-flex justify-center py-2 px-4 border border-black shadow-sm text-sm font-medium rounded-md text-black bg-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      >
                         Frequently asked questions
-                      </button>
+                      </Link>
                       <Link
                         to="/invest-in-nature/glasgow"
                         className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"

@@ -19,7 +19,9 @@ import banner2 from "../images/banner2.png";
 import banner3 from "../images/banner3.png";
 import trees from "../data/trees.json";
 
-const pages = [{ name: "Glasgow", href: "#", current: true }];
+const pages = [
+  { name: "Glasgow", href: "/invest-in-nature/glasgow", current: true },
+];
 
 const pieChartData = {
   labels: [
@@ -192,13 +194,13 @@ export default function Glasgow() {
                       className="flex-shrink-0 h-5 w-5 text-gray-400"
                       aria-hidden="true"
                     />
-                    <a
-                      href={page.href}
+                    <Link
+                      to={page.href}
                       className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
                       aria-current={page.current ? "page" : undefined}
                     >
                       {page.name}
-                    </a>
+                    </Link>
                   </div>
                 </li>
               ))}
@@ -264,12 +266,12 @@ export default function Glasgow() {
                     </Link>
                   </div>
                   <div className="ml-3 inline-flex">
-                    <a
-                      href="/"
+                    <Link
+                      to="/faq"
                       className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
                     >
                       Learn more
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -292,12 +294,12 @@ export default function Glasgow() {
                     </a>
                   </div>
                   <div className="ml-3 inline-flex">
-                    <a
-                      href="/"
+                    <Link
+                      to="/faq"
                       className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
                     >
                       Learn more
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -319,12 +321,12 @@ export default function Glasgow() {
                     </Link>
                   </div>
                   <div className="ml-3 inline-flex">
-                    <a
-                      href="/"
+                    <Link
+                      to="/faq"
                       className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
                     >
                       Learn more
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -678,7 +680,7 @@ export default function Glasgow() {
                           <br />
                         </p>
                         <a
-                          href="/nature-steward"
+                          href="/"
                           className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
                         >
                           Get started
@@ -709,12 +711,13 @@ export default function Glasgow() {
                       <dd className="mt-2 text-base text-gray-500">
                         {faq.answer}
                       </dd>
-                      <button
+                      <Link
                         type="button"
+                        to="/faq"
                         className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       >
                         Learn more
-                      </button>
+                      </Link>
                     </div>
                   ))}
                 </dl>

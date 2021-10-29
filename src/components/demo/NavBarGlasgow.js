@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Link } from "react-router-dom";
 
 export default function NavBarGlasgow() {
   return (
@@ -41,30 +42,30 @@ export default function NavBarGlasgow() {
                   >
                     About
                   </a>
-                  <a
-                    href="/"
+                  <Link
+                    to="/invest-in-nature/glasgow/steward"
                     className="border-transparent text-white hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
                     Become a steward
-                  </a>
-                  <a
-                    href="/"
+                  </Link>
+                  <Link
+                    to="/invest-in-nature/glasgow/invest"
                     className="border-indigo-500 text-gray2 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
                     Invest in nature
-                  </a>
+                  </Link>
                   <a
                     href="/"
                     className="border-transparent text-white hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
                     Gift to Future
                   </a>
-                  <a
-                    href="/"
+                  <Link
+                    to="/faq"
                     className="border-transparent text-white hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
                     FAQ
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="flex items-center">

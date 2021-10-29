@@ -189,12 +189,12 @@ export default function Cities() {
                     street trees, rewilding your local park or replenishing the
                     urban forest.
                   </p>
-                  <a
-                    href="/nature-steward"
+                  <Link
+                    to="/invest-in-nature/glasgow"
                     className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
                   >
                     Learn more
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
@@ -219,12 +219,13 @@ export default function Cities() {
                     <dd className="mt-2 text-base text-gray-500">
                       {faq.answer}
                     </dd>
-                    <button
+                    <Link
                       type="button"
+                      to="/faq"
                       className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
                       Learn more
-                    </button>
+                    </Link>
                   </div>
                 ))}
               </dl>

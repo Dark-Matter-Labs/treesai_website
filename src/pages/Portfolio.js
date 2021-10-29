@@ -317,12 +317,13 @@ export default function Portfolio() {
                     {faq.question}
                   </dt>
                   <dd className="mt-2 text-base text-gray-500">{faq.answer}</dd>
-                  <button
+                  <Link
                     type="button"
+                    to="/faq"
                     className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   >
                     Learn more
-                  </button>
+                  </Link>
                 </div>
               ))}
             </dl>
