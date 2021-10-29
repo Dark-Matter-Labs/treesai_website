@@ -7,6 +7,7 @@ import Cities from "./pages/Cities";
 import Glasgow from "./pages/Glasgow";
 import Steward from "./pages/Steward";
 import Invest from "./pages/Invest";
+import Portfolio from "./pages/Portfolio";
 
 import "./App.css";
 
@@ -20,6 +21,9 @@ export default function TreesAIWebsite() {
         </Route>
         <Route exact path="/invest-in-nature/glasgow/invest">
           <Invest />
+        </Route>
+        <Route exact path="/invest-in-nature/glasgow/invest/portfolio">
+          <Portfolio />
         </Route>
         <Route exact path="/invest-in-nature/glasgow">
           <Glasgow />
