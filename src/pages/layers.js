@@ -3,7 +3,7 @@ export const clusterLayer = {
   type: "circle",
   source: "trees",
   filter: ["has", "point_count"],
-  paint: {
+  paint: {    
     "circle-color": [
       "step",
       ["get", "point_count"],
@@ -36,8 +36,8 @@ export const unclusteredPointLayer = {
   filter: ["!", ["has", "point_count"]],
   paint: {
     "circle-color": "#047857",
-    "circle-radius": 4,
+    "circle-radius": 5,
     "circle-stroke-width": 1,
     "circle-stroke-color": "#fff",
-  },
+  }
 };

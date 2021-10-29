@@ -17,7 +17,7 @@ import NavBarGlasgow from "../components/demo/NavBarGlasgow";
 import banner1 from "../images/banner1.png";
 import banner2 from "../images/banner2.png";
 import banner3 from "../images/banner3.png";
-import Combined from "../data/Combined.json";
+import trees from "../data/trees.json";
 
 const pages = [{ name: "Glasgow", href: "#", current: true }];
 
@@ -136,9 +136,9 @@ export default function Glasgow() {
     height: "80vh",
   });
   const mapRef = useRef(null);
+
   const onClick = (event) => {
     const feature = event.features[0];
-    console.log(event);
     const clusterId = feature.properties.cluster_id;
 
     const mapboxSource = mapRef.current.getMap().getSource("trees");
@@ -220,12 +220,6 @@ export default function Glasgow() {
                 ingested by our children.{" "}
               </p>
             </div>
-            <button
-              type="button"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gcc hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              Invest
-            </button>
           </div>
           <div className="h-full w-full">
             <ReactMapGL
@@ -240,7 +234,7 @@ export default function Glasgow() {
               <Source
                 id="trees"
                 type="geojson"
-                data={Combined}
+                data={trees}
                 cluster={true}
                 clusterMaxZoom={14}
                 clusterRadius={50}
@@ -317,12 +311,12 @@ export default function Glasgow() {
                 </h2>
                 <div className="mt-8 flex justify-center">
                   <div className="inline-flex rounded-md shadow">
-                    <a
-                      href="/"
+                    <Link
+                      to="/invest-in-nature/glasgow/invest"
                       className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-indigo-700"
                     >
                       Invest
-                    </a>
+                    </Link>
                   </div>
                   <div className="ml-3 inline-flex">
                     <a
@@ -646,12 +640,12 @@ export default function Glasgow() {
                           <br />
                           - Secure municipality backed investment. <br />
                         </p>
-                        <a
-                          href="/nature-steward"
+                        <Link
+                          to="/invest-in-nature/glasgow/invest"
                           className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
                         >
                           Get started
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="-mt-6">
