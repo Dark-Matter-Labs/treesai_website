@@ -401,7 +401,7 @@ export default function Steward() {
 
   const calculate_button_click = (e) => {
     e.preventDefault();
-
+    window.scrollTo(0, 0);
     update_seq();
     update_water();
 
@@ -416,7 +416,7 @@ export default function Steward() {
 
   const next = (e) => {
     e.preventDefault();
-
+    window.scrollTo(0, 0);
     setPageState(pageState + 1);
   };
 
