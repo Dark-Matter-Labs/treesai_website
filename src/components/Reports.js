@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 
 const videos = [
   {
@@ -154,7 +154,7 @@ const posts = [
 ];
 
 export default function Reports() {
-  const [openTab, setOpenTab] = React.useState(1);
+  const [openTab, setOpenTab] = useState(1);
   return (
     <div className="relative bg-gray py-16 sm:py-24 lg:py-20" id="reports">
       <div className="relative">
