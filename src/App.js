@@ -6,6 +6,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Cities from "./pages/Cities";
 import Glasgow from "./pages/Glasgow";
 import Steward from "./pages/Steward";
+import Invest from "./pages/Invest";
 
 import "./App.css";
 
@@ -16,6 +17,9 @@ export default function TreesAIWebsite() {
       <Switch>
         <Route exact path="/invest-in-nature/glasgow/steward">
           <Steward />
+        </Route>
+        <Route exact path="/invest-in-nature/glasgow/invest">
+          <Invest />
         </Route>
         <Route exact path="/invest-in-nature/glasgow">
           <Glasgow />
