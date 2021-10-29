@@ -989,7 +989,7 @@ export default function Steward() {
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                         <dt>
                           <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                            Heat island effect
+                            Heat island effect reduction
                           </p>
                         </dt>
                         <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
