@@ -287,12 +287,12 @@ export default function Portfolio() {
         <p className="mt-3 text-lg font-regular text-gray-500">
           Carbon stored over time
         </p>
-        <h4 className="text-md leading-6 font-medium text-gray-900">
-          Stormwater retention
-        </h4>
         <div className="chart-size">
           <Bar data={carbon_data} options={carbon_options} />
         </div>
+        <p className="mt-3 text-lg font-regular text-gray-500">
+        Water retained over time
+        </p>
         <div className="chart-size">
           <Bar data={stormwater_data} options={stormwater_options} />
         </div>
