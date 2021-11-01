@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 import {
   ChevronRightIcon,
   InformationCircleIcon,
@@ -7,11 +7,7 @@ import { Link } from "react-router-dom";
 import ReactMapGL, { Source, Layer } from "react-map-gl";
 import { Bar, Pie } from "react-chartjs-2";
 
-import {
-  clusterLayer,
-  clusterCountLayer,
-  unclusteredPointLayer,
-} from "./layers";
+import { unclusteredPointLayer } from "./layers";
 
 import NavBarGlasgow from "../components/demo/NavBarGlasgow";
 import banner1 from "../images/banner1.png";
@@ -137,6 +133,7 @@ export default function Glasgow() {
     width: "100%",
     height: "80vh",
   });
+  const [hoverInfo, setHoverInfo] = useState(null);
   const mapRef = useRef(null);
 
   const onClick = (event) => {
@@ -158,6 +155,24 @@ export default function Glasgow() {
       });
     });
   };
+
+  const onHover = useCallback((event) => {
+    const {
+      features,
+      srcEvent: { offsetX, offsetY },
+    } = event;
+    const hoveredFeature = features && features[0];
+
+    setHoverInfo(
+      hoveredFeature
+        ? {
+            feature: hoveredFeature,
+            x: offsetX,
+            y: offsetY,
+          }
+        : null
+    );
+  }, []);
 
   return (
     <>
@@ -235,22 +250,26 @@ export default function Glasgow() {
               mapStyle="mapbox://styles/mapbox/light-v10"
               onViewportChange={setViewport}
               mapboxApiAccessToken={MAPBOX_TOKEN}
-              interactiveLayerIds={[clusterLayer.id]}
               onClick={onClick}
               ref={mapRef}
+              onHover={onHover}
+              interactiveLayerIds={["trees"]}
             >
-              <Source
-                id="trees"
-                type="geojson"
-                data={trees}
-                cluster={true}
-                clusterMaxZoom={14}
-                clusterRadius={50}
-              >
-                <Layer {...clusterLayer} />
-                <Layer {...clusterCountLayer} />
+              <Source id="trees" type="geojson" data={trees} cluster={false}>
                 <Layer {...unclusteredPointLayer} />
               </Source>
+              {hoverInfo && (
+                <div
+                  className="tooltip"
+                  style={{ left: hoverInfo.x, top: hoverInfo.y }}
+                >
+                  <div>Tree ID: {hoverInfo.feature.properties.Tree_Id}</div>
+                  <div>Species: {hoverInfo.feature.properties.Species}</div>
+                  <div>Height: {hoverInfo.feature.properties.Height}</div>
+                  <div>DBH: {hoverInfo.feature.properties.Spread}</div>
+                  <div>Location: {hoverInfo.feature.properties.Location}</div>
+                </div>
+              )}
             </ReactMapGL>
           </div>
 
