@@ -777,7 +777,7 @@ export default function Steward() {
                                 </div>
                                 <div className="ml-3">
                                   <h3 className="text-sm font-medium text-green-800">
-                                    Activities are in progrees. Give us feedabck
+                                    Activities are in progress. Give us feedback
                                     and learn about our <u>methodology</u>
                                   </h3>
                                 </div>
@@ -1161,6 +1161,9 @@ export default function Steward() {
                     <div className="add-to-market"></div>
                     <div className="bg-gray-50 py-16 px-4">
                       <div className="max-w-lg mx-auto">
+                        <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
+                          Work with TREESAI
+                        </h2>
                         <h2 className="font-grotesk text-3xl text-gray-900 sm:text-4xl">
                           Share your environmental services to support your
                           project

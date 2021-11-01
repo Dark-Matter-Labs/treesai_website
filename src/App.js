@@ -9,6 +9,8 @@ import Steward from "./pages/Steward";
 import Invest from "./pages/Invest";
 import Portfolio from "./pages/Portfolio";
 import FAQ from "./pages/FAQ";
+import StewardMain from "./pages/StewardMain";
+import Gift from "./pages/Gift";
 
 import "./App.css";
 
@@ -29,11 +31,17 @@ export default function TreesAIWebsite() {
         <Route exact path="/invest-in-nature/glasgow">
           <Glasgow />
         </Route>
+        <Route exact path="/become-a-steward">
+          <StewardMain />
+        </Route>
         <Route exact path="/invest-in-nature">
           <Cities />
         </Route>
         <Route exact path="/faq">
           <FAQ />
+        </Route>
+        <Route exact path="/gift">
+          <Gift />
         </Route>
         <Route path="/privacy">
           <PrivacyPolicy />

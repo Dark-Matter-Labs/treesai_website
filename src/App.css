@@ -151,3 +151,13 @@ iframe {
 .chart-size {
   width: 60%;
 }
+
+.gift {
+  background: url(images/Gift.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  padding: 40%;
+}
