@@ -5,31 +5,16 @@ import {
   InformationCircleIcon,
   CheckIcon,
 } from "@heroicons/react/solid";
-import { RadioGroup } from "@headlessui/react";
 import { Bar, Line } from "react-chartjs-2";
 
 import NavBarGlasgow from "../components/demo/NavBarGlasgow";
 
 const pages = [
-  { name: "Glasgow", href: "/invest-in-nature/glasgow/", current: false },
-  { name: "Steward", href: "/invest-in-nature/glasgow/steward", current: true },
   {
     name: "Project details",
-    href: "/invest-in-nature/glasgow/steward",
+    href: "/become-a-steward/glasgow/steward",
     current: true,
   },
-];
-
-const settings = [
-  {
-    name: "Preservation",
-    description: "Legally prevent felling in the long term",
-  },
-  {
-    name: "Planting",
-    description: "Planting the right tree at the right place",
-  },
-  { name: "Maintenance", description: "Intensive long term care" },
 ];
 
 function classNames(...classes) {
@@ -155,9 +140,7 @@ export default function Steward() {
   const [seq, setSeq] = useState(0);
   const [maintenanceCost, setMaintenanceCost] = useState(1000);
   const [seqArr, setArrSeq] = useState([]);
-  const [selected, setSelected] = useState(settings[0]);
   const [imperviousPercent, setImperviousPercent] = useState(50);
-  const [perviousPercent, setPerviousPercent] = useState(0);
   const [stormwater, setStormwater] = useState(0);
   const [stormwaterArray, setStormwaterArray] = useState([]);
 
@@ -429,10 +412,10 @@ export default function Steward() {
             <li>
               <div>
                 <Link
-                  to="/invest-in-nature"
+                  to="/become-a-steward"
                   className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
                 >
-                  Invest
+                  Steward
                 </Link>
               </div>
             </li>
@@ -461,412 +444,413 @@ export default function Steward() {
             case 0:
               return (
                 <>
-                  <div className="px-2 space-y-1 mt-10 input-section">
-                    <form className="space-y-8 divide-y divide-gray-200 input-inside">
-                      <div className="space-y-8 divide-y divide-gray-200">
-                        <div>
-                          <div>
-                            <h3 className="text-lg leading-6 font-medium text-gray-900">
-                              Enter project details
-                            </h3>
-                          </div>
-
-                          <div className="sm:col-span-3">
-                            <label
-                              htmlFor="project-name"
-                              className="block text-sm font-medium text-gray-700"
-                            >
-                              Project name
-                            </label>
-                            <div className="mt-1">
-                              <input
-                                type="text"
-                                name="project-name"
-                                id="project-name"
-                                className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                              />
-                            </div>
-                          </div>
-
-                          <div className="sm:col-span-3 mt-4">
-                            <label
-                              htmlFor="project-name"
-                              className="block text-sm font-medium text-gray-700"
-                            >
-                              Project short description
-                            </label>
-                            <div className="mt-1">
-                              <input
-                                type="text"
-                                name="project-name"
-                                id="project-name"
-                                className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                              />
-                            </div>
-                          </div>
-
-                          <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-1">
-                            <div className="sm:col-span-4">
-                              <h3 className="text-lg leading-6 font-medium text-gray-900">
-                                Site information
-                              </h3>
-                            </div>
-
-                            <div className="sm:col-span-3">
-                              <label
-                                htmlFor="project-location"
-                                className="block text-sm font-medium text-gray-700"
-                              >
-                                Location
-                              </label>
-                              <div className="mt-1">
-                                <input
-                                  type="text"
-                                  name="project-location"
-                                  id="project-location"
-                                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                />
+                  <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-4 sm:grid-cols-1">
+                    <div>
+                      <div className="px-2 space-y-1 mt-10 input-section">
+                        <form className="space-y-8 divide-y divide-gray-200 input-inside">
+                          <div className="space-y-8 divide-y divide-gray-200">
+                            <div>
+                              <div>
+                                <h3 className="text-lg leading-6 font-medium text-gray-900">
+                                  Enter project details
+                                </h3>
                               </div>
-                            </div>
 
-                            <div className="sm:col-span-4">
-                              <label
-                                htmlFor="i-cover"
-                                className="block text-sm font-medium text-gray-700"
-                              >
-                                Percentage of impervious surface
-                              </label>
-                              <div className="mt-1 flex rounded-md shadow-sm">
-                                <input
-                                  type="number"
-                                  name="i-cover"
-                                  id="i-cover"
-                                  defaultValue={imperviousPercent}
-                                  onChange={(e) => {
-                                    setImperviousPercent(e.target.value);
-                                  }}
-                                  max="100"
-                                  className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-l-md sm:text-sm border-gray-300"
-                                />
-                                <span className="inline-flex items-center px-3 rounded-r-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
-                                  %
-                                </span>
-                              </div>
-                            </div>
-
-                            <div className="sm:col-span-4">
-                              <label
-                                htmlFor="p-cover"
-                                className="block text-sm font-medium text-gray-700"
-                              >
-                                Percentage of pervious surface
-                              </label>
-                              <div className="mt-1 flex rounded-md shadow-sm">
-                                <input
-                                  type="number"
-                                  name="p-cover"
-                                  id="p-cover"
-                                  defaultValue={perviousPercent}
-                                  onChange={(e) => {
-                                    setPerviousPercent(e.target.value);
-                                  }}
-                                  max="100"
-                                  className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-l-md sm:text-sm border-gray-300"
-                                />
-                                <span className="inline-flex items-center px-3 rounded-r-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
-                                  %
-                                </span>
-                              </div>
-                            </div>
-
-                            <div className="sm:col-span-4">
-                              <h3 className="text-lg leading-6 font-medium text-gray-900">
-                                Tree information
-                              </h3>
-                            </div>
-
-                            <div className="sm:col-span-3">
-                              <label
-                                htmlFor="tree-number"
-                                className="block text-sm font-medium text-gray-700"
-                              >
-                                Number of existing trees
-                              </label>
-                              <div className="mt-1">
-                                <input
-                                  type="number"
-                                  onChange={(e) => {
-                                    setNumberOfTrees(e.target.value);
-                                  }}
-                                  name="tree-number"
-                                  defaultValue={numberOfTrees}
-                                  id="tree-number"
-                                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                />
-                              </div>
-                            </div>
-
-                            <div className="sm:col-span-3">
-                              <label
-                                htmlFor="tree-number"
-                                className="block text-sm font-medium text-gray-700"
-                              >
-                                Number of new trees
-                              </label>
-                              <div className="mt-1">
-                                <input
-                                  type="number"
-                                  onChange={(e) =>
-                                    setNewNumberOfTrees(e.target.value)
-                                  }
-                                  name="tree-number"
-                                  id="tree-number"
-                                  defaultValue={newNumberOfTrees}
-                                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                />
-                              </div>
-                            </div>
-
-                            <div className="sm:col-span-4">
-                              <label
-                                htmlFor="DBH"
-                                className="block text-sm font-medium text-gray-700"
-                              >
-                                Average diameter at breast height (DBH)
-                              </label>
-                              <div className="mt-1 flex rounded-md shadow-sm">
-                                <input
-                                  type="number"
-                                  onChange={(e) => {
-                                    setDBH(e.target.value);
-                                  }}
-                                  name="DBH"
-                                  id="DBH"
-                                  defaultValue={dbh}
-                                  className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-l-md sm:text-sm border-gray-300"
-                                />
-                                <span className="inline-flex items-center px-3 rounded-r-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
-                                  cm
-                                </span>
-                              </div>
-                            </div>
-
-                            <div className="sm:col-span-4">
-                              <label
-                                htmlFor="evergreen"
-                                className="block text-sm font-medium text-gray-700"
-                              >
-                                Percentage of evergreen trees
-                              </label>
-                              <div className="mt-1 flex rounded-md shadow-sm">
-                                <input
-                                  type="number"
-                                  name="evergreen"
-                                  id="evergreen"
-                                  defaultValue={evergreenPercent}
-                                  onChange={(e) => {
-                                    setEvergreenPercent(e.target.value);
-                                  }}
-                                  max="100"
-                                  className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-l-md sm:text-sm border-gray-300"
-                                />
-                                <span className="inline-flex items-center px-3 rounded-r-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
-                                  %
-                                </span>
-                              </div>
-                            </div>
-
-                            <div className="sm:col-span-4">
-                              <label
-                                htmlFor="decidious"
-                                className="block text-sm font-medium text-gray-700"
-                              >
-                                Percentage of decidious trees
-                              </label>
-                              <div className="mt-1 flex rounded-md shadow-sm">
-                                <input
-                                  type="number"
-                                  name="decidious"
-                                  id="decidious"
-                                  max="100"
-                                  defaultValue={decidiousPercent}
-                                  onChange={(e) => {
-                                    setDecidiousPercent(e.target.value);
-                                  }}
-                                  className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-l-md sm:text-sm border-gray-300"
-                                />
-                                <span className="inline-flex items-center px-3 rounded-r-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
-                                  %
-                                </span>
-                              </div>
-                            </div>
-
-                            <div className="sm:col-span-4">
-                              <label
-                                htmlFor="username"
-                                className="block text-sm font-medium text-gray-700"
-                              >
-                                Existing Maintenance costs
-                              </label>
-                              <div className="mt-1 flex rounded-md shadow-sm">
-                                <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
-                                  £
-                                </span>
-                                <input
-                                  type="number"
-                                  name="cost"
-                                  defaultValue={maintenanceCost}
-                                  onChange={(e) =>
-                                    setMaintenanceCost(e.target.value)
-                                  }
-                                  id="cost"
-                                  min="0.01"
-                                  step="0.01"
-                                  data-number-to-fixed="2"
-                                  data-number-stepfactor="100"
-                                  className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none  sm:text-sm border-gray-300"
-                                />
-                                <span className="inline-flex items-center px-3 rounded-r-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
-                                  per year
-                                </span>
-                              </div>
-                            </div>
-
-                            <div className="sm:col-span-4">
-                              <label
-                                htmlFor="username"
-                                className="block text-sm font-medium text-gray-700"
-                              >
-                                New Maintenance costs
-                              </label>
-                              <div className="mt-1 flex rounded-md shadow-sm">
-                                <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
-                                  £
-                                </span>
-                                <input
-                                  type="number"
-                                  name="cost"
-                                  onChange={(e) =>
-                                    setMaintenanceCost(e.target.value)
-                                  }
-                                  id="cost"
-                                  min="0.01"
-                                  step="0.01"
-                                  data-number-to-fixed="2"
-                                  data-number-stepfactor="100"
-                                  className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none  sm:text-sm border-gray-300"
-                                />
-                                <span className="inline-flex items-center px-3 rounded-r-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
-                                  per year
-                                </span>
-                              </div>
-                            </div>
-
-                            <div className="sm:col-span-4">
-                              <h3 className="text-lg leading-6 font-medium text-gray-900">
-                                What activities do you have planned?
-                              </h3>
-                            </div>
-                            <div className="rounded-md bg-green-50 p-4 mt-2">
-                              <div className="flex">
-                                <div className="flex-shrink-0">
-                                  <InformationCircleIcon
-                                    className="h-5 w-5 text-green-400"
-                                    aria-hidden="true"
+                              <div className="sm:col-span-3">
+                                <label
+                                  htmlFor="project-name"
+                                  className="block text-sm font-medium text-gray-700"
+                                >
+                                  Project name
+                                </label>
+                                <div className="mt-1">
+                                  <input
+                                    type="text"
+                                    name="project-name"
+                                    id="project-name"
+                                    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                                   />
                                 </div>
-                                <div className="ml-3">
-                                  <h3 className="text-sm font-medium text-green-800">
-                                    Activities are in progress. Give us feedback
-                                    and learn about our <u>methodology</u>
+                              </div>
+
+                              <div className="sm:col-span-3 mt-4">
+                                <label
+                                  htmlFor="project-name"
+                                  className="block text-sm font-medium text-gray-700"
+                                >
+                                  Project short description
+                                </label>
+                                <div className="mt-1">
+                                  <input
+                                    type="text"
+                                    name="project-name"
+                                    id="project-name"
+                                    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                  />
+                                </div>
+                              </div>
+
+                              <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-1">
+                                <div className="sm:col-span-4">
+                                  <h3 className="text-lg leading-6 font-medium text-gray-900">
+                                    Site information
                                   </h3>
+                                </div>
+
+                                <div className="sm:col-span-3">
+                                  <label
+                                    htmlFor="project-location"
+                                    className="block text-sm font-medium text-gray-700"
+                                  >
+                                    Location
+                                  </label>
+                                  <div className="mt-1">
+                                    <input
+                                      type="text"
+                                      name="project-location"
+                                      id="project-location"
+                                      className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                    />
+                                  </div>
+                                </div>
+
+                                <div className="sm:col-span-4">
+                                  <label
+                                    htmlFor="i-cover"
+                                    className="block text-sm font-medium text-gray-700"
+                                  >
+                                    Percentage of impervious surface
+                                  </label>
+                                  <div className="mt-1 flex rounded-md shadow-sm">
+                                    <input
+                                      type="number"
+                                      name="i-cover"
+                                      id="i-cover"
+                                      defaultValue={imperviousPercent}
+                                      onChange={(e) => {
+                                        setImperviousPercent(e.target.value);
+                                      }}
+                                      max="100"
+                                      className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-l-md sm:text-sm border-gray-300"
+                                    />
+                                    <span className="inline-flex items-center px-3 rounded-r-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                      %
+                                    </span>
+                                  </div>
+                                </div>
+
+                                <div className="sm:col-span-4">
+                                  <h3 className="text-lg leading-6 font-medium text-gray-900">
+                                    Tree information
+                                  </h3>
+                                </div>
+
+                                <div className="sm:col-span-3">
+                                  <label
+                                    htmlFor="tree-number"
+                                    className="block text-sm font-medium text-gray-700"
+                                  >
+                                    Number of existing trees
+                                  </label>
+                                  <div className="mt-1">
+                                    <input
+                                      type="number"
+                                      onChange={(e) => {
+                                        setNumberOfTrees(e.target.value);
+                                      }}
+                                      name="tree-number"
+                                      defaultValue={numberOfTrees}
+                                      id="tree-number"
+                                      className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                    />
+                                  </div>
+                                </div>
+
+                                <div className="sm:col-span-3">
+                                  <label
+                                    htmlFor="tree-number"
+                                    className="block text-sm font-medium text-gray-700"
+                                  >
+                                    Number of new trees
+                                  </label>
+                                  <div className="mt-1">
+                                    <input
+                                      type="number"
+                                      onChange={(e) =>
+                                        setNewNumberOfTrees(e.target.value)
+                                      }
+                                      name="tree-number"
+                                      id="tree-number"
+                                      defaultValue={newNumberOfTrees}
+                                      className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                    />
+                                  </div>
+                                </div>
+
+                                <div className="sm:col-span-4">
+                                  <label
+                                    htmlFor="DBH"
+                                    className="block text-sm font-medium text-gray-700"
+                                  >
+                                    Average diameter at breast height (DBH)
+                                  </label>
+                                  <div className="mt-1 flex rounded-md shadow-sm">
+                                    <input
+                                      type="number"
+                                      onChange={(e) => {
+                                        setDBH(e.target.value);
+                                      }}
+                                      name="DBH"
+                                      id="DBH"
+                                      defaultValue={dbh}
+                                      className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-l-md sm:text-sm border-gray-300"
+                                    />
+                                    <span className="inline-flex items-center px-3 rounded-r-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                      cm
+                                    </span>
+                                  </div>
+                                </div>
+
+                                <div className="sm:col-span-4">
+                                  <label
+                                    htmlFor="evergreen"
+                                    className="block text-sm font-medium text-gray-700"
+                                  >
+                                    Percentage of evergreen trees
+                                  </label>
+                                  <div className="mt-1 flex rounded-md shadow-sm">
+                                    <input
+                                      type="number"
+                                      name="evergreen"
+                                      id="evergreen"
+                                      defaultValue={evergreenPercent}
+                                      onChange={(e) => {
+                                        setEvergreenPercent(e.target.value);
+                                      }}
+                                      max="100"
+                                      className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-l-md sm:text-sm border-gray-300"
+                                    />
+                                    <span className="inline-flex items-center px-3 rounded-r-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                      %
+                                    </span>
+                                  </div>
+                                </div>
+
+                                <div className="sm:col-span-4">
+                                  <label
+                                    htmlFor="decidious"
+                                    className="block text-sm font-medium text-gray-700"
+                                  >
+                                    Percentage of decidious trees
+                                  </label>
+                                  <div className="mt-1 flex rounded-md shadow-sm">
+                                    <input
+                                      type="number"
+                                      name="decidious"
+                                      id="decidious"
+                                      max="100"
+                                      defaultValue={decidiousPercent}
+                                      onChange={(e) => {
+                                        setDecidiousPercent(e.target.value);
+                                      }}
+                                      className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-l-md sm:text-sm border-gray-300"
+                                    />
+                                    <span className="inline-flex items-center px-3 rounded-r-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                      %
+                                    </span>
+                                  </div>
+                                </div>
+
+                                <div className="sm:col-span-4">
+                                  <label
+                                    htmlFor="username"
+                                    className="block text-sm font-medium text-gray-700"
+                                  >
+                                    Existing Maintenance costs
+                                  </label>
+                                  <div className="mt-1 flex rounded-md shadow-sm">
+                                    <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                      £
+                                    </span>
+                                    <input
+                                      type="number"
+                                      name="cost"
+                                      defaultValue={maintenanceCost}
+                                      onChange={(e) =>
+                                        setMaintenanceCost(e.target.value)
+                                      }
+                                      id="cost"
+                                      min="0.01"
+                                      step="0.01"
+                                      data-number-to-fixed="2"
+                                      data-number-stepfactor="100"
+                                      className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none  sm:text-sm border-gray-300"
+                                    />
+                                    <span className="inline-flex items-center px-3 rounded-r-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                      per year
+                                    </span>
+                                  </div>
+                                </div>
+
+                                <div className="sm:col-span-4">
+                                  <label
+                                    htmlFor="username"
+                                    className="block text-sm font-medium text-gray-700"
+                                  >
+                                    New Maintenance costs
+                                  </label>
+                                  <div className="mt-1 flex rounded-md shadow-sm">
+                                    <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                      £
+                                    </span>
+                                    <input
+                                      type="number"
+                                      name="cost"
+                                      onChange={(e) =>
+                                        setMaintenanceCost(e.target.value)
+                                      }
+                                      id="cost"
+                                      min="0.01"
+                                      step="0.01"
+                                      data-number-to-fixed="2"
+                                      data-number-stepfactor="100"
+                                      className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none  sm:text-sm border-gray-300"
+                                    />
+                                    <span className="inline-flex items-center px-3 rounded-r-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                      per year
+                                    </span>
+                                  </div>
+                                </div>
+
+                                <div className="sm:col-span-4">
+                                  <h3 className="text-lg leading-6 font-medium text-gray-900">
+                                    What activities do you have planned?
+                                  </h3>
+                                </div>
+                                <div className="rounded-md bg-green-50 p-4 mt-2">
+                                  <div className="flex">
+                                    <div className="flex-shrink-0">
+                                      <InformationCircleIcon
+                                        className="h-5 w-5 text-green-400"
+                                        aria-hidden="true"
+                                      />
+                                    </div>
+                                    <div className="ml-3">
+                                      <h3 className="text-sm font-medium text-green-800">
+                                        Activities are in progress. Give us
+                                        feedback and learn about our{" "}
+                                        <u>methodology</u>
+                                      </h3>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <fieldset className="space-y-5">
+                                <legend className="sr-only">Activities</legend>
+                                <div className="relative flex items-start">
+                                  <div className="flex items-center h-5">
+                                    <input
+                                      id="planting"
+                                      aria-describedby="planting"
+                                      name="planting"
+                                      type="checkbox"
+                                      className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                    />
+                                  </div>
+                                  <div className="ml-3 text-sm">
+                                    <label
+                                      htmlFor="planting"
+                                      className="font-medium text-gray-700"
+                                    >
+                                      🌱 Planting
+                                    </label>
+                                    <p
+                                      id="offers-description"
+                                      className="text-gray2"
+                                    >
+                                      By reducing energy demand and absorbing
+                                      carbon dioxide, trees and vegetation
+                                      decrease the production and negative
+                                      effects of air pollution and greenhouse
+                                      gas emissions.
+                                    </p>
+                                  </div>
+                                </div>
+                                <div className="relative flex items-start">
+                                  <div className="flex items-center h-5">
+                                    <input
+                                      id="preservation"
+                                      aria-describedby="preservation"
+                                      name="preservation"
+                                      type="checkbox"
+                                      className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                    />
+                                  </div>
+                                  <div className="ml-3 text-sm">
+                                    <label
+                                      htmlFor="preservation"
+                                      className="font-medium text-gray-700"
+                                    >
+                                      🐛 Preservation
+                                    </label>
+                                    <p
+                                      id="offers-description"
+                                      className="text-gray2"
+                                    >
+                                      Invest in a series of projects that
+                                      legally demonstrate the preservation of
+                                      trees either via a Tree Preservation Order
+                                      or by changing land use
+                                    </p>
+                                  </div>
+                                </div>
+                                <div className="relative flex items-start">
+                                  <div className="flex items-center h-5">
+                                    <input
+                                      id="maintenance"
+                                      aria-describedby="maintenance"
+                                      name="maintenance"
+                                      type="checkbox"
+                                      className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                    />
+                                  </div>
+                                  <div className="ml-3 text-sm">
+                                    <label
+                                      htmlFor="maintenance"
+                                      className="font-medium text-gray-700"
+                                    >
+                                      🪓 Maintenance
+                                    </label>
+                                    <p
+                                      id="offers-description"
+                                      className="text-gray2"
+                                    >
+                                      Invest in a series of projects that are
+                                      focused on the intensive care and
+                                      maintenance of existing trees, centred on
+                                      strategic inspection, pruning, and
+                                      managing pests and diseases.
+                                    </p>
+                                  </div>
+                                </div>
+                              </fieldset>
+                              <div className="pt-5">
+                                <div className="flex justify-end">
+                                  <button
+                                    onClick={(e) => calculate_button_click(e)}
+                                    className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                  >
+                                    Calculate Impact
+                                  </button>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <RadioGroup value={selected} onChange={setSelected}>
-                            <RadioGroup.Label className="sr-only">
-                              Privacy setting
-                            </RadioGroup.Label>
-                            <div className="bg-white rounded-md -space-y-px">
-                              {settings.map((setting, settingIdx) => (
-                                <RadioGroup.Option
-                                  key={setting.name}
-                                  value={setting}
-                                  className={({ checked }) =>
-                                    classNames(
-                                      settingIdx === 0
-                                        ? "rounded-tl-md rounded-tr-md"
-                                        : "",
-                                      settingIdx === settings.length - 1
-                                        ? "rounded-bl-md rounded-br-md"
-                                        : "",
-                                      checked
-                                        ? "bg-indigo-50 border-indigo-200 z-10"
-                                        : "border-gray-200",
-                                      "relative border p-4 flex cursor-pointer focus:outline-none"
-                                    )
-                                  }
-                                >
-                                  {({ active, checked }) => (
-                                    <>
-                                      <span
-                                        className={classNames(
-                                          checked
-                                            ? "bg-indigo-600 border-transparent"
-                                            : "bg-white border-gray-300",
-                                          active
-                                            ? "ring-2 ring-offset-2 ring-indigo-500"
-                                            : "",
-                                          "h-4 w-4 mt-0.5 cursor-pointer rounded-full border flex items-center justify-center"
-                                        )}
-                                        aria-hidden="true"
-                                      >
-                                        <span className="rounded-full bg-white w-1.5 h-1.5" />
-                                      </span>
-                                      <div className="ml-3 flex flex-col">
-                                        <RadioGroup.Label
-                                          as="span"
-                                          className={classNames(
-                                            checked
-                                              ? "text-indigo-900"
-                                              : "text-gray-900",
-                                            "block text-sm font-medium"
-                                          )}
-                                        >
-                                          {setting.name}
-                                        </RadioGroup.Label>
-                                        <RadioGroup.Description
-                                          as="span"
-                                          className={classNames(
-                                            checked
-                                              ? "text-indigo-700"
-                                              : "text-gray-500",
-                                            "block text-sm"
-                                          )}
-                                        >
-                                          {setting.description}
-                                        </RadioGroup.Description>
-                                      </div>
-                                    </>
-                                  )}
-                                </RadioGroup.Option>
-                              ))}
-                            </div>
-                          </RadioGroup>
-                          <div className="pt-5">
-                            <div className="flex justify-end">
-                              <button
-                                onClick={(e) => calculate_button_click(e)}
-                                className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                              >
-                                Calculate Impact
-                              </button>
-                            </div>
-                          </div>
-                        </div>
+                        </form>
                       </div>
-                    </form>
+                    </div>
+                    <div className="steward"></div>
                   </div>
                   <div className="bg-gray">
                     <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
@@ -903,9 +887,9 @@ export default function Steward() {
                       <div className="flex justify-start">
                         <button
                           onClick={(e) => back(e)}
-                          className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                          className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
                         >
-                          Back to project details
+                          Back
                         </button>
                       </div>
                     </div>
@@ -1037,9 +1021,9 @@ export default function Steward() {
                       <div className="flex justify-start">
                         <button
                           onClick={(e) => back(e)}
-                          className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                          className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
                         >
-                          Back to impact review
+                          Back
                         </button>
                       </div>
                     </div>
@@ -1151,9 +1135,9 @@ export default function Steward() {
                     <div className="flex justify-start">
                       <button
                         onClick={(e) => back(e)}
-                        className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
                       >
-                        Back to maintenance review
+                        Back
                       </button>
                     </div>
                   </div>
@@ -1295,16 +1279,7 @@ export default function Steward() {
             case 4:
               return (
                 <div>
-                  <div className="pt-5">
-                    <div className="flex justify-start">
-                      <button
-                        onClick={(e) => back(e)}
-                        className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      >
-                        Back to protocol review
-                      </button>
-                    </div>
-                  </div>
+                  <div className="pt-5"></div>
                   <div className="relative max-w-7xl mx-auto md:grid-cols-2 lg:grid lg:grid-cols-2 sm:grid-cols-1">
                     <div className="add-to-market"></div>
                     <div className="bg-gray-50 py-16 px-4">
@@ -1320,6 +1295,16 @@ export default function Steward() {
                           </p>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                  <div className="pt-40">
+                    <div className="flex justify-end">
+                      <Link
+                        to="/invest-in-nature/glasgow"
+                        className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      >
+                        Invest in Glasgow
+                      </Link>
                     </div>
                   </div>
                 </div>
