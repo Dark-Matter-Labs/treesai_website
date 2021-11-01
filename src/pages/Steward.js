@@ -641,7 +641,7 @@ export default function Steward() {
                                     htmlFor="decidious"
                                     className="block text-sm font-medium text-gray-700"
                                   >
-                                    Percentage of decidious trees
+                                    Percentage of deciduous trees
                                   </label>
                                   <div className="mt-1 flex rounded-md shadow-sm">
                                     <input

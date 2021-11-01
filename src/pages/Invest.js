@@ -75,7 +75,7 @@ export default function Invest() {
                     What are your desired carbon outcomes?
                   </h3>
                   <p>
-                    Invest in nature to offsett your residual carbon emissions
+                    Invest in nature to offset your residual carbon emissions
                   </p>
                   <div className="flex flex-wrap space-x-4" aria-label="Tabs">
                     <div className="w-full">
