@@ -92,10 +92,6 @@ iframe {
   height: 800px;
 }
 
-.pie {
-  width: 30%;
-}
-
 #marker {
   background-image: url("https://docs.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg");
   background-size: cover;

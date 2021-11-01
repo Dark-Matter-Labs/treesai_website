@@ -221,167 +221,50 @@ export default function Glasgow() {
               ))}
             </ol>
           </nav>
-          <div className="mb-10">
-            <div className="py-10">
-              <h2 className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
-                Glasgow’s Nature Atlas{" "}
-              </h2>
-              <p>
-                <b>
-                  This atlas hosts a portion of a Glasgow magical natural
-                  ecosystem, from ancient street trees to wild meadows.
-                </b>{" "}
-                <br />
-                Its power lies in cooling down heatwaves, retaining water,
-                storing carbon and reducing polluted particulate matters
-                ingested by our children.{" "}
-              </p>
-            </div>
-            <Link
-              to="/invest-in-nature/glasgow/invest"
-              className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
-            >
-              Invest
-            </Link>
-          </div>
-          <div className="h-full w-full">
-            <ReactMapGL
-              {...viewport}
-              mapStyle="mapbox://styles/mapbox/light-v10"
-              onViewportChange={setViewport}
-              mapboxApiAccessToken={MAPBOX_TOKEN}
-              onClick={onClick}
-              ref={mapRef}
-              onHover={onHover}
-              interactiveLayerIds={["trees"]}
-            >
-              <Source id="trees" type="geojson" data={trees} cluster={false}>
-                <Layer {...unclusteredPointLayer} />
-              </Source>
-              {hoverInfo && (
-                <div
-                  className="tooltip"
-                  style={{ left: hoverInfo.x, top: hoverInfo.y }}
+          <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
+            <div className="mb-10">
+              <div className="py-10">
+                <h2 className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
+                  Glasgow’s Nature Atlas{" "}
+                </h2>
+                <Link
+                  to="/invest-in-nature/glasgow/invest"
+                  className="mt-2 mb-4 bg-blue border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-white hover:bg-blue2"
                 >
-                  <div>Tree ID: {hoverInfo.feature.properties.Tree_Id}</div>
-                  <div>Species: {hoverInfo.feature.properties.Species}</div>
-                  <div>Height: {hoverInfo.feature.properties.Height}</div>
-                  <div>DBH: {hoverInfo.feature.properties.Spread}</div>
-                  <div>Location: {hoverInfo.feature.properties.Location}</div>
-                </div>
-              )}
-            </ReactMapGL>
-          </div>
-
-          <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-2">
-            <div className="bg-indigo-600">
-              <div className="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-                <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                  <span className="block">
-                    Get rewarded for caring for Glasgow’s Nature
-                  </span>
-                </h2>
-                <div className="mt-8 flex justify-center">
-                  <div className="inline-flex rounded-md shadow">
-                    <Link
-                      to="/become-a-steward"
-                      className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-indigo-700"
-                    >
-                      Steward
-                    </Link>
+                  Invest
+                </Link>
+                <p>
+                  <b>
+                    This atlas hosts a portion of a Glasgow magical natural
+                    ecosystem, from ancient street trees to wild meadows.
+                  </b>{" "}
+                  <br />
+                  Its power lies in cooling down heatwaves, retaining water,
+                  storing carbon and reducing polluted particulate matters
+                  ingested by our children.{" "}
+                </p>
+              </div>
+              <div className="rounded-md bg-green-50 p-4 mt-5">
+                <div className="flex">
+                  <div className="flex-shrink-0">
+                    <InformationCircleIcon
+                      className="h-5 w-5 text-green-400"
+                      aria-hidden="true"
+                    />
                   </div>
-                  <div className="ml-3 inline-flex">
-                    <Link
-                      to="/faq"
-                      className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
-                    >
-                      Learn more
-                    </Link>
+                  <div className="ml-3">
+                    <h3 className="text-sm font-medium text-green-800">
+                      This is an estimate. Learn about our <u>methodology</u>
+                    </h3>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="bg-blue">
-              <div className="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-                <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                  <span className="block">
-                    Gift your garden’s environmental services to future
-                    generations
-                  </span>
-                </h2>
-                <div className="mt-8 flex justify-center">
-                  <div className="inline-flex rounded-md shadow">
-                    <Link
-                      to="/gift"
-                      className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-indigo-700"
-                    >
-                      Gift
-                    </Link>
-                  </div>
-                  <div className="ml-3 inline-flex">
-                    <Link
-                      to="/faq"
-                      className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
-                    >
-                      Learn more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-green4">
-              <div className="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-                <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                  <span className="block">
-                    Invest in Glasgow’s environmental services
-                  </span>
-                </h2>
-                <div className="mt-8 flex justify-center">
-                  <div className="inline-flex rounded-md shadow">
-                    <Link
-                      to="/invest-in-nature/glasgow/invest"
-                      className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-indigo-700"
-                    >
-                      Invest
-                    </Link>
-                  </div>
-                  <div className="ml-3 inline-flex">
-                    <Link
-                      to="/faq"
-                      className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
-                    >
-                      Learn more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="px-40 center">
-            <div className="rounded-md bg-green-50 p-4 mt-10">
-              <div className="flex">
-                <div className="flex-shrink-0">
-                  <InformationCircleIcon
-                    className="h-5 w-5 text-green-400"
-                    aria-hidden="true"
-                  />
-                </div>
-                <div className="ml-3">
-                  <h3 className="text-sm font-medium text-green-800">
-                    This is an estimate. Learn about our <u>methodology</u>
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div className="flex-shrink-0 pt-10">
-              <h3 className="text-lg leading-6 font-medium text-gray-900">
+              <h3 className="mt-2 text-lg leading-6 font-medium text-gray-900">
                 Environmental Services
               </h3>
-
               <h4 className="text-md leading-6 font-medium text-gray-900 m-2">
                 Physical Flows
               </h4>
-
               <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2">
                 <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                   <dt>
@@ -460,14 +343,13 @@ export default function Glasgow() {
                     Indicative valuation
                   </h4>
                 </div>
-                <div className="pie">
+                <div>
                   <Pie data={pieChartData} />
                 </div>
                 <div className="">
                   <p>£7.1m</p>
                 </div>
               </div>
-
               <h3 className="text-lg leading-6 font-medium text-gray-900 mt-10">
                 Highlights
               </h3>
@@ -571,42 +453,72 @@ export default function Glasgow() {
                 </div>
                 <Bar data={barChartData} />
               </div>
-              <div className="mt-5">
-                <h3 className="text-l text-gray-900 sm:text-xl py-5">
-                  Projects
-                </h3>
-                <div className="grid gap-y-10 gap-x-8 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-6">
-                  {projects.map((project) => (
-                    <div key={project.id} className="group relative">
-                      <div className="">
-                        <img
-                          src={project.imageSrc}
-                          alt={project.imageAlt}
-                          className=""
-                        />
-                      </div>
-                      <div className="mt-0 flex justify-between">
-                        <div>
-                          <h3 className="text-sm text-gray-700">
-                            <span
-                              aria-hidden="true"
-                              className="absolute inset-0"
-                            />
-                            {project.name}
-                          </h3>
-                          <p className="mt-1 text-sm text-gray2">
-                            {project.activity}
-                          </p>
-                          <p className="mt-1 text-sm text-gray2">
-                            {project.progress}
-                          </p>
-                        </div>
+              <h3 className="text-l text-gray-900 sm:text-xl py-5">Projects</h3>
+              <div className="grid gap-y-4 gap-x-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+                {projects.map((project) => (
+                  <div key={project.id} className="group relative">
+                    <div className="">
+                      <img
+                        src={project.imageSrc}
+                        alt={project.imageAlt}
+                        className=""
+                      />
+                    </div>
+                    <div className="mt-0 flex justify-between">
+                      <div>
+                        <h3 className="text-sm text-gray-700">
+                          <span
+                            aria-hidden="true"
+                            className="absolute inset-0"
+                          />
+                          {project.name}
+                        </h3>
+                        <p className="mt-1 text-sm text-gray2">
+                          {project.activity}
+                        </p>
+                        <p className="mt-1 text-sm text-gray2">
+                          {project.progress}
+                        </p>
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="h-full w-full">
+              <ReactMapGL
+                {...viewport}
+                mapStyle="mapbox://styles/mapbox/light-v10"
+                onViewportChange={setViewport}
+                mapboxApiAccessToken={MAPBOX_TOKEN}
+                onClick={onClick}
+                ref={mapRef}
+                onHover={onHover}
+                interactiveLayerIds={["trees"]}
+              >
+                <Source id="trees" type="geojson" data={trees} cluster={false}>
+                  <Layer {...unclusteredPointLayer} />
+                </Source>
+                {hoverInfo && (
+                  <div
+                    className="tooltip"
+                    style={{ left: hoverInfo.x, top: hoverInfo.y }}
+                  >
+                    <div>Tree ID: {hoverInfo.feature.properties.Tree_Id}</div>
+                    <div>Species: {hoverInfo.feature.properties.Species}</div>
+                    <div>Height: {hoverInfo.feature.properties.Height}</div>
+                    <div>DBH: {hoverInfo.feature.properties.Spread}</div>
+                    <div>Location: {hoverInfo.feature.properties.Location}</div>
+                  </div>
+                )}
+              </ReactMapGL>
+            </div>
+          </div>
+          <div className="px-40 center">
+            <div className="flex-shrink-0 pt-10">
+              <div className="mt-5">
                 <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-                  <div className="bg-indigo-700 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+                  <div className="bg-green3 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
                     <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
                       <div className="lg:self-center">
                         <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
@@ -645,7 +557,7 @@ export default function Glasgow() {
                   </div>
                 </div>
                 <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-                  <div className="bg-green3 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+                  <div className="bg-blue rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
                     <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
                       <div className="lg:self-center">
                         <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
@@ -673,6 +585,12 @@ export default function Glasgow() {
                         >
                           Get started
                         </Link>
+                        <Link
+                          to="/invest-in-nature/glasgow/invest/portfolio"
+                          className="mt-8 ml-4 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
+                        >
+                          View a sample portfolio
+                        </Link>
                       </div>
                     </div>
                     <div className="-mt-6">
@@ -685,7 +603,7 @@ export default function Glasgow() {
                   </div>
                 </div>
                 <div className="max-w-8xl mx-auto py-16 px-2 sm:px-6 lg:px-2">
-                  <div className="bg-blue rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+                  <div className="bg-indigo-700 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
                     <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
                       <div className="lg:self-center">
                         <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
