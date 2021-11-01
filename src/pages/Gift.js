@@ -43,7 +43,7 @@ function classNames(...classes) {
 export default function Gift() {
   return (
     <div>
-      <NavBar />
+      <NavBar current="gift" />
       <div className="md:grid-cols-2 lg:grid lg:grid-cols-2 sm:grid-cols-1">
         <div className="gift"></div>
         <div className="bg-gray-50 py-16 px-4">

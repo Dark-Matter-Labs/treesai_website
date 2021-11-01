@@ -176,7 +176,7 @@ export default function Glasgow() {
 
   return (
     <>
-      <NavBarGlasgow />
+      <NavBarGlasgow current="invest" />
       <div className="bg-gray">
         <div className="max-w-4xl mx-auto py-5 px-4 sm:py-24 sm:px-6 lg:px-4">
           <div className="text-center">

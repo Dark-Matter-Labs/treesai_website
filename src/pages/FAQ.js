@@ -42,7 +42,7 @@ const faqs = [
 export default function FAQ() {
   return (
     <>
-      <NavBar />
+      <NavBar current="faq" />
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
           <div className="max-w-2xl lg:mx-auto">

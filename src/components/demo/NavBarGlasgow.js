@@ -3,7 +3,11 @@ import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
 
-export default function NavBarGlasgow() {
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
+export default function NavBarGlasgow(props) {
   return (
     <Disclosure as="nav" className="bg-gcc shadow">
       {({ open }) => (
@@ -44,25 +48,45 @@ export default function NavBarGlasgow() {
                   </a>
                   <Link
                     to="/become-a-steward"
-                    className="border-transparent text-white hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className={classNames(
+                      props.current === "steward"
+                        ? "border-indigo-500 text-gray-900"
+                        : "border-transparent text-gray-500",
+                      "over:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    )}
                   >
                     Become a steward
                   </Link>
                   <Link
                     to="/invest-in-nature"
-                    className="border-indigo-500 text-gray2 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className={classNames(
+                      props.current === "invest"
+                        ? "border-indigo-500 text-gray-900"
+                        : "border-transparent text-gray-500",
+                      "over:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    )}
                   >
                     Invest in nature
                   </Link>
                   <Link
                     to="/gift"
-                    className="border-transparent text-white hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className={classNames(
+                      props.current === "gift"
+                        ? "border-indigo-500 text-gray-900"
+                        : "border-transparent text-gray-500",
+                      "over:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    )}
                   >
                     Gift to Future
                   </Link>
                   <Link
                     to="/faq"
-                    className="border-transparent text-white hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className={classNames(
+                      props.current === "faq"
+                        ? "border-indigo-500 text-gray-900"
+                        : "border-transparent text-gray-500",
+                      "over:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    )}
                   >
                     FAQ
                   </Link>

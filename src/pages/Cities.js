@@ -111,7 +111,7 @@ export default function Cities() {
 
   return (
     <>
-      <NavBar />
+      <NavBar current="invest" />
       <div className="bg-gray py-16 sm:py-24 lg:py-20 px-16">
         <nav className="flex" aria-label="Breadcrumb">
           <ol className="flex items-center space-x-4">

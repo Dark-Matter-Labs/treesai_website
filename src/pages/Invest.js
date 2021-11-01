@@ -56,7 +56,7 @@ export default function Invest() {
 
   return (
     <>
-      <NavBarGlasgow />
+      <NavBarGlasgow current="invest" />
       {(() => {
         switch (pageState) {
           case 0:
@@ -850,12 +850,12 @@ export default function Invest() {
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
                                         checked={maintenanceCheck}
-                                        onChange={() =>{
-                                          console.log('yo')
-                                          setMaintenanceCheck(!maintenanceCheck)
-                                        }
-                                          
-                                        }
+                                        onChange={() => {
+                                          console.log("yo");
+                                          setMaintenanceCheck(
+                                            !maintenanceCheck
+                                          );
+                                        }}
                                       />
                                     </div>
                                     <div className="ml-3 text-sm">

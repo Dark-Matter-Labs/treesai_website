@@ -67,7 +67,7 @@ const faqs = [
 export default function StewardMain() {
   return (
     <>
-      <NavBar />
+      <NavBar current="steward" />
       <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
         <div className="bg-black y-16 sm:py-24 lg:py-20 px-16">
           <nav className="flex" aria-label="Breadcrumb">
