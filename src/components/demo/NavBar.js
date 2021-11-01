@@ -49,7 +49,7 @@ export default function NavBar() {
                     Become a steward
                   </Link>
                   <Link
-                    to="/invest-in-nature/glasgow/invest"
+                    to="/invest-in-nature"
                     className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
                     Invest in nature
