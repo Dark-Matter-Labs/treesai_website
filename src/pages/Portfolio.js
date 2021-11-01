@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import { Bar } from "react-chartjs-2";
+import { XIcon } from "@heroicons/react/outline";
 
 import NavBar from "../components/demo/NavBarGlasgow";
 
@@ -200,10 +201,31 @@ export default function Portfolio() {
   return (
     <>
       <NavBar />
+      <div className="relative bg-indigo-600">
+        <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+          <div className="pr-16 sm:text-center sm:px-16">
+            <p className="font-medium text-white">
+              <span className="md:inline">
+                Congratulations! You are supporting 10% of Glasgow’s carbon
+                capacity production.
+              </span>
+            </p>
+          </div>
+          <div className="absolute inset-y-0 right-0 pt-1 pr-1 flex items-start sm:pt-1 sm:pr-2 sm:items-start">
+            <button
+              type="button"
+              className="flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white"
+            >
+              <span className="sr-only">Dismiss</span>
+              <XIcon className="h-6 w-6 text-white" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+      </div>
       <div className="bg-gray py-16 sm:py-24 lg:py-20 px-16">
         <div className="mt-10">
           <h2 className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
-            Natasha’s Nature Portfolio
+            Tesla’s Nature Portfolio
           </h2>
           <p className="mt-3 text-lg font-regular text-gray-500">
             This is a sample portfolio to track your investments in time
@@ -240,6 +262,23 @@ export default function Portfolio() {
                 </p>
               </dd>
             </div>
+          </div>
+        </div>
+        <div className="bg-gray py-16 sm:py-24 lg:py-20 px-16">
+          <h2 className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
+            Your portfolio performance
+          </h2>
+          <p className="mt-3 text-lg font-regular text-gray-500">
+            Carbon stored over time
+          </p>
+          <div className="chart-size">
+            <Bar data={carbon_data} options={carbon_options} />
+          </div>
+          <p className="mt-3 text-lg font-regular text-gray-500">
+            Water retained over time
+          </p>
+          <div className="chart-size">
+            <Bar data={stormwater_data} options={stormwater_options} />
           </div>
         </div>
         <h3 className="text-l text-gray-900 sm:text-xl py-5">
@@ -279,22 +318,31 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="bg-gray py-16 sm:py-24 lg:py-20 px-16">
-        <h2 className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
-          Your portfolio performance
-        </h2>
-        <p className="mt-3 text-lg font-regular text-gray-500">
-          Carbon stored over time
-        </p>
-        <div className="chart-size">
-          <Bar data={carbon_data} options={carbon_options} />
+        <div className="pt-10">
+          <div className="flex justify-center">
+            <button
+              disabled={true}
+              className="disabled:opacity-50 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              🔽 Download Report(Coming Soon)
+            </button>
+          </div>
         </div>
-        <p className="mt-3 text-lg font-regular text-gray-500">
-          Water retained over time
-        </p>
-        <div className="chart-size">
-          <Bar data={stormwater_data} options={stormwater_options} />
+        <div className="pt-10">
+          <div className="flex justify-center">
+            <button
+              disabled
+              className="disabled:opacity-50 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              Add to portfolio(Coming Soon)
+            </button>
+            <button
+              disabled
+              className="disabled:opacity-50 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              Renew Contract(Coming Soon)
+            </button>
+          </div>
         </div>
         <div className="pt-10">
           <div className="flex justify-end">
@@ -307,6 +355,7 @@ export default function Portfolio() {
           </div>
         </div>
       </div>
+
       <div className="bg-gray">
         <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
           <div className="mt-6 pt-10">
