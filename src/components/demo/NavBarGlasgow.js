@@ -29,12 +29,12 @@ export default function NavBarGlasgow(props) {
                 <div className="flex-shrink-0 flex items-center">
                   <img
                     className="block lg:hidden h-8 w-auto"
-                    src="assets/TreesAI_logo_Glasgow.svg"
+                    src="assets/TreesAI_logo_Glasgow.png"
                     alt="TreesAI logo"
                   />
                   <img
                     className="hidden lg:block h-8 w-auto"
-                    src="assets/TreesAI_logo_Glasgow.svg"
+                    src="assets/TreesAI_logo_Glasgow.png"
                     alt="TreesAI logo"
                   />
                 </div>
@@ -50,8 +50,8 @@ export default function NavBarGlasgow(props) {
                     to="/become-a-steward"
                     className={classNames(
                       props.current === "steward"
-                        ? "border-indigo-500 text-gray-900"
-                        : "border-transparent text-gray-500",
+                        ? "border-indigo-500 text-gray3"
+                        : "border-transparent text-white",
                       "over:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                     )}
                   >
@@ -61,8 +61,8 @@ export default function NavBarGlasgow(props) {
                     to="/invest-in-nature"
                     className={classNames(
                       props.current === "invest"
-                        ? "border-indigo-500 text-gray-900"
-                        : "border-transparent text-gray-500",
+                        ? "border-indigo-500 text-gray3"
+                        : "border-transparent text-white",
                       "over:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                     )}
                   >
@@ -72,8 +72,8 @@ export default function NavBarGlasgow(props) {
                     to="/gift"
                     className={classNames(
                       props.current === "gift"
-                        ? "border-indigo-500 text-gray-900"
-                        : "border-transparent text-gray-500",
+                        ? "border-indigo-500 text-gray3"
+                        : "border-transparent text-white",
                       "over:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                     )}
                   >
@@ -83,8 +83,8 @@ export default function NavBarGlasgow(props) {
                     to="/faq"
                     className={classNames(
                       props.current === "faq"
-                        ? "border-indigo-500 text-gray-900"
-                        : "border-transparent text-gray-500",
+                        ? "border-indigo-500 text-gray3"
+                        : "border-transparent text-white",
                       "over:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                     )}
                   >
