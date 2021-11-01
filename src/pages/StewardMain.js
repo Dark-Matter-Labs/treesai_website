@@ -99,9 +99,12 @@ export default function StewardMain() {
               <option value="Glasgow">Glasgow</option>
             </select>
             <div className="flex justify-end">
-              <button className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              <Link
+                to="/become-a-steward/glasgow/steward"
+                className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
                 Join
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -164,7 +167,7 @@ export default function StewardMain() {
                   reduce your carbon footprint and climate-related liabilities.
                 </p>
                 <Link
-                  to="/invest-in-nature/glasgow/invest"
+                  to="/invest-in-nature"
                   className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
                 >
                   Get started
@@ -196,12 +199,12 @@ export default function StewardMain() {
                   not donating the ecosysmte services that your tree generate to
                   future Glaswegians?
                 </p>
-                <a
-                  href="/"
+                <Link
+                  to="/gift"
                   className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
                 >
                   Learn more
-                </a>
+                </Link>
               </div>
             </div>
             <div className="-mt-6">

@@ -19,9 +19,6 @@ export default function TreesAIWebsite() {
     <HashRouter>
       <ScrollToTop />
       <Switch>
-        <Route exact path="/invest-in-nature/glasgow/steward">
-          <Steward />
-        </Route>
         <Route exact path="/invest-in-nature/glasgow/invest">
           <Invest />
         </Route>
@@ -30,6 +27,9 @@ export default function TreesAIWebsite() {
         </Route>
         <Route exact path="/invest-in-nature/glasgow">
           <Glasgow />
+        </Route>
+        <Route exact path="/become-a-steward/glasgow/steward">
+          <Steward />
         </Route>
         <Route exact path="/become-a-steward">
           <StewardMain />

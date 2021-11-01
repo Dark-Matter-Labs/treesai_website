@@ -222,6 +222,12 @@ export default function Glasgow() {
                 ingested by our children.{" "}
               </p>
             </div>
+            <Link
+              to="/invest-in-nature/glasgow/invest"
+              className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
+            >
+              Invest
+            </Link>
           </div>
           <div className="h-full w-full">
             <ReactMapGL
@@ -259,7 +265,7 @@ export default function Glasgow() {
                 <div className="mt-8 flex justify-center">
                   <div className="inline-flex rounded-md shadow">
                     <Link
-                      to="/invest-in-nature/glasgow/steward"
+                      to="/become-a-steward"
                       className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-indigo-700"
                     >
                       Steward
@@ -286,12 +292,12 @@ export default function Glasgow() {
                 </h2>
                 <div className="mt-8 flex justify-center">
                   <div className="inline-flex rounded-md shadow">
-                    <a
-                      href="/"
+                    <Link
+                      to="/gift"
                       className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-indigo-700"
                     >
                       Gift
-                    </a>
+                    </Link>
                   </div>
                   <div className="ml-3 inline-flex">
                     <Link
@@ -603,7 +609,7 @@ export default function Glasgow() {
                           <br />
                         </p>
                         <Link
-                          to="/invest-in-nature/glasgow/steward"
+                          to="/become-a-steward"
                           className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
                         >
                           Get started
@@ -679,12 +685,12 @@ export default function Glasgow() {
                           Glaswegians.
                           <br />
                         </p>
-                        <a
-                          href="/"
+                        <Link
+                          to="/gift"
                           className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
                         >
                           Get started
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="-mt-6">

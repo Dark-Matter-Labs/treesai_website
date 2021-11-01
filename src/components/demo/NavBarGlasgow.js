@@ -43,7 +43,7 @@ export default function NavBarGlasgow() {
                     About
                   </a>
                   <Link
-                    to="/invest-in-nature/glasgow/steward"
+                    to="/become-a-steward"
                     className="border-transparent text-white hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
                     Become a steward
@@ -54,12 +54,12 @@ export default function NavBarGlasgow() {
                   >
                     Invest in nature
                   </Link>
-                  <a
-                    href="/"
+                  <Link
+                    to="/gift"
                     className="border-transparent text-white hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
                     Gift to Future
-                  </a>
+                  </Link>
                   <Link
                     to="/faq"
                     className="border-transparent text-white hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
