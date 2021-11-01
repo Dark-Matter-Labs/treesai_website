@@ -304,7 +304,7 @@ export default function Invest() {
                                         name="stormwater"
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        defaultChecked={stormwaterCheck}
+                                        checked={stormwaterCheck}
                                         onChange={() =>
                                           setStormwaterCheck(!stormwaterCheck)
                                         }
@@ -351,7 +351,7 @@ export default function Invest() {
                                         name="flood"
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        defaultChecked={floodCheck}
+                                        checked={floodCheck}
                                         onChange={() =>
                                           setFloodCheck(!floodCheck)
                                         }
@@ -374,7 +374,7 @@ export default function Invest() {
                                         name="physical-health"
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        defaultChecked={physicalHealthCheck}
+                                        checked={physicalHealthCheck}
                                         onChange={() =>
                                           setPhysicalHealthCheck(
                                             !physicalHealthCheck
@@ -399,7 +399,7 @@ export default function Invest() {
                                         name="mental-health"
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        defaultChecked={mentalHealthCheck}
+                                        checked={mentalHealthCheck}
                                         onChange={() =>
                                           setMentalHealthCheck(
                                             !mentalHealthCheck
@@ -424,7 +424,7 @@ export default function Invest() {
                                         name="noise"
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        defaultChecked={noiseCheck}
+                                        checked={noiseCheck}
                                         onChange={() =>
                                           setNoiseCheck(!noiseCheck)
                                         }
@@ -447,7 +447,7 @@ export default function Invest() {
                                         name="air"
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        defaultChecked={airQualityCheck}
+                                        checked={airQualityCheck}
                                         onChange={() =>
                                           setAirQualityCheck(!airQualityCheck)
                                         }
@@ -470,7 +470,7 @@ export default function Invest() {
                                         name="heat"
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        defaultChecked={heatIslandCheck}
+                                        checked={heatIslandCheck}
                                         onChange={() =>
                                           setHeatIslandCheck(!heatIslandCheck)
                                         }
@@ -493,7 +493,7 @@ export default function Invest() {
                                         name="cool"
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        defaultChecked={coolingCheck}
+                                        checked={coolingCheck}
                                         onChange={() =>
                                           setCoolingCheck(!coolingCheck)
                                         }
@@ -516,7 +516,7 @@ export default function Invest() {
                                         name="wind"
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        defaultChecked={windCheck}
+                                        checked={windCheck}
                                         onChange={() =>
                                           setWindCheck(!windCheck)
                                         }
@@ -539,7 +539,7 @@ export default function Invest() {
                                         name="species"
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        defaultChecked={speciesCheck}
+                                        checked={speciesCheck}
                                         onChange={() =>
                                           setSpeciesCheck(!speciesCheck)
                                         }
@@ -562,7 +562,7 @@ export default function Invest() {
                                         name="jobs"
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        defaultChecked={greenJobsCheck}
+                                        checked={greenJobsCheck}
                                         onChange={() =>
                                           setGreenJobsCheck(!greenJobsCheck)
                                         }
@@ -585,7 +585,7 @@ export default function Invest() {
                                         name="football"
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        defaultChecked={footballCheck}
+                                        checked={footballCheck}
                                         onChange={() =>
                                           setFootballCheck(!footballCheck)
                                         }
@@ -608,7 +608,7 @@ export default function Invest() {
                                         name="other"
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        defaultChecked={otherCheck}
+                                        checked={otherCheck}
                                         onChange={() =>
                                           setOtherCheck(!otherCheck)
                                         }
@@ -782,7 +782,7 @@ export default function Invest() {
                                         name="planting"
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        defaultChecked={plantingCheck}
+                                        checked={plantingCheck}
                                         onChange={() =>
                                           setPlantingCheck(!plantingCheck)
                                         }
@@ -815,7 +815,7 @@ export default function Invest() {
                                         name="preservation"
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        defaultChecked={preservationCheck}
+                                        checked={preservationCheck}
                                         onChange={() =>
                                           setPreservationCheck(
                                             !preservationCheck
@@ -849,9 +849,12 @@ export default function Invest() {
                                         name="maintenance"
                                         type="checkbox"
                                         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                                        defaultChecked={maintenanceCheck}
-                                        onChange={() =>
+                                        checked={maintenanceCheck}
+                                        onChange={() =>{
+                                          console.log('yo')
                                           setMaintenanceCheck(!maintenanceCheck)
+                                        }
+                                          
                                         }
                                       />
                                     </div>
