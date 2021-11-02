@@ -64,48 +64,70 @@ const barChartData = {
 const projects = [
   {
     id: 1,
-    name: "Camlachie Tiny Forest",
-    imageSrc: "assets/project1.png",
+    name: "Green space & active travel",
+    location: "North Toryglen (TRA)",
+    imageSrc: "assets/northtoryglen.jpg",
     imageAlt: "Project picture",
-    activity: "Preservation",
-    progress: "In progress",
+    activity: "Planting & Restoration",
+    progress: "Complete",
   },
   {
     id: 2,
-    name: "River Clyde Bank ",
-    imageSrc: "assets/project2.png",
+    name: "SuDS basin",
+    location: "Early Braes Park",
+    imageSrc: "assets/Early_Braes_basin.jpg",
     imageAlt: "Project picture",
     activity: "Reforestation",
-    progress: "In progress",
+    progress: "Complete",
   },
   {
     id: 3,
-    name: "Port Dundas Tiny Project",
-    imageSrc: "assets/project3.png",
+    name: "Glasgow Children's Woodland",
+    location: "Castlemilk and Carmunnock",
+    imageSrc: "assets/woodland.jpg",
     imageAlt: "Project picture",
-    activity: "Restoration",
+    activity: "Planting",
     progress: "Completed",
   },
   {
     id: 4,
-    name: "Camlachie Tiny Forest",
-    imageSrc: "assets/project1.png",
+    name: "Community regeneration of Stalled Spaces",
+    location: "across Glasgow",
+    imageSrc: "assets/Stalled Spaces1.jpg",
     imageAlt: "Project picture",
-    activity: "Restoration",
+    activity: "Maintenance",
     progress: "Completed",
   },
   {
     id: 5,
-    name: "River Clyde Bank Reforestation",
-    imageSrc: "assets/project2.png",
+    name: "Weeforest",
+    location: "Govan Road",
+    imageSrc: "assets/wee_forest.jpg",
     imageAlt: "Project picture",
-    activity: "Maintenance",
-    progress: "In progress",
+    activity: "Planting",
+    progress: "Ongoing",
   },
   {
     id: 6,
-    name: "Port Dundas Tiny Project",
-    imageSrc: "assets/project3.png",
+    name: "Greenspace improvement & planting in NHS Eastwood Health and Care Centre",
+    location: "East Renfrewshire",
+    imageSrc: "assets/NHS.jpg",
+    imageAlt: "Project picture",
+    activity: "Planting & Restoration",
+    progress: "In progress",
+  },
+  {
+    id: 7,
+    name: "Upcoming projects from Clyde Climate Forest",
+    imageSrc: "assets/project1.png",
+    imageAlt: "Project picture",
+    activity: "Planting",
+    progress: "Completed",
+  },
+  {
+    id: 8,
+    name: "Upcoming projects from Metropolitan Glasgow Strategic Drainage Partnership",
+    imageSrc: "assets/project2.png",
     imageAlt: "Project picture",
     activity: "Planting",
     progress: "Completed",
@@ -178,17 +200,6 @@ export default function Glasgow() {
     <>
       <NavBarGlasgow current="invest" />
       <div className="bg-gray">
-        <div className="max-w-4xl mx-auto py-5 px-4 sm:py-24 sm:px-6 lg:px-4">
-          <div className="text-center">
-            <p className="mt-1 text-3xl font-extrabold text-gray-900 sm:text-3xl sm:tracking-tight lg:text-3xl">
-              Welcome to Glasgow’s Trees as Infrastructure
-            </p>
-            <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
-              TreesAI in Glasgow helps the city grow Nature-based Solutions at
-              scale.
-            </p>
-          </div>
-        </div>
         <div className="bg-gray py-16 sm:py-24 lg:py-20 px-16">
           <nav className="flex" aria-label="Breadcrumb">
             <ol className="flex items-center space-x-4">
@@ -454,7 +465,7 @@ export default function Glasgow() {
                 <Bar data={barChartData} />
               </div>
               <h3 className="text-l text-gray-900 sm:text-xl py-5">Projects</h3>
-              <div className="grid gap-y-4 gap-x-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+              <div className="grid gap-y-4 gap-x-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {projects.map((project) => (
                   <div key={project.id} className="group relative">
                     <div className="">
@@ -473,6 +484,9 @@ export default function Glasgow() {
                           />
                           {project.name}
                         </h3>
+                        <p className="mt-1 text-sm text-gray2">
+                          {project.location}
+                        </p>
                         <p className="mt-1 text-sm text-gray2">
                           {project.activity}
                         </p>
@@ -501,10 +515,13 @@ export default function Glasgow() {
                 </Source>
                 {hoverInfo && (
                   <div
-                    className="tooltip"
+                    className="tooltip bg-white"
                     style={{ left: hoverInfo.x, top: hoverInfo.y }}
                   >
-                    <div>Tree ID: {hoverInfo.feature.properties.Tree_Id}</div>
+                    <div>🌳</div>
+                    <div>
+                      <b>Tree ID</b>: {hoverInfo.feature.properties.Tree_Id}
+                    </div>
                     <div>Species: {hoverInfo.feature.properties.Species}</div>
                     <div>Height: {hoverInfo.feature.properties.Height}</div>
                     <div>DBH: {hoverInfo.feature.properties.Spread}</div>
