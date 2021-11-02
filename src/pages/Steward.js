@@ -122,6 +122,7 @@ export default function Steward() {
   const [stormwaterArray, setStormwaterArray] = useState([]);
   const [stormwaterCostArray, setStormwaterCostArray] = useState([]);
   const [seqCostArray, setSeqCostArray] = useState([]);
+  const [savingsPercentage, setSavingsPercentage] = useState('5-10');
 
   const co2data = {
     labels: ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
@@ -411,7 +412,9 @@ export default function Steward() {
     // savings
     let savings =
       Number(sum_arr(sequestration_arr_for_graph) /49) + Number(sum_arr(water_benefit_arr_for_graph) / 49);
-    setSavingsEstimate(savings);
+    setSavingsEstimate(savings.toFixed(1));
+
+    setSavingsPercentage((maintenanceCost/savings).toFixed());
   }
 
   function update_cost() {
@@ -1079,7 +1082,7 @@ export default function Steward() {
                       </dt>
                       <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                         <p className="text-2xl font-semibold text-green-600">
-                          5–10%
+                        {savingsPercentage}%
                         </p>
                         <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
                           Based on our methodology
