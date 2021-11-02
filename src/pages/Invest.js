@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Fragment } from "react";
 import { Transition } from "@headlessui/react";
 import { XIcon, InformationCircleIcon } from "@heroicons/react/solid";
-import { CheckCircleIcon } from "@heroicons/react/outline";
+import { CheckCircleIcon, ChevronLeftIcon } from "@heroicons/react/outline";
 
 import NavBarGlasgow from "../components/demo/NavBarGlasgow";
 
@@ -32,10 +32,20 @@ export default function Invest() {
   const [show, setShow] = useState(false);
 
   const addToCart = (type) => {
-    if (type === "carbon") {
+    if (type === "carbon" && carbonSelect === "Budget") {
       setCart((oldArray) => [
         ...oldArray,
-        `Carbon sequestration ${carbonSelect}:${carbonInputVal}`,
+        `Carbon sequestration ${carbonSelect}: £${carbonInputVal}`,
+      ]);
+    } else if (type === "carbon" && carbonSelect === "Flows") {
+      setCart((oldArray) => [
+        ...oldArray,
+        `Carbon sequestration ${carbonSelect}: ${carbonInputVal}tCO2e`,
+      ]);
+    } else if (type === "carbon" && carbonSelect === "Percentage") {
+      setCart((oldArray) => [
+        ...oldArray,
+        `Carbon sequestration ${carbonSelect}: ${carbonInputVal}%`,
       ]);
     }
 
@@ -56,34 +66,39 @@ export default function Invest() {
 
   return (
     <>
-      <NavBarGlasgow current="invest" />
       {(() => {
         switch (pageState) {
           case 0:
             return (
-              <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-4 sm:grid-cols-1">
-                <div className="py-16 sm:py-24 lg:py-20 px-16 ">
-                  <div className="mb-5">
+              <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
+                <div>
+                  <NavBarGlasgow />
+                  <div className="flex items-center mt-20 ml-20">
+                    <ChevronLeftIcon
+                      className="flex-shrink-0 h-5 w-5 text-gray-400"
+                      aria-hidden="true"
+                    />
                     <Link
                       to="/invest-in-nature/glasgow"
-                      className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+                      className="text-sm font-medium text-gray-500 hover:text-gray-700"
                     >
                       Back
                     </Link>
                   </div>
-                  <h3 className="text-lg leading-6 font-medium text-gray-900">
-                    What are your desired carbon outcomes?
-                  </h3>
-                  <p>
-                    Invest in nature to offset your residual carbon emissions
-                  </p>
-                  <div className="flex flex-wrap space-x-4" aria-label="Tabs">
+                  <div className="py-16 sm:py-16 lg:py-20 px-16 ">
+                    <h3 className="text-lg leading-6 font-medium text-gray-900">
+                      What are your desired carbon outcomes?
+                    </h3>
+                    <p>
+                      Invest in nature to offset your residual carbon emissions
+                    </p>
+
                     <div className="w-full">
                       <div className="relative flex flex-col min-w-0 break-words w-full mb-6 rounded">
-                        <div className="px-4 py-5 flex-auto">
-                          <div className="tab-content tab-space">
-                            <div className="grid lg:grid-cols-1 md:grid-cols-2 sm:grid-cols-1 gap-2">
-                              <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg ">
+                        <div className="">
+                          <div className="">
+                            <div className="grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1">
+                              <div className="relative bg-white pt-5 px-2 pb-5 sm:pt-6 sm:px-2 shadow rounded-lg ">
                                 <dt>
                                   <p className="ml-2 text-md font-medium text-gray-500 truncate">
                                     Carbon sequestration
@@ -101,7 +116,7 @@ export default function Invest() {
                                     <div className="mt-1 flex rounded-md shadow-sm">
                                       <select
                                         id="invest-type"
-                                        className="mt-1 flex rounded-md shadow-sm"
+                                        className="mt-1 flex rounded-md shadow-sm mr-5"
                                         onChange={(e) => {
                                           setCarbonSelect(e.target.value);
                                         }}
@@ -129,7 +144,7 @@ export default function Invest() {
                                             step="0.01"
                                             data-number-to-fixed="2"
                                             data-number-stepfactor="100"
-                                            className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none  sm:text-sm border-gray-300"
+                                            className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full  rounded-none  sm:text-sm border-gray-300"
                                           />
                                         </>
                                       )}
@@ -177,7 +192,7 @@ export default function Invest() {
                                       <button
                                         type="button"
                                         onClick={() => addToCart("carbon")}
-                                        className="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                        className="ml-5 inline-flex items-center px-2.5 py-1.5 border border-transparent text-sm font-medium rounded shadow-sm text-white bg-blue4 hover:bg-blue3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                       >
                                         Add
                                       </button>
@@ -192,7 +207,7 @@ export default function Invest() {
                           <div className="flex justify-end">
                             <button
                               onClick={(e) => next(e)}
-                              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             >
                               Next
                             </button>
@@ -215,7 +230,7 @@ export default function Invest() {
                     <div className="grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 gap-2">
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                         <dt>
-                          <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                          <p className="ml-2 text-sm font-regular text-gray-500 truncate">
                             Carbon sequestration
                           </p>
                         </dt>
@@ -223,7 +238,7 @@ export default function Invest() {
                           <p className="text-2xl font-semibold text-green-600 ">
                             8,140 tCO2e
                           </p>
-                          <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
+                          <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
                             per year
                           </p>
                         </dd>
@@ -233,7 +248,7 @@ export default function Invest() {
                       </h4>
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                         <dt>
-                          <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                          <p className="ml-2 text-sm font-regular text-gray-500 truncate">
                             Carbon sequestration
                           </p>
                         </dt>
@@ -241,7 +256,7 @@ export default function Invest() {
                           <p className="text-2xl font-semibold text-green-600 ">
                             £628,253
                           </p>
-                          <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
+                          <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
                             per year
                           </p>
                         </dd>
@@ -258,7 +273,10 @@ export default function Invest() {
                         <div className="ml-3">
                           <h3 className="text-sm font-medium text-green-800">
                             This is an estimate. Learn about our{" "}
-                            <u>methodology</u>
+                            <Link to="/faq">
+                              {" "}
+                              <u>methodology</u>
+                            </Link>
                           </h3>
                         </div>
                       </div>
@@ -269,30 +287,36 @@ export default function Invest() {
             );
           case 1:
             return (
-              <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-4 sm:grid-cols-1">
-                <div className="py-16 sm:py-24 lg:py-20 px-16 ">
-                  <div className="mb-5">
+              <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
+                <div>
+                  <NavBarGlasgow />
+                  <div className="flex items-center mt-20 ml-20">
+                    <ChevronLeftIcon
+                      className="flex-shrink-0 h-5 w-5 text-gray-400"
+                      aria-hidden="true"
+                    />
                     <button
                       onClick={back}
-                      className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+                      className="text-sm font-medium text-gray-500 hover:text-gray-700"
                     >
                       Back
                     </button>
                   </div>
-                  <h3 className="text-lg leading-6 font-medium text-gray-900">
-                    What other outcomes are you looking to achieve?
-                  </h3>
-                  <p>
-                    Include environmental services or specific activities in
-                    your portfolio to reduce your carbon footprint and mitigate
-                    your climate-related risks
-                  </p>
-                  <div className="flex flex-wrap space-x-4" aria-label="Tabs">
+                  <div className="py-10 sm:py-24 lg:py-10 px-20">
+                    <h3 className="text-lg leading-6 font-medium text-gray-900">
+                      What other outcomes are you looking to achieve?
+                    </h3>
+                    <p>
+                      Include environmental services or specific activities in
+                      your portfolio to reduce your carbon footprint and
+                      mitigate your climate-related risks
+                    </p>
+
                     <div className="w-full">
                       <div className="relative flex flex-col min-w-0 break-words w-full mb-6 rounded">
                         <div className="px-4 py-5 flex-auto">
                           <div className="tab-content tab-space">
-                            <div className="grid lg:grid-cols-1 md:grid-cols-2 sm:grid-cols-1 gap-2">
+                            <div className="grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 gap-2">
                               <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg ">
                                 <fieldset className="space-y-5">
                                   <legend className="sr-only">Outcomes</legend>
@@ -303,7 +327,7 @@ export default function Invest() {
                                         aria-describedby="stormwater"
                                         name="stormwater"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         checked={stormwaterCheck}
                                         onChange={() =>
                                           setStormwaterCheck(!stormwaterCheck)
@@ -326,7 +350,7 @@ export default function Invest() {
                                         aria-describedby="waterquality"
                                         name="waterquality"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         onChange={() =>
                                           setWaterQualityCheck(
                                             !waterQualityCheck
@@ -350,7 +374,7 @@ export default function Invest() {
                                         aria-describedby="flood"
                                         name="flood"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         checked={floodCheck}
                                         onChange={() =>
                                           setFloodCheck(!floodCheck)
@@ -373,7 +397,7 @@ export default function Invest() {
                                         aria-describedby="physical-health"
                                         name="physical-health"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         checked={physicalHealthCheck}
                                         onChange={() =>
                                           setPhysicalHealthCheck(
@@ -398,7 +422,7 @@ export default function Invest() {
                                         aria-describedby="mental-health"
                                         name="mental-health"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         checked={mentalHealthCheck}
                                         onChange={() =>
                                           setMentalHealthCheck(
@@ -423,7 +447,7 @@ export default function Invest() {
                                         aria-describedby="noise"
                                         name="noise"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         checked={noiseCheck}
                                         onChange={() =>
                                           setNoiseCheck(!noiseCheck)
@@ -446,7 +470,7 @@ export default function Invest() {
                                         aria-describedby="air"
                                         name="air"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         checked={airQualityCheck}
                                         onChange={() =>
                                           setAirQualityCheck(!airQualityCheck)
@@ -469,7 +493,7 @@ export default function Invest() {
                                         aria-describedby="heat"
                                         name="heat"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         checked={heatIslandCheck}
                                         onChange={() =>
                                           setHeatIslandCheck(!heatIslandCheck)
@@ -492,7 +516,7 @@ export default function Invest() {
                                         aria-describedby="cool"
                                         name="cool"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         checked={coolingCheck}
                                         onChange={() =>
                                           setCoolingCheck(!coolingCheck)
@@ -515,7 +539,7 @@ export default function Invest() {
                                         aria-describedby="wind"
                                         name="wind"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         checked={windCheck}
                                         onChange={() =>
                                           setWindCheck(!windCheck)
@@ -538,7 +562,7 @@ export default function Invest() {
                                         aria-describedby="species"
                                         name="species"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-blue4 rounded"
                                         checked={speciesCheck}
                                         onChange={() =>
                                           setSpeciesCheck(!speciesCheck)
@@ -561,7 +585,7 @@ export default function Invest() {
                                         aria-describedby="jobs"
                                         name="jobs"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         checked={greenJobsCheck}
                                         onChange={() =>
                                           setGreenJobsCheck(!greenJobsCheck)
@@ -584,7 +608,7 @@ export default function Invest() {
                                         aria-describedby="football"
                                         name="football"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         checked={footballCheck}
                                         onChange={() =>
                                           setFootballCheck(!footballCheck)
@@ -607,7 +631,7 @@ export default function Invest() {
                                         aria-describedby="other"
                                         name="other"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         checked={otherCheck}
                                         onChange={() =>
                                           setOtherCheck(!otherCheck)
@@ -632,7 +656,7 @@ export default function Invest() {
                           <div className="flex justify-end">
                             <button
                               onClick={(e) => next(e)}
-                              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             >
                               Next
                             </button>
@@ -651,10 +675,10 @@ export default function Invest() {
                     <h4 className="text-md leading-6 font-medium text-gray-900 m-2">
                       Physical Flows
                     </h4>
-                    <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2">
+                    <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-2">
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                         <dt>
-                          <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                          <p className="ml-2 text-sm font-regular text-gray-500 truncate">
                             CO2 removal
                           </p>
                         </dt>
@@ -662,14 +686,14 @@ export default function Invest() {
                           <p className="text-2xl font-semibold text-green-600 ">
                             8,140 tCO2e
                           </p>
-                          <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
+                          <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
                             per year
                           </p>
                         </dd>
                       </div>
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                         <dt>
-                          <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                          <p className="ml-2 text-sm font-regular text-gray-500 truncate">
                             Avoided runoff
                           </p>
                         </dt>
@@ -677,14 +701,14 @@ export default function Invest() {
                           <p className="text-2xl font-semibold text-blue2 ">
                             812,000m³
                           </p>
-                          <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
+                          <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
                             per year
                           </p>
                         </dd>
                       </div>
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                         <dt>
-                          <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                          <p className="ml-2 text-sm font-regular text-gray-500 truncate">
                             Air quality improvement
                           </p>
                         </dt>
@@ -692,14 +716,14 @@ export default function Invest() {
                           <p className="text-2xl font-semibold text-green-600 ">
                             44.38(PM2.5)
                           </p>
-                          <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
+                          <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
                             per year
                           </p>
                         </dd>
                       </div>
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                         <dt>
-                          <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                          <p className="ml-2 text-sm font-regualr text-gray-500 truncate">
                             Flood control
                           </p>
                         </dt>
@@ -712,7 +736,7 @@ export default function Invest() {
 
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                         <dt>
-                          <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                          <p className="ml-2 text-sm font-regular text-gray-500 truncate">
                             Heat island effect reduction
                           </p>
                         </dt>
@@ -734,7 +758,9 @@ export default function Invest() {
                         <div className="ml-3">
                           <h3 className="text-sm font-medium text-green-800">
                             This is an estimate. Learn about our{" "}
-                            <u>methodology</u>
+                            <Link to="/faq">
+                              <u>methodology</u>.
+                            </Link>
                           </h3>
                         </div>
                       </div>
@@ -745,30 +771,36 @@ export default function Invest() {
             );
           case 2:
             return (
-              <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-4 sm:grid-cols-1">
-                <div className="py-16 sm:py-24 lg:py-20 px-16 ">
-                  <div className="mb-5">
+              <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
+                <div>
+                  <NavBarGlasgow />
+                  <div className="flex items-center mt-20 ml-20">
+                    <ChevronLeftIcon
+                      className="flex-shrink-0 h-5 w-5 text-gray-400"
+                      aria-hidden="true"
+                    />
                     <button
                       onClick={back}
-                      className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+                      className="text-sm font-medium text-gray-500 hover:text-gray-700"
                     >
                       Back
                     </button>
                   </div>
-                  <h3 className="text-lg leading-6 font-medium text-gray-900">
-                    Are you interested in investing in specific types of
-                    activities?
-                  </h3>
-                  <p>
-                    Include specific activities in your portfolio to reduce your
-                    carbon footprint and mitigate your climate-related risks
-                  </p>
-                  <div className="flex flex-wrap space-x-4" aria-label="Tabs">
+                  <div className="py-10 px-20 ">
+                    <h3 className="text-lg leading-6 font-medium text-gray-900">
+                      Are you interested in investing in specific types of
+                      activities?
+                    </h3>
+                    <p>
+                      Include specific activities in your portfolio to reduce
+                      your carbon footprint and mitigate your climate-related
+                      risks
+                    </p>
                     <div className="w-full">
-                      <div className="relative flex flex-col min-w-0 break-words w-full mb-6 rounded">
+                      <div className="relative flex flex-col  w-full mb-6 rounded">
                         <div className="px-4 py-5 flex-auto">
                           <div className="tab-content tab-space">
-                            <div className="grid lg:grid-cols-1 md:grid-cols-2 sm:grid-cols-1 gap-2">
+                            <div className="grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 gap-2">
                               <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg ">
                                 <fieldset className="space-y-5">
                                   <legend className="sr-only">
@@ -781,7 +813,7 @@ export default function Invest() {
                                         aria-describedby="planting"
                                         name="planting"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         checked={plantingCheck}
                                         onChange={() =>
                                           setPlantingCheck(!plantingCheck)
@@ -814,7 +846,7 @@ export default function Invest() {
                                         aria-describedby="preservation"
                                         name="preservation"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         checked={preservationCheck}
                                         onChange={() =>
                                           setPreservationCheck(
@@ -848,7 +880,7 @@ export default function Invest() {
                                         aria-describedby="maintenance"
                                         name="maintenance"
                                         type="checkbox"
-                                        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         checked={maintenanceCheck}
                                         onChange={() => {
                                           console.log("yo");
@@ -964,7 +996,7 @@ export default function Invest() {
                           <div className="flex justify-end">
                             <button
                               onClick={(e) => next(e)}
-                              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             >
                               Next
                             </button>
@@ -974,6 +1006,7 @@ export default function Invest() {
                     </div>
                   </div>
                 </div>
+
                 <div className="bg-gray3 py-16 sm:py-24 lg:py-20 px-16 ">
                   <div className="flex-shrink-0 pt-10">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
@@ -983,7 +1016,7 @@ export default function Invest() {
                     <h4 className="text-md leading-6 font-medium text-gray-900 m-2">
                       Number of trees
                     </h4>
-                    <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-2">
+                    <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2">
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                         <dt>
                           <p className="ml-2 text-sm font-medium text-gray-500 truncate">
@@ -1024,7 +1057,7 @@ export default function Invest() {
                     <h4 className="text-md leading-6 font-medium text-gray-900 m-2">
                       Indicative valuation
                     </h4>
-                    <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-2">
+                    <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2">
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                         <dt>
                           <p className="ml-2 text-sm font-medium text-gray-500 truncate">
@@ -1073,7 +1106,10 @@ export default function Invest() {
                         <div className="ml-3">
                           <h3 className="text-sm font-medium text-green-800">
                             This is an estimate. Learn about our{" "}
-                            <u>methodology</u>
+                            <Link to="/faq">
+                              {" "}
+                              <u>methodology</u>.
+                            </Link>
                           </h3>
                         </div>
                       </div>
@@ -1084,67 +1120,78 @@ export default function Invest() {
             );
           case 3:
             return (
-              <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-4 sm:grid-cols-1">
-                <div className="py-16 sm:py-24 lg:py-20 px-16 ">
-                  <div className="mb-5">
+              <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
+                <div>
+                  <NavBarGlasgow />
+                  <div className="flex items-center mt-20 ml-20">
+                    <ChevronLeftIcon
+                      className="flex-shrink-0 h-5 w-5 text-gray-400"
+                      aria-hidden="true"
+                    />
                     <button
-                      onClick={(e) => back(e)}
-                      className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+                      onClick={back}
+                      className="text-sm font-medium text-gray-500 hover:text-gray-700"
                     >
                       Back
                     </button>
                   </div>
-                  <h3 className="text-lg leading-6 font-medium text-gray-900">
-                    Submit your interest
-                  </h3>
-                  <h4 className="text-lg mt-5 leading-6 font-sm text-gray-900">
-                    Purchase summary
-                  </h4>
-                  <p>{cart}</p>
-                  {stormwaterCheck && <p>✅ 🌧Stormwater Retention</p>}
-                  {waterQualityCheck && <p>✅ 🚰Water Quality</p>}
-                  {floodCheck && <p>✅ 🌊Flood control</p>}
-                  {physicalHealthCheck && <p>✅ 🤕Physical health</p>}
-                  {mentalHealthCheck && <p>✅ 🤔Mental health</p>}
-                  {noiseCheck && <p>✅ 🔕Noise reduction</p>}
-                  {airQualityCheck && <p>✅ ☁Air quality improvement</p>}
-                  {heatIslandCheck && <p>✅ 🥵Heat island effect reduction</p>}
-                  {coolingCheck && <p>✅ 🌶Cooling effect</p>}
-                  {windCheck && <p>✅ 💨Wind protection</p>}
-                  {speciesCheck && <p>✅ 🐝Increased species richness</p>}
-                  {greenJobsCheck && <p>✅ 👩‍🌾Green jobs creation</p>}
-                  {footballCheck && <p>✅ 🚶‍♀️Increased high street footfall</p>}
-                  {otherCheck && <p>✅ 🤽‍♀️Other social outcomes</p>}
-                  {plantingCheck && <p>✅ 🌱Planting</p>}
-                  {preservationCheck && <p>✅ 🐛Preservation </p>}
-                  {maintenanceCheck && <p>✅ 🪓Maintenance</p>}
-                  <div className="mt-10">
+                  <div className="py-10 px-20 ">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
-                      Ecosystem service outcomes will be available to purchase
-                      soon.
+                      Submit your interest
                     </h3>
                     <h4 className="text-lg mt-5 leading-6 font-sm text-gray-900">
-                      Enter your email and our team will process your request.
+                      Purchase summary
                     </h4>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="you@example.com"
-                      onChange={(e) => {
-                        setCarbonInputVal(e.target.value);
-                      }}
-                      id="email"
-                      className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded sm:text-sm border-gray-300"
-                    />
-                  </div>
-                  <div className="pt-5">
-                    <div className="flex justify-end">
-                      <button
-                        onClick={(e) => next(e)}
-                        className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      >
-                        Submit your interest
-                      </button>
+                    <p>{cart.join("\n")}</p>
+                    {stormwaterCheck && <p>✅ 🌧Stormwater Retention</p>}
+                    {waterQualityCheck && <p>✅ 🚰Water Quality</p>}
+                    {floodCheck && <p>✅ 🌊Flood control</p>}
+                    {physicalHealthCheck && <p>✅ 🤕Physical health</p>}
+                    {mentalHealthCheck && <p>✅ 🤔Mental health</p>}
+                    {noiseCheck && <p>✅ 🔕Noise reduction</p>}
+                    {airQualityCheck && <p>✅ ☁Air quality improvement</p>}
+                    {heatIslandCheck && (
+                      <p>✅ 🥵Heat island effect reduction</p>
+                    )}
+                    {coolingCheck && <p>✅ 🌶Cooling effect</p>}
+                    {windCheck && <p>✅ 💨Wind protection</p>}
+                    {speciesCheck && <p>✅ 🐝Increased species richness</p>}
+                    {greenJobsCheck && <p>✅ 👩‍🌾Green jobs creation</p>}
+                    {footballCheck && (
+                      <p>✅ 🚶‍♀️Increased high street footfall</p>
+                    )}
+                    {otherCheck && <p>✅ 🤽‍♀️Other social outcomes</p>}
+                    {plantingCheck && <p>✅ 🌱Planting</p>}
+                    {preservationCheck && <p>✅ 🐛Preservation </p>}
+                    {maintenanceCheck && <p>✅ 🪓Maintenance</p>}
+                    <div className="mt-10">
+                      <h3 className="text-lg leading-6 font-medium text-gray-900">
+                        Ecosystem service outcomes will be available to purchase
+                        soon.
+                      </h3>
+                      <h4 className="text-lg mt-5 leading-6 font-sm text-gray-900">
+                        Enter your email and our team will process your request.
+                      </h4>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        onChange={(e) => {
+                          setCarbonInputVal(e.target.value);
+                        }}
+                        id="email"
+                        className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded sm:text-sm border-gray-300"
+                      />
+                    </div>
+                    <div className="pt-5">
+                      <div className="flex justify-end">
+                        <button
+                          onClick={(e) => next(e)}
+                          className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        >
+                          Submit your interest
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1154,43 +1201,47 @@ export default function Invest() {
             );
           case 4:
             return (
-              <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-4 sm:grid-cols-1">
-                <div className="py-16 sm:py-24 lg:py-20 px-16 ">
-                  <h3 className="text-lg leading-6 font-medium text-gray-900">
-                    Thanks for submitting your interest in supporting ecosystem
-                    service outcomes in Glasgow!
-                  </h3>
-                  <p>
-                    A confirmation has been sent to your email and our team will
-                    contact you for next steps.
-                  </p>
-                  <div className="pt-5">
-                    <div className="flex justify-start">
-                      <Link
-                        to="/invest-in-nature/glasgow/invest/portfolio"
-                        className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      >
-                        View sample portfolio
-                      </Link>
+              <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
+                <div>
+                  <NavBarGlasgow />
+                  <div className="py-16 sm:py-24 lg:py-20 px-16 ">
+                    <h3 className="text-lg leading-6 font-medium text-gray-900">
+                      Thanks for submitting your interest in supporting
+                      ecosystem service outcomes in Glasgow!
+                    </h3>
+                    <p>
+                      A confirmation has been sent to your email and our team
+                      will contact you for next steps.
+                    </p>
+                    <div className="pt-5">
+                      <div className="flex justify-start">
+                        <Link
+                          to="/invest-in-nature/glasgow/invest/portfolio"
+                          className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        >
+                          View sample portfolio
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                  <div className="pt-40">
-                    <div className="flex justify-start">
-                      <Link
-                        to="/faq"
-                        className="ml-3 inline-flex justify-center py-2 px-4 border border-black shadow-sm text-sm font-medium rounded-md text-black bg-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      >
-                        Frequently asked questions
-                      </Link>
-                      <Link
-                        to="/invest-in-nature/glasgow"
-                        className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      >
-                        Return home
-                      </Link>
+                    <div className="pt-40">
+                      <div className="flex justify-start">
+                        <Link
+                          to="/faq"
+                          className="ml-3 inline-flex justify-center py-2 px-4 border border-black shadow-sm text-sm font-medium rounded-md text-black bg-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        >
+                          Frequently asked questions
+                        </Link>
+                        <Link
+                          to="/invest-in-nature/glasgow"
+                          className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        >
+                          Return home
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
+
                 <div className="outcomes-panel"></div>
               </div>
             );

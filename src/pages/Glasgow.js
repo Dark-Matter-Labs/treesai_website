@@ -238,7 +238,10 @@ export default function Glasgow() {
                 </div>
                 <div className="ml-3">
                   <h3 className="text-sm font-medium text-green-800">
-                    This is an estimate. Learn about our <u>methodology</u>
+                    This is an estimate. Learn about our
+                    <Link to="/faq">
+                      <u>methodology</u>
+                    </Link>
                   </h3>
                 </div>
               </div>
@@ -344,7 +347,10 @@ export default function Glasgow() {
                   <div className="ml-3">
                     <h3 className="text-sm font-medium text-green-800">
                       Activities are in progrees. Give us feedabck and learn
-                      about our <u>methodology</u>
+                      about our{" "}
+                      <Link to="/faq">
+                        <u>methodology</u>
+                      </Link>
                     </h3>
                   </div>
                 </div>
