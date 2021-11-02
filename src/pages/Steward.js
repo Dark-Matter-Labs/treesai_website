@@ -404,7 +404,8 @@ export default function Steward() {
 
     // savings
     let savings =
-      Number(sum_arr(sequestration_arr_for_graph) /49) + Number(sum_arr(water_benefit_arr_for_graph) / 49);
+      Number(sum_arr(sequestration_arr_for_graph) / 49) +
+      Number(sum_arr(water_benefit_arr_for_graph) / 49);
     setSavingsEstimate(savings);
   }
 

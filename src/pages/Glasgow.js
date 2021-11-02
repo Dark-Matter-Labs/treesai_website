@@ -11,7 +11,7 @@ import { unclusteredPointLayer } from "./layers";
 
 import NavBarGlasgow from "../components/demo/NavBarGlasgow";
 import banner1 from "../images/banner1.png";
-import banner2 from "../images/banner2.png";
+import InvestBanner from "../images/InvestBanner.png";
 import banner3 from "../images/banner3.png";
 import trees from "../data/trees.json";
 
@@ -613,7 +613,7 @@ export default function Glasgow() {
                     <div className="-mt-6">
                       <img
                         className="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
-                        src={banner2}
+                        src={InvestBanner}
                         alt="Nature stewards"
                       />
                     </div>
