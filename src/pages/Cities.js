@@ -113,23 +113,9 @@ export default function Cities() {
     <>
       <NavBar current="invest" />
       <div className="bg-gray py-16 sm:py-24 lg:py-20 px-16">
-        <nav className="flex" aria-label="Breadcrumb">
-          <ol className="flex items-center space-x-4">
-            <li>
-              <div>
-                <Link
-                  to="/invest-in-nature"
-                  className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
-                >
-                  Invest
-                </Link>
-              </div>
-            </li>
-          </ol>
-        </nav>
         <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
           <div className="mt-10">
-            <h2 className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
+            <h2 className="font-grotesk mt-2 lg:text-5xl md:text-4xl text-gray-900 sm:text-4xl">
               Find places to invest in nature
             </h2>
             <p className="mt-3 text-lg font-regular text-gray-500">

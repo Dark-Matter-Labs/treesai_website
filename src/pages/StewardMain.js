@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { InformationCircleIcon } from "@heroicons/react/solid";
 import NavBar from "../components/demo/NavBar";
-import banner2 from "../images/banner2.png";
+import InvestBanner from "../images/InvestBanner.png";
 import banner3 from "../images/banner3.png";
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 const activities = [
   {
@@ -34,7 +38,7 @@ const activities = [
     name: "Restoration",
     imageSrc: "assets/Restoration.png",
     imageAlt: "Restoration picture",
-    detail: "Targeted habitat nurturing",
+    detail: "Targeted habitat nurturing(coming soon)",
     progress: "Coming soon",
   },
   {
@@ -42,7 +46,7 @@ const activities = [
     name: "Seedling",
     imageSrc: "assets/Seedling.png",
     imageAlt: "Seedling picture",
-    detail: "Grow healthy seedlings locally",
+    detail: "Grow healthy seedlings locally(coming soon)",
     progress: "Coming soon",
   },
   {
@@ -50,7 +54,7 @@ const activities = [
     name: "Upcycling",
     imageSrc: "assets/Upcycling.png",
     imageAlt: "Upcycling picture",
-    detail: "Sustainably manage trees' end of life",
+    detail: "Sustainably manage trees' end of life(coming soon)",
     progress: "Coming soon",
   },
 ];
@@ -70,41 +74,31 @@ export default function StewardMain() {
       <NavBar current="steward" />
       <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
         <div className="bg-black y-16 sm:py-24 lg:py-20 px-16">
-          <nav className="flex" aria-label="Breadcrumb">
-            <ol className="flex items-center space-x-4">
-              <li>
-                <div>
-                  <Link
-                    to="/become-a-steward"
-                    className="ml-4 text-sm font-medium text-white hover:text-gray-700"
-                  >
-                    Steward
-                  </Link>
-                </div>
-              </li>
-            </ol>
-          </nav>
-          <div className="mt-40">
-            <h2 className="font-grotesk mt-2 text-3xl text-white sm:text-4xl">
+          <div className="mt-20">
+            <h2 className="font-grotesk lg:text-5xl md:text-4xl sm:text-4xl text-white">
               Join the stewardship revolution
             </h2>
             <p className="mt-3 text-lg font-regular text-white">
               Cover up to 10% of your maintenance costs by preserving street
               trees, rewilding your local park or replenishing the urban forest.
             </p>
-            <p className="mt-3 text-lg font-semibold leading-6 text-white">
+            <p className="mt-10 text-lg font-semibold leading-6 text-white">
               Pick your city
             </p>
-            <select className="mt-1 flex rounded-md shadow-sm">
-              <option value="Glasgow">Glasgow</option>
-            </select>
-            <div className="flex justify-end">
-              <Link
-                to="/become-a-steward/glasgow/steward"
-                className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              >
-                Add a project
-              </Link>
+            <div className="flex">
+              <div>
+                <select className="mt-1 flex rounded-md shadow-sm">
+                  <option value="Glasgow">Glasgow</option>
+                </select>
+              </div>
+              <div className="mt-2">
+                <Link
+                  to="/become-a-steward/glasgow/steward"
+                  className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green4 hover:bg-green2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  Add a project
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -122,22 +116,28 @@ export default function StewardMain() {
             <div className="ml-3">
               <h3 className="text-sm font-medium text-green-800">
                 Activities are in progress. Give us feedback and learn about our{" "}
-                <u>methodology</u>
+                <Link to="/faq">
+                  <u>methodology</u>
+                </Link>
+                .
               </h3>
             </div>
           </div>
         </div>
         <h3 className="text-l text-gray-900 sm:text-xl py-5">
-          What are the elegible activities?
+          Eligible activities
         </h3>
-        <div className="grid gap-y-10 gap-x-8 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-6">
+        <div className="grid gap-y-8 gap-x-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {activities.map((activity) => (
             <div key={activity.id} className="group relative">
-              <div className="">
+              <div className="w-full bg-gray-200 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
                 <img
                   src={activity.imageSrc}
                   alt={activity.imageAlt}
-                  className=""
+                  className={classNames(
+                    activity.progress === "Coming soon" ? "image-blur" : "",
+                    ""
+                  )}
                 />
               </div>
               <div className="mt-0 flex justify-between">
@@ -147,14 +147,13 @@ export default function StewardMain() {
                     {activity.name}
                   </h3>
                   <p className="mt-1 text-sm text-gray2">{activity.detail}</p>
-                  <p className="mt-1 text-sm text-gray2">{activity.progress}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <div className="max-w-8xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-          <div className="bg-blue rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+        <div className="max-w-8xl mx-auto py-16 px-4 sm:px-6 lg:px-0">
+          <div className="bg-blue4 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
             <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
               <div className="lg:self-center">
                 <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
@@ -162,28 +161,28 @@ export default function StewardMain() {
                     Interested in investing in nature?
                   </span>
                 </h2>
-                <p className="mt-4 text-lg leading-6 text-green1">
+                <p className="mt-4 text-lg leading-6 text-white">
                   Discover portfolios of projects or individual actions that can
                   reduce your carbon footprint and climate-related liabilities.
                 </p>
                 <Link
                   to="/invest-in-nature"
-                  className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
+                  className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-blue4 hover:bg-indigo-50"
                 >
                   Get started
                 </Link>
               </div>
             </div>
-            <div className="-mt-6">
+            <div className="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
               <img
                 className="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
-                src={banner2}
+                src={InvestBanner}
                 alt="Nature stewards"
               />
             </div>
           </div>
         </div>
-        <div className="max-w-8xl mx-auto py-16 px-2 sm:px-6 lg:px-2">
+        <div className="max-w-8xl mx-auto py-16 px-2 sm:px-6 lg:px-0">
           <div className="bg-indigo-600 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
             <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
               <div className="lg:self-center">

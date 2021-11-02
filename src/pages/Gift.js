@@ -52,7 +52,7 @@ export default function Gift() {
               HELP YOUR URBAN FOREST
             </h2>
             <h2 className="font-grotesk text-3xl text-gray-900 sm:text-4xl">
-              Gift your environmental services to support glasgow’s urban
+              Gift your environmental services to support Glasgow’s urban
               forest.
             </h2>
             <div className="pt-2 pb-2">
@@ -60,7 +60,7 @@ export default function Gift() {
                 Add your trees to Glasgow’s Nature Portfolio to gift the
                 environmental services to fund the long term maintenance of the
                 forest so that your kids and the kids of your kids can live in a
-                cleaner and greaner Glasgow!
+                cleaner and greener Glasgow!
               </p>
             </div>
             <nav aria-label="Progress">

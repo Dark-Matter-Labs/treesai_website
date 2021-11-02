@@ -413,6 +413,7 @@ export default function Steward() {
     let savings =
       Number(sum_arr(sequestration_arr_for_graph) / 49) +
       Number(sum_arr(water_benefit_arr_for_graph) / 49);
+
     setSavingsEstimate(savings.toFixed(1));
 
     setSavingsPercentage((maintenanceCost / savings).toFixed());
@@ -1345,7 +1346,7 @@ export default function Steward() {
                         to="/invest-in-nature/glasgow"
                         className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       >
-                        Invest in Glasgow
+                        Check out Glasgow portfolio
                       </Link>
                     </div>
                   </div>
