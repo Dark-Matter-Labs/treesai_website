@@ -70,33 +70,6 @@ const formatter = new Intl.NumberFormat("en-UK", {
   currency: "GBP",
 });
 
-const maintenance_forecast_data = {
-  labels: ["0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
-  datasets: [
-    {
-      label: "Current maintenance costs",
-      fill: true,
-      backgroundColor: "#0010B981",
-      borderColor: "#10B981",
-      data: [2, 4, 8, 10, 12, 16, 22, 26, 30, 34, 36],
-    },
-    {
-      label: "Stormwater retention",
-      fill: true,
-      backgroundColor: "#033B82F6",
-      borderColor: "#3B82F6",
-      data: [1, 2, 4, 8, 10, 12, 16, 20, 24, 30, 32],
-    },
-    {
-      label: "Other ecosystem  services(coming soon)",
-      backgroundColor: "#FF00000",
-      borderColor: "#6B7280",
-      data: [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 20],
-      fill: true,
-    },
-  ],
-};
-
 const steps = [
   {
     name: "Calculate your impact",
@@ -139,10 +112,13 @@ export default function Steward() {
   const [decidiousPercent, setDecidiousPercent] = useState(50);
   const [seq, setSeq] = useState(0);
   const [maintenanceCost, setMaintenanceCost] = useState(1000);
+  const [maintenanceCostArray, setMaintenanceCostArray] = useState([]);
+  const [savingsEstimate, setSavingsEstimate] = useState(10);
   const [seqArr, setArrSeq] = useState([]);
   const [imperviousPercent, setImperviousPercent] = useState(50);
   const [stormwater, setStormwater] = useState(0);
   const [stormwaterArray, setStormwaterArray] = useState([]);
+  const [stormwaterCostArray, setStormwaterCostArray] = useState([]);
 
   const co2data = {
     labels: ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
@@ -221,6 +197,33 @@ export default function Steward() {
         display: false,
       },
     },
+  };
+
+  const maintenance_forecast_data = {
+    labels: ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
+    datasets: [
+      {
+        label: "Current maintenance costs",
+        fill: true,
+        backgroundColor: "#0010B981",
+        borderColor: "#10B981",
+        data: maintenanceCostArray,
+      },
+      {
+        label: "Stormwater retention",
+        fill: true,
+        backgroundColor: "#033B82F6",
+        borderColor: "#3B82F6",
+        data: stormwaterCostArray,
+      },
+      {
+        label: "Other ecosystem  services(coming soon)",
+        backgroundColor: "#FF00000",
+        borderColor: "#6B7280",
+        data: [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 20],
+        fill: true,
+      },
+    ],
   };
 
   const get_stock = (cm, senescence) => {
@@ -348,7 +351,7 @@ export default function Steward() {
     // // Calculate and update water retention chart
 
     // Variables to be used later
-    // let cost_per_m2_of_water = 1.3464; // £ per sq. meter
+    //
     // let ret_per_tree = 0.406; //m2 per tree
     // let money_per_tree = 0.55; //£ per tree
     // let tree_area = 13.3; // Roni back of the envelope estimation https://darkmatterlabs.slack.com/archives/C02ET8M2UTG/p1635337783037800?thread_ts=1635155720.033900&cid=C02ET8M2UTG
@@ -380,6 +383,23 @@ export default function Steward() {
     setStormwaterArray(water_arr_for_graph);
 
     setStormwater(waterRetentionValue.toFixed(2));
+
+    // Water Cost
+    let cost_per_m2_of_water = 1.53; // £ per sq. meter
+
+    let water_benefit_arr_for_graph = water_arr_for_graph.map(
+      (x) => x * cost_per_m2_of_water
+    );
+    setStormwaterCostArray(water_benefit_arr_for_graph);
+    let savings = sum_arr(water_benefit_arr_for_graph) / 50
+    setSavingsEstimate(savings);
+  }
+
+  function update_cost() {
+    // Update the cost chart of page 3
+    let cost = Array(10).fill(maintenanceCost * 5);
+    
+    setMaintenanceCostArray(cost);
   }
 
   const calculate_button_click = (e) => {
@@ -387,6 +407,7 @@ export default function Steward() {
     window.scrollTo(0, 0);
     update_seq();
     update_water();
+    update_cost();
 
     setPageState(1);
   };
@@ -1075,7 +1096,7 @@ export default function Steward() {
                           </dt>
                           <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                             <p className="text-2xl font-semibold text-gray-900">
-                              {formatter.format(maintenanceCost * 0.08)}
+                              {formatter.format(savingsEstimate)}
                             </p>
                             <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
                               <span className="sr-only">by</span>
@@ -1100,7 +1121,7 @@ export default function Steward() {
                         <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                           <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                             <p className="text-2xl font-semibold text-green-600">
-                              {formatter.format(maintenanceCost * 0.08 * 50)}
+                              {formatter.format(savingsEstimate * 50)}
                             </p>
                             <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
                               <span className="sr-only">by</span>
