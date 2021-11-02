@@ -50,6 +50,7 @@ const maintenance_forecast_options = {
   scales: {
     x: {
       display: true,
+      stacked: true,
       title: {
         display: true,
         text: "Costs over 50 years, assuming maintenance costs remain the same, at 0% inflation.",
@@ -57,6 +58,7 @@ const maintenance_forecast_options = {
     },
     y: {
       display: true,
+      stacked: true,
       title: {
         display: true,
         text: "Maintenance cost reduction estimate",
@@ -209,6 +211,7 @@ export default function Steward() {
         backgroundColor: "#0010B981",
         borderColor: "#10B981",
         data: maintenanceCostArray,
+        stack: 'Stack 0',
       },
       {
         label: "Stormwater retention",
@@ -216,6 +219,7 @@ export default function Steward() {
         backgroundColor: "#033B82F6",
         borderColor: "#3B82F6",
         data: stormwaterCostArray,
+        stack: 'Stack 1',
       },
       {
         label: "Carbon sequestration",
@@ -223,6 +227,7 @@ export default function Steward() {
         backgroundColor: "#03AAAAAA",
         borderColor: "#3B82F6",
         data: seqCostArray,
+        stack: 'Stack 1',
       },
       {
         label: "Other ecosystem  services(coming soon)",
@@ -230,6 +235,7 @@ export default function Steward() {
         borderColor: "#6B7280",
         data: [100, 200, 300, 400, 600, 800, 1000, 1200, 1400, 1600, 2000],
         fill: true,
+        stack: 'Stack 1',
       },
     ],
   };
