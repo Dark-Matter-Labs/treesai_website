@@ -1,21 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ChevronRightIcon,
+  ChevronLeftIcon,
   InformationCircleIcon,
   CheckIcon,
 } from "@heroicons/react/solid";
 import { Bar, Line } from "react-chartjs-2";
 
 import NavBarGlasgow from "../components/demo/NavBarGlasgow";
-
-const pages = [
-  {
-    name: "Project details",
-    href: "/become-a-steward/glasgow/steward",
-    current: true,
-  },
-];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -26,7 +18,7 @@ const faqs = [
     id: 1,
     question: "What do we mean by pervious and impervious surface?",
     answer:
-      "A pervious surface allows water to percolate through to the area underneath rather than becoming runoff. Impervious surfaces are solid surfaces that prevent aeration, infiltration, and water penetration, resulting in a number of harmful side effects. Perviouse surfaces have multiple benefits from a point of view of stormwater management. Find here more information about these benefits. https://www.susdrain.org/delivering-suds/using-suds/suds-components/source-control/pervious-surfaces/benefits-of-pervious-surfaces.html ",
+      "A pervious surface allows water to percolate through to the area underneath rather than becoming runoff. Impervious surfaces are solid surfaces that prevent aeration, infiltration, and water penetration, resulting in a number of harmful side effects. Perviouse surfaces have multiple benefits from a point of view of stormwater management.",
   },
   {
     id: 2,
@@ -107,13 +99,14 @@ const steps = [
 
 export default function Steward() {
   const [pageState, setPageState] = useState(0);
+  const [projectName, setProjectName] = useState("");
   const [numberOfTrees, setNumberOfTrees] = useState(100);
   const [dbh, setDBH] = useState(13);
   const [newNumberOfTrees, setNewNumberOfTrees] = useState(0);
   const [evergreenPercent, setEvergreenPercent] = useState(50);
   const [decidiousPercent, setDecidiousPercent] = useState(50);
   const [seq, setSeq] = useState(0);
-  const [maintenanceCost, setMaintenanceCost] = useState(1000);
+  const [maintenanceCost, setMaintenanceCost] = useState(10000);
   const [maintenanceCostArray, setMaintenanceCostArray] = useState([]);
   const [savingsEstimate, setSavingsEstimate] = useState(10);
   const [seqArr, setArrSeq] = useState([]);
@@ -448,58 +441,39 @@ export default function Steward() {
 
   return (
     <>
-      <NavBarGlasgow current="steward" />
-      <div className="bg-gray py-16 sm:py-24 lg:py-20 px-16">
-        <nav className="flex" aria-label="Breadcrumb">
-          <ol className="flex items-center space-x-4">
-            <li>
-              <div>
-                <Link
-                  to="/become-a-steward"
-                  className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
-                >
-                  Steward
-                </Link>
-              </div>
-            </li>
-            {pages.map((page) => (
-              <li key={page.name}>
-                <div className="flex items-center">
-                  <ChevronRightIcon
-                    className="flex-shrink-0 h-5 w-5 text-gray-400"
-                    aria-hidden="true"
-                  />
-                  <Link
-                    to={page.href}
-                    className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
-                    aria-current={page.current ? "page" : undefined}
-                  >
-                    {page.name}
-                  </Link>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </nav>
-
+      <div className="bg-white">
         {(() => {
           switch (pageState) {
             case 0:
               return (
                 <>
-                  <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-4 sm:grid-cols-1">
+                  <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                     <div>
-                      <div className="px-2 space-y-1 mt-10 input-section">
+                      <NavBarGlasgow />
+                      <div className="flex items-center mt-20 ml-20">
+                        <ChevronLeftIcon
+                          className="flex-shrink-0 h-5 w-5 text-gray-400"
+                          aria-hidden="true"
+                        />
+                        <Link
+                          to="/become-a-steward"
+                          className="text-sm font-medium text-gray-500 hover:text-gray-700"
+                        >
+                          Back
+                        </Link>
+                      </div>
+
+                      <div className="px-0 space-y-2 mt-10 input-section">
                         <form className="space-y-8 divide-y divide-gray-200 input-inside">
                           <div className="space-y-8 divide-y divide-gray-200">
                             <div>
                               <div>
-                                <h3 className="text-lg leading-6 font-medium text-gray-900">
-                                  Enter project details
+                                <h3 className="text-2xl leading-6 font-medium text-gray-900">
+                                  Enter your project details to get started
                                 </h3>
                               </div>
 
-                              <div className="sm:col-span-3">
+                              <div className="sm:col-span-3 mt-5">
                                 <label
                                   htmlFor="project-name"
                                   className="block text-sm font-medium text-gray-700"
@@ -511,6 +485,10 @@ export default function Steward() {
                                     type="text"
                                     name="project-name"
                                     id="project-name"
+                                    defaultValue={projectName}
+                                    onChange={(e) => {
+                                      setProjectName(e.target.value);
+                                    }}
                                     className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                                   />
                                 </div>
@@ -521,7 +499,7 @@ export default function Steward() {
                                   htmlFor="project-name"
                                   className="block text-sm font-medium text-gray-700"
                                 >
-                                  Project short description
+                                  Short description
                                 </label>
                                 <div className="mt-1">
                                   <input
@@ -550,6 +528,7 @@ export default function Steward() {
                                   <div className="mt-1">
                                     <input
                                       type="text"
+                                      placeholder="5 Mansewood Rd, Glasgow G43 1TW"
                                       name="project-location"
                                       id="project-location"
                                       className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
@@ -770,7 +749,7 @@ export default function Steward() {
                                     What activities do you have planned?
                                   </h3>
                                 </div>
-                                <div className="rounded-md bg-green-50 p-4 mt-2">
+                                <div className="rounded-md bg-green-50 p-4">
                                   <div className="flex">
                                     <div className="flex-shrink-0">
                                       <InformationCircleIcon
@@ -782,13 +761,14 @@ export default function Steward() {
                                       <h3 className="text-sm font-medium text-green-800">
                                         Activities are in progress. Give us
                                         feedback and learn about our{" "}
-                                        <u>methodology</u>
+                                        <Link to="/faq">
+                                          <u>methodology</u>.
+                                        </Link>
                                       </h3>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-
                               <fieldset className="space-y-5">
                                 <legend className="sr-only">Activities</legend>
                                 <div className="relative flex items-start">
@@ -882,9 +862,9 @@ export default function Steward() {
                                 <div className="flex justify-end">
                                   <button
                                     onClick={(e) => calculate_button_click(e)}
-                                    className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                    className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green4 hover:green2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                   >
-                                    Calculate Impact
+                                    Next
                                   </button>
                                 </div>
                               </div>
@@ -924,274 +904,300 @@ export default function Steward() {
               );
             case 1:
               return (
-                <div className="input-section">
-                  <div className="flex-shrink-0 pt-10 input-inside">
-                    <div className="pt-5">
-                      <div className="flex justify-start">
-                        <button
-                          onClick={(e) => back(e)}
-                          className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
-                        >
-                          Back
-                        </button>
-                      </div>
-                    </div>
-                    <div className="rounded-md bg-green-50 p-4 mt-10">
-                      <div className="flex">
-                        <div className="flex-shrink-0">
-                          <InformationCircleIcon
-                            className="h-5 w-5 text-green-400"
-                            aria-hidden="true"
-                          />
-                        </div>
-                        <div className="ml-3">
-                          <h3 className="text-sm font-medium text-green-800">
-                            This is an estimate. Learn about our{" "}
-                            <u>methodology</u>
-                          </h3>
-                        </div>
-                      </div>
-                    </div>
-                    <h3 className="text-lg leading-6 font-medium text-gray-900">
-                      Environmental service
-                    </h3>
-
-                    <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2">
-                      <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                        <dt>
-                          <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                            CO2 removal
-                          </p>
-                        </dt>
-                        <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                          <p className="text-2xl font-semibold text-green-600 ">
-                            {seq} tCO2e
-                          </p>
-                          <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
-                            over 50 years
-                          </p>
-                        </dd>
-                      </div>
-
-                      <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                        <dt>
-                          <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                            Stormwater retention
-                          </p>
-                        </dt>
-                        <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                          <p className="text-2xl font-semibold text-blue2 ">
-                            {stormwater} m3
-                          </p>
-                          <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
-                            over 50 years
-                          </p>
-                        </dd>
-                      </div>
-
-                      <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                        <dt>
-                          <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                            Flood control
-                          </p>
-                        </dt>
-                        <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
-                            Coming soon
-                          </span>
-                        </dd>
-                      </div>
-
-                      <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                        <dt>
-                          <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                            Air quality improvement
-                          </p>
-                        </dt>
-                        <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
-                            Coming soon
-                          </span>
-                        </dd>
-                      </div>
-
-                      <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                        <dt>
-                          <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                            Heat island effect reduction
-                          </p>
-                        </dt>
-                        <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
-                            Coming soon
-                          </span>
-                        </dd>
-                      </div>
-                    </div>
-
-                    <div className="mt-5 flex flex-wrap content-around bg-white flex-space">
-                      <h4 className="text-md leading-6 font-medium text-gray-900">
-                        CO2 Removal
-                      </h4>
-                      <Line data={co2data} options={co2options} />
-
-                      <h4 className="text-md leading-6 font-medium text-gray-900">
-                        Stormwater retention
-                      </h4>
-                      <Bar
-                        data={stormwater_data}
-                        options={stormwater_options}
+                <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
+                  <div>
+                    <NavBarGlasgow />
+                    <div className="flex items-center mt-20 ml-20">
+                      <ChevronLeftIcon
+                        className="flex-shrink-0 h-5 w-5 text-gray-400"
+                        aria-hidden="true"
                       />
-                    </div>
-                    <div className="pt-5">
-                      <div className="flex justify-end">
-                        <button
-                          onClick={(e) => next(e)}
-                          className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        >
-                          Review your benefits
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            case 2:
-              return (
-                <div className="input-section">
-                  <div className="flex-shrink-0 pt-10 input-inside">
-                    <div className="pt-5">
-                      <div className="flex justify-start">
-                        <button
-                          onClick={(e) => back(e)}
-                          className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
-                        >
-                          Back
-                        </button>
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-lg leading-6 font-medium text-gray-900">
-                        Maintenance forecast estimate
-                      </h3>
-                    </div>
-
-                    <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg">
-                      <dt>
-                        <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                          Maintenance coverage by TreesAI platform
-                        </p>
-                      </dt>
-                      <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                        <p className="text-2xl font-semibold text-green-600">
-                          {savingsPercentage}%
-                        </p>
-                        <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
-                          Based on our methodology
-                        </p>
-                      </dd>
-                    </div>
-
-                    <div>
-                      <dl className="mt-5 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-2">
-                        <div className="relative bg-white pt-2 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                          <dt>
-                            <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                              Current costs
-                            </p>
-                          </dt>
-                          <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                            <p className="text-2xl font-semibold text-gray-900">
-                              {formatter.format(maintenanceCost)}
-                            </p>
-                            <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
-                              <span className="sr-only">by</span>
-                              per year
-                            </p>
-                          </dd>
-                        </div>
-                        <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                          <dt>
-                            <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                              Savings estimate
-                            </p>
-                          </dt>
-                          <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                            <p className="text-2xl font-semibold text-gray-900">
-                              {formatter.format(savingsEstimate)}
-                            </p>
-                            <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
-                              <span className="sr-only">by</span>
-                              per year
-                            </p>
-                          </dd>
-                        </div>
-                      </dl>
-
-                      <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-2">
-                        <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                          <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                            <p className="text-2xl font-semibold text-green-600">
-                              {formatter.format(maintenanceCost * 50)}
-                            </p>
-                            <p className="ml-1 text-gray-900ml-2 flex items-baseline text-sm font-semibold">
-                              <span className="sr-only">by</span>
-                              over 50 years
-                            </p>
-                          </dd>
-                        </div>
-                        <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                          <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                            <p className="text-2xl font-semibold text-green-600">
-                              {formatter.format(savingsEstimate * 50)}
-                            </p>
-                            <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
-                              <span className="sr-only">by</span>
-                              over 50 years
-                            </p>
-                          </dd>
-                        </div>
-                      </dl>
-                    </div>
-
-                    <Bar
-                      data={maintenance_forecast_data}
-                      options={maintenance_forecast_options}
-                    />
-                    <div className="pt-5">
-                      <div className="flex justify-end">
-                        <button
-                          onClick={(e) => next(e)}
-                          className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        >
-                          Next
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            case 3:
-              return (
-                <div>
-                  <div className="pt-5">
-                    <div className="flex justify-start">
                       <button
                         onClick={(e) => back(e)}
-                        className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+                        className="text-sm font-medium text-gray-500 hover:text-gray-700"
                       >
                         Back
                       </button>
                     </div>
+
+                    <div className="input-section">
+                      <div className="flex-shrink-0 input-inside">
+                        <h3 className="text-2xl leading-6 font-medium text-gray-900 mt-5">
+                          {projectName} Project Impact
+                        </h3>
+                        <div className="rounded-md bg-green-50 p-4 mt-4">
+                          <div className="flex">
+                            <div className="flex-shrink-0">
+                              <InformationCircleIcon
+                                className="h-5 w-5 text-green-400"
+                                aria-hidden="true"
+                              />
+                            </div>
+                            <div className="ml-3">
+                              <h3 className="text-sm font-medium text-green-800">
+                                This is an estimate. Learn about our{" "}
+                                <u>methodology</u>
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                        <h3 className="text-lg leading-6 font-medium text-gray-900 mt-4">
+                          Environmental service
+                        </h3>
+
+                        <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2">
+                          <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                            <dt>
+                              <p className="ml-2 text-sm font-small text-gray-500 truncate">
+                                CO2 removal
+                              </p>
+                            </dt>
+                            <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                              <p className="text-2xl font-semibold text-green-600 ">
+                                {seq} tCO2e
+                              </p>
+                              <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
+                                over 50 years
+                              </p>
+                            </dd>
+                          </div>
+
+                          <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                            <dt>
+                              <p className="ml-2 text-sm font-small text-gray-500 truncate">
+                                Avoided runoff
+                              </p>
+                            </dt>
+                            <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                              <p className="text-2xl font-semibold text-blue2 ">
+                                {stormwater} m3
+                              </p>
+                              <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
+                                over 50 years
+                              </p>
+                            </dd>
+                          </div>
+
+                          <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                            <dt>
+                              <p className="ml-2 text-sm font-small text-gray-500 truncate">
+                                Flood control
+                              </p>
+                            </dt>
+                            <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
+                                Coming soon
+                              </span>
+                            </dd>
+                          </div>
+
+                          <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                            <dt>
+                              <p className="ml-2 text-sm font-small text-gray-500 truncate">
+                                Air quality improvement
+                              </p>
+                            </dt>
+                            <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
+                                Coming soon
+                              </span>
+                            </dd>
+                          </div>
+
+                          <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                            <dt>
+                              <p className="ml-2 text-sm font-small text-gray-500 truncate">
+                                Heat island effect reduction
+                              </p>
+                            </dt>
+                            <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
+                                Coming soon
+                              </span>
+                            </dd>
+                          </div>
+                        </div>
+
+                        <div className="mt-5 flex flex-wrap content-around bg-white flex-space">
+                          <h4 className="text-2xl leading-6 font-large text-gray-900 pb-2 pt-2">
+                            Carbon sequestration over time
+                          </h4>
+                          <Line data={co2data} options={co2options} />
+
+                          <h4 className="text-2xl leading-6 font-large text-gray-900 pb-2 pt-2">
+                            Stormwater retention
+                          </h4>
+                          <Bar
+                            data={stormwater_data}
+                            options={stormwater_options}
+                          />
+                        </div>
+                        <div className="pt-5">
+                          <div className="flex justify-end pb-20">
+                            <button
+                              onClick={(e) => next(e)}
+                              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green4 hover:bg-green2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            >
+                              Next
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="relative max-w-7xl mx-auto md:grid-cols-2 lg:grid lg:grid-cols-2 sm:grid-cols-1">
-                    <div className="add-to-market"></div>
-                    <div className="bg-gray-50 py-16 px-4">
-                      <div className="max-w-lg mx-auto">
-                        <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
+
+                  <div className="steward"></div>
+                </div>
+              );
+            case 2:
+              return (
+                <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
+                  <div>
+                    <NavBarGlasgow />
+                    <div className="flex items-center mt-20 ml-20">
+                      <ChevronLeftIcon
+                        className="flex-shrink-0 h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                      />
+                      <button
+                        onClick={(e) => back(e)}
+                        className="text-sm font-medium text-gray-500 hover:text-gray-700"
+                      >
+                        Back
+                      </button>
+                    </div>
+                    <div className="input-section">
+                      <div className="flex-shrink-0 input-inside mt-5">
+                        <div className="mb-5">
+                          <h3 className="text-2xl leading-6 font-medium text-gray-900">
+                            {projectName} Maintenance forecast estimate
+                          </h3>
+                        </div>
+
+                        <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg">
+                          <dt>
+                            <p className="ml-2 text-sm font-small text-gray-500 truncate">
+                              Maintenance coverage by TreesAI platform
+                            </p>
+                          </dt>
+                          <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                            <p className="text-2xl font-semibold text-green-600">
+                              {savingsPercentage}%
+                            </p>
+                            <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
+                              Based on our methodology
+                            </p>
+                          </dd>
+                        </div>
+
+                        <div>
+                          <dl className="mt-5 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-2">
+                            <div className="relative bg-white pt-2 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                              <dt>
+                                <p className="ml-2 text-sm font-small text-gray-500 truncate">
+                                  Current costs
+                                </p>
+                              </dt>
+                              <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                                <p className="text-2xl font-semibold text-gray-900">
+                                  {formatter.format(maintenanceCost)}
+                                </p>
+                                <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
+                                  <span className="sr-only">by</span>
+                                  per year
+                                </p>
+                              </dd>
+                            </div>
+                            <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                              <dt>
+                                <p className="ml-2 text-sm font-small text-gray-500 truncate">
+                                  Savings estimate
+                                </p>
+                              </dt>
+                              <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                                <p className="text-2xl font-semibold text-gray-900">
+                                  {formatter.format(savingsEstimate)}
+                                </p>
+                                <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
+                                  <span className="sr-only">by</span>
+                                  per year
+                                </p>
+                              </dd>
+                            </div>
+                          </dl>
+
+                          <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-2">
+                            <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                              <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                                <p className="text-2xl font-semibold text-green-600">
+                                  {formatter.format(maintenanceCost * 50)}
+                                </p>
+                                <p className="ml-1 text-gray-5 flex items-baseline text-sm font-regular">
+                                  <span className="sr-only">by</span>
+                                  over 50 years
+                                </p>
+                              </dd>
+                            </div>
+                            <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                              <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                                <p className="text-2xl font-semibold text-green-600">
+                                  {formatter.format(savingsEstimate * 50)}
+                                </p>
+                                <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
+                                  <span className="sr-only">by</span>
+                                  over 50 years
+                                </p>
+                              </dd>
+                            </div>
+                          </dl>
+                        </div>
+
+                        <div className="mt-5">
+                          <Bar
+                            data={maintenance_forecast_data}
+                            options={maintenance_forecast_options}
+                          />
+                        </div>
+
+                        <div className="pt-5 pb-20">
+                          <div className="flex justify-end">
+                            <button
+                              onClick={(e) => next(e)}
+                              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green4 hover:bg-green2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            >
+                              Next
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="steward"></div>
+                </div>
+              );
+            case 3:
+              return (
+                <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
+                  <div>
+                    <NavBarGlasgow />
+                    <div className="flex items-center mt-20 ml-20">
+                      <ChevronLeftIcon
+                        className="flex-shrink-0 h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                      />
+                      <button
+                        onClick={(e) => back(e)}
+                        className="text-sm font-medium text-gray-500 hover:text-gray-700"
+                      >
+                        Back
+                      </button>
+                    </div>
+                    <div className="bg-white">
+                      <div className="ml-20 mt-5">
+                        <h2 className="text-base text-green4 font-semibold tracking-wide uppercase">
                           Work with TREESAI
                         </h2>
-                        <h2 className="font-grotesk text-3xl text-gray-900 sm:text-4xl">
+                        <h2 className="font-medium text-2xl text-gray-900">
                           Share your environmental services to support your
                           project
                         </h2>
@@ -1215,7 +1221,7 @@ export default function Steward() {
                                   <>
                                     {stepIdx !== steps.length - 1 ? (
                                       <div
-                                        className="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-indigo-600"
+                                        className="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-green4"
                                         aria-hidden="true"
                                       />
                                     ) : null}
@@ -1224,7 +1230,7 @@ export default function Steward() {
                                       className="relative flex items-start group"
                                     >
                                       <span className="h-9 flex items-center">
-                                        <span className="relative z-10 w-8 h-8 flex items-center justify-center bg-indigo-600 rounded-full group-hover:bg-indigo-800">
+                                        <span className="relative z-10 w-8 h-8 flex items-center justify-center bg-green4 rounded-full group-hover:bg-indigo-800">
                                           <CheckIcon
                                             className="w-5 h-5 text-white"
                                             aria-hidden="true"
@@ -1258,12 +1264,12 @@ export default function Steward() {
                                         className="h-9 flex items-center"
                                         aria-hidden="true"
                                       >
-                                        <span className="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-indigo-600 rounded-full">
-                                          <span className="h-2.5 w-2.5 bg-indigo-600 rounded-full" />
+                                        <span className="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-green4 rounded-full">
+                                          <span className="h-2.5 w-2.5 bg-green4 rounded-full" />
                                         </span>
                                       </span>
                                       <span className="ml-4 min-w-0 flex flex-col">
-                                        <span className="text-xs font-semibold tracking-wide uppercase text-indigo-600">
+                                        <span className="text-xs font-semibold tracking-wide uppercase text-green4">
                                           {step.name}
                                         </span>
                                         <span className="text-sm text-gray-500">
@@ -1285,15 +1291,15 @@ export default function Steward() {
                                         className="h-9 flex items-center"
                                         aria-hidden="true"
                                       >
-                                        <span className="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray-300 rounded-full group-hover:border-gray-400">
+                                        <span className="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray2 rounded-full group-hover:border-gray-400">
                                           <span className="h-2.5 w-2.5 bg-transparent rounded-full group-hover:bg-gray-300" />
                                         </span>
                                       </span>
                                       <span className="ml-4 min-w-0 flex flex-col">
-                                        <span className="text-xs font-semibold tracking-wide uppercase text-gray-500">
+                                        <span className="text-xs font-semibold tracking-wide uppercase text-gray2">
                                           {step.name}
                                         </span>
-                                        <span className="text-sm text-gray-500">
+                                        <span className="text-sm text-gray2">
                                           {step.description}
                                         </span>
                                       </span>
@@ -1304,34 +1310,35 @@ export default function Steward() {
                             ))}
                           </ol>
                         </nav>
+                        <div className="pt-5 pr-10">
+                          <div className="flex justify-end">
+                            <button
+                              onClick={(e) => next(e)}
+                              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green4 hover:bg-green2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            >
+                              Submit for review
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div className="pt-5">
-                    <div className="flex justify-end">
-                      <button
-                        onClick={(e) => next(e)}
-                        className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      >
-                        Submit for review
-                      </button>
-                    </div>
-                  </div>
+
+                  <div className="add-to-market"></div>
                 </div>
               );
             case 4:
               return (
-                <div>
-                  <div className="pt-5"></div>
-                  <div className="relative max-w-7xl mx-auto md:grid-cols-2 lg:grid lg:grid-cols-2 sm:grid-cols-1">
-                    <div className="add-to-market"></div>
+                <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
+                  <div>
+                    <NavBarGlasgow />
                     <div className="bg-gray-50 py-16 px-4">
                       <div className="max-w-lg mx-auto">
                         <h2 className="font-grotesk text-3xl text-gray-900 sm:text-4xl">
                           Thank you for submitting your project!
                         </h2>
                         <div className="pt-2 pb-2">
-                          <p className="text-lg leading-6 text-dark">
+                          <p className="text-lg leading-6 text-dark pt-4">
                             We are currently looking for innovative projects in
                             Glasgow. If you are interested in TreesAI, please
                             send us an email.
@@ -1339,17 +1346,19 @@ export default function Steward() {
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="pt-40">
-                    <div className="flex justify-end">
-                      <Link
-                        to="/invest-in-nature/glasgow"
-                        className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      >
-                        Check out Glasgow portfolio
-                      </Link>
+                    <div className="pt-20 pr-10">
+                      <div className="flex justify-end">
+                        <Link
+                          to="/invest-in-nature/glasgow"
+                          className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green4 hover:bg-green2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        >
+                          Check out Glasgow portfolio
+                        </Link>
+                      </div>
                     </div>
                   </div>
+
+                  <div className="add-to-market"></div>
                 </div>
               );
             default:

@@ -117,7 +117,7 @@ iframe {
 }
 
 .input-inside {
-  width: 50%;
+  width: 80%;
 }
 
 .add-to-market {
@@ -127,7 +127,6 @@ iframe {
   background-position: center center;
   width: 100%;
   height: 100%;
-  padding: 40%;
 }
 
 #map {
@@ -164,7 +163,7 @@ iframe {
   background-repeat: no-repeat;
   background-position: center center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 
 .image-blur {
