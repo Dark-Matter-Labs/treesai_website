@@ -130,7 +130,7 @@ export default function StewardMain() {
         <div className="grid gap-y-8 gap-x-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {activities.map((activity) => (
             <div key={activity.id} className="group relative">
-              <div className="w-full bg-gray-200 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
+              <div className="w-full bg-gray-200 rounded-md overflow-hidden lg:aspect-none">
                 <img
                   src={activity.imageSrc}
                   alt={activity.imageAlt}
