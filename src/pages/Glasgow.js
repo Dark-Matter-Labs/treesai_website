@@ -200,7 +200,7 @@ export default function Glasgow() {
               aria-hidden="true"
             />
             <Link
-              to="/become-a-steward"
+              to="/invest-in-nature"
               className="text-sm font-medium text-gray-500 hover:text-gray-700"
             >
               Back
