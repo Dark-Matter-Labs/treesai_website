@@ -50,6 +50,7 @@ const maintenance_forecast_options = {
   scales: {
     x: {
       display: true,
+      stacked: true,
       title: {
         display: true,
         text: "Costs over 50 years, assuming maintenance costs remain the same, at 0% inflation.",
@@ -57,9 +58,10 @@ const maintenance_forecast_options = {
     },
     y: {
       display: true,
+      stacked: true,
       title: {
         display: true,
-        text: "Maintenance cost reduction estimate",
+        text: "Cost/Benefit estimate",
       },
     },
   },
@@ -120,6 +122,7 @@ export default function Steward() {
   const [stormwaterArray, setStormwaterArray] = useState([]);
   const [stormwaterCostArray, setStormwaterCostArray] = useState([]);
   const [seqCostArray, setSeqCostArray] = useState([]);
+  const [savingsPercentage, setSavingsPercentage] = useState("5-10");
 
   const co2data = {
     labels: ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
@@ -206,16 +209,18 @@ export default function Steward() {
       {
         label: "Current maintenance costs",
         fill: true,
-        backgroundColor: "#0010B981",
+        backgroundColor: "#10B981",
         borderColor: "#10B981",
         data: maintenanceCostArray,
+        stack: "Stack 0",
       },
       {
         label: "Stormwater retention",
         fill: true,
-        backgroundColor: "#033B82F6",
+        backgroundColor: "#3B82F6",
         borderColor: "#3B82F6",
         data: stormwaterCostArray,
+        stack: "Stack 1",
       },
       {
         label: "Carbon sequestration",
@@ -223,13 +228,15 @@ export default function Steward() {
         backgroundColor: "#03AAAAAA",
         borderColor: "#3B82F6",
         data: seqCostArray,
+        stack: "Stack 1",
       },
       {
-        label: "Other ecosystem  services(coming soon)",
-        backgroundColor: "#FF00000",
+        label: "Other ecosystem services(coming soon)",
+        backgroundColor: "#6B7280",
         borderColor: "#6B7280",
         data: [100, 200, 300, 400, 600, 800, 1000, 1200, 1400, 1600, 2000],
         fill: true,
+        stack: "Stack 1",
       },
     ],
   };
@@ -406,7 +413,10 @@ export default function Steward() {
     let savings =
       Number(sum_arr(sequestration_arr_for_graph) / 49) +
       Number(sum_arr(water_benefit_arr_for_graph) / 49);
-    setSavingsEstimate(savings);
+
+    setSavingsEstimate(savings.toFixed(1));
+
+    setSavingsPercentage((maintenanceCost / savings).toFixed());
   }
 
   function update_cost() {
@@ -1074,7 +1084,7 @@ export default function Steward() {
                       </dt>
                       <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                         <p className="text-2xl font-semibold text-green-600">
-                          5–10%
+                          {savingsPercentage}%
                         </p>
                         <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
                           Based on our methodology
