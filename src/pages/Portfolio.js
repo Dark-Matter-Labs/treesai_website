@@ -258,7 +258,7 @@ export default function Portfolio() {
           </div>
         </div>
       </div>
-      <div className="bg-gray py-16 sm:py-24 lg:py-20 px-16 sm:px-4">
+      <div className="bg-gray py-16 sm:py-24 lg:py-20 md:px-16 lg:px-16 sm:px-4">
         <div className="mt-10">
           <h2 className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
             Scottish Motor’s Nature Portfolio
@@ -307,13 +307,13 @@ export default function Portfolio() {
           <p className="mt-3 text-lg font-regular text-gray-500">
             Carbon stored over time
           </p>
-          <div className="lg:chart-size md:chart-size sm:chart-size-mobile">
+          <div className="sm:w-full lg:w-9/12 md:w-9/12">
             <Bar data={carbon_data} options={carbon_options} />
           </div>
           <p className="mt-3 text-lg font-regular text-gray-500">
             Water retained over time
           </p>
-          <div className="lg:chart-size md:chart-size sm:chart-size-mobile">
+          <div className="sm:w-full lg:w-9/12 md:w-9/12">
             <Bar data={stormwater_data} options={stormwater_options} />
           </div>
         </div>

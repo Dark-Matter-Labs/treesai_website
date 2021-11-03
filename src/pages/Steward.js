@@ -1152,7 +1152,7 @@ export default function Steward() {
                           </dl>
                         </div>
 
-                        <div className="mt-5 sm:chart-size-mobile">
+                        <div className="mt-5 sm:w-full lg:w-9/12 md:w-9/12">
                           <Bar
                             data={maintenance_forecast_data}
                             options={maintenance_forecast_options}
