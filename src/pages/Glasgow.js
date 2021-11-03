@@ -557,7 +557,7 @@ export default function Glasgow() {
                       </Link>
                     </div>
                   </div>
-                  <div className="-mt-6">
+                  <div className="-mt-6  aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
                     <img
                       className="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
                       src={letsInvestImage}
@@ -597,13 +597,13 @@ export default function Glasgow() {
                       </Link>
                       <Link
                         to="/invest-in-nature/glasgow/invest/portfolio"
-                        className="mt-8 ml-4 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-blue4 hover:bg-indigo-50"
+                        className="mt-8 md:ml-4 lg:ml-4 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-blue4 hover:bg-indigo-50"
                       >
                         View a sample portfolio
                       </Link>
                     </div>
                   </div>
-                  <div className="-mt-6">
+                  <div className="-mt-6  aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
                     <img
                       className="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
                       src={InvestBanner}
@@ -640,7 +640,7 @@ export default function Glasgow() {
                       </Link>
                     </div>
                   </div>
-                  <div className="-mt-6">
+                  <div className="-mt-6  aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
                     <img
                       className="transform rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
                       src={banner3}
