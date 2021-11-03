@@ -24,6 +24,8 @@ module.exports = {
         green1: "#A7F3D0",
         blue: "#06B6D4",
         blue2: "#3B82f6",
+        blue3: "#06B6D4",
+        blue4: "#1d6e8e",
         dark: "#6B7280",
         gray: "#F9FAFB",
         gray2: "#9CA3AF",
@@ -33,11 +35,17 @@ module.exports = {
         light: "#D4D4D4",
         extraLight: "#F2F2F2",
         white: "#FFFFFF",
+        gcc: "#035D51",
       },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      opacity: ["disabled"],
+    },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/forms"),
+  ],
 };

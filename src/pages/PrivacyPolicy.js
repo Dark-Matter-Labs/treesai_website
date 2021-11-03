@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Privacy from "../components/Privacy";
 import Footer from "../components/Footer";
 
-export default function Home() {
+export default function PrivacyPolicy() {
   return (
     <div className="bg-gray">
       <div className="relative overflow-hidden">
