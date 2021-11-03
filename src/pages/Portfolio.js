@@ -261,7 +261,7 @@ export default function Portfolio() {
       <div className="bg-gray py-16 sm:py-24 lg:py-20 px-16 sm:px-4">
         <div className="mt-10">
           <h2 className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
-            Tesla’s Nature Portfolio
+            Scottish Motor’s Nature Portfolio
           </h2>
           <p className="mt-3 text-lg font-regular text-gray-500">
             This is a sample portfolio to track your investments in time

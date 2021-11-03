@@ -104,7 +104,7 @@ export default function StewardMain() {
         </div>
         <div className="lets-invest"></div>
       </div>
-      <div className="mt-5 y-16 sm:py-24 lg:py-20 px-16 sm:px-8">
+      <div className="mt-5 y-16 sm:py-24 lg:py-20 lg:px-16 md:px-16 sm:px-8">
         <div className="rounded-md bg-green-50 p-4 mt-2">
           <div className="flex">
             <div className="flex-shrink-0">
@@ -206,7 +206,7 @@ export default function StewardMain() {
                 </Link>
               </div>
             </div>
-            <div className="-mt-6">
+            <div className="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
               <img
                 className="transform rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
                 src={banner3}
