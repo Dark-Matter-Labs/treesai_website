@@ -450,7 +450,7 @@ export default function Steward() {
                   <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                     <div>
                       <NavBarGlasgow />
-                      <div className="flex items-center mt-20 ml-20">
+                      <div className="flex items-center mt-20 ml-20 sm:ml-10">
                         <ChevronLeftIcon
                           className="flex-shrink-0 h-5 w-5 text-gray-400"
                           aria-hidden="true"
@@ -907,7 +907,7 @@ export default function Steward() {
                 <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                   <div>
                     <NavBarGlasgow />
-                    <div className="flex items-center mt-20 ml-20">
+                    <div className="flex items-center mt-20 ml-20 sm:ml-10">
                       <ChevronLeftIcon
                         className="flex-shrink-0 h-5 w-5 text-gray-400"
                         aria-hidden="true"
@@ -1054,7 +1054,7 @@ export default function Steward() {
                 <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                   <div>
                     <NavBarGlasgow />
-                    <div className="flex items-center mt-20 ml-20">
+                    <div className="flex items-center mt-20 ml-20 sm:ml-10">
                       <ChevronLeftIcon
                         className="flex-shrink-0 h-5 w-5 text-gray-400"
                         aria-hidden="true"
@@ -1091,7 +1091,7 @@ export default function Steward() {
                         </div>
 
                         <div>
-                          <dl className="mt-5 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-2">
+                          <dl className="mt-5 grid grid-cols-1 gap-10 sm:grid-cols-1 lg:grid-cols-2">
                             <div className="relative bg-white pt-2 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                               <dt>
                                 <p className="ml-2 text-sm font-small text-gray-500 truncate">
@@ -1126,7 +1126,7 @@ export default function Steward() {
                             </div>
                           </dl>
 
-                          <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-2">
+                          <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-1 lg:grid-cols-2">
                             <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                               <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                                 <p className="text-2xl font-semibold text-green-600">
@@ -1152,7 +1152,7 @@ export default function Steward() {
                           </dl>
                         </div>
 
-                        <div className="mt-5">
+                        <div className="mt-5 sm:chart-size-mobile">
                           <Bar
                             data={maintenance_forecast_data}
                             options={maintenance_forecast_options}
@@ -1180,7 +1180,7 @@ export default function Steward() {
                 <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                   <div>
                     <NavBarGlasgow />
-                    <div className="flex items-center mt-20 ml-20">
+                    <div className="flex items-center mt-20 ml-20 sm:ml-10">
                       <ChevronLeftIcon
                         className="flex-shrink-0 h-5 w-5 text-gray-400"
                         aria-hidden="true"
@@ -1193,7 +1193,7 @@ export default function Steward() {
                       </button>
                     </div>
                     <div className="bg-white">
-                      <div className="ml-20 mt-5">
+                      <div className="ml-20 mt-5 sm:ml-8">
                         <h2 className="text-base text-green4 font-semibold tracking-wide uppercase">
                           Work with TREESAI
                         </h2>

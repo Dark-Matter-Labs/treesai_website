@@ -14,10 +14,10 @@ import trees from "../data/trees.json";
 
 const pieChartData = {
   labels: [
-    "Carbon sequestration",
-    "Stormwater retention",
-    "Flood control",
-    "Air quality improvement",
+    "Carbon sequestration%",
+    "Stormwater retention%",
+    "Flood control%",
+    "Air quality improvement%",
   ],
   datasets: [
     {
@@ -62,7 +62,7 @@ const projects = [
     imageSrc: "assets/northtoryglen.jpg",
     imageAlt: "Project picture",
     activity: "Planting & Restoration",
-    progress: "Complete",
+    progress: "Completed",
   },
   {
     id: 2,
@@ -71,7 +71,7 @@ const projects = [
     imageSrc: "assets/Early_Braes_basin.jpg",
     imageAlt: "Project picture",
     activity: "Reforestation",
-    progress: "Complete",
+    progress: "Completed",
   },
   {
     id: 3,
@@ -98,7 +98,7 @@ const projects = [
     imageSrc: "assets/wee_forest.jpg",
     imageAlt: "Project picture",
     activity: "Planting",
-    progress: "Ongoing",
+    progress: "In progress",
   },
   {
     id: 6,
@@ -206,17 +206,21 @@ export default function Glasgow() {
               Back
             </Link>
           </div>
-          <div className="mt-10 ml-20 mr-10">
-            <div className="flex">
-              <h2 className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
-                Glasgow’s Nature Atlas
-              </h2>
-              <Link
-                to="/invest-in-nature/glasgow/invest"
-                className="ml-20 mt-2 mb-4 bg-blue4 border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-white hover:bg-blue2"
-              >
-                Invest
-              </Link>
+          <div className="mt-10 lg:ml-20 md:ml-20 sm:ml-10 mr-10">
+            <div>
+              <div>
+                <h2 className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
+                  Glasgow’s Nature Atlas
+                </h2>
+              </div>
+              <div>
+                <Link
+                  to="/invest-in-nature/glasgow/invest"
+                  className="mt-2 mb-4 bg-blue4 border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-white hover:bg-blue2"
+                >
+                  Start investing
+                </Link>
+              </div>
             </div>
             <p>
               <b>
@@ -238,9 +242,9 @@ export default function Glasgow() {
                 </div>
                 <div className="ml-3">
                   <h3 className="text-sm font-medium text-green-800">
-                    This is an estimate. Learn about our
+                    This is an estimate. Learn about our{" "}
                     <Link to="/faq">
-                      <u>methodology</u>
+                      <u> methodology</u>.
                     </Link>
                   </h3>
                 </div>
@@ -346,7 +350,7 @@ export default function Glasgow() {
                   </div>
                   <div className="ml-3">
                     <h3 className="text-sm font-medium text-green-800">
-                      Activities are in progrees. Give us feedabck and learn
+                      Activities are in progress. Give us feedback and learn
                       about our{" "}
                       <Link to="/faq">
                         <u>methodology</u>
@@ -403,83 +407,85 @@ export default function Glasgow() {
               </div>
             )}
           </ReactMapGL>
-          <h3 className="text-lg leading-6 font-medium text-gray-900 mt-10">
-            Highlights
-          </h3>
-          <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2">
-            <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-              <dt>
-                <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                  Trees
-                </p>
-              </dt>
-              <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                <p className="text-2xl font-semibold text-green-600 ">
-                  2,100,000
-                </p>
-              </dd>
-            </div>
-            <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-              <dt>
-                <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                  Canopy Cover
-                </p>
-              </dt>
-              <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                <p className="text-2xl font-semibold text-blue2 ">15%</p>
-              </dd>
-            </div>
-            <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-              <dt>
-                <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                  Forest Density
-                </p>
-              </dt>
-              <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                <p className="text-2xl font-semibold text-green-600 ">112</p>
-                <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
-                  per hectares
-                </p>
-              </dd>
-            </div>
-            <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-              <dt>
-                <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                  Located in parks
-                </p>
-              </dt>
-              <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                <p className="text-2xl font-semibold text-green-600 ">55%</p>
-                <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
-                  of all trees
-                </p>
-              </dd>
-            </div>
-            <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-              <dt>
-                <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                  Most Common Species
-                </p>
-              </dt>
-              <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
-                  ash, hawthorn and alder
-                </span>
-              </dd>
-            </div>
+          <div className="sm:ml-10">
+            <h3 className="pb-5 text-lg leading-6 font-medium text-gray-900 mt-10">
+              Highlights
+            </h3>
+            <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2">
+              <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                <dt>
+                  <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                    Trees
+                  </p>
+                </dt>
+                <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                  <p className="text-2xl font-semibold text-green-600 ">
+                    2,100,000
+                  </p>
+                </dd>
+              </div>
+              <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                <dt>
+                  <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                    Canopy Cover
+                  </p>
+                </dt>
+                <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                  <p className="text-2xl font-semibold text-blue2 ">15%</p>
+                </dd>
+              </div>
+              <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                <dt>
+                  <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                    Forest Density
+                  </p>
+                </dt>
+                <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                  <p className="text-2xl font-semibold text-green-600 ">112</p>
+                  <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
+                    per hectares
+                  </p>
+                </dd>
+              </div>
+              <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                <dt>
+                  <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                    Located in parks
+                  </p>
+                </dt>
+                <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                  <p className="text-2xl font-semibold text-green-600 ">55%</p>
+                  <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
+                    of all trees
+                  </p>
+                </dd>
+              </div>
+              <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                <dt>
+                  <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                    Most Common Species
+                  </p>
+                </dt>
+                <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
+                    ash, hawthorn and alder
+                  </span>
+                </dd>
+              </div>
 
-            <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-              <dt>
-                <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                  Tree Story of the month
-                </p>
-              </dt>
-              <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                <p className="text-2xl font-semibold text-gray-500">
-                  “And I watered it in fears. Night and morning with my tears:
-                  And I sunned it with smiles. And with soft deceitful wiles.”
-                </p>
-              </dd>
+              <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                <dt>
+                  <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                    Tree Story of the month
+                  </p>
+                </dt>
+                <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                  <p className="text-2xl font-semibold text-gray-500">
+                    “And I watered it in fears. Night and morning with my tears:
+                    And I sunned it with smiles. And with soft deceitful wiles.”
+                  </p>
+                </dd>
+              </div>
             </div>
           </div>
         </div>

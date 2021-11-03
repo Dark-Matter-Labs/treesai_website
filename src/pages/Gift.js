@@ -169,7 +169,7 @@ export default function Gift() {
           </div>
         </div>
       </div>
-      <div className="pt-5 pr-20">
+      <div className="pt-5 pr-20 pb-20">
         <div className="flex justify-end">
           <Link
             to="/"

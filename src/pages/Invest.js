@@ -60,6 +60,7 @@ export default function Invest() {
 
   const next = (e) => {
     e.preventDefault();
+    window.scrollTo(0, 0);
     setShow(false);
     setPageState(pageState + 1);
   };
@@ -73,7 +74,7 @@ export default function Invest() {
               <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                 <div>
                   <NavBarGlasgow />
-                  <div className="flex items-center mt-20 ml-20">
+                  <div className="flex items-center mt-20 ml-20 sm:ml-10">
                     <ChevronLeftIcon
                       className="flex-shrink-0 h-5 w-5 text-gray-400"
                       aria-hidden="true"
@@ -85,7 +86,7 @@ export default function Invest() {
                       Back
                     </Link>
                   </div>
-                  <div className="py-16 sm:py-16 lg:py-20 px-16 ">
+                  <div className="py-16 sm:py-16 lg:py-20 px-16 sm:px-5">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                       What are your desired carbon outcomes?
                     </h3>
@@ -290,7 +291,7 @@ export default function Invest() {
               <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                 <div>
                   <NavBarGlasgow />
-                  <div className="flex items-center mt-20 ml-20">
+                  <div className="flex items-center mt-20 ml-20 sm:ml-10">
                     <ChevronLeftIcon
                       className="flex-shrink-0 h-5 w-5 text-gray-400"
                       aria-hidden="true"
@@ -302,7 +303,7 @@ export default function Invest() {
                       Back
                     </button>
                   </div>
-                  <div className="py-10 sm:py-24 lg:py-10 px-20">
+                  <div className="py-10 sm:py-24 lg:py-10 px-20 sm:px-5">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                       What other outcomes are you looking to achieve?
                     </h3>
@@ -774,7 +775,7 @@ export default function Invest() {
               <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                 <div>
                   <NavBarGlasgow />
-                  <div className="flex items-center mt-20 ml-20">
+                  <div className="flex items-center mt-20 ml-20 sm:ml-10">
                     <ChevronLeftIcon
                       className="flex-shrink-0 h-5 w-5 text-gray-400"
                       aria-hidden="true"
@@ -786,7 +787,7 @@ export default function Invest() {
                       Back
                     </button>
                   </div>
-                  <div className="py-10 px-20 ">
+                  <div className="py-10 px-20 sm:px-5">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                       Are you interested in investing in specific types of
                       activities?
@@ -1123,7 +1124,7 @@ export default function Invest() {
               <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                 <div>
                   <NavBarGlasgow />
-                  <div className="flex items-center mt-20 ml-20">
+                  <div className="flex items-center mt-20 ml-20 sm:ml-10">
                     <ChevronLeftIcon
                       className="flex-shrink-0 h-5 w-5 text-gray-400"
                       aria-hidden="true"
@@ -1135,7 +1136,7 @@ export default function Invest() {
                       Back
                     </button>
                   </div>
-                  <div className="py-10 px-20 ">
+                  <div className="py-10 px-20 sm:px-8">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                       Submit your interest
                     </h3>
@@ -1204,7 +1205,7 @@ export default function Invest() {
               <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                 <div>
                   <NavBarGlasgow />
-                  <div className="py-16 sm:py-24 lg:py-20 px-16 ">
+                  <div className="py-16 sm:py-24 lg:py-20 px-16 sm:px-8">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                       Thanks for submitting your interest in supporting
                       ecosystem service outcomes in Glasgow!
