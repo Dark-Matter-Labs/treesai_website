@@ -79,12 +79,12 @@ export default class Vision extends Component {
                   </p>
                   <div className="mt-10 sm:mt-12 sm:mb-12">
                     <a
-                      href="https://www.eventbrite.co.uk/e/committing-to-nature-nature-based-solutions-for-climate-positive-cities-tickets-175636703107"
+                      href="http://eepurl.com/hFsY1n"
                       target="_blank"
                       rel="noreferrer noopener"
                       className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-green2"
                     >
-                      Register to join the demo launch at COP26
+                      Get notified when we launch
                     </a>
                   </div>
                 </div>

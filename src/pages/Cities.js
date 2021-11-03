@@ -125,7 +125,7 @@ export default function Cities() {
       <NavBar current="invest" />
       <div className="bg-white">
         <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
-          <div className="mt-10 py-16 sm:py-24 lg:py-20 px-16">
+          <div className="mt-10 py-16 sm:py-10 lg:py-20 px-16">
             <h2 className="font-grotesk mt-2 lg:text-5xl md:text-4xl text-gray-900 sm:text-4xl">
               Find places to invest in nature
             </h2>

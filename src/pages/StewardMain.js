@@ -104,7 +104,7 @@ export default function StewardMain() {
         </div>
         <div className="lets-invest"></div>
       </div>
-      <div className="mt-5 y-16 sm:py-24 lg:py-20 px-16">
+      <div className="mt-5 y-16 sm:py-24 lg:py-20 px-16 sm:px-8">
         <div className="rounded-md bg-green-50 p-4 mt-2">
           <div className="flex">
             <div className="flex-shrink-0">
@@ -152,7 +152,7 @@ export default function StewardMain() {
             </div>
           ))}
         </div>
-        <div className="max-w-8xl mx-auto py-16 px-4 sm:px-6 lg:px-0">
+        <div className="max-w-7xl mx-auto py-16 px-4 sm:px-4 lg:px-0">
           <div className="bg-blue4 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
             <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
               <div className="lg:self-center">
@@ -182,7 +182,7 @@ export default function StewardMain() {
             </div>
           </div>
         </div>
-        <div className="max-w-8xl mx-auto py-16 px-2 sm:px-6 lg:px-0">
+        <div className="max-w-7xl mx-auto py-16 px-2 sm:px-4 lg:px-0">
           <div className="bg-indigo-600 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
             <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
               <div className="lg:self-center">
