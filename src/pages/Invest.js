@@ -1156,7 +1156,7 @@ export default function Invest() {
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                       Submit your interest
                     </h3>
-                    <h4 className="text-lg mt-5 leading-6 font-sm text-gray-900">
+                    <h4 className="text-lg mt-5 leading-6 font-sm text-gray-900 pb-2">
                       Interest summary
                     </h4>
                     <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-8 sm:grid-cols-1">
