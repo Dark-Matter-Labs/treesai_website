@@ -137,7 +137,7 @@ const projects = [
   {
     id: 8,
     name: "Plantation Forest",
-    location: "tbc",
+    location: "across Glasgow",
     imageSrc: "assets/clyde-climate.jpg",
     imageAlt: "Project picture",
     activity: "Planting",
@@ -490,7 +490,7 @@ export default function Glasgow() {
                         <p className="mt-1 text-sm text-gray2">
                           {project.location}
                         </p>
-                        <p className="mt-1 text-sm text-gray2">
+                        <p className="mt-1 text-sm text-green3">
                           {project.activity}
                         </p>
                         <p className="mt-1 text-sm text-gray2">
