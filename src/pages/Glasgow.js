@@ -272,7 +272,7 @@ export default function Glasgow() {
                   <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
                     <Link
                       to="/invest-in-nature/glasgow/invest"
-                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-blue4 bg-white hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-blue4 bg-white hover:bg-indigo-100 sm:text-sm"
                     >
                       Start investing
                     </Link>
@@ -517,7 +517,7 @@ export default function Glasgow() {
                   <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
                     <Link
                       to="/invest-in-nature/glasgow/invest"
-                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-blue4 bg-white hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-blue4 bg-white hover:bg-indigo-100 sm:text-sm"
                     >
                       Start investing
                     </Link>
@@ -543,7 +543,7 @@ export default function Glasgow() {
                         <Link
                           type="button"
                           to="/faq"
-                          className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                          className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
                         >
                           Learn more
                         </Link>
