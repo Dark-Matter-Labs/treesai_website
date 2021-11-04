@@ -418,7 +418,7 @@ export default function Glasgow() {
                     </p>
                   </dt>
                   <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                    <p className="text-2xl font-semibold text-blue2 ">15%</p>
+                    <p className="text-2xl font-semibold text-blue2 ">16.6%</p>
                   </dd>
                 </div>
               </div>
