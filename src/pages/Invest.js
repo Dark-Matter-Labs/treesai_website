@@ -229,7 +229,10 @@ export default function Invest() {
                               <div className="mt-6 pt-10">
                                 <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-12">
                                   {faqs.map((faq) => (
-                                    <div key={faq.id} className="bg-gray p-5 rounded-md">
+                                    <div
+                                      key={faq.id}
+                                      className="bg-gray p-5 rounded-md"
+                                    >
                                       <dt className="text-lg leading-6 font-medium text-gray-900">
                                         {faq.question}
                                       </dt>
@@ -632,7 +635,10 @@ export default function Invest() {
                               <div className="mt-6 pt-10">
                                 <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-12">
                                   {faqs2.map((faq) => (
-                                    <div key={faq.id} className="bg-gray p-5 rounded-md">
+                                    <div
+                                      key={faq.id}
+                                      className="bg-gray p-5 rounded-md"
+                                    >
                                       <dt className="text-lg leading-6 font-medium text-gray-900">
                                         {faq.question}
                                       </dt>
@@ -990,7 +996,10 @@ export default function Invest() {
                               <div className="mt-6 pt-10">
                                 <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-12">
                                   {faqs3.map((faq) => (
-                                    <div key={faq.id} className="bg-gray p-5 rounded-md">
+                                    <div
+                                      key={faq.id}
+                                      className="bg-gray p-5 rounded-md"
+                                    >
                                       <dt className="text-lg leading-6 font-medium text-gray-900">
                                         {faq.question}
                                       </dt>
@@ -1151,29 +1160,58 @@ export default function Invest() {
                     <h4 className="text-lg mt-5 leading-6 font-sm text-gray-900">
                       Interest summary
                     </h4>
-                    {carbonSelect === "Budget" && (
-                      <p>Carbon Budget: £{carbonInputVal}</p>
-                    )}
-                    {carbonSelect === "Flows" && (
-                      <p>Carbon Physical Flows: {carbonInputVal}tCO2e</p>
-                    )}
-                    {carbonSelect === "Percentage" && (
-                      <p>Carbon Percentage: £{carbonInputVal}% available</p>
-                    )}
-                    {stormwaterCheck && <p>🌧 Stormwater Retention</p>}
-                    {waterQualityCheck && <p>🚰 Water Quality</p>}
-                    {floodCheck && <p>🌊 Flood control</p>}
-                    {airQualityCheck && <p>☁ Air quality improvement</p>}
-                    {heatIslandCheck && <p>🥵 Heat island effect reduction</p>}
-                    {noiseCheck && <p>🔕 Noise reduction</p>}
-                    {windCheck && <p>💨 Wind protection</p>}
-                    {speciesCheck && <p>🐝 Biodiversity</p>}
-                    {greenJobsCheck && <p>👩‍🌾 Green jobs creation</p>}
-                    {footballCheck && <p>🚶‍♀️ Increased high street footfall</p>}
-                    {otherCheck && <p>🤽‍♀️ Other social outcomes</p>}
-                    {plantingCheck && <p>🌱 Planting</p>}
-                    {preservationCheck && <p>🐛 Preservation </p>}
-                    {maintenanceCheck && <p>🪓 Maintenance</p>}
+                    <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-8 sm:grid-cols-1">
+                      {carbonSelect === "Budget" && (
+                        <div className="carbon-card rounded-md">
+                          <p className="text-white ml-4 mt-4 text-lg">
+                            Carbon Budget
+                          </p>
+                          <p className="text-white ml-4 mt-2 mb-20 text-2xl font-semibold leading-6 text-gray-700">
+                            £{carbonInputVal}
+                          </p>
+                        </div>
+                      )}
+                      {carbonSelect === "Flows" && (
+                        <div className="carbon-card rounded-md">
+                          <p className="text-white ml-4 mt-4 text-lg">
+                            Carbon Physical Flows
+                          </p>
+                          <p className="text-white ml-4 mt-2 mb-20 text-2xl font-semibold leading-6 text-gray-700">
+                            {carbonInputVal}tCO2e
+                          </p>
+                        </div>
+                      )}
+                      {carbonSelect === "Percentage" && (
+                        <div className="carbon-card rounded-md">
+                          <p className="text-white ml-4 mt-4 text-lg">
+                            Carbon Percentage
+                          </p>
+                          <p className="text-white ml-4 mt-2 mb-20 text-2xl font-semibold leading-6 text-gray-700">
+                            {carbonInputVal}% available
+                          </p>
+                        </div>
+                      )}
+                      <div className="rounded-md">
+                        {stormwaterCheck && <p>🌧 Stormwater Retention</p>}
+                        {waterQualityCheck && <p>🚰 Water Quality</p>}
+                        {floodCheck && <p>🌊 Flood control</p>}
+                        {airQualityCheck && <p>☁ Air quality improvement</p>}
+                        {heatIslandCheck && (
+                          <p>🥵 Heat island effect reduction</p>
+                        )}
+                        {noiseCheck && <p>🔕 Noise reduction</p>}
+                        {windCheck && <p>💨 Wind protection</p>}
+                        {speciesCheck && <p>🐝 Biodiversity</p>}
+                        {greenJobsCheck && <p>👩‍🌾 Green jobs creation</p>}
+                        {footballCheck && (
+                          <p>🚶‍♀️ Increased high street footfall</p>
+                        )}
+                        {otherCheck && <p>🤽‍♀️ Other social outcomes</p>}
+                        {plantingCheck && <p>🌱 Planting</p>}
+                        {preservationCheck && <p>🐛 Preservation </p>}
+                        {maintenanceCheck && <p>🪓 Maintenance</p>}
+                      </div>
+                    </div>
                     <div className="mt-10">
                       <h4 className="text-lg mt-5 leading-6 font-sm text-gray-900">
                         Enter your email and our team will process your request.

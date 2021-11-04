@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import { Bar } from "react-chartjs-2";
 import { XIcon, CheckCircleIcon } from "@heroicons/react/outline";
-import { Transition } from '@headlessui/react'
+import { Transition } from "@headlessui/react";
 
 import NavBar from "../components/demo/NavBarGlasgow";
 
@@ -307,7 +307,7 @@ export default function Portfolio() {
               onClick={() => setShow(true)}
               className="disabled:opacity-50 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue4  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              🔽 Download environmental report 
+              🔽 Download environmental report
             </button>
           </div>
         </div>
@@ -358,16 +358,21 @@ export default function Portfolio() {
               <div className="p-4">
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
-                    <CheckCircleIcon className="h-6 w-6 text-green-400" aria-hidden="true" />
+                    <CheckCircleIcon
+                      className="h-6 w-6 text-green-400"
+                      aria-hidden="true"
+                    />
                   </div>
                   <div className="ml-3 w-0 flex-1 pt-0.5">
-                    <p className="text-sm font-medium text-gray-900">Download complete</p>
+                    <p className="text-sm font-medium text-gray-900">
+                      Download complete
+                    </p>
                   </div>
                   <div className="ml-4 flex-shrink-0 flex">
                     <button
                       className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       onClick={() => {
-                        setShow(false)
+                        setShow(false);
                       }}
                     >
                       <span className="sr-only">Close</span>
