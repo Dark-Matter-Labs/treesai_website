@@ -305,7 +305,7 @@ export default function Portfolio() {
           <div className="flex justify-center">
             <button
               onClick={() => setShow(true)}
-              className="disabled:opacity-50 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue4  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="disabled:opacity-50 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue4"
             >
               🔽 Download environmental report
             </button>
@@ -315,13 +315,13 @@ export default function Portfolio() {
           <div className="flex justify-center">
             <button
               disabled
-              className="disabled:opacity-50 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4  hover:bg-blue4  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="disabled:opacity-50 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4  hover:bg-blue4"
             >
               Renew contract
             </button>
             <button
               disabled
-              className="disabled:opacity-50 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4  hover:bg-blue4  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="disabled:opacity-50 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4  hover:bg-blue4"
             >
               Add investments
             </button>
@@ -331,7 +331,7 @@ export default function Portfolio() {
           <div className="flex justify-end">
             <Link
               to="/invest-in-nature/glasgow"
-              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4  hover:bg-blue4  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4  hover:bg-blue4"
             >
               Return home
             </Link>
@@ -370,7 +370,7 @@ export default function Portfolio() {
                   </div>
                   <div className="ml-4 flex-shrink-0 flex">
                     <button
-                      className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500"
                       onClick={() => {
                         setShow(false);
                       }}

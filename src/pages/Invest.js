@@ -217,7 +217,7 @@ export default function Invest() {
                           <div className="flex justify-end">
                             <button
                               onClick={(e) => next(e)}
-                              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3"
                             >
                               Next
                             </button>
@@ -242,7 +242,7 @@ export default function Invest() {
                                       <Link
                                         type="button"
                                         to="/faq"
-                                        className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                        className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
                                       >
                                         Learn more
                                       </Link>
@@ -623,7 +623,7 @@ export default function Invest() {
                           <div className="flex justify-end">
                             <button
                               onClick={(e) => next(e)}
-                              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3"
                             >
                               Next
                             </button>
@@ -648,7 +648,7 @@ export default function Invest() {
                                       <Link
                                         type="button"
                                         to="/faq"
-                                        className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                        className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
                                       >
                                         Learn more
                                       </Link>
@@ -983,7 +983,7 @@ export default function Invest() {
                           <div className="flex justify-end">
                             <button
                               onClick={(e) => next(e)}
-                              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                              className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3"
                             >
                               Next
                             </button>
@@ -1008,7 +1008,7 @@ export default function Invest() {
                                       <Link
                                         type="button"
                                         to="/faq"
-                                        className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                        className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
                                       >
                                         Learn more
                                       </Link>
@@ -1230,7 +1230,7 @@ export default function Invest() {
                       <div className="flex justify-end">
                         <button
                           onClick={(e) => next(e)}
-                          className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                          className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3"
                         >
                           Submit
                         </button>
@@ -1260,7 +1260,7 @@ export default function Invest() {
                       <div className="flex justify-end">
                         <Link
                           to="/invest-in-nature/glasgow/invest/portfolio"
-                          className="ml-3 inline-flex justify-end py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                          className="ml-3 inline-flex justify-end py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3"
                         >
                           View sample portfolio
                         </Link>
