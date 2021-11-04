@@ -13,15 +13,16 @@ import trees from "../data/trees.json";
 const pieChartData = {
   labels: [
     "%Carbon sequestration",
-    "%Stormwater retention",
     "%Flood control",
+    "%Stormwater runoff reduction",
+    "%Heat island effect reduction",
     "%Air quality improvement",
   ],
   datasets: [
     {
-      data: [54, 30, 3, 5],
-      backgroundColor: ["#10B981", "#00000", "#ACB9FF", "#065F46"],
-      borderColor: ["#10B981", "#00000", "#ACB9FF", "#065F46"],
+      data: [8.8, 4.7, 17.4, 4.4, 64.8],
+      backgroundColor: ["#10B981", "#00000", "#ACB9FF", "#065F46", "#06B6D4"],
+      borderColor: ["#10B981", "#00000", "#ACB9FF", "#065F46", "#06B6D4"],
       borderWidth: 1,
     },
   ],
