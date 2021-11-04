@@ -964,8 +964,8 @@ export default function Steward() {
 
                     <div className="input-section">
                       <div className="flex-shrink-0 input-inside">
-                        <h3 className="text-2xl leading-6 font-medium text-gray-900 mt-5">
-                          {projectName} Your project impact
+                        <h3 className="text-2xl leading-6 font-medium text-gray-900 mt-5"> 
+                          {projectName !== "" ? projectName : "Your"} project impact
                         </h3>
                         <div className="rounded-md bg-green-50 p-4 mt-4">
                           <div className="flex">
