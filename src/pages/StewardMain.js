@@ -139,19 +139,19 @@ export default function StewardMain() {
         <div className="grid gap-y-8 gap-x0 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {activities.map((activity) => (
             <div key={activity.id} className="group relative">
-              <div className="w-full bg-gray-200 rounded-md overflow-hidden lg:aspect-none">
+              <div className="w-full bg-gray-200 rounded-md overflow-hidden lg:aspect-none ">
                 <img
                   src={activity.imageSrc}
                   alt={activity.imageAlt}
                   className={classNames(
-                    activity.progress === "Coming soon" ? "image-blur" : "",
+                    activity.progress === "Coming soon" ? "" : "",
                     ""
                   )}
                 />
               </div>
               <div className="mt-0 flex justify-between">
                 <div>
-                  <h3 className="text-sm text-gray-700">
+                  <h3 className="text-lg text-gray-700">
                     <span aria-hidden="true" className="absolute inset-0" />
                     {activity.name}
                   </h3>
@@ -161,7 +161,7 @@ export default function StewardMain() {
             </div>
           ))}
         </div>
-        <div className="max-w-7xl mx-auto py-16 px-2 sm:px-4 lg:px-0">
+        <div className="max-w-8xl py-16 px-2 sm:px-4 lg:px-0">
           <div className="bg-green4 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
             <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
               <div className="lg:self-center">
@@ -189,7 +189,7 @@ export default function StewardMain() {
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto py-10 px-4 sm:px-4 lg:px-0">
+        <div className="max-w-8xl py-10 px-4 sm:px-4 lg:px-0">
           <div className="bg-blue4 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
             <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
               <div className="lg:self-center">
@@ -217,7 +217,7 @@ export default function StewardMain() {
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto py-10 px-2 sm:px-4 lg:px-0">
+        <div className="max-w-8xl py-10 px-2 sm:px-4 lg:px-0">
           <div className="bg-indigo-600 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
             <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
               <div className="lg:self-center">

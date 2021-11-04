@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     id: 2,
-    question: "WWhat are climate risks?",
+    question: "What are climate risks?",
     answer:
       "As the climate of the earth becomes more volatile: public and private entities are experiencing increasing liabilities. For example, corporations have growing carbon and social impact liabilities; water utility companies are faced with tougher regulations and fines due to frequent flood events; and the healthcare sector has increasing treatment costs due to deteriorating air quality in cites. Investing in urban forests is a green strategy for mitigating such climate risks.",
   },
@@ -239,7 +239,7 @@ export default function Cities() {
                 <div className="mt-6 pt-10">
                   <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-12 ">
                     {faqs.map((faq) => (
-                      <div key={faq.id} className="bg-gray p-5">
+                      <div key={faq.id} className="bg-gray p-5 rounded-md">
                         <dt className="text-lg leading-6 font-medium text-gray-900">
                           {faq.question}
                         </dt>

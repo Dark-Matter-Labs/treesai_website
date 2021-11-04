@@ -176,3 +176,12 @@ iframe {
   height: 100vh;
   box-sizing: border-box;
 }
+
+.carbon-card {
+  background: url(images/carboncard.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+}

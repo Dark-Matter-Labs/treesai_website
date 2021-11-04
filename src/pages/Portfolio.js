@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Fragment } from "react";
 import { Link } from "react-router-dom";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import { Bar } from "react-chartjs-2";
-import { XIcon } from "@heroicons/react/outline";
+import { XIcon, CheckCircleIcon } from "@heroicons/react/outline";
+import { Transition } from "@headlessui/react";
 
 import NavBar from "../components/demo/NavBarGlasgow";
 
@@ -171,6 +172,7 @@ export default function Portfolio() {
   const [lng] = useState(-4.2518);
   const [lat] = useState(55.8642);
   const [zoom] = useState(11);
+  const [show, setShow] = useState(false);
 
   // ES related variables
   // uncomment those spooky lines to get the yearly average
@@ -203,27 +205,6 @@ export default function Portfolio() {
   return (
     <>
       <NavBar current="invest" />
-      <div className="relative bg-blue4">
-        <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
-          <div className="pr-16 sm:text-center sm:px-16">
-            <p className="font-medium text-white">
-              <span className="md:inline">
-                Congratulations! You are supporting 10% of Glasgow’s carbon
-                capacity production.
-              </span>
-            </p>
-          </div>
-          <div className="absolute inset-y-0 right-0 pt-1 pr-1 flex items-start sm:pt-1 sm:pr-2 sm:items-start">
-            <button
-              type="button"
-              className="flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white"
-            >
-              <span className="sr-only">Dismiss</span>
-              <XIcon className="h-6 w-6 text-white" aria-hidden="true" />
-            </button>
-          </div>
-        </div>
-      </div>
       <div className="bg-gray py-16 sm:py-24 lg:py-20 md:px-16 lg:px-16 sm:px-4">
         <div className="mt-10">
           <h2 className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
@@ -323,10 +304,10 @@ export default function Portfolio() {
         <div className="pt-10">
           <div className="flex justify-center">
             <button
-              disabled={true}
+              onClick={() => setShow(true)}
               className="disabled:opacity-50 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue4  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              🔽 Download Report
+              🔽 Download environmental report
             </button>
           </div>
         </div>
@@ -336,13 +317,13 @@ export default function Portfolio() {
               disabled
               className="disabled:opacity-50 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4  hover:bg-blue4  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Add to portfolio
+              Renew contract
             </button>
             <button
               disabled
               className="disabled:opacity-50 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4  hover:bg-blue4  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Renew Contract
+              Add investments
             </button>
           </div>
         </div>
@@ -355,6 +336,53 @@ export default function Portfolio() {
               Return home
             </Link>
           </div>
+        </div>
+      </div>
+      <div
+        aria-live="assertive"
+        className="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start"
+      >
+        <div className="w-full flex flex-col items-center space-y-4 sm:items-end">
+          {/* Notification panel, dynamically insert this into the live region when it needs to be displayed */}
+          <Transition
+            show={show}
+            as={Fragment}
+            enter="transform ease-out duration-300 transition"
+            enterFrom="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
+            enterTo="translate-y-0 opacity-100 sm:translate-x-0"
+            leave="transition ease-in duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
+              <div className="p-4">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <CheckCircleIcon
+                      className="h-6 w-6 text-green-400"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <div className="ml-3 w-0 flex-1 pt-0.5">
+                    <p className="text-sm font-medium text-gray-900">
+                      Download complete
+                    </p>
+                  </div>
+                  <div className="ml-4 flex-shrink-0 flex">
+                    <button
+                      className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      onClick={() => {
+                        setShow(false);
+                      }}
+                    >
+                      <span className="sr-only">Close</span>
+                      <XIcon className="h-5 w-5" aria-hidden="true" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Transition>
         </div>
       </div>
     </>
