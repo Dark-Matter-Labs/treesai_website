@@ -1,11 +1,56 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Fragment } from "react";
-import { Transition } from "@headlessui/react";
-import { XIcon, InformationCircleIcon } from "@heroicons/react/solid";
-import { CheckCircleIcon, ChevronLeftIcon } from "@heroicons/react/outline";
+import { InformationCircleIcon } from "@heroicons/react/solid";
+import { ChevronLeftIcon } from "@heroicons/react/outline";
 
 import NavBarGlasgow from "../components/demo/NavBarGlasgow";
+
+const faqs = [
+  {
+    id: 1,
+    question: "How are environmental services calculated in TreesAI?",
+    answer:
+      "Each environmental service requires different data points to be assessed, even when accounting for them partially. Stormwater retention, for example, requires the amount of rain and its intensity on an hourly level whereas pollutant removal does not. Therefore we can estimate different environmental services depending on the information we have gathered at each site, our capacity, and confidence in modelling it. The basis of each estimation of environmental service is peer-reviewed academic literature.",
+  },
+  {
+    id: 2,
+    question: "How do we price environmental services in TreesAI?",
+    answer:
+      "We derive the economic value of environmental service through a direct non-use valuation method. Where we measure the value of regulating environmental services trees provide (such as carbon sequestration) rather than actual direct use of trees (such as timber). As we want to preserve and repurpose urban trees as civic assets, we estimate the avoided costs enjoyed by stakeholders from the delivery of environmental services. In Phase I pricing, we see tree value as the summation of avoided damage-cost to local stakeholders. In the next phases, we will socialize pricing benchmarks and move towards a willingness-to-pay method informed by local liability holders.",
+  },
+];
+
+const faqs2 = [
+  {
+    id: 1,
+    question:
+      "What is the difference between ​​Ecosystem services and Environmental services?",
+    answer:
+      "There is currently a debate among practitioners as to whether to use the term ecosystem or environmental services. The term ecosystem service is used to refer to benefits that are mainly provided by ecosystems, whereas environmental services require key human intervention like, for example, infrastructure or labour.",
+  },
+  {
+    id: 2,
+    question: "How are environmental services calculated in TreesAI?",
+    answer:
+      "Each environmental service requires different data points to be assessed, even when accounting for them partially. Stormwater retention, for example, requires the amount of rain and its intensity on an hourly level whereas pollutant removal does not. Therefore we can estimate different environmental services depending on the information we have gathered at each site, our capacity, and confidence in modelling it. The basis of each estimation of environmental service is peer-reviewed academic literature.",
+  },
+];
+
+const faqs3 = [
+  {
+    id: 1,
+    question: "What do we mean by stewardship and nature stewards?",
+    answer:
+      "By stewardship, we mean the responsible use and protection of the natural environment through innovative and sustainable practices, such as preservation, maintenance, restoration, disease management and others. Nature stewards are the ‘doers’, the ones that go out and execute on sustainable practices, through direct action and management.",
+  },
+  {
+    id: 2,
+    question: "How do we calculate a city’s stewardship activities?",
+    answer:
+      "The amount of trees in each stewardship activity indicated in the demo are highly indicative and aimed at showing potential portfolio scenarios. These do not indicate an accurate representation of Glasgow’s urban forest. The are assumptions extracted by a variety of different sources, from the city open space map, to the cities 2015 itree report. 470,000 trees in the planting activity assumes that 70% of all all available space for planting is used, which has been estimated to be about 32% of Glasgow, and that 170,000 of that would be replenished of dead ash trees; 370,000 trees in the maintenance activity assumes that all established trees in public ownership receive advanced maintenance care (maure is defined by > 20cm dbh). 180,000 trees in the preservation activity assumes that all trees in vacant and derelict land in Council ownership are protected;",
+  },
+];
 
 export default function Invest() {
   const [pageState, setPageState] = useState(0);
@@ -30,27 +75,6 @@ export default function Invest() {
   const [maintenanceCheck, setMaintenanceCheck] = useState(false);
   const [cart, setCart] = useState([]);
   const [show, setShow] = useState(false);
-
-  const addToCart = (type) => {
-    if (type === "carbon" && carbonSelect === "Budget") {
-      setCart((oldArray) => [
-        ...oldArray,
-        `Carbon sequestration ${carbonSelect}: £${carbonInputVal}`,
-      ]);
-    } else if (type === "carbon" && carbonSelect === "Flows") {
-      setCart((oldArray) => [
-        ...oldArray,
-        `Carbon sequestration ${carbonSelect}: ${carbonInputVal}tCO2e`,
-      ]);
-    } else if (type === "carbon" && carbonSelect === "Percentage") {
-      setCart((oldArray) => [
-        ...oldArray,
-        `Carbon sequestration ${carbonSelect}: ${carbonInputVal}%`,
-      ]);
-    }
-
-    setShow(true);
-  };
 
   const back = (e) => {
     e.preventDefault();
@@ -88,10 +112,10 @@ export default function Invest() {
                   </div>
                   <div className="py-16 sm:py-16 lg:py-16 md:px-16 lg:px-16 sm:px-5">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
-                      What are your desired carbon outcomes?
+                      Invest in carbon sequestration
                     </h3>
                     <p>
-                      Invest in nature to offset your residual carbon emissions
+                      Invest in nature to offset your residual carbon emissions.
                     </p>
 
                     <div className="w-full">
@@ -105,11 +129,8 @@ export default function Invest() {
                                     Carbon sequestration
                                   </p>
                                   <p className="ml-2 mt-1 text-sm">
-                                    By reducing energy demand and absorbing
-                                    carbon dioxide, trees and vegetation
-                                    decrease the production and negative effects
-                                    of air pollution and greenhouse gas
-                                    emissions.
+                                    Trees absorb and long-term store carbon
+                                    dioxide from the air.
                                   </p>
                                 </dt>
                                 <dd className="ml-2 pb-6 sm:pb-7">
@@ -124,7 +145,9 @@ export default function Invest() {
                                         value={carbonSelect}
                                       >
                                         <option value="Budget">Budget</option>
-                                        <option value="Flows">Flows</option>
+                                        <option value="Flows">
+                                          Physical Flows
+                                        </option>
                                         <option value="Percentage">
                                           Percentage
                                         </option>
@@ -189,14 +212,6 @@ export default function Invest() {
                                           </span>
                                         </>
                                       )}
-
-                                      <button
-                                        type="button"
-                                        onClick={() => addToCart("carbon")}
-                                        className="ml-5 inline-flex items-center px-2.5 py-1.5 border border-transparent text-sm font-medium rounded shadow-sm text-white bg-blue4 hover:bg-blue3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                      >
-                                        Add
-                                      </button>
                                     </div>
                                   </div>
                                 </dd>
@@ -214,6 +229,33 @@ export default function Invest() {
                             </button>
                           </div>
                         </div>
+                        <div className="bg-white">
+                          <div className="bg-white">
+                            <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
+                              <div className="mt-6 pt-10">
+                                <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-12">
+                                  {faqs.map((faq) => (
+                                    <div key={faq.id} className="bg-gray p-5">
+                                      <dt className="text-lg leading-6 font-medium text-gray-900">
+                                        {faq.question}
+                                      </dt>
+                                      <dd className="mt-2 text-base text-gray-500">
+                                        {faq.answer}
+                                      </dd>
+                                      <Link
+                                        type="button"
+                                        to="/faq"
+                                        className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                      >
+                                        Learn more
+                                      </Link>
+                                    </div>
+                                  ))}
+                                </dl>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -221,11 +263,11 @@ export default function Invest() {
                 <div className="bg-gray3 py-16 sm:py-24 lg:py-20 px-16 right">
                   <div className="flex-shrink-0 pt-10">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
-                      Available Environmental Services
+                      Glasgow’s Carbon Sequestration capacity
                     </h3>
 
                     <h4 className="text-md leading-6 font-medium text-gray-900 m-2">
-                      Physical Flows
+                      Physical Flow
                     </h4>
 
                     <div className="grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 gap-2">
@@ -276,7 +318,7 @@ export default function Invest() {
                             This is an estimate. Learn about our{" "}
                             <Link to="/faq">
                               {" "}
-                              <u>methodology</u>
+                              <u>methodology</u>.
                             </Link>
                           </h3>
                         </div>
@@ -305,12 +347,11 @@ export default function Invest() {
                   </div>
                   <div className="py-10 sm:py-24 lg:py-10 md:px-16 lg:px-16 sm:px-5">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
-                      What other outcomes are you looking to achieve?
+                      Are you interested in other environmental services?
                     </h3>
                     <p>
-                      Include environmental services or specific activities in
-                      your portfolio to reduce your carbon footprint and
-                      mitigate your climate-related risks
+                      Environmental services can help reduce your climate risks,
+                      and achieve your climate & sustainability goals.
                     </p>
 
                     <div className="w-full">
@@ -394,79 +435,6 @@ export default function Invest() {
                                   <div className="relative flex items-start">
                                     <div className="flex items-center h-5">
                                       <input
-                                        id="physical-health"
-                                        aria-describedby="physical-health"
-                                        name="physical-health"
-                                        type="checkbox"
-                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
-                                        checked={physicalHealthCheck}
-                                        onChange={() =>
-                                          setPhysicalHealthCheck(
-                                            !physicalHealthCheck
-                                          )
-                                        }
-                                      />
-                                    </div>
-                                    <div className="ml-3 text-sm">
-                                      <label
-                                        htmlFor="physical-health"
-                                        className="font-medium text-gray-700"
-                                      >
-                                        🤕 Physical health
-                                      </label>
-                                    </div>
-                                  </div>
-                                  <div className="relative flex items-start">
-                                    <div className="flex items-center h-5">
-                                      <input
-                                        id="mental-health"
-                                        aria-describedby="mental-health"
-                                        name="mental-health"
-                                        type="checkbox"
-                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
-                                        checked={mentalHealthCheck}
-                                        onChange={() =>
-                                          setMentalHealthCheck(
-                                            !mentalHealthCheck
-                                          )
-                                        }
-                                      />
-                                    </div>
-                                    <div className="ml-3 text-sm">
-                                      <label
-                                        htmlFor="mental-health"
-                                        className="font-medium text-gray-700"
-                                      >
-                                        🤔 Mental health
-                                      </label>
-                                    </div>
-                                  </div>
-                                  <div className="relative flex items-start">
-                                    <div className="flex items-center h-5">
-                                      <input
-                                        id="noise"
-                                        aria-describedby="noise"
-                                        name="noise"
-                                        type="checkbox"
-                                        className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
-                                        checked={noiseCheck}
-                                        onChange={() =>
-                                          setNoiseCheck(!noiseCheck)
-                                        }
-                                      />
-                                    </div>
-                                    <div className="ml-3 text-sm">
-                                      <label
-                                        htmlFor="noise"
-                                        className="font-medium text-gray-700"
-                                      >
-                                        🔕 Noise reduction
-                                      </label>
-                                    </div>
-                                  </div>
-                                  <div className="relative flex items-start">
-                                    <div className="flex items-center h-5">
-                                      <input
                                         id="air"
                                         aria-describedby="air"
                                         name="air"
@@ -513,23 +481,23 @@ export default function Invest() {
                                   <div className="relative flex items-start">
                                     <div className="flex items-center h-5">
                                       <input
-                                        id="cool"
-                                        aria-describedby="cool"
-                                        name="cool"
+                                        id="noise"
+                                        aria-describedby="noise"
+                                        name="noise"
                                         type="checkbox"
                                         className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
-                                        checked={coolingCheck}
+                                        checked={noiseCheck}
                                         onChange={() =>
-                                          setCoolingCheck(!coolingCheck)
+                                          setNoiseCheck(!noiseCheck)
                                         }
                                       />
                                     </div>
                                     <div className="ml-3 text-sm">
                                       <label
-                                        htmlFor="cool"
+                                        htmlFor="noise"
                                         className="font-medium text-gray-700"
                                       >
-                                        🌶 Cooling effect
+                                        🔕 Noise reduction
                                       </label>
                                     </div>
                                   </div>
@@ -575,7 +543,7 @@ export default function Invest() {
                                         htmlFor="species"
                                         className="font-medium text-gray-700"
                                       >
-                                        🐝 Increased species richness
+                                        🐝 Biodiversity
                                       </label>
                                     </div>
                                   </div>
@@ -644,7 +612,8 @@ export default function Invest() {
                                         htmlFor="other"
                                         className="font-medium text-gray-700"
                                       >
-                                        🤽‍♀️ Other social outcomes
+                                        🤽‍♀️ Other social outcomes (e.g. mental
+                                        health, walkability)
                                       </label>
                                     </div>
                                   </div>
@@ -663,6 +632,33 @@ export default function Invest() {
                             </button>
                           </div>
                         </div>
+                        <div className="bg-white">
+                          <div className="bg-white">
+                            <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
+                              <div className="mt-6 pt-10">
+                                <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-12">
+                                  {faqs2.map((faq) => (
+                                    <div key={faq.id} className="bg-gray p-5">
+                                      <dt className="text-lg leading-6 font-medium text-gray-900">
+                                        {faq.question}
+                                      </dt>
+                                      <dd className="mt-2 text-base text-gray-500">
+                                        {faq.answer}
+                                      </dd>
+                                      <Link
+                                        type="button"
+                                        to="/faq"
+                                        className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                      >
+                                        Learn more
+                                      </Link>
+                                    </div>
+                                  ))}
+                                </dl>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -670,7 +666,7 @@ export default function Invest() {
                 <div className="bg-gray3 py-16 sm:py-24 lg:py-20 px-16 right">
                   <div className="flex-shrink-0 pt-10">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
-                      Available Environmental Services
+                      Glasgow’s Environmental Services Capacity
                     </h3>
 
                     <h4 className="text-md leading-6 font-medium text-gray-900 m-2">
@@ -680,22 +676,7 @@ export default function Invest() {
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                         <dt>
                           <p className="ml-2 text-sm font-regular text-gray-500 truncate">
-                            CO2 removal
-                          </p>
-                        </dt>
-                        <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                          <p className="text-2xl font-semibold text-green-600 ">
-                            8,140 tCO2e
-                          </p>
-                          <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
-                            per year
-                          </p>
-                        </dd>
-                      </div>
-                      <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                        <dt>
-                          <p className="ml-2 text-sm font-regular text-gray-500 truncate">
-                            Avoided runoff
+                            Stormwater retention
                           </p>
                         </dt>
                         <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
@@ -720,6 +701,18 @@ export default function Invest() {
                           <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
                             per year
                           </p>
+                        </dd>
+                      </div>
+                      <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                        <dt>
+                          <p className="ml-2 text-sm font-regualr text-gray-500 truncate">
+                            Biodiversity
+                          </p>
+                        </dt>
+                        <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
+                            Coming soon
+                          </span>
                         </dd>
                       </div>
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
@@ -789,13 +782,12 @@ export default function Invest() {
                   </div>
                   <div className="py-10 md:px-16 lg:px-16 sm:px-5">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
-                      Are you interested in investing in specific types of
-                      activities?
+                      Do you want to invest in stewardship activities?
                     </h3>
                     <p>
-                      Include specific activities in your portfolio to reduce
-                      your carbon footprint and mitigate your climate-related
-                      risks
+                      Diversified greening efforts for planting more trees and
+                      maintaining larger trees, to maximize environmental
+                      services.
                     </p>
                     <div className="w-full">
                       <div className="relative flex flex-col  w-full mb-6 rounded">
@@ -832,11 +824,8 @@ export default function Invest() {
                                         id="offers-description"
                                         className="text-gray2"
                                       >
-                                        By reducing energy demand and absorbing
-                                        carbon dioxide, trees and vegetation
-                                        decrease the production and negative
-                                        effects of air pollution and greenhouse
-                                        gas emissions.
+                                        Invest in projects focused on planting
+                                        the right tree at the right place.
                                       </p>
                                     </div>
                                   </div>
@@ -867,10 +856,8 @@ export default function Invest() {
                                         id="offers-description"
                                         className="text-gray2"
                                       >
-                                        Invest in a series of projects that
-                                        legally demonstrate the preservation of
-                                        trees either via a Tree Preservation
-                                        Order or by changing land use
+                                        Invest in projects legally preventing
+                                        unnecessary felling.
                                       </p>
                                     </div>
                                   </div>
@@ -902,11 +889,8 @@ export default function Invest() {
                                         id="offers-description"
                                         className="text-gray2"
                                       >
-                                        Invest in a series of projects that are
-                                        focused on the intensive care and
-                                        maintenance of existing trees, centred
-                                        on strategic inspection, pruning, and
-                                        managing pests and diseases.
+                                        Invest in projects focused on intensive
+                                        long-term care.
                                       </p>
                                     </div>
                                   </div>
@@ -932,7 +916,8 @@ export default function Invest() {
                                         id="offers-description"
                                         className="text-gray2"
                                       >
-                                        Coming soon
+                                        Invest in projects targeting habitat
+                                        restoration. (Coming soon)
                                       </p>
                                     </div>
                                   </div>
@@ -958,7 +943,8 @@ export default function Invest() {
                                         id="offers-description"
                                         className="text-gray2"
                                       >
-                                        Coming soon
+                                        Invest in projects growing seedlings
+                                        locally. (Coming soon)
                                       </p>
                                     </div>
                                   </div>
@@ -984,7 +970,8 @@ export default function Invest() {
                                         id="offers-description"
                                         className="text-gray2"
                                       >
-                                        Coming soon
+                                        Invest in projects sustainably managing
+                                        trees' end of life. (Coming soon)
                                       </p>
                                     </div>
                                   </div>
@@ -1003,6 +990,33 @@ export default function Invest() {
                             </button>
                           </div>
                         </div>
+                        <div className="bg-white">
+                          <div className="bg-white">
+                            <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
+                              <div className="mt-6 pt-10">
+                                <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-12">
+                                  {faqs3.map((faq) => (
+                                    <div key={faq.id} className="bg-gray p-5">
+                                      <dt className="text-lg leading-6 font-medium text-gray-900">
+                                        {faq.question}
+                                      </dt>
+                                      <dd className="mt-2 text-base text-gray-500">
+                                        {faq.answer}
+                                      </dd>
+                                      <Link
+                                        type="button"
+                                        to="/faq"
+                                        className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                      >
+                                        Learn more
+                                      </Link>
+                                    </div>
+                                  ))}
+                                </dl>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1011,7 +1025,7 @@ export default function Invest() {
                 <div className="bg-gray3 py-16 sm:py-24 lg:py-20 px-16 right">
                   <div className="flex-shrink-0 pt-10">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
-                      Available Activities 2021-2025
+                      Glasgow’s Stewardship Activities 2021-2025
                     </h3>
 
                     <h4 className="text-md leading-6 font-medium text-gray-900 m-2">
@@ -1066,9 +1080,9 @@ export default function Invest() {
                           </p>
                         </dt>
                         <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                          <p className="text-2xl font-semibold text-green-600 ">
-                            £tbc
-                          </p>
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
+                            Coming soon
+                          </span>
                         </dd>
                       </div>
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
@@ -1078,9 +1092,9 @@ export default function Invest() {
                           </p>
                         </dt>
                         <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                          <p className="text-2xl font-semibold text-blue2 ">
-                            £tbc
-                          </p>
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
+                            Coming soon
+                          </span>
                         </dd>
                       </div>
                       <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
@@ -1090,9 +1104,9 @@ export default function Invest() {
                           </p>
                         </dt>
                         <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                          <p className="text-2xl font-semibold text-green-600 ">
-                            £tbc
-                          </p>
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
+                            Coming soon
+                          </span>
                         </dd>
                       </div>
                     </div>
@@ -1141,20 +1155,17 @@ export default function Invest() {
                       Submit your interest
                     </h3>
                     <h4 className="text-lg mt-5 leading-6 font-sm text-gray-900">
-                      Purchase summary
+                      Interest summary
                     </h4>
                     <p>{cart.join("\n")}</p>
                     {stormwaterCheck && <p>🌧 Stormwater Retention</p>}
                     {waterQualityCheck && <p>🚰 Water Quality</p>}
                     {floodCheck && <p>🌊 Flood control</p>}
-                    {physicalHealthCheck && <p>🤕 Physical health</p>}
-                    {mentalHealthCheck && <p>🤔 Mental health</p>}
-                    {noiseCheck && <p>🔕 Noise reduction</p>}
                     {airQualityCheck && <p>☁ Air quality improvement</p>}
                     {heatIslandCheck && <p>🥵 Heat island effect reduction</p>}
-                    {coolingCheck && <p>🌶 Cooling effect</p>}
+                    {noiseCheck && <p>🔕 Noise reduction</p>}
                     {windCheck && <p>💨 Wind protection</p>}
-                    {speciesCheck && <p>🐝 Increased species richness</p>}
+                    {speciesCheck && <p>🐝 Biodiversity</p>}
                     {greenJobsCheck && <p>👩‍🌾 Green jobs creation</p>}
                     {footballCheck && <p>🚶‍♀️ Increased high street footfall</p>}
                     {otherCheck && <p>🤽‍♀️ Other social outcomes</p>}
@@ -1162,10 +1173,6 @@ export default function Invest() {
                     {preservationCheck && <p>🐛 Preservation </p>}
                     {maintenanceCheck && <p>🪓 Maintenance</p>}
                     <div className="mt-10">
-                      <h3 className="text-lg leading-6 font-medium text-gray-900">
-                        Ecosystem service outcomes will be available to purchase
-                        soon.
-                      </h3>
                       <h4 className="text-lg mt-5 leading-6 font-sm text-gray-900">
                         Enter your email and our team will process your request.
                       </h4>
@@ -1186,7 +1193,7 @@ export default function Invest() {
                           onClick={(e) => next(e)}
                           className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
-                          Submit your interest
+                          Submit
                         </button>
                       </div>
                     </div>
@@ -1204,7 +1211,7 @@ export default function Invest() {
                   <div className="py-16 sm:py-24 lg:py-20 md:px-16 lg:px-16 sm:px-8">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                       Thanks for submitting your interest in supporting
-                      ecosystem service outcomes in Glasgow!
+                      Glasgow’s Urban Forest Portfolio!
                     </h3>
                     <p>
                       A confirmation has been sent to your email and our team
@@ -1246,57 +1253,6 @@ export default function Invest() {
             return "Hi!"; //TODO: update this
         }
       })()}
-
-      <div
-        aria-live="assertive"
-        className="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start"
-      >
-        <div className="w-full flex flex-col items-center space-y-4 sm:items-end">
-          {/* Notification panel, dynamically insert this into the live region when it needs to be displayed */}
-          <Transition
-            show={show}
-            as={Fragment}
-            enter="transform ease-out duration-300 transition"
-            enterFrom="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
-            enterTo="translate-y-0 opacity-100 sm:translate-x-0"
-            leave="transition ease-in duration-100"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
-              <div className="p-4">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <CheckCircleIcon
-                      className="h-6 w-6 text-green-400"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <div className="ml-3 w-0 flex-1 pt-0.5">
-                    <p className="text-sm font-medium text-gray-900">
-                      Added to cart
-                    </p>
-                    <p className="mt-1 text-sm text-gray-500">
-                      {cart[cart.length - 1]}
-                    </p>
-                  </div>
-                  <div className="ml-4 flex-shrink-0 flex">
-                    <button
-                      className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      onClick={() => {
-                        setShow(false);
-                      }}
-                    >
-                      <span className="sr-only">Close</span>
-                      <XIcon className="h-5 w-5" aria-hidden="true" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Transition>
-        </div>
-      </div>
     </>
   );
 }

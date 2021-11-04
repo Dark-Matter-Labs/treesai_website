@@ -16,15 +16,57 @@ function classNames(...classes) {
 const faqs = [
   {
     id: 1,
-    question: "What do we mean by pervious and impervious surface?",
+    question: "Can I just run projects that fit the listed activities?",
     answer:
-      "A pervious surface allows water to percolate through to the area underneath rather than becoming runoff. Impervious surfaces are solid surfaces that prevent aeration, infiltration, and water penetration, resulting in a number of harmful side effects. Perviouse surfaces have multiple benefits from a point of view of stormwater management.",
+      "In order for projects to receive financial capital for the environmental services they produce, we have to certify that specific actions have been achieved to the highest standards. Thus we are building a series of protocols that will help nature stewards guide their project development and build investible NbS sites.",
   },
   {
     id: 2,
-    question: "Can i just run projects that fit the listed activities?",
+    question: "What do we mean by stewardship and nature stewards?",
     answer:
-      "In order for projects to receive financial rewards for the environmental services they produce, we have to certify that specific actions have been achieved to the highest standards, thus we are building a series of protocols that will help nature stewards guide their project development.",
+      "By stewardship, we mean the responsible use and protection of the natural environment through innovative and sustainable practices, such as preservation, maintenance, restoration, disease management and others. Nature stewards are the ‘doers’, the ones that go out and execute on sustainable practices, through direct action and management.",
+  },
+  {
+    id: 3,
+    question: "What is TreesAI's relationship to nature stewards?",
+    answer:
+      "TreesAI delivers monitoring and forecasting capabilities of urban forest health and evolution to help inform nature stewards' decisions to optimise for natural regeneration. Both parties are part of a non-binding protocol of stewardship practices that details optimal arboricultural techniques to be followed by nature stewards, thus making them eligible for BCB financing.",
+  },
+  {
+    id: 4,
+    question: "What do we mean by pervious and impervious surface?",
+    answer:
+      "A pervious surface allows water to percolate through to the area underneath rather than becoming runoff. Impervious surfaces are solid surfaces that prevent aeration, infiltration, and water penetration, resulting in a number of harmful side effects. Pervious surfaces have multiple benefits from the point of view of stormwater management.",
+  },
+];
+
+const faqs2 = [
+  {
+    id: 1,
+    question: "What are environmental services?",
+    answer:
+      "Environments services refers to the qualitative functions of natural assets of land, water and air. The three basic types of environmental services are disposal services, which reflect the functions of the natural environment as an absorptive sink for residuals, productive services, which reflect economic functions, and consumer or consumptive services, which provide for the physiological and recreational needs of humans.",
+  },
+  {
+    id: 2,
+    question: "How are environmental services calculated in TreesAI?",
+    answer:
+      "Each environmental service requires different data points to be assessed, even when accounting for them partially. Stormwater retention, for example, requires the amount of rain and its intensity on an hourly level whereas pollutant removal does not. Therefore we can estimate different environmental services depending on the information we have gathered at each site, our capacity, and confidence in modelling it. The basis of each estimation of environmental service is peer-reviewed academic literature.",
+  },
+];
+
+const faqs3 = [
+  {
+    id: 1,
+    question: "How do we calculate maintenance funding potential?",
+    answer:
+      "We do not calculate the maintenance cost of project developers. We rely on the project uploader to input an estimate of annual maintenance costs (optional field). In the demo, we are using indicative numbers based on two initial studied sites (annual maintenance cost of £1,000 for 50 years, £50-100 revenue from environmental services; therefore, 5-10% maintenance cost coverage). For the pilot phase, project developers will have the option to input annual maintenance costs then the platform will compute environmental services value, Maintenance cost coverage (%) = Potential Revenue from Sale of Environmental Services / Annual Maintenance Cost of Site",
+  },
+  {
+    id: 2,
+    question: "How do we price environmental services in TreesAI?",
+    answer:
+      "We derive the economic value of environmental service through a direct non-use valuation method. Where we measure the value of regulating environmental services trees provide (such as carbon sequestration) rather than actual direct use of trees (such as timber). As we want to preserve and repurpose urban trees as civic assets, we estimate the avoided costs enjoyed by stakeholders from the delivery of environmental services. In Phase I pricing, we see tree value as the summation of avoided damage-cost to local stakeholders. In the next phases, we will socialize pricing benchmarks and move towards a willingness-to-pay method informed by local liability holders.",
   },
 ];
 
@@ -67,32 +109,32 @@ const formatter = new Intl.NumberFormat("en-UK", {
 const steps = [
   {
     name: "Calculate your impact",
-    description: "Input your project details for an estimation.",
+    description: "Upload your project details for an estimation.",
     status: "complete",
   },
   {
     name: "Review and sign protocol",
-    description: "Stewardship, Growing and CarbonPlus.",
+    description: "Agree to follow specific design and delivery terms.",
     status: "current",
   },
   {
-    name: "Add to project marketplace",
+    name: "ADD TO GLASGOW’S PORTFOLIO",
     description: "Input additional info and upload your project.",
     status: "upcoming",
   },
   {
-    name: "Ecosystem services SOLD",
-    description: "Outcomes-buyers purchase your services.",
+    name: "FUNDING COMMITMENT RECEIVED",
+    description: "Beneficiaries invest in your environmental services.",
     status: "upcoming",
   },
   {
     name: "Year 0: Project begins",
-    description: "Monitor and set a project baseline.",
+    description: "Set a project baseline and monitor.",
     status: "upcoming",
   },
   {
     name: "Year 1: First payment",
-    description: "Receive 10% of funding",
+    description: "Receive funds covering operational costs.",
     status: "upcoming",
   },
 ];
@@ -469,7 +511,7 @@ export default function Steward() {
                             <div>
                               <div>
                                 <h3 className="text-2xl leading-6 font-medium text-gray-900">
-                                  Enter your project details to get started
+                                  Enter your project details
                                 </h3>
                               </div>
 
@@ -563,7 +605,7 @@ export default function Steward() {
 
                                 <div className="sm:col-span-4">
                                   <h3 className="text-lg leading-6 font-medium text-gray-900">
-                                    Tree information
+                                    Trees
                                   </h3>
                                 </div>
 
@@ -746,7 +788,7 @@ export default function Steward() {
 
                                 <div className="sm:col-span-4">
                                   <h3 className="text-lg leading-6 font-medium text-gray-900">
-                                    What activities do you have planned?
+                                    What are your stewardship activities?
                                   </h3>
                                 </div>
                                 <div className="rounded-md bg-green-50 p-4">
@@ -759,8 +801,9 @@ export default function Steward() {
                                     </div>
                                     <div className="ml-3">
                                       <h3 className="text-sm font-medium text-green-800">
-                                        Activities are in progress. Give us
-                                        feedback and learn about our{" "}
+                                        We are currently defining stewardship
+                                        activities. Give us feedback and learn
+                                        more about our{" "}
                                         <Link to="/faq">
                                           <u>methodology</u>.
                                         </Link>
@@ -792,11 +835,8 @@ export default function Steward() {
                                       id="offers-description"
                                       className="text-gray2"
                                     >
-                                      By reducing energy demand and absorbing
-                                      carbon dioxide, trees and vegetation
-                                      decrease the production and negative
-                                      effects of air pollution and greenhouse
-                                      gas emissions.
+                                      Your project is focused on planting the
+                                      right tree at the right place.
                                     </p>
                                   </div>
                                 </div>
@@ -821,10 +861,8 @@ export default function Steward() {
                                       id="offers-description"
                                       className="text-gray2"
                                     >
-                                      Invest in a series of projects that
-                                      legally demonstrate the preservation of
-                                      trees either via a Tree Preservation Order
-                                      or by changing land use
+                                      Your project is legally preventing
+                                      unnecessary felling.
                                     </p>
                                   </div>
                                 </div>
@@ -849,11 +887,8 @@ export default function Steward() {
                                       id="offers-description"
                                       className="text-gray2"
                                     >
-                                      Invest in a series of projects that are
-                                      focused on the intensive care and
-                                      maintenance of existing trees, centred on
-                                      strategic inspection, pruning, and
-                                      managing pests and diseases.
+                                      Your project is focused on intensive long
+                                      term care.
                                     </p>
                                   </div>
                                 </div>
@@ -923,7 +958,7 @@ export default function Steward() {
                     <div className="input-section">
                       <div className="flex-shrink-0 input-inside">
                         <h3 className="text-2xl leading-6 font-medium text-gray-900 mt-5">
-                          {projectName} Project Impact
+                          {projectName} Your project impact
                         </h3>
                         <div className="rounded-md bg-green-50 p-4 mt-4">
                           <div className="flex">
@@ -936,20 +971,20 @@ export default function Steward() {
                             <div className="ml-3">
                               <h3 className="text-sm font-medium text-green-800">
                                 This is an estimate. Learn about our{" "}
-                                <u>methodology</u>
+                                <u>methodology</u>.
                               </h3>
                             </div>
                           </div>
                         </div>
                         <h3 className="text-lg leading-6 font-medium text-gray-900 mt-4">
-                          Environmental service
+                          Environmental services
                         </h3>
 
                         <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2">
                           <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                             <dt>
                               <p className="ml-2 text-sm font-small text-gray-500 truncate">
-                                CO2 removal
+                                CO₂ sequestration
                               </p>
                             </dt>
                             <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
@@ -975,6 +1010,19 @@ export default function Steward() {
                               <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
                                 over 50 years
                               </p>
+                            </dd>
+                          </div>
+
+                          <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                            <dt>
+                              <p className="ml-2 text-sm font-small text-gray-500 truncate">
+                                Biodiversity
+                              </p>
+                            </dt>
+                            <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
+                                Coming soon
+                              </span>
                             </dd>
                           </div>
 
@@ -1020,7 +1068,7 @@ export default function Steward() {
 
                         <div className="mt-5 flex flex-wrap content-around bg-white flex-space">
                           <h4 className="text-2xl leading-6 font-large text-gray-900 pb-2 pt-2">
-                            Carbon sequestration over time
+                            Carbon sequestration
                           </h4>
                           <Line data={co2data} options={co2options} />
 
@@ -1040,6 +1088,31 @@ export default function Steward() {
                             >
                               Next
                             </button>
+                          </div>
+                        </div>
+                        <div className="bg-white">
+                          <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
+                            <div className="mt-6 pt-10">
+                              <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-12">
+                                {faqs2.map((faq) => (
+                                  <div key={faq.id} className="bg-gray p-5">
+                                    <dt className="text-lg leading-6 font-medium text-gray-900">
+                                      {faq.question}
+                                    </dt>
+                                    <dd className="mt-2 text-base text-gray-500">
+                                      {faq.answer}
+                                    </dd>
+                                    <Link
+                                      type="button"
+                                      to="/faq"
+                                      className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                    >
+                                      Learn more
+                                    </Link>
+                                  </div>
+                                ))}
+                              </dl>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1070,14 +1143,29 @@ export default function Steward() {
                       <div className="flex-shrink-0 input-inside mt-5">
                         <div className="mb-5">
                           <h3 className="text-2xl leading-6 font-medium text-gray-900">
-                            {projectName} Maintenance forecast estimate
+                            {projectName} Maintenance funding potential
                           </h3>
                         </div>
-
+                        <div className="rounded-md bg-green-50 p-4 mt-4">
+                          <div className="flex">
+                            <div className="flex-shrink-0">
+                              <InformationCircleIcon
+                                className="h-5 w-5 text-green-400"
+                                aria-hidden="true"
+                              />
+                            </div>
+                            <div className="ml-3">
+                              <h3 className="text-sm font-medium text-green-800">
+                                This is an estimate. Learn about our{" "}
+                                <u>methodology</u>.
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
                         <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg">
                           <dt>
                             <p className="ml-2 text-sm font-small text-gray-500 truncate">
-                              Maintenance coverage by TreesAI platform
+                              Potential funding coverage
                             </p>
                           </dt>
                           <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
@@ -1151,8 +1239,11 @@ export default function Steward() {
                             </div>
                           </dl>
                         </div>
+                        <h3 className="mt-10 text-lg leading-6 font-medium text-gray-900 mt-4">
+                          Funding potential over 50 years
+                        </h3>
 
-                        <div className="mt-5 sm:w-full lg:w-9/12 md:w-9/12">
+                        <div className="sm:w-full">
                           <Bar
                             data={maintenance_forecast_data}
                             options={maintenance_forecast_options}
@@ -1169,10 +1260,35 @@ export default function Steward() {
                             </button>
                           </div>
                         </div>
+                        <div className="bg-white">
+                          <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
+                            <div className="mt-6 pt-10">
+                              <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-12">
+                                {faqs3.map((faq) => (
+                                  <div key={faq.id} className="bg-gray p-5">
+                                    <dt className="text-lg leading-6 font-medium text-gray-900">
+                                      {faq.question}
+                                    </dt>
+                                    <dd className="mt-2 text-base text-gray-500">
+                                      {faq.answer}
+                                    </dd>
+                                    <Link
+                                      type="button"
+                                      to="/faq"
+                                      className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                    >
+                                      Learn more
+                                    </Link>
+                                  </div>
+                                ))}
+                              </dl>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div className="steward"></div>
+                  <div className="steward right"></div>
                 </div>
               );
             case 3:
@@ -1198,13 +1314,13 @@ export default function Steward() {
                           Work with TREESAI
                         </h2>
                         <h2 className="font-medium text-2xl text-gray-900">
-                          Share your environmental services to support your
+                          Fund your environmental services to support your
                           project
                         </h2>
                         <div className="pt-2 pb-2">
                           <p className="text-lg leading-6 text-dark">
-                            Add your project to Glasgow’s Nature Atlas to share
-                            its ecosystem services.
+                            Upload your project to Glasgow’s Urban Forest
+                            Portfolio.
                           </p>
                         </div>
                         <nav aria-label="Progress">
@@ -1316,7 +1432,7 @@ export default function Steward() {
                               onClick={(e) => next(e)}
                               className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green4 hover:bg-green2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             >
-                              Submit for review
+                              Next
                             </button>
                           </div>
                         </div>
@@ -1339,9 +1455,9 @@ export default function Steward() {
                         </h2>
                         <div className="pt-2 pb-2 pr-5">
                           <p className="text-lg leading-6 text-dark pt-4">
-                            We are currently looking for innovative projects in
-                            Glasgow. If you are interested in TreesAI, please
-                            send us an email.
+                            We are currently looking for innovative urban forest
+                            projects in Glasgow. If you are interested in
+                            TreesAI, please send us an email.
                           </p>
                         </div>
                       </div>
@@ -1352,7 +1468,7 @@ export default function Steward() {
                           to="/invest-in-nature/glasgow"
                           className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green4 hover:bg-green2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
-                          Check out Glasgow portfolio
+                          View Glasgow’s Portfolio
                         </Link>
                       </div>
                     </div>

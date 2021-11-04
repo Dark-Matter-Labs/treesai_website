@@ -5,33 +5,28 @@ import NavBar from "../components/demo/NavBar";
 
 const steps = [
   {
-    name: "Share some images and info about your project",
-    description: "Input your trees details",
+    name: "SHARE DETAILS OF YOUR GARDEN",
+    description: "Upload images and information.",
     status: "complete",
   },
   {
-    name: "Submit your data For review",
-    description: "Get your tree data reviewed",
+    name: "SUBMIT YOUR DATA FOR REVIEW",
+    description: "Get your garden data reviewed.",
     status: "current",
   },
   {
-    name: "Review and sign an agreement",
-    description: "Agree to gift your environmental services",
+    name: "REVIEW AND SIGN A GIFT AGREEMENT",
+    description: "Agree to gift your environmental services.",
     status: "upcoming",
   },
   {
-    name: "Do the same process year on year",
-    description: "Show your trees are growing and healthy",
+    name: "MONITOR YOUR GARDEN",
+    description: "Show your trees are growing and are healthy.",
     status: "upcoming",
   },
   {
     name: "Year 1: Receive a gift to future certificate",
     description: "Share your actions with family and friends!",
-    status: "upcoming",
-  },
-  {
-    name: "Start a new gift",
-    description: "...",
     status: "upcoming",
   },
 ];
@@ -48,18 +43,14 @@ export default function Gift() {
         <div className="bg-gray-50 py-16 px-4">
           <div className="max-w-lg mx-auto">
             <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
-              HELP YOUR URBAN FOREST
+              BE PART OF A GROWING MOVEMENT
             </h2>
             <h2 className="font-grotesk text-3xl text-gray-900 sm:text-4xl">
-              Gift your environmental services to support Glasgow’s urban
-              forest.
+              Gift your garden’s environmental services to future generations!
             </h2>
             <div className="pt-2 pb-2">
               <p className="text-lg leading-6 text-dark">
-                Add your trees to Glasgow’s Nature Portfolio to gift the
-                environmental services to fund the long term maintenance of the
-                forest so that your kids and the kids of your kids can live in a
-                cleaner and greener Glasgow!
+                Add your trees to Glasgow’s Urban Forest.
               </p>
             </div>
             <nav aria-label="Progress">

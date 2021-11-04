@@ -11,10 +11,10 @@ import trees from "../data/trees.json";
 
 const pieChartData = {
   labels: [
-    "Carbon sequestration%",
-    "Stormwater retention%",
-    "Flood control%",
-    "Air quality improvement%",
+    "%Carbon sequestration",
+    "%Stormwater retention",
+    "%Flood control",
+    "%Air quality improvement",
   ],
   datasets: [
     {
@@ -144,9 +144,27 @@ const projects = [
 const faqs = [
   {
     id: 1,
-    question: "What are Environmental Services?",
+    question: "What are environmental services?",
     answer:
       "Environments services refers to the qualitative functions of natural assets of land, water and air. The three basic types of environmental services are disposal services, which reflect the functions of the natural environment as an absorptive sink for residuals, productive services, which reflect economic functions, and consumer or consumptive services, which provide for the physiological and recreational needs of humans.",
+  },
+  {
+    id: 2,
+    question: "What environmental services do urban trees provide?",
+    answer:
+      "Urban trees provide a multitude of benefits, mostly best understood as regulating and provisioning services, such as: carbon sequestration, air pollutant absorption, stormwater retention, flood control, heat island effect reduction, cooling effect, biodiversity enhancement, noise reduction, water filtration. Other secondary benefits that we also observe are: mental health improvement, crime reduction, improved walkability, decreased crime rates, local economy enhancement.",
+  },
+  {
+    id: 3,
+    question: "How do we price environmental services in TreesAI?",
+    answer:
+      "We derive the economic value of environmental service through a direct non-use valuation method. Where we measure the value of regulating environmental services trees provide (such as carbon sequestration) rather than actual direct use of trees (such as timber). As we want to preserve and repurpose urban trees as civic assets, we estimate the avoided costs enjoyed by stakeholders from the delivery of environmental services. In Phase I pricing, we see tree value as the summation of avoided damage-cost to local stakeholders. In the next phases, we will socialize pricing benchmarks and move towards a willingness-to-pay method informed by local liability holders.",
+  },
+  {
+    id: 4,
+    question: "How do we calculate a city’s stewardship activities?",
+    answer:
+      "The amount of trees in each stewardship activity indicated in the demo are highly indicative and aimed at showing potential portfolio scenarios. These do not indicate an accurate representation of Glasgow’s urban forest. The are assumptions extracted by a variety of different sources, from the city open space map, to the cities 2015 itree report. 470,000 trees in the planting activity assumes that 70% of all all available space for planting is used, which has been estimated to be about 32% of Glasgow, and that 170,000 of that would be replenished of dead ash trees; 370,000 trees in the maintenance activity assumes that all established trees in public ownership receive advanced maintenance care (maure is defined by > 20cm dbh). \\n\\n 180,000 trees in the preservation activity assumes that all trees in vacant and derelict land in Council ownership are protected;",
   },
 ];
 
@@ -224,20 +242,40 @@ export default function Glasgow() {
             <div>
               <div>
                 <h2 className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
-                  Glasgow’s Nature Atlas
+                  Glasgow’s Urban Forest Portfolio
                 </h2>
               </div>
             </div>
-            <p>
+            <p className="mt-2">
+              <i>TreesAI</i>{" "}
               <b>
-                This atlas hosts a portion of a Glasgow magical natural
-                ecosystem, from ancient street trees to wild meadows.
-              </b>{" "}
-              <br />
-              Its power lies in cooling down heatwaves, retaining water, storing
-              carbon and reducing polluted particulate matters ingested by our
-              children.{" "}
+                in Glasgow helps the city grow and maintain healthy urban
+                forests, delivering multiple environmental services.
+              </b>
             </p>
+            <div className="bg-blue4 shadow sm:rounded-lg mt-10">
+              <div className="px-4 py-5 sm:p-6">
+                <h3 className="text-lg leading-6 font-medium text-white">
+                  Invest in nature
+                </h3>
+                <div className="mt-2 sm:flex sm:items-start sm:justify-between">
+                  <div className="max-w-xl text-sm text-white">
+                    <p>
+                      Support urban forest projects to reach climate &
+                      sustainability goals.
+                    </p>
+                  </div>
+                  <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
+                    <Link
+                      to="/invest-in-nature/glasgow/invest"
+                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-blue4 bg-white hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+                    >
+                      Start investing
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="rounded-md bg-green-50 p-4 mt-5">
               <div className="flex">
                 <div className="flex-shrink-0">
@@ -257,13 +295,13 @@ export default function Glasgow() {
               </div>
             </div>
             <h3 className="mt-2 text-lg leading-6 font-medium text-gray-900 pb-5">
-              Environmental Services
+              Environmental services
             </h3>
             <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-2">
               <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                 <dt>
                   <p className="ml-2 text-sm font-regular text-gray-500 truncate">
-                    CO2 removal
+                    CO₂ sequestration
                   </p>
                 </dt>
                 <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
@@ -308,6 +346,18 @@ export default function Glasgow() {
               <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                 <dt>
                   <p className="ml-2 text-sm font-regular text-gray-500 truncate">
+                    Biodiversity
+                  </p>
+                </dt>
+                <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
+                    Coming soon
+                  </span>
+                </dd>
+              </div>
+              <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                <dt>
+                  <p className="ml-2 text-sm font-regular text-gray-500 truncate">
                     Flood control
                   </p>
                 </dt>
@@ -330,55 +380,90 @@ export default function Glasgow() {
                 </dd>
               </div>
             </div>
-            <div className="bg-blue4 shadow sm:rounded-lg">
-              <div className="px-4 py-5 sm:p-6 mt-5">
-                <div className="mt-2 sm:flex sm:items-start sm:justify-between">
-                  <h3 className="text-lg leading-6 font-medium text-white">
-                    Invest in Glasgow’s environmental services
-                  </h3>
-                  <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
-                    <Link
-                      to="/invest-in-nature/glasgow/invest"
-                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-blue4 bg-white hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
-                    >
-                      Invest
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-green4 shadow sm:rounded-lg">
-              <div className="px-4 py-5 sm:p-6 mt-5">
-                <div className="mt-2 sm:flex sm:items-start sm:justify-between">
-                  <h3 className="text-lg leading-6 font-medium text-white">
-                    Get rewarded for caring for Glasgow’s nature
-                  </h3>
-                  <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
-                    <Link
-                      to="/become-a-steward"
-                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-green4 bg-white hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
-                    >
-                      Steward
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div className="mt-10 flex flex-wrap content-around bg-white flex-space">
               <div>
-                <h4 className="text-md leading-6 font-medium text-gray-900 pr-20">
+                <h4 className="text-md leading-6 font-medium text-gray-900 mr-20">
                   Indicative valuation
                 </h4>
               </div>
               <div>
                 <Pie data={pieChartData} options={pieChartOptions} />
               </div>
-              <div className="pl-20">
+              <div className="ml-20">
                 <p>£7.1m</p>
               </div>
             </div>
+            <div className="">
+              <h3 className="pb-5 text-lg leading-6 font-medium text-gray-900 mt-10">
+                Highlights
+              </h3>
+              <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2">
+                <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                  <dt>
+                    <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                      Trees
+                    </p>
+                  </dt>
+                  <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                    <p className="text-2xl font-semibold text-green-600 ">
+                      2,100,000
+                    </p>
+                  </dd>
+                </div>
+                <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                  <dt>
+                    <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                      Canopy Cover
+                    </p>
+                  </dt>
+                  <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                    <p className="text-2xl font-semibold text-blue2 ">15%</p>
+                  </dd>
+                </div>
+              </div>
+              <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden mt-2">
+                <dt>
+                  <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                    Tree Story of the month
+                  </p>
+                </dt>
+                <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                  <p className="text-2xl font-semibold text-gray-500">
+                    “And I watered it in fears. Night and morning with my tears:
+                    And I sunned it with smiles. And with soft deceitful wiles.”
+                  </p>
+                </dd>
+              </div>
+            </div>
+            <div className="mt-5 bg-white mt-10">
+              <h3 className="pb-5 text-lg leading-6 font-medium text-gray-900 mt-10">
+                Stewardship activities
+              </h3>
+              <div className="rounded-md bg-green-50 p-4">
+                <div className="flex">
+                  <div className="flex-shrink-0">
+                    <InformationCircleIcon
+                      className="h-5 w-5 text-green-400"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <div className="ml-3">
+                    <h3 className="text-sm font-medium text-green-800">
+                      We are currently defining stewardship activities. Give us
+                      feedback and learn more about our{" "}
+                      <Link to="/faq">
+                        <u>methodology</u>.
+                      </Link>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <Bar data={barChartData} options={barChartOptions} />
+            </div>
             <div className="bg-white py-16 sm:py-24 lg:py-20">
-              <h3 className="text-l text-gray-900 sm:text-xl py-5">Projects</h3>
+              <h3 className="text-l text-gray-900 sm:text-xl py-5">
+                Portfolio projects
+              </h3>
               <div className="grid gap-y-10 gap-x-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
                 {projects.map((project) => (
                   <div key={project.id} className="group relative">
@@ -413,116 +498,38 @@ export default function Glasgow() {
                 ))}
               </div>
             </div>
-            <div className="mt-5 bg-white">
-              <div className="rounded-md bg-green-50 p-4 mt-10">
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <InformationCircleIcon
-                      className="h-5 w-5 text-green-400"
-                      aria-hidden="true"
-                    />
+            <div className="bg-blue4 shadow sm:rounded-lg mt-10">
+              <div className="px-4 py-5 sm:p-6">
+                <h3 className="text-lg leading-6 font-medium text-white">
+                  Invest in nature
+                </h3>
+                <div className="mt-2 sm:flex sm:items-start sm:justify-between">
+                  <div className="max-w-xl text-sm text-white">
+                    <p>
+                      Support urban forest projects to reach climate &
+                      sustainability goals.
+                    </p>
                   </div>
-                  <div className="ml-3">
-                    <h3 className="text-sm font-medium text-green-800">
-                      Activities are in progress. Give us feedback and learn
-                      about our{" "}
-                      <Link to="/faq">
-                        <u>methodology</u>.
-                      </Link>
-                    </h3>
+                  <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
+                    <Link
+                      to="/invest-in-nature/glasgow/invest"
+                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-blue4 bg-white hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+                    >
+                      Start investing
+                    </Link>
                   </div>
                 </div>
               </div>
-              <Bar data={barChartData} options={barChartOptions} />
             </div>
           </div>
-          <div className="sm:ml-10">
-            <h3 className="pb-5 text-lg leading-6 font-medium text-gray-900 mt-10">
-              Summary
-            </h3>
-            <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2">
-              <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                <dt>
-                  <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                    Trees
-                  </p>
-                </dt>
-                <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                  <p className="text-2xl font-semibold text-green-600 ">
-                    2,100,000
-                  </p>
-                </dd>
-              </div>
-              <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                <dt>
-                  <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                    Canopy Cover
-                  </p>
-                </dt>
-                <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                  <p className="text-2xl font-semibold text-blue2 ">15%</p>
-                </dd>
-              </div>
-              <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                <dt>
-                  <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                    Forest Density
-                  </p>
-                </dt>
-                <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                  <p className="text-2xl font-semibold text-green-600 ">112</p>
-                  <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
-                    per hectares
-                  </p>
-                </dd>
-              </div>
-              <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                <dt>
-                  <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                    Located in parks
-                  </p>
-                </dt>
-                <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                  <p className="text-2xl font-semibold text-green-600 ">55%</p>
-                  <p className="text-gray-900 ml-2 flex items-baseline text-sm font-semibold">
-                    of all trees
-                  </p>
-                </dd>
-              </div>
-              <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                <dt>
-                  <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                    Most Common Species
-                  </p>
-                </dt>
-                <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
-                    ash, hawthorn and alder
-                  </span>
-                </dd>
-              </div>
-            </div>
-            <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden mt-2">
-              <dt>
-                <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                  Tree Story of the month
-                </p>
-              </dt>
-              <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                <p className="text-2xl font-semibold text-gray-500">
-                  “And I watered it in fears. Night and morning with my tears:
-                  And I sunned it with smiles. And with soft deceitful wiles.”
-                </p>
-              </dd>
-            </div>
-          </div>
+
           <div className="bg-white">
-            <div className="bg-gray">
+            <div className="bg-white">
               <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
                 <div className="mt-6 pt-10">
                   <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-12">
                     {faqs.map((faq) => (
-                      <div key={faq.id}>
+                      <div key={faq.id} className="bg-gray p-5">
                         <dt className="text-lg leading-6 font-medium text-gray-900">
                           {faq.question}
                         </dt>

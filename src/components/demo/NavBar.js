@@ -126,7 +126,7 @@ export default function NavBar(props) {
                 href="#"
                 className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium sm:pl-5 sm:pr-6"
               >
-                <Link to="/gift">Gift to Future</Link>
+                <Link to="/gift">Gift to future</Link>
               </Disclosure.Button>
               <Disclosure.Button className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium sm:pl-5 sm:pr-6">
                 <Link to="/faq">FAQ</Link>

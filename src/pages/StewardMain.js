@@ -3,6 +3,7 @@ import { InformationCircleIcon } from "@heroicons/react/solid";
 import NavBar from "../components/demo/NavBar";
 import InvestBanner from "../images/InvestBanner.png";
 import banner3 from "../images/banner3.png";
+import letsInvest from "../images//letsinvest.jpeg";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -10,11 +11,11 @@ function classNames(...classes) {
 
 const activities = [
   {
-    id: 1,
-    name: "Preservation",
-    imageSrc: "assets/Preservation.png",
-    imageAlt: "Preservation picture",
-    detail: "Legally prevent felling in the long term",
+    id: 3,
+    name: "Planting",
+    imageSrc: "assets/Planting.png",
+    imageAlt: "Planting picture",
+    detail: "Planting the right tree at the right place.",
     progress: "",
   },
   {
@@ -22,15 +23,15 @@ const activities = [
     name: "Maintenance",
     imageSrc: "assets/Maintenance.png",
     imageAlt: "Maintenance picture",
-    detail: "Intensive long term care",
+    detail: "Intensive long-term care.",
     progress: "",
   },
   {
-    id: 3,
-    name: "Planting",
-    imageSrc: "assets/Planting.png",
-    imageAlt: "Planting picture",
-    detail: "Planting the right tree at the right place",
+    id: 1,
+    name: "Preservation",
+    imageSrc: "assets/Preservation.png",
+    imageAlt: "Preservation picture",
+    detail: "Legally prevent unnecessary felling.",
     progress: "",
   },
   {
@@ -38,7 +39,7 @@ const activities = [
     name: "Restoration",
     imageSrc: "assets/Restoration.png",
     imageAlt: "Restoration picture",
-    detail: "Targeted habitat nurturing(coming soon)",
+    detail: "Targeted habitat nurturing(coming soon).",
     progress: "Coming soon",
   },
   {
@@ -46,7 +47,7 @@ const activities = [
     name: "Seedling",
     imageSrc: "assets/Seedling.png",
     imageAlt: "Seedling picture",
-    detail: "Grow healthy seedlings locally(coming soon)",
+    detail: "Grow healthy seedlings locally(coming soon).",
     progress: "Coming soon",
   },
   {
@@ -54,7 +55,7 @@ const activities = [
     name: "Upcycling",
     imageSrc: "assets/Upcycling.png",
     imageAlt: "Upcycling picture",
-    detail: "Sustainably manage trees' end of life(coming soon)",
+    detail: "Sustainably manage trees' end of life(coming soon).",
     progress: "Coming soon",
   },
 ];
@@ -64,7 +65,13 @@ const faqs = [
     id: 1,
     question: "What do we mean by stewardship and nature steward?",
     answer:
-      "By stewardship we mean the responsible use and protection of the natural environment through innovative and sustainable practices. This is a multi-layered concept, aimed at combining environmental improvement with community building, and uses actions to achieve outcomes. ",
+      "By stewardship, we mean the responsible use and protection of the natural environment through innovative and sustainable practices, such as preservation, maintenance, restoration, disease management and others. Nature stewards are the ‘doers’, the ones that go out and execute on sustainable practices, through direct action and management.",
+  },
+  {
+    id: 2,
+    question: "What is TreesAI's relationship to nature stewards?",
+    answer:
+      "TreesAI delivers monitoring and forecasting capabilities of urban forest health and evolution to help inform nature stewards' decisions to optimise for natural regeneration. Both parties are part of a non-binding protocol of stewardship practices that details optimal arboricultural techniques to be followed by nature stewards, thus making them eligible for BCB financing.",
   },
 ];
 
@@ -79,11 +86,11 @@ export default function StewardMain() {
               Join the stewardship revolution
             </h2>
             <p className="mt-3 text-lg font-regular text-white">
-              Cover up to 10% of your maintenance costs by preserving street
-              trees, rewilding your local park or replenishing the urban forest.
+              Upload your urban forest project to a city portfolio and discover
+              funding opportunities.
             </p>
             <p className="mt-10 text-lg font-semibold leading-6 text-white">
-              Pick your city
+              Select your city
             </p>
             <div className="flex">
               <div>
@@ -96,7 +103,7 @@ export default function StewardMain() {
                   to="/become-a-steward/glasgow/steward"
                   className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green4 hover:bg-green2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
-                  Add a project
+                  Upload a project
                 </Link>
               </div>
             </div>
@@ -115,7 +122,8 @@ export default function StewardMain() {
             </div>
             <div className="ml-3">
               <h3 className="text-sm font-medium text-green-800">
-                Activities are in progress. Give us feedback and learn about our{" "}
+                We are currently defining stewardship activities. Give us
+                feedback and learn more about our{" "}
                 <Link to="/faq">
                   <u>methodology</u>
                 </Link>
@@ -125,9 +133,9 @@ export default function StewardMain() {
           </div>
         </div>
         <h3 className="text-l text-gray-900 sm:text-xl py-5">
-          Eligible activities
+          Eligible stewardship activities
         </h3>
-        <div className="grid gap-y-8 gap-x-0 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-y-8 gap-x0 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {activities.map((activity) => (
             <div key={activity.id} className="group relative">
               <div className="w-full bg-gray-200 rounded-md overflow-hidden lg:aspect-none">
@@ -152,24 +160,50 @@ export default function StewardMain() {
             </div>
           ))}
         </div>
-        <div className="max-w-7xl mx-auto py-16 px-4 sm:px-4 lg:px-0">
+        <div className="max-w-7xl mx-auto py-16 px-2 sm:px-4 lg:px-0">
+          <div className="bg-green4 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+            <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
+              <div className="lg:self-center">
+                <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+                  <span className="block">Become a nature steward</span>
+                </h2>
+                <p className="mt-4 text-lg leading-6 text-white">
+                  Upload your urban forest project and discover funding
+                  opportunities.
+                </p>
+                <Link
+                  to="/become-a-steward/glasgow/steward"
+                  className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-green4 hover:bg-indigo-50"
+                >
+                  Learn more
+                </Link>
+              </div>
+            </div>
+            <div className="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
+              <img
+                className="transform rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
+                src={letsInvest}
+                alt="Nature stewards"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto py-10 px-4 sm:px-4 lg:px-0">
           <div className="bg-blue4 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
             <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
               <div className="lg:self-center">
                 <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                  <span className="block">
-                    Interested in investing in nature?
-                  </span>
+                  <span className="block">Invest in nature</span>
                 </h2>
                 <p className="mt-4 text-lg leading-6 text-white">
-                  Discover portfolios of projects or individual actions that can
-                  reduce your carbon footprint and climate-related liabilities.
+                  Support urban forest projects to reach climate &
+                  sustainability goals.
                 </p>
                 <Link
                   to="/invest-in-nature"
                   className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-blue4 hover:bg-indigo-50"
                 >
-                  Get started
+                  Learn more
                 </Link>
               </div>
             </div>
@@ -182,21 +216,16 @@ export default function StewardMain() {
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto py-16 px-2 sm:px-4 lg:px-0">
+        <div className="max-w-7xl mx-auto py-10 px-2 sm:px-4 lg:px-0">
           <div className="bg-indigo-600 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
             <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
               <div className="lg:self-center">
                 <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                  <span className="block">
-                    Why not donate your trees’ ecosystem services to future
-                    generations?
-                  </span>
+                  <span className="block">Gift to future!</span>
                 </h2>
                 <p className="mt-4 text-lg leading-6 text-indigo-200">
-                  You are the lucky owner of a wild backgarden, yard or field
-                  and plan to continue caring for in in the coming 5 years. Why
-                  not donating the ecosysmte services that your tree generate to
-                  future Glaswegians?
+                  Be part of a growing movement and learn how to take care of
+                  healthy trees.
                 </p>
                 <Link
                   to="/gift"

@@ -61,15 +61,15 @@ const cities = [
 const faqs = [
   {
     id: 1,
-    question: "What are climate-related liabilities?",
+    question: "What are urban forests?",
     answer:
-      "We live in an increasingly fragile world where climate change and biodiversity loss are having a detrimental impact on all, from individuals to businesses. By pooling our resources to invest in nature, restoring and growing strong ecosystems and habitats we can reverse this cycle and support thriving and resilient communities.",
+      "Urban forests are “networks or systems comprising all woodlands, groups of trees, and individual trees located in urban and peri-urban areas; they include, therefore, forests, street trees, trees in parks and gardens, and trees in derelict areas.”",
   },
   {
     id: 2,
-    question: "What do we mean by nature?",
+    question: "WWhat are climate risks?",
     answer:
-      "We use nature as a shorthand for Nature-based Solutions. While TreesAI aims to fund most Nature-based Solutions, we are currently focusing on Urban Forests. ",
+      "As the climate of the earth becomes more volatile: public and private entities are experiencing increasing liabilities. For example, corporations have growing carbon and social impact liabilities; water utility companies are faced with tougher regulations and fines due to frequent flood events; and the healthcare sector has increasing treatment costs due to deteriorating air quality in cites. Investing in urban forests is a green strategy for mitigating such climate risks.",
   },
 ];
 
@@ -121,11 +121,11 @@ export default function Cities() {
         <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
           <div className="mt-10 py-16 sm:py-10 lg:py-20 px-16">
             <h2 className="font-grotesk mt-2 lg:text-5xl md:text-4xl text-gray-900 sm:text-4xl">
-              Find places to invest in nature
+              Select a city to invest in nature
             </h2>
             <p className="mt-3 text-lg font-regular text-gray-500">
-              Discover portfolios of projects or individual actions that can
-              reduce your carbon footprint and climate-related liabilities.
+              Discover urban forest portfolios that can help reduce your climate
+              risks.
             </p>
             <div className="mt-5">
               <div className="grid gap-y-10 gap-x-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
@@ -163,6 +163,75 @@ export default function Cities() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+            <div className="bg-blue4 shadow sm:rounded-lg mt-10">
+              <div className="px-4 py-5 sm:p-6">
+                <h3 className="text-lg leading-6 font-medium text-white">
+                  Invest in nature
+                </h3>
+                <div className="mt-2 sm:flex sm:items-start sm:justify-between">
+                  <div className="max-w-xl text-sm text-white">
+                    <p>
+                      Support urban forest projects to reach climate &
+                      sustainability goals.
+                    </p>
+                  </div>
+                  <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
+                    <Link
+                      to="/invest-in-nature/glasgow"
+                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-blue4 bg-white hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+                    >
+                      Learn more
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-green4 shadow sm:rounded-lg mt-10">
+              <div className="px-4 py-5 sm:p-6">
+                <h3 className="text-lg leading-6 font-medium text-white">
+                  Become a nature steward
+                </h3>
+                <div className="mt-2 sm:flex sm:items-start sm:justify-between">
+                  <div className="max-w-xl text-sm text-white">
+                    <p>
+                      Upload your urban forest project and discover funding
+                      opportunities.
+                    </p>
+                  </div>
+                  <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
+                    <Link
+                      to="/become-a-steward"
+                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-green4 bg-white hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+                    >
+                      Learn more
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-indigo-600 shadow sm:rounded-lg mt-10">
+              <div className="px-4 py-5 sm:p-6">
+                <h3 className="text-lg leading-6 font-medium text-white">
+                  Gift to future!
+                </h3>
+                <div className="mt-2 sm:flex sm:items-start sm:justify-between">
+                  <div className="max-w-xl text-sm text-white">
+                    <p>
+                      Be part of a growing movement and learn how to take care
+                      of healthy trees
+                    </p>
+                  </div>
+                  <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
+                    <Link
+                      to="/gift"
+                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+                    >
+                      Learn more
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="bg-white">

@@ -184,19 +184,6 @@ const stormwater_options = {
   },
 };
 
-const faqs = [
-  {
-    id: 1,
-    question: "Have more questions?",
-    answer: "",
-  },
-  {
-    id: 2,
-    question: "Want to know more about the service?",
-    answer: "",
-  },
-];
-
 export default function Portfolio() {
   mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
   //Map related variables
@@ -261,19 +248,19 @@ export default function Portfolio() {
       <div className="bg-gray py-16 sm:py-24 lg:py-20 md:px-16 lg:px-16 sm:px-4">
         <div className="mt-10">
           <h2 className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
-            Scottish Motor’s Nature Portfolio
+            Scottish Motors Nature Portfolio
           </h2>
           <p className="mt-3 text-lg font-regular text-gray-500">
-            This is a sample portfolio to track your investments in time
+            This is a sample portfolio to track your investments.
           </p>
           <h3 className="text-l text-gray-900 sm:text-xl py-5">
-            Outcomes by 2030
+            Environmental services investments by 2030
           </h3>
           <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2">
             <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
               <dt>
                 <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                  Carbon
+                  Carbon sequestration
                 </p>
               </dt>
               <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
@@ -288,7 +275,7 @@ export default function Portfolio() {
             <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
               <dt>
                 <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                  Water
+                  Stormwater retention
                 </p>
               </dt>
               <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
@@ -302,23 +289,23 @@ export default function Portfolio() {
         </div>
         <div className="bg-gray py-16 sm:py-24 lg:py-20 px-16 sm:px-4">
           <h2 className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
-            Your portfolio performance
+            Performance over time
           </h2>
           <p className="mt-3 text-lg font-regular text-gray-500">
-            Carbon stored over time
+            Carbon stored
           </p>
           <div className="sm:w-full lg:w-9/12 md:w-9/12">
             <Bar data={carbon_data} options={carbon_options} />
           </div>
           <p className="mt-3 text-lg font-regular text-gray-500">
-            Water retained over time
+            Water retained
           </p>
           <div className="sm:w-full lg:w-9/12 md:w-9/12">
             <Bar data={stormwater_data} options={stormwater_options} />
           </div>
         </div>
         <h3 className="text-l text-gray-900 sm:text-xl py-5">
-          Activities in portfolio
+          Sample projects
         </h3>
         <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
           <div className="h-full w-full">
@@ -360,7 +347,7 @@ export default function Portfolio() {
               disabled={true}
               className="disabled:opacity-50 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue4  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              🔽 Download Report(Coming Soon)
+              🔽 Download Report
             </button>
           </div>
         </div>
@@ -370,13 +357,13 @@ export default function Portfolio() {
               disabled
               className="disabled:opacity-50 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4  hover:bg-blue4  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Add to portfolio(Coming Soon)
+              Add to portfolio
             </button>
             <button
               disabled
               className="disabled:opacity-50 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4  hover:bg-blue4  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Renew Contract(Coming Soon)
+              Renew Contract
             </button>
           </div>
         </div>
@@ -388,30 +375,6 @@ export default function Portfolio() {
             >
               Return home
             </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-gray">
-        <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
-          <div className="mt-6 pt-10">
-            <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12">
-              {faqs.map((faq) => (
-                <div key={faq.id}>
-                  <dt className="text-lg leading-6 font-medium text-gray-900">
-                    {faq.question}
-                  </dt>
-                  <dd className="mt-2 text-base text-gray-500">{faq.answer}</dd>
-                  <Link
-                    type="button"
-                    to="/faq"
-                    className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  >
-                    Learn more
-                  </Link>
-                </div>
-              ))}
-            </dl>
           </div>
         </div>
       </div>
