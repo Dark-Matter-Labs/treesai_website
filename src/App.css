@@ -121,7 +121,7 @@ iframe {
 }
 
 .add-to-market {
-  background: url(images/Banner-image.png);
+  background: url(images/Banner-image.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -164,4 +164,11 @@ iframe {
 
 .image-blur {
   filter: opacity(50%);
+}
+
+.right {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  box-sizing: border-box;
 }

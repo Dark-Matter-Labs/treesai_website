@@ -74,7 +74,7 @@ export default function Invest() {
               <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                 <div>
                   <NavBarGlasgow />
-                  <div className="flex items-center mt-20 ml-20 sm:ml-10">
+                  <div className="flex items-center mt-20 lg:ml-16 md:ml-16 sm:ml-10">
                     <ChevronLeftIcon
                       className="flex-shrink-0 h-5 w-5 text-gray-400"
                       aria-hidden="true"
@@ -86,7 +86,7 @@ export default function Invest() {
                       Back
                     </Link>
                   </div>
-                  <div className="py-16 sm:py-16 lg:py-20 px-16 sm:px-5">
+                  <div className="py-16 sm:py-16 lg:py-16 md:px-16 lg:px-16 sm:px-5">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                       What are your desired carbon outcomes?
                     </h3>
@@ -112,7 +112,7 @@ export default function Invest() {
                                     emissions.
                                   </p>
                                 </dt>
-                                <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                                <dd className="ml-2 pb-6 sm:pb-7">
                                   <div className="sm:col-span-4">
                                     <div className="mt-1 flex rounded-md shadow-sm">
                                       <select
@@ -145,7 +145,7 @@ export default function Invest() {
                                             step="0.01"
                                             data-number-to-fixed="2"
                                             data-number-stepfactor="100"
-                                            className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full  rounded-none  sm:text-sm border-gray-300"
+                                            className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none sm:text-sm border-gray-300"
                                           />
                                         </>
                                       )}
@@ -218,7 +218,7 @@ export default function Invest() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-gray3 py-16 sm:py-24 lg:py-20 px-16 ">
+                <div className="bg-gray3 py-16 sm:py-24 lg:py-20 px-16 right">
                   <div className="flex-shrink-0 pt-10">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                       Available Environmental Services
@@ -291,7 +291,7 @@ export default function Invest() {
               <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                 <div>
                   <NavBarGlasgow />
-                  <div className="flex items-center mt-20 ml-20 sm:ml-10">
+                  <div className="flex items-center mt-20 lg:ml-16 md:ml-16 sm:ml-10">
                     <ChevronLeftIcon
                       className="flex-shrink-0 h-5 w-5 text-gray-400"
                       aria-hidden="true"
@@ -303,7 +303,7 @@ export default function Invest() {
                       Back
                     </button>
                   </div>
-                  <div className="py-10 sm:py-24 lg:py-10 px-20 sm:px-5">
+                  <div className="py-10 sm:py-24 lg:py-10 md:px-16 lg:px-16 sm:px-5">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                       What other outcomes are you looking to achieve?
                     </h3>
@@ -598,7 +598,7 @@ export default function Invest() {
                                         htmlFor="jobs"
                                         className="font-medium text-gray-700"
                                       >
-                                        👩‍🌾Green jobs creation
+                                        👩‍🌾 Green jobs creation
                                       </label>
                                     </div>
                                   </div>
@@ -667,7 +667,7 @@ export default function Invest() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-gray3 py-16 sm:py-24 lg:py-20 px-16 ">
+                <div className="bg-gray3 py-16 sm:py-24 lg:py-20 px-16 right">
                   <div className="flex-shrink-0 pt-10">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                       Available Environmental Services
@@ -775,7 +775,7 @@ export default function Invest() {
               <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                 <div>
                   <NavBarGlasgow />
-                  <div className="flex items-center mt-20 ml-20 sm:ml-10">
+                  <div className="flex items-center mt-20 md:ml-16 ml:mt-16 sm:ml-10">
                     <ChevronLeftIcon
                       className="flex-shrink-0 h-5 w-5 text-gray-400"
                       aria-hidden="true"
@@ -787,7 +787,7 @@ export default function Invest() {
                       Back
                     </button>
                   </div>
-                  <div className="py-10 px-20 sm:px-5">
+                  <div className="py-10 md:px-16 lg:px-16 sm:px-5">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                       Are you interested in investing in specific types of
                       activities?
@@ -1008,7 +1008,7 @@ export default function Invest() {
                   </div>
                 </div>
 
-                <div className="bg-gray3 py-16 sm:py-24 lg:py-20 px-16 ">
+                <div className="bg-gray3 py-16 sm:py-24 lg:py-20 px-16 right">
                   <div className="flex-shrink-0 pt-10">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                       Available Activities 2021-2025
@@ -1124,7 +1124,7 @@ export default function Invest() {
               <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                 <div>
                   <NavBarGlasgow />
-                  <div className="flex items-center mt-20 ml-20 sm:ml-10">
+                  <div className="flex items-center mt-20 md:ml-16 lg:ml-16 sm:ml-10">
                     <ChevronLeftIcon
                       className="flex-shrink-0 h-5 w-5 text-gray-400"
                       aria-hidden="true"
@@ -1136,7 +1136,7 @@ export default function Invest() {
                       Back
                     </button>
                   </div>
-                  <div className="py-10 px-20 sm:px-8">
+                  <div className="py-10 md:px-16 lg:px-16 sm:px-8">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                       Submit your interest
                     </h3>
@@ -1144,27 +1144,23 @@ export default function Invest() {
                       Purchase summary
                     </h4>
                     <p>{cart.join("\n")}</p>
-                    {stormwaterCheck && <p>✅ 🌧Stormwater Retention</p>}
-                    {waterQualityCheck && <p>✅ 🚰Water Quality</p>}
-                    {floodCheck && <p>✅ 🌊Flood control</p>}
-                    {physicalHealthCheck && <p>✅ 🤕Physical health</p>}
-                    {mentalHealthCheck && <p>✅ 🤔Mental health</p>}
-                    {noiseCheck && <p>✅ 🔕Noise reduction</p>}
-                    {airQualityCheck && <p>✅ ☁Air quality improvement</p>}
-                    {heatIslandCheck && (
-                      <p>✅ 🥵Heat island effect reduction</p>
-                    )}
-                    {coolingCheck && <p>✅ 🌶Cooling effect</p>}
-                    {windCheck && <p>✅ 💨Wind protection</p>}
-                    {speciesCheck && <p>✅ 🐝Increased species richness</p>}
-                    {greenJobsCheck && <p>✅ 👩‍🌾Green jobs creation</p>}
-                    {footballCheck && (
-                      <p>✅ 🚶‍♀️Increased high street footfall</p>
-                    )}
-                    {otherCheck && <p>✅ 🤽‍♀️Other social outcomes</p>}
-                    {plantingCheck && <p>✅ 🌱Planting</p>}
-                    {preservationCheck && <p>✅ 🐛Preservation </p>}
-                    {maintenanceCheck && <p>✅ 🪓Maintenance</p>}
+                    {stormwaterCheck && <p>🌧 Stormwater Retention</p>}
+                    {waterQualityCheck && <p>🚰 Water Quality</p>}
+                    {floodCheck && <p>🌊 Flood control</p>}
+                    {physicalHealthCheck && <p>🤕 Physical health</p>}
+                    {mentalHealthCheck && <p>🤔 Mental health</p>}
+                    {noiseCheck && <p>🔕 Noise reduction</p>}
+                    {airQualityCheck && <p>☁ Air quality improvement</p>}
+                    {heatIslandCheck && <p>🥵 Heat island effect reduction</p>}
+                    {coolingCheck && <p>🌶 Cooling effect</p>}
+                    {windCheck && <p>💨 Wind protection</p>}
+                    {speciesCheck && <p>🐝 Increased species richness</p>}
+                    {greenJobsCheck && <p>👩‍🌾 Green jobs creation</p>}
+                    {footballCheck && <p>🚶‍♀️ Increased high street footfall</p>}
+                    {otherCheck && <p>🤽‍♀️ Other social outcomes</p>}
+                    {plantingCheck && <p>🌱 Planting</p>}
+                    {preservationCheck && <p>🐛 Preservation </p>}
+                    {maintenanceCheck && <p>🪓 Maintenance</p>}
                     <div className="mt-10">
                       <h3 className="text-lg leading-6 font-medium text-gray-900">
                         Ecosystem service outcomes will be available to purchase
@@ -1197,7 +1193,7 @@ export default function Invest() {
                   </div>
                 </div>
 
-                <div className="outcomes-panel"></div>
+                <div className="outcomes-panel right"></div>
               </div>
             );
           case 4:
@@ -1205,7 +1201,7 @@ export default function Invest() {
               <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                 <div>
                   <NavBarGlasgow />
-                  <div className="py-16 sm:py-24 lg:py-20 px-16 sm:px-8">
+                  <div className="py-16 sm:py-24 lg:py-20 md:px-16 lg:px-16 sm:px-8">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                       Thanks for submitting your interest in supporting
                       ecosystem service outcomes in Glasgow!
@@ -1243,7 +1239,7 @@ export default function Invest() {
                   </div>
                 </div>
 
-                <div className="outcomes-panel"></div>
+                <div className="outcomes-panel right"></div>
               </div>
             );
           default:

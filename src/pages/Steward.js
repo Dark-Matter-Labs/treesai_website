@@ -100,7 +100,7 @@ const steps = [
 export default function Steward() {
   const [pageState, setPageState] = useState(0);
   const [projectName, setProjectName] = useState("");
-  const [numberOfTrees, setNumberOfTrees] = useState(100);
+  const [numberOfTrees, setNumberOfTrees] = useState(6000);
   const [dbh, setDBH] = useState(13);
   const [newNumberOfTrees, setNewNumberOfTrees] = useState(0);
   const [evergreenPercent, setEvergreenPercent] = useState(50);
@@ -450,7 +450,7 @@ export default function Steward() {
                   <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                     <div>
                       <NavBarGlasgow />
-                      <div className="flex items-center mt-20 ml-20 sm:ml-10">
+                      <div className="flex items-center mt-20 md:ml-20 lg:ml-20 sm:ml-10">
                         <ChevronLeftIcon
                           className="flex-shrink-0 h-5 w-5 text-gray-400"
                           aria-hidden="true"
@@ -858,7 +858,7 @@ export default function Steward() {
                                   </div>
                                 </div>
                               </fieldset>
-                              <div className="pt-5">
+                              <div className="pt-5 pb-20">
                                 <div className="flex justify-end">
                                   <button
                                     onClick={(e) => calculate_button_click(e)}
@@ -872,33 +872,33 @@ export default function Steward() {
                           </div>
                         </form>
                       </div>
-                    </div>
-                    <div className="steward"></div>
-                  </div>
-                  <div className="bg-gray">
-                    <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
-                      <div className="mt-6 pt-10">
-                        <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12">
-                          {faqs.map((faq) => (
-                            <div key={faq.id}>
-                              <dt className="text-lg leading-6 font-medium text-gray-900">
-                                {faq.question}
-                              </dt>
-                              <dd className="mt-2 text-base text-gray-500">
-                                {faq.answer}
-                              </dd>
-                              <Link
-                                type="button"
-                                to="/faq"
-                                className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                              >
-                                Learn more
-                              </Link>
-                            </div>
-                          ))}
-                        </dl>
+                      <div className="bg-white">
+                        <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
+                          <div className="mt-6 pt-10">
+                            <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-12">
+                              {faqs.map((faq) => (
+                                <div key={faq.id} className="bg-gray p-5">
+                                  <dt className="text-lg leading-6 font-medium text-gray-900">
+                                    {faq.question}
+                                  </dt>
+                                  <dd className="mt-2 text-base text-gray-500">
+                                    {faq.answer}
+                                  </dd>
+                                  <Link
+                                    type="button"
+                                    to="/faq"
+                                    className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                  >
+                                    Learn more
+                                  </Link>
+                                </div>
+                              ))}
+                            </dl>
+                          </div>
+                        </div>
                       </div>
                     </div>
+                    <div className="steward right"></div>
                   </div>
                 </>
               );
@@ -907,7 +907,7 @@ export default function Steward() {
                 <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                   <div>
                     <NavBarGlasgow />
-                    <div className="flex items-center mt-20 ml-20 sm:ml-10">
+                    <div className="flex items-center mt-20 md:ml-20 lg:ml-20 sm:ml-10">
                       <ChevronLeftIcon
                         className="flex-shrink-0 h-5 w-5 text-gray-400"
                         aria-hidden="true"
@@ -1046,7 +1046,7 @@ export default function Steward() {
                     </div>
                   </div>
 
-                  <div className="steward"></div>
+                  <div className="steward right"></div>
                 </div>
               );
             case 2:
@@ -1054,7 +1054,7 @@ export default function Steward() {
                 <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                   <div>
                     <NavBarGlasgow />
-                    <div className="flex items-center mt-20 ml-20 sm:ml-10">
+                    <div className="flex items-center mt-20 lg:ml-20 md:ml-20 sm:ml-10">
                       <ChevronLeftIcon
                         className="flex-shrink-0 h-5 w-5 text-gray-400"
                         aria-hidden="true"
@@ -1180,7 +1180,7 @@ export default function Steward() {
                 <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                   <div>
                     <NavBarGlasgow />
-                    <div className="flex items-center mt-20 ml-20 sm:ml-10">
+                    <div className="flex items-center mt-20 lg:ml-20 md:ml-20 sm:ml-10">
                       <ChevronLeftIcon
                         className="flex-shrink-0 h-5 w-5 text-gray-400"
                         aria-hidden="true"
@@ -1193,7 +1193,7 @@ export default function Steward() {
                       </button>
                     </div>
                     <div className="bg-white">
-                      <div className="ml-20 mt-5 sm:ml-8">
+                      <div className="lg:ml-20 md:ml-20 mt-5 sm:ml-8">
                         <h2 className="text-base text-green4 font-semibold tracking-wide uppercase">
                           Work with TREESAI
                         </h2>
@@ -1324,7 +1324,7 @@ export default function Steward() {
                     </div>
                   </div>
 
-                  <div className="add-to-market"></div>
+                  <div className="add-to-market right"></div>
                 </div>
               );
             case 4:
@@ -1332,12 +1332,12 @@ export default function Steward() {
                 <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                   <div>
                     <NavBarGlasgow />
-                    <div className="bg-gray-50 py-16 px-4">
-                      <div className="max-w-lg mx-auto">
+                    <div className="bg-gray-50 py-16 lg:ml-20 md:ml-20 sm:ml-10">
+                      <div className="">
                         <h2 className="font-grotesk text-3xl text-gray-900 sm:text-4xl">
                           Thank you for submitting your project!
                         </h2>
-                        <div className="pt-2 pb-2">
+                        <div className="pt-2 pb-2 pr-5">
                           <p className="text-lg leading-6 text-dark pt-4">
                             We are currently looking for innovative projects in
                             Glasgow. If you are interested in TreesAI, please
@@ -1358,7 +1358,7 @@ export default function Steward() {
                     </div>
                   </div>
 
-                  <div className="add-to-market"></div>
+                  <div className="add-to-market right"></div>
                 </div>
               );
             default:

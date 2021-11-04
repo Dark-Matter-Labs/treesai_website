@@ -7,9 +7,6 @@ import { Bar, Pie } from "react-chartjs-2";
 import { unclusteredPointLayer } from "./layers";
 
 import NavBarGlasgow from "../components/demo/NavBarGlasgow";
-import letsInvestImage from "../images/letsinvest.jpeg";
-import InvestBanner from "../images/InvestBanner.png";
-import banner3 from "../images/banner3.png";
 import trees from "../data/trees.json";
 
 const pieChartData = {
@@ -27,6 +24,15 @@ const pieChartData = {
       borderWidth: 1,
     },
   ],
+};
+
+const pieChartOptions = {
+  plugins: {
+    legend: {
+      position: "bottom",
+      align: "start",
+    },
+  },
 };
 
 const barChartData = {
@@ -52,6 +58,14 @@ const barChartData = {
       ],
     },
   ],
+};
+
+const barChartOptions = {
+  plugins: {
+    tooltip: {
+      enabled: false,
+    },
+  },
 };
 
 const projects = [
@@ -194,7 +208,7 @@ export default function Glasgow() {
       <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
         <div>
           <NavBarGlasgow />
-          <div className="flex items-center mt-20 ml-20">
+          <div className="flex items-center mt-20 lg:ml-20 md:ml-20 sm:ml-10">
             <ChevronLeftIcon
               className="flex-shrink-0 h-5 w-5 text-gray-400"
               aria-hidden="true"
@@ -212,14 +226,6 @@ export default function Glasgow() {
                 <h2 className="font-grotesk mt-2 text-3xl text-gray-900 sm:text-4xl">
                   Glasgow’s Nature Atlas
                 </h2>
-              </div>
-              <div>
-                <Link
-                  to="/invest-in-nature/glasgow/invest"
-                  className="mt-2 mb-4 bg-blue4 border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-white hover:bg-blue2"
-                >
-                  Start investing
-                </Link>
               </div>
             </div>
             <p>
@@ -250,7 +256,7 @@ export default function Glasgow() {
                 </div>
               </div>
             </div>
-            <h3 className="mt-2 text-lg leading-6 font-medium text-gray-900">
+            <h3 className="mt-2 text-lg leading-6 font-medium text-gray-900 pb-5">
               Environmental Services
             </h3>
             <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-2">
@@ -311,7 +317,6 @@ export default function Glasgow() {
                   </span>
                 </dd>
               </div>
-
               <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                 <dt>
                   <p className="ml-2 text-sm font-regular text-gray-500 truncate">
@@ -325,20 +330,89 @@ export default function Glasgow() {
                 </dd>
               </div>
             </div>
-            <div className="mt-5 flex flex-wrap content-around bg-white flex-space">
+            <div className="bg-blue4 shadow sm:rounded-lg">
+              <div className="px-4 py-5 sm:p-6 mt-5">
+                <div className="mt-2 sm:flex sm:items-start sm:justify-between">
+                  <h3 className="text-lg leading-6 font-medium text-white">
+                    Invest in Glasgow’s environmental services
+                  </h3>
+                  <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
+                    <Link
+                      to="/invest-in-nature/glasgow/invest"
+                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-blue4 bg-white hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+                    >
+                      Invest
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-green4 shadow sm:rounded-lg">
+              <div className="px-4 py-5 sm:p-6 mt-5">
+                <div className="mt-2 sm:flex sm:items-start sm:justify-between">
+                  <h3 className="text-lg leading-6 font-medium text-white">
+                    Get rewarded for caring for Glasgow’s nature
+                  </h3>
+                  <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
+                    <Link
+                      to="/become-a-steward"
+                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-green4 bg-white hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+                    >
+                      Steward
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mt-10 flex flex-wrap content-around bg-white flex-space">
               <div>
-                <h4 className="text-md leading-6 font-medium text-gray-900 pr-10">
+                <h4 className="text-md leading-6 font-medium text-gray-900 pr-20">
                   Indicative valuation
                 </h4>
               </div>
               <div>
-                <Pie data={pieChartData} />
+                <Pie data={pieChartData} options={pieChartOptions} />
               </div>
-              <div className="pl-10">
+              <div className="pl-20">
                 <p>£7.1m</p>
               </div>
             </div>
-
+            <div className="bg-white py-16 sm:py-24 lg:py-20">
+              <h3 className="text-l text-gray-900 sm:text-xl py-5">Projects</h3>
+              <div className="grid gap-y-10 gap-x-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
+                {projects.map((project) => (
+                  <div key={project.id} className="group relative">
+                    <div className="w-full h-auto bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden">
+                      <img
+                        src={project.imageSrc}
+                        alt={project.imageAlt}
+                        className=""
+                      />
+                    </div>
+                    <div className="mt-0 flex justify-between">
+                      <div>
+                        <h3 className="text-sm text-gray-700">
+                          <span
+                            aria-hidden="true"
+                            className="absolute inset-0"
+                          />
+                          {project.name}
+                        </h3>
+                        <p className="mt-1 text-sm text-gray2">
+                          {project.location}
+                        </p>
+                        <p className="mt-1 text-sm text-gray2">
+                          {project.activity}
+                        </p>
+                        <p className="mt-1 text-sm text-gray2">
+                          {project.progress}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
             <div className="mt-5 bg-white">
               <div className="rounded-md bg-green-50 p-4 mt-10">
                 <div className="flex">
@@ -353,63 +427,18 @@ export default function Glasgow() {
                       Activities are in progress. Give us feedback and learn
                       about our{" "}
                       <Link to="/faq">
-                        <u>methodology</u>
+                        <u>methodology</u>.
                       </Link>
                     </h3>
                   </div>
                 </div>
               </div>
-              <Bar data={barChartData} />
+              <Bar data={barChartData} options={barChartOptions} />
             </div>
           </div>
-        </div>
-        <div className="h-full w-full">
-          <ReactMapGL
-            {...viewport}
-            mapStyle="mapbox://styles/mapbox/light-v10"
-            onViewportChange={setViewport}
-            mapboxApiAccessToken={MAPBOX_TOKEN}
-            onClick={onClick}
-            ref={mapRef}
-            onHover={onHover}
-            interactiveLayerIds={["trees"]}
-          >
-            <Source id="trees" type="geojson" data={trees} cluster={false}>
-              <Layer {...unclusteredPointLayer} />
-            </Source>
-            {hoverInfo && (
-              <div
-                className="tooltip bg-white pl-10 pt-5 pb-5"
-                style={{ left: hoverInfo.x, top: hoverInfo.y }}
-              >
-                <div>🌳</div>
-                <div>
-                  <b>Tree ID</b>: {hoverInfo.feature.properties.Tree_Id}
-                </div>
-                <div>
-                  <b>Species</b>: {hoverInfo.feature.properties.Species}
-                </div>
-                <div>
-                  <b>Height</b>: {hoverInfo.feature.properties.Height}
-                </div>
-                <div>
-                  <b>DBH</b>: {hoverInfo.feature.properties.Spread}
-                </div>
-                <div>
-                  <b>Location</b>: {hoverInfo.feature.properties.Location}
-                </div>
-                <div>
-                  <b>Visit type</b>: {hoverInfo.feature.properties.Visit_Type}
-                </div>
-                <div>
-                  <b>Visit date</b>: {hoverInfo.feature.properties.Visited}
-                </div>
-              </div>
-            )}
-          </ReactMapGL>
           <div className="sm:ml-10">
             <h3 className="pb-5 text-lg leading-6 font-medium text-gray-900 mt-10">
-              Highlights
+              Summary
             </h3>
             <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2">
               <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
@@ -472,210 +501,93 @@ export default function Glasgow() {
                   </span>
                 </dd>
               </div>
-
-              <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
-                <dt>
-                  <p className="ml-2 text-sm font-medium text-gray-500 truncate">
-                    Tree Story of the month
-                  </p>
-                </dt>
-                <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
-                  <p className="text-2xl font-semibold text-gray-500">
-                    “And I watered it in fears. Night and morning with my tears:
-                    And I sunned it with smiles. And with soft deceitful wiles.”
-                  </p>
-                </dd>
-              </div>
+            </div>
+            <div className="relative bg-white pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden mt-2">
+              <dt>
+                <p className="ml-2 text-sm font-medium text-gray-500 truncate">
+                  Tree Story of the month
+                </p>
+              </dt>
+              <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
+                <p className="text-2xl font-semibold text-gray-500">
+                  “And I watered it in fears. Night and morning with my tears:
+                  And I sunned it with smiles. And with soft deceitful wiles.”
+                </p>
+              </dd>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="bg-white">
-        <div className="bg-white py-16 sm:py-24 lg:py-20 px-16">
-          <h3 className="text-l text-gray-900 sm:text-xl py-5">Projects</h3>
-          <div className="grid gap-y-10 gap-x-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {projects.map((project) => (
-              <div key={project.id} className="group relative">
-                <div className="">
-                  <img
-                    src={project.imageSrc}
-                    alt={project.imageAlt}
-                    className=""
-                  />
-                </div>
-                <div className="mt-0 flex justify-between">
-                  <div>
-                    <h3 className="text-sm text-gray-700">
-                      <span aria-hidden="true" className="absolute inset-0" />
-                      {project.name}
-                    </h3>
-                    <p className="mt-1 text-sm text-gray2">
-                      {project.location}
-                    </p>
-                    <p className="mt-1 text-sm text-gray2">
-                      {project.activity}
-                    </p>
-                    <p className="mt-1 text-sm text-gray2">
-                      {project.progress}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="center">
-          <div className="flex-shrink-0 pt-10">
-            <div className="mt-5">
-              <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-                <div className="bg-green4 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
-                  <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
-                    <div className="lg:self-center">
-                      <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                        <span className="block">
-                          Get rewarded to care for Glasgow’s Nature
-                        </span>
-                      </h2>
-                      <p className="mt-4 text-lg leading-6 text-white">
-                        - Find out all about Glasgow’s Nature.
-                        <br />
-                        - Forecast the performance of trees. <br />
-                        - List a new projects on a city’s atlas.
-                        <br />
-                        - Access to finance.
-                        <br />
-                        - Cover your maintenance costs.
-                        <br />
-                        - Share the value of your environmental services.
-                        <br />
-                      </p>
-                      <Link
-                        to="/become-a-steward"
-                        className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-green4 hover:bg-indigo-50"
-                      >
-                        Get started
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="-mt-6  aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
-                    <img
-                      className="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
-                      src={letsInvestImage}
-                      alt="Nature stewards"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-                <div className="bg-blue4 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
-                  <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
-                    <div className="lg:self-center">
-                      <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                        <span className="block">
-                          Invest in Glasgow’s environmental services
-                        </span>
-                      </h2>
-                      <p className="mt-4 text-lg leading-6 text-white">
-                        - Offset your emissions and meet your 2030 net zero
-                        targets.
-                        <br />
-                        - Mitigate your strategic and climate related risks.
-                        <br />
-                        - Restore your historical emissions and impact.
-                        <br />
-                        - Customisable and trusted impact reports.
-                        <br />
-                        - Landscape scale NbS portfolio management.
-                        <br />
-                        - Secure municipality backed investment. <br />
-                      </p>
-                      <Link
-                        to="/invest-in-nature/glasgow/invest"
-                        className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-blue4 hover:bg-indigo-50"
-                      >
-                        Get started
-                      </Link>
-                      <Link
-                        to="/invest-in-nature/glasgow/invest/portfolio"
-                        className="mt-8 md:ml-4 lg:ml-4 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-blue4 hover:bg-indigo-50"
-                      >
-                        View a sample portfolio
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="-mt-6  aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
-                    <img
-                      className="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
-                      src={InvestBanner}
-                      alt="Nature stewards"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="max-w-7xl mx-auto py-16 px-2 sm:px-6 lg:px-2">
-                <div className="bg-indigo-700 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
-                  <div className="pt-10 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
-                    <div className="lg:self-center">
-                      <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                        <span className="block">
-                          Be the first one to gift your garden’s environmental
-                          services to future generations!
-                        </span>
-                      </h2>
-                      <p className="mt-4 text-lg leading-6 text-indigo-200">
-                        - Scan your trees.
-                        <br />
-                        - Understand the environmental services of the trees in
-                        your property.
-                        <br />
-                        - Share the environmental services with future
-                        Glaswegians.
-                        <br />
-                      </p>
-                      <Link
-                        to="/gift"
-                        className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
-                      >
-                        Get started
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="-mt-6  aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
-                    <img
-                      className="transform rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
-                      src={banner3}
-                      alt="Nature stewards"
-                    />
-                  </div>
+          <div className="bg-white">
+            <div className="bg-gray">
+              <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
+                <div className="mt-6 pt-10">
+                  <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-12">
+                    {faqs.map((faq) => (
+                      <div key={faq.id}>
+                        <dt className="text-lg leading-6 font-medium text-gray-900">
+                          {faq.question}
+                        </dt>
+                        <dd className="mt-2 text-base text-gray-500">
+                          {faq.answer}
+                        </dd>
+                        <Link
+                          type="button"
+                          to="/faq"
+                          className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        >
+                          Learn more
+                        </Link>
+                      </div>
+                    ))}
+                  </dl>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="bg-gray">
-          <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
-            <div className="mt-6 pt-10">
-              <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12">
-                {faqs.map((faq) => (
-                  <div key={faq.id}>
-                    <dt className="text-lg leading-6 font-medium text-gray-900">
-                      {faq.question}
-                    </dt>
-                    <dd className="mt-2 text-base text-gray-500">
-                      {faq.answer}
-                    </dd>
-                    <Link
-                      type="button"
-                      to="/faq"
-                      className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
-                      Learn more
-                    </Link>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </div>
+        <div className="h-full w-full right">
+          <ReactMapGL
+            {...viewport}
+            mapStyle="mapbox://styles/mapbox/light-v10"
+            onViewportChange={setViewport}
+            mapboxApiAccessToken={MAPBOX_TOKEN}
+            onClick={onClick}
+            ref={mapRef}
+            onHover={onHover}
+            interactiveLayerIds={["trees"]}
+          >
+            <Source id="trees" type="geojson" data={trees} cluster={false}>
+              <Layer {...unclusteredPointLayer} />
+            </Source>
+            {hoverInfo && (
+              <div
+                className="tooltip bg-white pl-10 pt-5 pb-5"
+                style={{ left: hoverInfo.x, top: hoverInfo.y }}
+              >
+                <div>🌳</div>
+                <div>
+                  <b>Tree ID</b>: {hoverInfo.feature.properties.Tree_Id}
+                </div>
+                <div>
+                  <b>Species</b>: {hoverInfo.feature.properties.Species}
+                </div>
+                <div>
+                  <b>Height</b>: {hoverInfo.feature.properties.Height}
+                </div>
+                <div>
+                  <b>DBH</b>: {hoverInfo.feature.properties.Spread}
+                </div>
+                <div>
+                  <b>Location</b>: {hoverInfo.feature.properties.Location}
+                </div>
+                <div>
+                  <b>Visit type</b>: {hoverInfo.feature.properties.Visit_Type}
+                </div>
+                <div>
+                  <b>Visit date</b>: {hoverInfo.feature.properties.Visited}
+                </div>
+              </div>
+            )}
+          </ReactMapGL>
         </div>
       </div>
     </>

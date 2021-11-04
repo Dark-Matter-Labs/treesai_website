@@ -45,7 +45,6 @@ export default function Gift() {
     <div>
       <NavBar current="gift" />
       <div className="md:grid-cols-2 lg:grid lg:grid-cols-2 sm:grid-cols-1">
-        <div className="gift"></div>
         <div className="bg-gray-50 py-16 px-4">
           <div className="max-w-lg mx-auto">
             <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
@@ -167,17 +166,18 @@ export default function Gift() {
               </ol>
             </nav>
           </div>
+          <div className="pt-5 pr-5 pb-20">
+            <div className="flex justify-end">
+              <Link
+                to="/"
+                className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Back to home
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="pt-5 pr-20 pb-20">
-        <div className="flex justify-end">
-          <Link
-            to="/"
-            className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-          >
-            Back to home
-          </Link>
-        </div>
+        <div className="gift right"></div>
       </div>
     </div>
   );

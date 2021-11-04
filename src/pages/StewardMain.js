@@ -127,7 +127,7 @@ export default function StewardMain() {
         <h3 className="text-l text-gray-900 sm:text-xl py-5">
           Eligible activities
         </h3>
-        <div className="grid gap-y-8 gap-x-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-y-8 gap-x-0 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {activities.map((activity) => (
             <div key={activity.id} className="group relative">
               <div className="w-full bg-gray-200 rounded-md overflow-hidden lg:aspect-none">

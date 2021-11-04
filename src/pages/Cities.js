@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 
 import NavBar from "../components/demo/NavBar";
-import letsInvestImage from "../images/letsinvest.jpeg";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -72,11 +71,6 @@ const faqs = [
     answer:
       "We use nature as a shorthand for Nature-based Solutions. While TreesAI aims to fund most Nature-based Solutions, we are currently focusing on Urban Forests. ",
   },
-  {
-    id: 3,
-    question: "What do we mean by invest?",
-    answer: "tbc",
-  },
 ];
 
 export default function Cities() {
@@ -133,29 +127,25 @@ export default function Cities() {
               Discover portfolios of projects or individual actions that can
               reduce your carbon footprint and climate-related liabilities.
             </p>
-            <p className="mt-3 text-lg font-semibold leading-6 text-blue4">
-              Select a city of interest to find our more
-            </p>
             <div className="mt-5">
-              <h3 className="text-l text-gray-900 sm:text-xl py-5">Cities</h3>
-              <div className="grid gap-y-10 gap-x-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-y-10 gap-x-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
                 {cities.map((city) => (
                   <div key={city.id} className="group relative">
-                    <div className="">
+                    <div className="w-full h-auto bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden">
                       <img
                         src={city.imageSrc}
                         alt={city.imageAlt}
                         className={classNames(
                           city.progressText === "coming soon"
                             ? "image-blur"
-                            : "border-2 rounded-md border-blue4 ",
+                            : "",
                           ""
                         )}
                       />
                     </div>
                     <div className="mt-0 flex justify-between">
                       <div>
-                        <h3 className="text-sm text-gray-700">
+                        <h3 className="text-lg font-semibold leading-6 text-gray-700">
                           <Link to={city.href}>
                             <span
                               aria-hidden="true"
@@ -164,73 +154,44 @@ export default function Cities() {
                             {city.name}
                           </Link>
                         </h3>
-                        <p className="mt-1 text-sm text-gray2">
-                          {city.progressText}
-                        </p>
+                        {city.progressText === "coming soon" && (
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
+                            Coming soon
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
-          <div className="h-full w-full">
-            <div ref={mapContainer} className="map-container" />
-          </div>
-        </div>
-        <div className="bg-white">
-          <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-            <div className="bg-green4 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
-              <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
-                <div className="lg:self-center">
-                  <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                    <span className="block">Try becoming a nature steward</span>
-                  </h2>
-                  <p className="mt-4 text-lg leading-6 text-white">
-                    Cover up to 10% of your maintenance costs by preserving
-                    street trees, rewilding your local park or replenishing the
-                    urban forest.
-                  </p>
-                  <Link
-                    to="/become-a-steward"
-                    className="mt-8 bg-gray border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-green4 hover:bg-indigo-50"
-                  >
-                    Learn more
-                  </Link>
+            <div className="bg-white">
+              <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
+                <div className="mt-6 pt-10">
+                  <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-12 ">
+                    {faqs.map((faq) => (
+                      <div key={faq.id} className="bg-gray p-5">
+                        <dt className="text-lg leading-6 font-medium text-gray-900">
+                          {faq.question}
+                        </dt>
+                        <dd className="mt-2 text-base text-gray-500">
+                          {faq.answer}
+                        </dd>
+                        <Link
+                          to="/faq"
+                          className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        >
+                          Learn more
+                        </Link>
+                      </div>
+                    ))}
+                  </dl>
                 </div>
               </div>
-              <div className="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
-                <img
-                  className="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
-                  src={letsInvestImage}
-                  alt="Nature stewards"
-                />
-              </div>
             </div>
           </div>
-        </div>
-        <div className="bg-gray">
-          <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
-            <div className="mt-6 pt-10">
-              <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12">
-                {faqs.map((faq) => (
-                  <div key={faq.id}>
-                    <dt className="text-lg leading-6 font-medium text-gray-900">
-                      {faq.question}
-                    </dt>
-                    <dd className="mt-2 text-base text-gray-500">
-                      {faq.answer}
-                    </dd>
-                    <Link
-                      to="/faq"
-                      className="inline-flex items-center px-4 py-2 mt-4 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
-                      Learn more
-                    </Link>
-                  </div>
-                ))}
-              </dl>
-            </div>
+          <div className="h-full w-full right">
+            <div ref={mapContainer} className="map-container" />
           </div>
         </div>
       </div>
