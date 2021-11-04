@@ -119,7 +119,7 @@ export default function Cities() {
       <NavBar current="invest" />
       <div className="bg-white">
         <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
-          <div className="mt-10 py-16 sm:py-10 lg:py-20 px-16">
+          <div className="mt-10 py-16 sm:py-10 lg:py-20 px-16 sm:px-8">
             <h2 className="font-grotesk mt-2 lg:text-5xl md:text-4xl text-gray-900 sm:text-4xl">
               Select a city to invest in nature
             </h2>
@@ -235,7 +235,7 @@ export default function Cities() {
               </div>
             </div>
             <div className="bg-white">
-              <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
+              <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-0 lg:px-8">
                 <div className="mt-6 pt-10">
                   <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-12 ">
                     {faqs.map((faq) => (
@@ -259,7 +259,7 @@ export default function Cities() {
               </div>
             </div>
           </div>
-          <div className="h-full w-full right">
+          <div className="h-full w-full right sm:hidden md:block lg:block">
             <div ref={mapContainer} className="map-container" />
           </div>
         </div>

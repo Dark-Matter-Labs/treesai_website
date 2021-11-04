@@ -92,7 +92,7 @@ export default function Invest() {
               <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                 <div>
                   <NavBarGlasgow />
-                  <div className="flex items-center mt-20 lg:ml-16 md:ml-16 sm:ml-10">
+                  <div className="flex items-center mt-20 lg:ml-16 md:ml-16 sm:ml-5">
                     <ChevronLeftIcon
                       className="flex-shrink-0 h-5 w-5 text-gray-400"
                       aria-hidden="true"
@@ -330,7 +330,7 @@ export default function Invest() {
               <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                 <div>
                   <NavBarGlasgow />
-                  <div className="flex items-center mt-20 lg:ml-16 md:ml-16 sm:ml-10">
+                  <div className="flex items-center mt-20 lg:ml-16 md:ml-16 sm:ml-5">
                     <ChevronLeftIcon
                       className="flex-shrink-0 h-5 w-5 text-gray-400"
                       aria-hidden="true"
@@ -768,7 +768,7 @@ export default function Invest() {
               <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                 <div>
                   <NavBarGlasgow />
-                  <div className="flex items-center mt-20 md:ml-16 ml:mt-16 sm:ml-10">
+                  <div className="flex items-center mt-20 md:ml-16 ml:mt-16 sm:ml-5">
                     <ChevronLeftIcon
                       className="flex-shrink-0 h-5 w-5 text-gray-400"
                       aria-hidden="true"
@@ -1140,7 +1140,7 @@ export default function Invest() {
               <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-6 gap-x-0 sm:grid-cols-1">
                 <div>
                   <NavBarGlasgow />
-                  <div className="flex items-center mt-20 md:ml-16 lg:ml-16 sm:ml-10">
+                  <div className="flex items-center mt-20 md:ml-16 lg:ml-16 sm:ml-8">
                     <ChevronLeftIcon
                       className="flex-shrink-0 h-5 w-5 text-gray-400"
                       aria-hidden="true"

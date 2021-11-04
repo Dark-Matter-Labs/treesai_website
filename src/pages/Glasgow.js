@@ -555,7 +555,7 @@ export default function Glasgow() {
             </div>
           </div>
         </div>
-        <div className="h-full w-full right">
+        <div className="h-full w-full right sm:hidden md:block lg:block">
           <ReactMapGL
             {...viewport}
             mapStyle="mapbox://styles/mapbox/light-v10"
