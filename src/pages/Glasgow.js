@@ -3,6 +3,7 @@ import { ChevronLeftIcon, InformationCircleIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
 import ReactMapGL, { Source, Layer } from "react-map-gl";
 import { Bar, Pie } from "react-chartjs-2";
+import { Link as AnchorLink } from "react-scroll";
 
 import { unclusteredPointLayer } from "./layers";
 
@@ -287,9 +288,9 @@ export default function Glasgow() {
                 <div className="ml-3">
                   <h3 className="text-sm font-medium text-green-800">
                     This is an estimate. Learn about our{" "}
-                    <Link to="/faq">
-                      <u> methodology</u>.
-                    </Link>
+                    <AnchorLink to="faq" smooth={true}>
+                      <u className="pointer-cursor"> methodology</u>.
+                    </AnchorLink>
                   </h3>
                 </div>
               </div>
@@ -523,7 +524,7 @@ export default function Glasgow() {
             </div>
           </div>
 
-          <div className="bg-white">
+          <div className="bg-white faq">
             <div className="bg-white">
               <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
                 <div className="mt-6 pt-10">

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Fragment } from "react";
 import { InformationCircleIcon } from "@heroicons/react/solid";
 import { ChevronLeftIcon } from "@heroicons/react/outline";
+import { Link as AnchorLink } from "react-scroll";
 
 import NavBarGlasgow from "../components/demo/NavBarGlasgow";
 
@@ -59,12 +60,9 @@ export default function Invest() {
   const [stormwaterCheck, setStormwaterCheck] = useState(false);
   const [waterQualityCheck, setWaterQualityCheck] = useState(false);
   const [floodCheck, setFloodCheck] = useState(false);
-  const [physicalHealthCheck, setPhysicalHealthCheck] = useState(false);
-  const [mentalHealthCheck, setMentalHealthCheck] = useState(false);
   const [noiseCheck, setNoiseCheck] = useState(false);
   const [airQualityCheck, setAirQualityCheck] = useState(false);
   const [heatIslandCheck, setHeatIslandCheck] = useState(false);
-  const [coolingCheck, setCoolingCheck] = useState(false);
   const [windCheck, setWindCheck] = useState(false);
   const [speciesCheck, setSpeciesCheck] = useState(false);
   const [greenJobsCheck, setGreenJobsCheck] = useState(false);
@@ -73,19 +71,15 @@ export default function Invest() {
   const [plantingCheck, setPlantingCheck] = useState(false);
   const [preservationCheck, setPreservationCheck] = useState(false);
   const [maintenanceCheck, setMaintenanceCheck] = useState(false);
-  const [cart, setCart] = useState([]);
-  const [show, setShow] = useState(false);
 
   const back = (e) => {
     e.preventDefault();
-    setShow(false);
     setPageState(pageState - 1);
   };
 
   const next = (e) => {
     e.preventDefault();
     window.scrollTo(0, 0);
-    setShow(false);
     setPageState(pageState + 1);
   };
 
@@ -229,7 +223,7 @@ export default function Invest() {
                             </button>
                           </div>
                         </div>
-                        <div className="bg-white">
+                        <div className="bg-white faq">
                           <div className="bg-white">
                             <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
                               <div className="mt-6 pt-10">
@@ -316,10 +310,10 @@ export default function Invest() {
                         <div className="ml-3">
                           <h3 className="text-sm font-medium text-green-800">
                             This is an estimate. Learn about our{" "}
-                            <Link to="/faq">
+                            <AnchorLink to="faq" smooth={true}>
                               {" "}
-                              <u>methodology</u>.
-                            </Link>
+                              <u className="pointer-cursor">methodology</u>.
+                            </AnchorLink>
                           </h3>
                         </div>
                       </div>
@@ -632,7 +626,7 @@ export default function Invest() {
                             </button>
                           </div>
                         </div>
-                        <div className="bg-white">
+                        <div className="bg-white faq2">
                           <div className="bg-white">
                             <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
                               <div className="mt-6 pt-10">
@@ -752,9 +746,9 @@ export default function Invest() {
                         <div className="ml-3">
                           <h3 className="text-sm font-medium text-green-800">
                             This is an estimate. Learn about our{" "}
-                            <Link to="/faq">
-                              <u>methodology</u>.
-                            </Link>
+                            <AnchorLink to="faq2" smooth={true}>
+                              <u className="pointer-cursor">methodology</u>.
+                            </AnchorLink>
                           </h3>
                         </div>
                       </div>
@@ -990,7 +984,7 @@ export default function Invest() {
                             </button>
                           </div>
                         </div>
-                        <div className="bg-white">
+                        <div className="bg-white faq3">
                           <div className="bg-white">
                             <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
                               <div className="mt-6 pt-10">
@@ -1121,10 +1115,10 @@ export default function Invest() {
                         <div className="ml-3">
                           <h3 className="text-sm font-medium text-green-800">
                             This is an estimate. Learn about our{" "}
-                            <Link to="/faq">
+                            <AnchorLink to="faq3" smooth={true}>
                               {" "}
-                              <u>methodology</u>.
-                            </Link>
+                              <u className="pointer-cursor">methodology</u>.
+                            </AnchorLink>
                           </h3>
                         </div>
                       </div>
@@ -1157,7 +1151,15 @@ export default function Invest() {
                     <h4 className="text-lg mt-5 leading-6 font-sm text-gray-900">
                       Interest summary
                     </h4>
-                    <p>{cart.join("\n")}</p>
+                    {carbonSelect === "Budget" && (
+                      <p>Carbon Budget: £{carbonInputVal}</p>
+                    )}
+                    {carbonSelect === "Flows" && (
+                      <p>Carbon Physical Flows: {carbonInputVal}tCO2e</p>
+                    )}
+                    {carbonSelect === "Percentage" && (
+                      <p>Carbon Percentage: £{carbonInputVal}% available</p>
+                    )}
                     {stormwaterCheck && <p>🌧 Stormwater Retention</p>}
                     {waterQualityCheck && <p>🚰 Water Quality</p>}
                     {floodCheck && <p>🌊 Flood control</p>}
@@ -1209,7 +1211,7 @@ export default function Invest() {
                 <div>
                   <NavBarGlasgow />
                   <div className="py-16 sm:py-24 lg:py-20 md:px-16 lg:px-16 sm:px-8">
-                    <h3 className="text-lg leading-6 font-medium text-gray-900">
+                    <h3 className="font-grotesk text-3xl text-gray-900 sm:text-4xl pb-5">
                       Thanks for submitting your interest in supporting
                       Glasgow’s Urban Forest Portfolio!
                     </h3>
@@ -1218,28 +1220,12 @@ export default function Invest() {
                       will contact you for next steps.
                     </p>
                     <div className="pt-5">
-                      <div className="flex justify-start">
+                      <div className="flex justify-end">
                         <Link
                           to="/invest-in-nature/glasgow/invest/portfolio"
-                          className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                          className="ml-3 inline-flex justify-end py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                           View sample portfolio
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="pt-40">
-                      <div className="flex justify-start">
-                        <Link
-                          to="/faq"
-                          className="ml-3 inline-flex justify-center py-2 px-4 border border-black shadow-sm text-sm font-medium rounded-md text-black bg-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        >
-                          Frequently asked questions
-                        </Link>
-                        <Link
-                          to="/invest-in-nature/glasgow"
-                          className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        >
-                          Return home
                         </Link>
                       </div>
                     </div>

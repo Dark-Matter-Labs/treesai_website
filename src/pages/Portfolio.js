@@ -40,48 +40,27 @@ const mock_water_arr = [
 const projects = [
   {
     id: 1,
-    name: "Camlachie Tiny Forest",
-    imageSrc: "assets/project1.png",
+    name: "Green space & active travel",
+    location: "North Toryglen (TRA)",
+    imageSrc: "assets/northtoryglen.jpg",
     imageAlt: "Project picture",
-    activity: "Preservation",
-    progress: "In progress",
+    activity: "Planting & Restoration",
+    progress: "Completed",
   },
   {
     id: 2,
-    name: "River Clyde Bank ",
-    imageSrc: "assets/project2.png",
+    name: "SuDS basin",
+    location: "Early Braes Park",
+    imageSrc: "assets/Early_Braes_basin.jpg",
     imageAlt: "Project picture",
     activity: "Reforestation",
-    progress: "In progress",
+    progress: "Completed",
   },
   {
     id: 3,
-    name: "Port Dundas Tiny Project",
-    imageSrc: "assets/project3.png",
-    imageAlt: "Project picture",
-    activity: "Restoration",
-    progress: "Completed",
-  },
-  {
-    id: 4,
-    name: "Camlachie Tiny Forest",
-    imageSrc: "assets/project1.png",
-    imageAlt: "Project picture",
-    activity: "Restoration",
-    progress: "Completed",
-  },
-  {
-    id: 5,
-    name: "River Clyde Bank Reforestation",
-    imageSrc: "assets/project2.png",
-    imageAlt: "Project picture",
-    activity: "Maintenance",
-    progress: "In progress",
-  },
-  {
-    id: 6,
-    name: "Port Dundas Tiny Project",
-    imageSrc: "assets/project3.png",
+    name: "Glasgow Children's Woodland",
+    location: "Castlemilk and Carmunnock",
+    imageSrc: "assets/woodland.jpg",
     imageAlt: "Project picture",
     activity: "Planting",
     progress: "Completed",
@@ -309,7 +288,7 @@ export default function Portfolio() {
         </h3>
         <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
           <div className="h-full w-full">
-            <div ref={mapContainer} className="map-container" />
+            <div ref={mapContainer} className="map-container-portfolio" />
           </div>
           <div className="mt-5">
             <div className="grid gap-y-10 gap-x-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">

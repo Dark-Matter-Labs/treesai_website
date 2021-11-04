@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { InformationCircleIcon } from "@heroicons/react/solid";
+import { Link as AnchorLink } from "react-scroll";
 import NavBar from "../components/demo/NavBar";
 import InvestBanner from "../images/InvestBanner.png";
 import banner3 from "../images/banner3.png";
@@ -124,9 +125,9 @@ export default function StewardMain() {
               <h3 className="text-sm font-medium text-green-800">
                 We are currently defining stewardship activities. Give us
                 feedback and learn more about our{" "}
-                <Link to="/faq">
-                  <u>methodology</u>
-                </Link>
+                <AnchorLink to="faq" smooth={true}>
+                  <u className="pointer-cursor">methodology</u>
+                </AnchorLink>
                 .
               </h3>
             </div>
@@ -245,7 +246,7 @@ export default function StewardMain() {
           </div>
         </div>
       </div>
-      <div className="bg-gray">
+      <div className="bg-gray" id="faq">
         <div className="max-w-7xl mx-auto py-8 px-4 divide-y-2 divide-gray-200 sm:py-10 sm:px-6 lg:px-8">
           <div className="mt-6 pt-10">
             <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12">
