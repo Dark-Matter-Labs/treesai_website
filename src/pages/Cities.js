@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     id: 2,
-    question: "WWhat are climate risks?",
+    question: "What are climate risks?",
     answer:
       "As the climate of the earth becomes more volatile: public and private entities are experiencing increasing liabilities. For example, corporations have growing carbon and social impact liabilities; water utility companies are faced with tougher regulations and fines due to frequent flood events; and the healthcare sector has increasing treatment costs due to deteriorating air quality in cites. Investing in urban forests is a green strategy for mitigating such climate risks.",
   },

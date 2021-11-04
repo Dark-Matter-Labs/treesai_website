@@ -871,7 +871,6 @@ export default function Invest() {
                                         className="focus:ring-blue4 h-4 w-4 text-blue4 border-gray-300 rounded"
                                         checked={maintenanceCheck}
                                         onChange={() => {
-                                          console.log("yo");
                                           setMaintenanceCheck(
                                             !maintenanceCheck
                                           );
