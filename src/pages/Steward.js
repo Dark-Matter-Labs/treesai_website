@@ -7,6 +7,7 @@ import {
 } from "@heroicons/react/solid";
 import { Bar, Line } from "react-chartjs-2";
 import { Link as AnchorLink } from "react-scroll";
+import emailjs from "emailjs-com";
 
 import NavBarGlasgow from "../components/demo/NavBarGlasgow";
 
@@ -159,6 +160,7 @@ export default function Steward() {
   const [stormwaterCostArray, setStormwaterCostArray] = useState([]);
   const [seqCostArray, setSeqCostArray] = useState([]);
   const [savingsPercentage, setSavingsPercentage] = useState("5-10");
+  const [emailInputVal, setEmailInputVal] = useState("");
 
   const co2data = {
     labels: ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
@@ -479,6 +481,36 @@ export default function Steward() {
     e.preventDefault();
     window.scrollTo(0, 0);
     setPageState(pageState + 1);
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    var templateParams = {
+      project_name: projectName,
+      number_of_trees: numberOfTrees,
+      avg_dbh: dbh,
+      new_trees: newNumberOfTrees,
+      maintain_cost: maintenanceCost,
+      impervious: imperviousPercent,
+      email: emailInputVal,
+    };
+
+    emailjs
+      .send(
+        "treesai",
+        process.env.REACT_APP_EMAILJS_STEWARD_TEMPLATE,
+        templateParams,
+        process.env.REACT_APP_EMAILJS_USER_ID
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
   };
 
   return (
@@ -1453,13 +1485,19 @@ export default function Steward() {
                             name="email"
                             placeholder="you@example.com"
                             id="email"
+                            onChange={(e) => {
+                              setEmailInputVal(e.target.value);
+                            }}
                             className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded sm:text-sm border-gray-300"
                           />
                         </div>
                         <div className="pt-5 pr-10">
                           <div className="flex justify-end">
                             <button
-                              onClick={(e) => next(e)}
+                              onClick={(e) => {
+                                sendEmail(e);
+                                next(e);
+                              }}
                               className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green4 hover:bg-green2"
                             >
                               Next

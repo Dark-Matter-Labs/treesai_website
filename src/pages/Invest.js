@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import { InformationCircleIcon } from "@heroicons/react/solid";
 import { ChevronLeftIcon } from "@heroicons/react/outline";
 import { Link as AnchorLink } from "react-scroll";
+import emailjs from "emailjs-com";
 
 import NavBarGlasgow from "../components/demo/NavBarGlasgow";
 
@@ -71,6 +72,7 @@ export default function Invest() {
   const [plantingCheck, setPlantingCheck] = useState(false);
   const [preservationCheck, setPreservationCheck] = useState(false);
   const [maintenanceCheck, setMaintenanceCheck] = useState(false);
+  const [emailInputVal, setEmailInputVal] = useState("");
 
   const back = (e) => {
     e.preventDefault();
@@ -81,6 +83,46 @@ export default function Invest() {
     e.preventDefault();
     window.scrollTo(0, 0);
     setPageState(pageState + 1);
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    var templateParams = {
+      carbon_select: carbonSelect,
+      carbon_budget: carbonInputVal,
+      stormwater_check: stormwaterCheck,
+      water_quality_check: waterQualityCheck,
+      flood_check: floodCheck,
+      noise_check: noiseCheck,
+      air_quality_check: airQualityCheck,
+      heat_island_check: heatIslandCheck,
+      wind_check: windCheck,
+      species_check: speciesCheck,
+      green_jobs_Check: greenJobsCheck,
+      football_check: footballCheck,
+      other_check: otherCheck,
+      planting_check: plantingCheck,
+      preservation_check: preservationCheck,
+      maintenance_check: maintenanceCheck,
+      email: emailInputVal,
+    };
+
+    emailjs
+      .send(
+        "treesai",
+        process.env.REACT_APP_EMAILJS_INVEST_TEMPLATE,
+        templateParams,
+        process.env.REACT_APP_EMAILJS_USER_ID
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
   };
 
   return (
@@ -1220,13 +1262,19 @@ export default function Invest() {
                         name="email"
                         placeholder="you@example.com"
                         id="email"
+                        onChange={(e) => {
+                          setEmailInputVal(e.target.value);
+                        }}
                         className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded sm:text-sm border-gray-300"
                       />
                     </div>
                     <div className="pt-5">
                       <div className="flex justify-end">
                         <button
-                          onClick={(e) => next(e)}
+                          onClick={(e) => {
+                            sendEmail(e);
+                            next(e);
+                          }}
                           className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue4 hover:bg-blue3"
                         >
                           Submit
