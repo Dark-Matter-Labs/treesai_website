@@ -1443,6 +1443,19 @@ export default function Steward() {
                             ))}
                           </ol>
                         </nav>
+                        <div className="mt-10 mr-20">
+                          <h4 className="text-lg mt-5 leading-6 font-sm text-gray-900">
+                            Enter your email and our team will be in touch
+                            shortly.
+                          </h4>
+                          <input
+                            type="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            id="email"
+                            className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded sm:text-sm border-gray-300"
+                          />
+                        </div>
                         <div className="pt-5 pr-10">
                           <div className="flex justify-end">
                             <button

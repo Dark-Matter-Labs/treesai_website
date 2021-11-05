@@ -1219,9 +1219,6 @@ export default function Invest() {
                         type="email"
                         name="email"
                         placeholder="you@example.com"
-                        onChange={(e) => {
-                          setCarbonInputVal(e.target.value);
-                        }}
                         id="email"
                         className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded sm:text-sm border-gray-300"
                       />
