@@ -33,7 +33,8 @@ export default function Pilot() {
               </h2>
               <p className="text-lg text-green1">
                 TreesAI is partnering with Glasgow City Council to launch its
-                first pilot, helping to meet the city’s climate targets. We will share more information very soon.
+                first pilot, helping to meet the city’s climate targets. We will
+                share more information very soon.
               </p>
             </div>
           </div>
