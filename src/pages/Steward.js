@@ -89,7 +89,7 @@ const maintenance_forecast_options = {
       stacked: true,
       title: {
         display: true,
-        text: "Costs over 50 years, assuming maintenance costs remain the same, at 0% inflation.",
+        text: "Years", // Costs over 50 years, assuming maintenance costs remain the same, at 0% inflation.
       },
     },
     y: {
@@ -97,7 +97,7 @@ const maintenance_forecast_options = {
       stacked: true,
       title: {
         display: true,
-        text: "Cost/Benefit estimate",
+        text: "Cost and Benefit estimate (£)",
       },
     },
   },
@@ -245,15 +245,15 @@ export default function Steward() {
     labels: ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
     datasets: [
       {
-        label: "Current maintenance costs",
+        label: "Current maintenance costs (£)",
         fill: true,
         backgroundColor: "#10B981",
         borderColor: "#10B981",
         data: maintenanceCostArray,
-        stack: "Stack 0",
+        stack: "Stack 1",
       },
       {
-        label: "Stormwater retention",
+        label: "Stormwater retention (£)",
         fill: true,
         backgroundColor: "#3B82F6",
         borderColor: "#3B82F6",
@@ -261,7 +261,7 @@ export default function Steward() {
         stack: "Stack 1",
       },
       {
-        label: "Carbon sequestration",
+        label: "Carbon sequestration (£)",
         fill: true,
         backgroundColor: "#03AAAAAA",
         borderColor: "#3B82F6",
@@ -458,7 +458,7 @@ export default function Steward() {
 
   function update_cost() {
     // Update the cost chart of page 3
-    let cost = Array(10).fill(maintenanceCost * 5);
+    let cost = Array(10).fill(maintenanceCost * -5);
     setMaintenanceCostArray(cost);
   }
 
@@ -1245,7 +1245,7 @@ export default function Steward() {
                             <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                               <dt>
                                 <p className="ml-2 text-sm font-small text-gray-500 truncate">
-                                  Savings estimate
+                                  Funding potential
                                 </p>
                               </dt>
                               <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
@@ -1286,7 +1286,7 @@ export default function Steward() {
                           </dl>
                         </div>
                         <h3 className="mt-10 text-lg leading-6 font-medium text-gray-900 mt-4">
-                          Funding potential over 50 years
+                          Environmental services funding over 50 years
                         </h3>
 
                         <div className="sm:w-full">
