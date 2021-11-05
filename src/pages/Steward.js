@@ -451,8 +451,7 @@ export default function Steward() {
       Number(sum_arr(water_benefit_arr_for_graph) / 49);
 
     setSavingsEstimate(savings.toFixed(1));
-
-    setSavingsPercentage((maintenanceCost / savings).toFixed());
+    setSavingsPercentage(( savings / maintenanceCost *100 ).toFixed());
   }
 
   function update_cost() {
