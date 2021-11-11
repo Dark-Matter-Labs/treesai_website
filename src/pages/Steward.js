@@ -152,7 +152,7 @@ export default function Steward() {
   const [imperviousPercent, setImperviousPercent] = useState(50);
   // Sequestration related
   const [SeqState, setSeqState] = useState({
-    seq: 0,
+    seqTotal: 0,
     seqArr: [],
     seqCostArray: [],
   });
@@ -399,19 +399,16 @@ export default function Steward() {
       return num + seq_arr_deciduous[idx];
     });
 
-    let carbonPrice = 77; //price per ton // to be changed for evolutive price
-
-    let sequestration_arr_for_graph = reduce_arr(joined_seq);
+    let sequestration_arr_for_graph = reduce_arr(joined_seq); // TODO: TBR
 
     setSeqState((prevState) => {
       return {
         ...prevState,
-        seq: sum_arr(joined_seq).toFixed(2),
-        seqArr: reduce_arr(joined_seq)
+        seqTotal: sum_arr(joined_seq).toFixed(2),
+        seqArr: reduce_arr(joined_seq),
       };
     });
 
-    
     // // Calculate and update water retention chart
 
     // Variables to be used later
@@ -473,12 +470,12 @@ export default function Steward() {
   }, [maintenanceCost]);
 
   useEffect(() => {
-    // update the cost
+    // update the cost array if the sequestration array changes
     let carbonPrice = 77; //price per ton // to be changed for evolutive price
     setSeqState((prevState) => {
       return {
         ...prevState,
-        seqCostArray: prevState.seqArr.map((x) => x * carbonPrice)
+        seqCostArray: prevState.seqArr.map((x) => x * carbonPrice),
       };
     });
   }, [SeqState.seqArr]);
@@ -1051,7 +1048,7 @@ export default function Steward() {
                             </dt>
                             <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                               <p className="text-2xl font-semibold text-green-600 ">
-                                {SeqState.seq} tCO2e
+                                {SeqState.seqTotal} tCO2e
                               </p>
                               <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
                                 over 50 years
