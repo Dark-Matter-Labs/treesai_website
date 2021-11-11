@@ -471,11 +471,15 @@ export default function Steward() {
 
   useEffect(() => {
     // update the cost array if the sequestration array changes
-    let carbonPrice = 77; //price per ton // to be changed for evolutive price
+    function calculate_carbon_price(arr) {
+      let carbonPrice = 77; //price per ton // to be changed for evolutive price
+      return arr.map((x) => x * carbonPrice);
+    }
+
     setSeqState((prevState) => {
       return {
         ...prevState,
-        seqCostArray: prevState.seqArr.map((x) => x * carbonPrice),
+        seqCostArray: calculate_carbon_price(prevState.seqArr),
       };
     });
   }, [SeqState.seqArr]);
