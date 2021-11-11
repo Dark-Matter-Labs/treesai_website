@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ChevronLeftIcon,
@@ -149,24 +149,31 @@ export default function Steward() {
   const [newNumberOfTrees, setNewNumberOfTrees] = useState(0);
   const [evergreenPercent, setEvergreenPercent] = useState(50);
   const [decidiousPercent, setDecidiousPercent] = useState(50);
-  const [seq, setSeq] = useState(0);
+  const [imperviousPercent, setImperviousPercent] = useState(50);
+  // Sequestration related
+  const [SeqState, setSeqState] = useState({
+    seq: 0,
+    seqArr: [],
+    seqCostArray: [],
+  });
+  // maintenance related
   const [maintenanceCost, setMaintenanceCost] = useState(10000);
   const [maintenanceCostArray, setMaintenanceCostArray] = useState([]);
-  const [savingsEstimate, setSavingsEstimate] = useState(10);
-  const [seqArr, setArrSeq] = useState([]);
-  const [imperviousPercent, setImperviousPercent] = useState(50);
+  //Stormwater related
   const [stormwater, setStormwater] = useState(0);
   const [stormwaterArray, setStormwaterArray] = useState([]);
   const [stormwaterCostArray, setStormwaterCostArray] = useState([]);
-  const [seqCostArray, setSeqCostArray] = useState([]);
+  //savings related
+  const [savingsEstimate, setSavingsEstimate] = useState(10);
   const [savingsPercentage, setSavingsPercentage] = useState("5-10");
+
   const [emailInputVal, setEmailInputVal] = useState("");
 
   const co2data = {
     labels: ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
     datasets: [
       {
-        data: seqArr,
+        data: SeqState.seqArr,
         fill: false,
         backgroundColor: "#10B981",
         borderColor: "#10B981",
@@ -265,7 +272,7 @@ export default function Steward() {
         fill: true,
         backgroundColor: "#03AAAAAA",
         borderColor: "#3B82F6",
-        data: seqCostArray,
+        data: SeqState.seqCostArray,
         stack: "Stack 1",
       },
       {
@@ -335,14 +342,14 @@ export default function Steward() {
 
   function reduce_arr(arr) {
     // function that sums elements of an array 5 by 5
-
+    const cloned_Array = [...arr];
     // Create a new array
     const out = [];
 
     // While there are elements remaining
-    while (arr.length > 0) {
+    while (cloned_Array.length > 0) {
       // `splice` off 5 elements from the array
-      const next = arr.splice(0, 5);
+      const next = cloned_Array.splice(0, 5);
 
       const sum = sum_arr(next);
 
@@ -392,16 +399,19 @@ export default function Steward() {
       return num + seq_arr_deciduous[idx];
     });
 
-    const sequestrationValue = sum_arr(joined_seq);
-    setSeq(sequestrationValue.toFixed(2));
+    let carbonPrice = 77; //price per ton // to be changed for evolutive price
 
     let sequestration_arr_for_graph = reduce_arr(joined_seq);
-    setArrSeq(sequestration_arr_for_graph);
 
-    let carbonPrice = 77; //price per ton // to be changed for evolutive price
-    let seq_benefit = sequestration_arr_for_graph.map((x) => x * carbonPrice);
-    setSeqCostArray(seq_benefit);
+    setSeqState((prevState) => {
+      return {
+        ...prevState,
+        seq: sum_arr(joined_seq).toFixed(2),
+        seqArr: reduce_arr(joined_seq)
+      };
+    });
 
+    
     // // Calculate and update water retention chart
 
     // Variables to be used later
@@ -456,17 +466,28 @@ export default function Steward() {
     setSavingsPercentage(((savings / maintenanceCost) * 100).toFixed());
   }
 
-  function update_cost() {
+  useEffect(() => {
     // Update the cost chart of page 3
     let cost = Array(10).fill(maintenanceCost * -5);
     setMaintenanceCostArray(cost);
-  }
+  }, [maintenanceCost]);
+
+  useEffect(() => {
+    // update the cost
+    let carbonPrice = 77; //price per ton // to be changed for evolutive price
+    setSeqState((prevState) => {
+      return {
+        ...prevState,
+        seqCostArray: prevState.seqArr.map((x) => x * carbonPrice)
+      };
+    });
+  }, [SeqState.seqArr]);
 
   const calculate_button_click = (e) => {
     e.preventDefault();
     window.scrollTo(0, 0);
     update_seq();
-    update_cost();
+    //update_cost();
 
     setPageState(1);
   };
@@ -1030,7 +1051,7 @@ export default function Steward() {
                             </dt>
                             <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                               <p className="text-2xl font-semibold text-green-600 ">
-                                {seq} tCO2e
+                                {SeqState.seq} tCO2e
                               </p>
                               <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
                                 over 50 years
