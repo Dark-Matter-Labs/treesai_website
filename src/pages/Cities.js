@@ -146,13 +146,23 @@ export default function Cities() {
                     <div className="mt-0 flex justify-between">
                       <div>
                         <h3 className="text-lg font-semibold leading-6 text-gray-700">
-                          <Link to={city.href}>
-                            <span
-                              aria-hidden="true"
-                              className="absolute inset-0"
-                            />
-                            {city.name}
-                          </Link>
+                          {city.progressText !== "coming soon" ? (
+                            <Link to={city.href}>
+                              <span
+                                aria-hidden="true"
+                                className="absolute inset-0"
+                              />
+                              {city.name}
+                            </Link>
+                          ) : (
+                            <div>
+                              <span
+                                aria-hidden="true"
+                                className="absolute inset-0"
+                              />
+                              {city.name}
+                            </div>
+                          )}
                         </h3>
                         {city.progressText === "coming soon" && (
                           <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray3 text-gray-800">
@@ -163,75 +173,6 @@ export default function Cities() {
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-            <div className="bg-blue4 shadow sm:rounded-lg mt-10">
-              <div className="px-4 py-5 sm:p-6">
-                <h3 className="text-lg leading-6 font-medium text-white">
-                  Invest in nature
-                </h3>
-                <div className="mt-2 sm:flex sm:items-start sm:justify-between">
-                  <div className="max-w-xl text-sm text-white">
-                    <p>
-                      Support urban forest projects to reach climate &
-                      sustainability goals.
-                    </p>
-                  </div>
-                  <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
-                    <Link
-                      to="/invest-in-nature/glasgow"
-                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-blue4 bg-white hover:bg-indigo-100 sm:text-sm"
-                    >
-                      Learn more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-green4 shadow sm:rounded-lg mt-10">
-              <div className="px-4 py-5 sm:p-6">
-                <h3 className="text-lg leading-6 font-medium text-white">
-                  Become a nature steward
-                </h3>
-                <div className="mt-2 sm:flex sm:items-start sm:justify-between">
-                  <div className="max-w-xl text-sm text-white">
-                    <p>
-                      Upload your urban forest project and discover funding
-                      opportunities.
-                    </p>
-                  </div>
-                  <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
-                    <Link
-                      to="/become-a-steward"
-                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-green4 bg-white hover:bg-indigo-100 sm:text-sm"
-                    >
-                      Learn more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-indigo-600 shadow sm:rounded-lg mt-10">
-              <div className="px-4 py-5 sm:p-6">
-                <h3 className="text-lg leading-6 font-medium text-white">
-                  Gift to future!
-                </h3>
-                <div className="mt-2 sm:flex sm:items-start sm:justify-between">
-                  <div className="max-w-xl text-sm text-white">
-                    <p>
-                      Be part of a growing movement and learn how to take care
-                      of healthy trees
-                    </p>
-                  </div>
-                  <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
-                    <Link
-                      to="/gift"
-                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-100 sm:text-sm"
-                    >
-                      Learn more
-                    </Link>
-                  </div>
-                </div>
               </div>
             </div>
             <div className="bg-white">
@@ -255,6 +196,52 @@ export default function Cities() {
                       </div>
                     ))}
                   </dl>
+                </div>
+              </div>
+            </div>
+            <div className="bg-green4 shadow sm:rounded-lg mt-10">
+              <div className="px-4 py-5 sm:p-6">
+                <h3 className="text-lg leading-6 font-medium text-white">
+                  Become a nature steward
+                </h3>
+                <div className="mt-2 sm:flex sm:items-start sm:justify-between">
+                  <div className="max-w-xl text-sm text-white">
+                    <p>
+                      Upload your urban forest project and discover funding
+                      opportunities.
+                    </p>
+                  </div>
+                  <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
+                    <Link
+                      to="/become-a-steward"
+                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-green4 bg-white hover:bg-indigo-100 sm:text-sm"
+                    >
+                      Steward
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-indigo-600 shadow sm:rounded-lg mt-10">
+              <div className="px-4 py-5 sm:p-6">
+                <h3 className="text-lg leading-6 font-medium text-white">
+                  Gift to future!
+                </h3>
+                <div className="mt-2 sm:flex sm:items-start sm:justify-between">
+                  <div className="max-w-xl text-sm text-white">
+                    <p>
+                      Be part of a growing movement and learn how to take care
+                      of healthy trees.
+                    </p>
+                  </div>
+                  <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
+                    <Link
+                      to="/gift"
+                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-100 sm:text-sm"
+                    >
+                      Gift
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
