@@ -152,22 +152,18 @@ export default function Steward() {
   const [imperviousPercent, setImperviousPercent] = useState(50);
   // Sequestration related
   const [SeqState, setSeqState] = useState({
-    seqTotal: 0,
-    seqArr: [],
-    seqCostArray: [],
+    total: 0,
+    Array: [],
+    costArray: [],
   });
   // maintenance related
   const [maintenanceCost, setMaintenanceCost] = useState(10000);
   const [maintenanceCostArray, setMaintenanceCostArray] = useState([]);
   //Stormwater related
-  //const [stormwater, setStormwater] = useState(0);
-  //const [stormwaterArray, setStormwaterArray] = useState([]);
-  //const [stormwaterCostArray, setStormwaterCostArray] = useState([]);
-  // Sequestration related
   const [StormwaterState, setStormwaterState] = useState({
-    stormwaterTotal: 0,
-    stormwaterArray: [],
-    stormwaterCostArray: [],
+    total: 0,
+    Array: [],
+    costArray: [],
   });
   //savings related
   const [savingsEstimate, setSavingsEstimate] = useState(10);
@@ -179,7 +175,7 @@ export default function Steward() {
     labels: ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
     datasets: [
       {
-        data: SeqState.seqArr,
+        data: SeqState.Array,
         fill: false,
         backgroundColor: "#10B981",
         borderColor: "#10B981",
@@ -218,7 +214,7 @@ export default function Steward() {
     labels: ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
     datasets: [
       {
-        data: StormwaterState.stormwaterArray,
+        data: StormwaterState.Array,
         backgroundColor: ["#DBEAFE"],
         borderColor: ["#3B82F6"],
         borderWidth: 1,
@@ -270,7 +266,7 @@ export default function Steward() {
         fill: true,
         backgroundColor: "#3B82F6",
         borderColor: "#3B82F6",
-        data: StormwaterState.stormwaterCostArray,
+        data: StormwaterState.costArray,
         stack: "Stack 1",
       },
       {
@@ -278,7 +274,7 @@ export default function Steward() {
         fill: true,
         backgroundColor: "#03AAAAAA",
         borderColor: "#3B82F6",
-        data: SeqState.seqCostArray,
+        data: SeqState.costArray,
         stack: "Stack 1",
       },
       {
@@ -410,8 +406,8 @@ export default function Steward() {
     setSeqState((prevState) => {
       return {
         ...prevState,
-        seqTotal: sum_arr(joined_seq).toFixed(2),
-        seqArr: reduce_arr(joined_seq),
+        total: sum_arr(joined_seq).toFixed(2),
+        Array: reduce_arr(joined_seq),
       };
     });
 
@@ -447,8 +443,8 @@ export default function Steward() {
     setStormwaterState((prevState) => {
       return {
         ...prevState,
-        stormwaterTotal: sum_arr(water_array).toFixed(2),
-        seqArr: reduce_arr(water_array),
+        total: sum_arr(water_array).toFixed(2),
+        Array: reduce_arr(water_array),
       };
     });
 
@@ -479,12 +475,10 @@ export default function Steward() {
     setStormwaterState((prevState) => {
       return {
         ...prevState,
-        stormwaterCostArray: calculate_stormwater_price(
-          prevState.stormwaterArray
-        ),
+        costArray: calculate_stormwater_price(prevState.Array),
       };
     });
-  }, [StormwaterState.stormwaterArray]);
+  }, [StormwaterState.Array]);
 
   useEffect(() => {
     // update the cost array if the sequestration array changes
@@ -496,10 +490,10 @@ export default function Steward() {
     setSeqState((prevState) => {
       return {
         ...prevState,
-        seqCostArray: calculate_carbon_price(prevState.seqArr),
+        costArray: calculate_carbon_price(prevState.Array),
       };
     });
-  }, [SeqState.seqArr]);
+  }, [SeqState.Array]);
 
   const calculate_button_click = (e) => {
     e.preventDefault();
@@ -1069,7 +1063,7 @@ export default function Steward() {
                             </dt>
                             <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                               <p className="text-2xl font-semibold text-green-600 ">
-                                {SeqState.seqTotal} tCO2e
+                                {SeqState.total} tCO2e
                               </p>
                               <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
                                 over 50 years
@@ -1085,7 +1079,7 @@ export default function Steward() {
                             </dt>
                             <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                               <p className="text-2xl font-semibold text-blue2 ">
-                                {stormwater} m3
+                                {StormwaterState.total} m3
                               </p>
                               <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
                                 over 50 years
