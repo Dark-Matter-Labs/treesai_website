@@ -145,8 +145,8 @@ export default function Steward() {
   const [pageState, setPageState] = useState(0);
   const [projectName, setProjectName] = useState("");
   const [numberOfTrees, setNumberOfTrees] = useState(6000);
-  const [dbh, setDBH] = useState(13);
   const [newNumberOfTrees, setNewNumberOfTrees] = useState(0);
+  const [dbh, setDBH] = useState(13);
   const [evergreenPercent, setEvergreenPercent] = useState(50);
   const [decidiousPercent, setDecidiousPercent] = useState(50);
   const [imperviousPercent, setImperviousPercent] = useState(50);
