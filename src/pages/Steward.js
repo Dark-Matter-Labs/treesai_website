@@ -160,9 +160,15 @@ export default function Steward() {
   const [maintenanceCost, setMaintenanceCost] = useState(10000);
   const [maintenanceCostArray, setMaintenanceCostArray] = useState([]);
   //Stormwater related
-  const [stormwater, setStormwater] = useState(0);
-  const [stormwaterArray, setStormwaterArray] = useState([]);
-  const [stormwaterCostArray, setStormwaterCostArray] = useState([]);
+  //const [stormwater, setStormwater] = useState(0);
+  //const [stormwaterArray, setStormwaterArray] = useState([]);
+  //const [stormwaterCostArray, setStormwaterCostArray] = useState([]);
+  // Sequestration related
+  const [StormwaterState, setStormwaterState] = useState({
+    stormwaterTotal: 0,
+    stormwaterArray: [],
+    stormwaterCostArray: [],
+  });
   //savings related
   const [savingsEstimate, setSavingsEstimate] = useState(10);
   const [savingsPercentage, setSavingsPercentage] = useState("5-10");
@@ -212,7 +218,7 @@ export default function Steward() {
     labels: ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
     datasets: [
       {
-        data: stormwaterArray,
+        data: StormwaterState.stormwaterArray,
         backgroundColor: ["#DBEAFE"],
         borderColor: ["#3B82F6"],
         borderWidth: 1,
@@ -264,7 +270,7 @@ export default function Steward() {
         fill: true,
         backgroundColor: "#3B82F6",
         borderColor: "#3B82F6",
-        data: stormwaterCostArray,
+        data: StormwaterState.stormwaterCostArray,
         stack: "Stack 1",
       },
       {
@@ -438,21 +444,13 @@ export default function Steward() {
       d0 = get_t1(d0);
     }
 
-    const waterRetentionValue = sum_arr(water_array);
-
-    let water_arr_for_graph = reduce_arr(water_array);
-
-    setStormwaterArray(water_arr_for_graph);
-
-    setStormwater(waterRetentionValue.toFixed(2));
-
-    // Water Cost
-    let cost_per_m2_of_water = 1.53; // £ per sq. meter
-
-    let water_benefit_arr_for_graph = water_arr_for_graph.map(
-      (x) => x * cost_per_m2_of_water
-    );
-    setStormwaterCostArray(water_benefit_arr_for_graph);
+    setStormwaterState((prevState) => {
+      return {
+        ...prevState,
+        stormwaterTotal: sum_arr(water_array).toFixed(2),
+        seqArr: reduce_arr(water_array),
+      };
+    });
 
     // savings
     let savings =
@@ -468,6 +466,25 @@ export default function Steward() {
     let cost = Array(10).fill(maintenanceCost * -5);
     setMaintenanceCostArray(cost);
   }, [maintenanceCost]);
+
+  // Update the
+  useEffect(() => {
+    // update the cost array if the sequestration array changes
+    function calculate_stormwater_price(arr) {
+      // Water Cost
+      let cost_per_m2_of_water = 1.53; // £ per sq. meter
+      return arr.map((x) => x * cost_per_m2_of_water);
+    }
+
+    setStormwaterState((prevState) => {
+      return {
+        ...prevState,
+        stormwaterCostArray: calculate_stormwater_price(
+          prevState.stormwaterArray
+        ),
+      };
+    });
+  }, [StormwaterState.stormwaterArray]);
 
   useEffect(() => {
     // update the cost array if the sequestration array changes
