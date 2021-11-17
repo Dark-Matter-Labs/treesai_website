@@ -145,35 +145,39 @@ export default function Steward() {
   const [pageState, setPageState] = useState(0);
   const [projectName, setProjectName] = useState("");
   const [numberOfTrees, setNumberOfTrees] = useState(6000);
-  const [dbh, setDBH] = useState(13);
   const [newNumberOfTrees, setNewNumberOfTrees] = useState(0);
+  const [dbh, setDBH] = useState(13);
   const [evergreenPercent, setEvergreenPercent] = useState(50);
   const [decidiousPercent, setDecidiousPercent] = useState(50);
   const [imperviousPercent, setImperviousPercent] = useState(50);
   // Sequestration related
   const [SeqState, setSeqState] = useState({
-    seqTotal: 0,
-    seqArr: [],
-    seqCostArray: [],
+    total: 0,
+    array: [],
+    costarray: [],
   });
   // maintenance related
-  const [maintenanceCost, setMaintenanceCost] = useState(10000);
-  const [maintenanceCostArray, setMaintenanceCostArray] = useState([]);
+  const [maintenanceCost, setMaintenanceCost] = useState({
+    total: 10000,
+    array: [],
+  });
   //Stormwater related
-  const [stormwater, setStormwater] = useState(0);
-  const [stormwaterArray, setStormwaterArray] = useState([]);
-  const [stormwaterCostArray, setStormwaterCostArray] = useState([]);
+  const [StormwaterState, setStormwaterState] = useState({
+    total: 0,
+    array: [],
+    costarray: [],
+  });
   //savings related
   const [savingsEstimate, setSavingsEstimate] = useState(10);
   const [savingsPercentage, setSavingsPercentage] = useState("5-10");
-
+  //email and conta
   const [emailInputVal, setEmailInputVal] = useState("");
 
   const co2data = {
     labels: ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
     datasets: [
       {
-        data: SeqState.seqArr,
+        data: SeqState.array,
         fill: false,
         backgroundColor: "#10B981",
         borderColor: "#10B981",
@@ -212,7 +216,7 @@ export default function Steward() {
     labels: ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
     datasets: [
       {
-        data: stormwaterArray,
+        data: StormwaterState.array,
         backgroundColor: ["#DBEAFE"],
         borderColor: ["#3B82F6"],
         borderWidth: 1,
@@ -256,7 +260,7 @@ export default function Steward() {
         fill: true,
         backgroundColor: "#10B981",
         borderColor: "#10B981",
-        data: maintenanceCostArray,
+        data: maintenanceCost.array,
         stack: "Stack 1",
       },
       {
@@ -264,7 +268,7 @@ export default function Steward() {
         fill: true,
         backgroundColor: "#3B82F6",
         borderColor: "#3B82F6",
-        data: stormwaterCostArray,
+        data: StormwaterState.costarray,
         stack: "Stack 1",
       },
       {
@@ -272,7 +276,7 @@ export default function Steward() {
         fill: true,
         backgroundColor: "#03AAAAAA",
         borderColor: "#3B82F6",
-        data: SeqState.seqCostArray,
+        data: SeqState.costarray,
         stack: "Stack 1",
       },
       {
@@ -342,14 +346,14 @@ export default function Steward() {
 
   function reduce_arr(arr) {
     // function that sums elements of an array 5 by 5
-    const cloned_Array = [...arr];
+    const cloned_array = [...arr];
     // Create a new array
     const out = [];
 
     // While there are elements remaining
-    while (cloned_Array.length > 0) {
+    while (cloned_array.length > 0) {
       // `splice` off 5 elements from the array
-      const next = cloned_Array.splice(0, 5);
+      const next = cloned_array.splice(0, 5);
 
       const sum = sum_arr(next);
 
@@ -404,30 +408,10 @@ export default function Steward() {
     setSeqState((prevState) => {
       return {
         ...prevState,
-        seqTotal: sum_arr(joined_seq).toFixed(2),
-        seqArr: reduce_arr(joined_seq),
+        total: sum_arr(joined_seq).toFixed(2),
+        array: reduce_arr(joined_seq),
       };
     });
-
-    // // Calculate and update water retention chart
-
-    // Variables to be used later
-    // flood control m3 average £12.70
-    // £312,000 = heat island effect reduction -> total Glasgow
-    // Heat island effect - 1.56£ per tree per year
-
-    // let ret_per_tree = 0.406; //m2 per tree
-    // let money_per_tree = 0.55; //£ per tree
-    // let tree_area = 13.3; // Roni back of the envelope estimation https://darkmatterlabs.slack.com/archives/C02ET8M2UTG/p1635337783037800?thread_ts=1635155720.033900&cid=C02ET8M2UTG
-    // iTREE - 403 L per Tree per Year
-    // // -------------------------------
-    // // Equations crafter by Marko
-    //
-    // let runoff_tree =
-    //   precipitation - canopy_storage - imper_cover_storage - evaporation;
-    // let runoff_ground = precipitation - imper_cover_storage - evaporation;
-    // let avoided_runoff =
-    //   (imperviousPercent / 100) * tree_area * (runoff_ground - runoff_tree);
 
     let years = 50;
     let d0 = dbh;
@@ -438,21 +422,15 @@ export default function Steward() {
       d0 = get_t1(d0);
     }
 
-    const waterRetentionValue = sum_arr(water_array);
+    setStormwaterState((prevState) => {
+      return {
+        ...prevState,
+        total: sum_arr(water_array).toFixed(2),
+        array: reduce_arr(water_array),
+      };
+    });
 
-    let water_arr_for_graph = reduce_arr(water_array);
-
-    setStormwaterArray(water_arr_for_graph);
-
-    setStormwater(waterRetentionValue.toFixed(2));
-
-    // Water Cost
-    let cost_per_m2_of_water = 1.53; // £ per sq. meter
-
-    let water_benefit_arr_for_graph = water_arr_for_graph.map(
-      (x) => x * cost_per_m2_of_water
-    );
-    setStormwaterCostArray(water_benefit_arr_for_graph);
+    let water_benefit_arr_for_graph = reduce_arr(water_array); // TODO: TBR
 
     // savings
     let savings =
@@ -460,14 +438,35 @@ export default function Steward() {
       Number(sum_arr(water_benefit_arr_for_graph) / 49);
 
     setSavingsEstimate(savings.toFixed(1));
-    setSavingsPercentage(((savings / maintenanceCost) * 100).toFixed());
+    setSavingsPercentage(((savings / maintenanceCost.total) * 100).toFixed());
   }
 
   useEffect(() => {
     // Update the cost chart of page 3
-    let cost = Array(10).fill(maintenanceCost * -5);
-    setMaintenanceCostArray(cost);
-  }, [maintenanceCost]);
+    setMaintenanceCost((prevState) => {
+      return {
+        ...prevState,
+        array: Array(10).fill(maintenanceCost.total * -5),
+      };
+    });
+  }, [maintenanceCost.total]);
+
+  // Update the
+  useEffect(() => {
+    // update the cost array if the sequestration array changes
+    function calculate_stormwater_price(arr) {
+      // Water Cost
+      let cost_per_m2_of_water = 1.53; // £ per sq. meter
+      return arr.map((x) => x * cost_per_m2_of_water);
+    }
+
+    setStormwaterState((prevState) => {
+      return {
+        ...prevState,
+        costarray: calculate_stormwater_price(prevState.array),
+      };
+    });
+  }, [StormwaterState.array]);
 
   useEffect(() => {
     // update the cost array if the sequestration array changes
@@ -479,10 +478,10 @@ export default function Steward() {
     setSeqState((prevState) => {
       return {
         ...prevState,
-        seqCostArray: calculate_carbon_price(prevState.seqArr),
+        costarray: calculate_carbon_price(prevState.array),
       };
     });
-  }, [SeqState.seqArr]);
+  }, [SeqState.array]);
 
   const calculate_button_click = (e) => {
     e.preventDefault();
@@ -793,7 +792,7 @@ export default function Steward() {
                                     <input
                                       type="number"
                                       name="cost"
-                                      defaultValue={maintenanceCost}
+                                      defaultValue={maintenanceCost.total}
                                       onChange={(e) =>
                                         setMaintenanceCost(e.target.value)
                                       }
@@ -1052,7 +1051,7 @@ export default function Steward() {
                             </dt>
                             <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                               <p className="text-2xl font-semibold text-green-600 ">
-                                {SeqState.seqTotal} tCO2e
+                                {SeqState.total} tCO2e
                               </p>
                               <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
                                 over 50 years
@@ -1068,7 +1067,7 @@ export default function Steward() {
                             </dt>
                             <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                               <p className="text-2xl font-semibold text-blue2 ">
-                                {stormwater} m3
+                                {StormwaterState.total} m3
                               </p>
                               <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
                                 over 50 years
@@ -1256,7 +1255,7 @@ export default function Steward() {
                               </dt>
                               <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                                 <p className="text-2xl font-semibold text-gray-900">
-                                  {formatter.format(maintenanceCost)}
+                                  {formatter.format(maintenanceCost.total)}
                                 </p>
                                 <p className="text-gray5 ml-2 flex items-baseline text-sm font-regular">
                                   <span className="sr-only">by</span>
@@ -1286,7 +1285,7 @@ export default function Steward() {
                             <div className="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                               <dd className="ml-2 pb-6 flex items-baseline sm:pb-7">
                                 <p className="text-2xl font-semibold text-green-600">
-                                  {formatter.format(maintenanceCost * 50)}
+                                  {formatter.format(maintenanceCost.total * 50)}
                                 </p>
                                 <p className="ml-1 text-gray-5 flex items-baseline text-sm font-regular">
                                   <span className="sr-only">by</span>
