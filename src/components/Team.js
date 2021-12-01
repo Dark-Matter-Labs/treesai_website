@@ -73,9 +73,15 @@ export default function Team() {
               >
                 <b>Dark Matter Labs</b>
               </a>
-              , a multidisciplinary ecosystem of discovery, design and
-              development, working with partners and collaborators across the
-              world to develop new working methods for system change.
+              {" "}and{" "}
+              <a
+                href="https://lucidminds.ai/"
+                target="_blank"
+                className="hover:text-black"
+                rel="noreferrer noopener"
+              >
+                <b>Lucidminds</b>
+              </a>.
             </p>
           </div>
           <div className="lg:col-span-2">
