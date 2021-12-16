@@ -2,6 +2,18 @@ import { useState } from "react";
 
 const videos = [
   {
+    id: 0,
+    title:
+      "Carlotta Conte presenting at COP26",
+    href: "https://youtu.be/pfVScBgCU9A",
+    date: "Nov 6, 2021",
+    datetime: "2021-11-06",
+    category: { name: "19:12" },
+    imageUrl: "assets/COPbanner.png",
+    preview: "",
+    readingLength: "Dark Matter Labs",
+  },
+  {
     id: 1,
     title:
       "TreesAI presenting at Mayday C4 events: Deforestation and Carbon Offsets",
