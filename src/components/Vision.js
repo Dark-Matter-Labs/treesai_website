@@ -22,18 +22,17 @@ export default class Vision extends Component {
                     Challenge on Climate
                   </span>
                   <span className="hidden md:inline">
-                    TreesAI is a proud recipient of Google.org’s Impact
-                    Challenge on Climate
+                    TreesAI is delighted to share our demo launched at COP26
                   </span>
                   <span className="block sm:ml-2 sm:inline-block">
                     <a
-                      href="https://blog.google/outreach-initiatives/sustainability/these-11-organizations-are-building-greener-europe/"
+                      href="https://treesasinfrastructure.com/#/invest-in-nature"
                       className="text-white font-bold underline"
                       target="_blank"
                       rel="noreferrer noopener"
                     >
                       {" "}
-                      Learn more <span aria-hidden="true">&rarr;</span>
+                      Check it out <span aria-hidden="true">&rarr;</span>
                     </a>
                   </span>
                 </p>
