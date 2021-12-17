@@ -125,6 +125,20 @@ const blogPosts = [
 
 const posts = [
   {
+    title: "Financing Urban Forests for Environmental and Social Benefits",
+    href: "https://www.morganstanley.com/ideas/tree-ai-nature-urban-infrastructure",
+    description: "Morgan Stanley",
+    date: "2021",
+    datetime: "2021-11-10",
+  },
+  {
+    title: "Three innovative solutions for rewilding our cities",
+    href: "https://twitter.com/wef/status/1466452246724587520",
+    description: "World Economic Forum",
+    date: "2021",
+    datetime: "2021-12-2",
+  },
+  {
     title: "Building Vitality – Regenerative Construction",
     href: "https://demoshelsinki.fi/julkaisut/building-vitality-regenerative-construction/",
     description: "Demos Helsinki",
@@ -138,6 +152,14 @@ const posts = [
     description: "Morgan Stanley",
     date: "June 9, 2021",
     datetime: "2021-06-9",
+  },
+  {
+    title:
+      "These 11 organizations are building a greener Europe",
+    href: "https://blog.google/outreach-initiatives/sustainability/these-11-organizations-are-building-greener-europe/",
+    description: "Google.org",
+    date: "April 13, 2021",
+    datetime: "2021-04-13",
   },
   {
     title:
