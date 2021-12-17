@@ -87,6 +87,17 @@ const videos = [
 
 const blogPosts = [
   {
+    id: 0,
+    title: "TreesAI - Blue Paper",
+    href: "https://drive.google.com/file/d/127XlBUlQ-9_llwJawalifxWoqbBxG8ha/view?usp=sharing",
+    date: "Dec 17, 2021",
+    datetime: "2021-12-17",
+    category: { name: "Paper" },
+    imageUrl: "assets/Bluepaper.png",
+    preview: "A platform to value and invest in Nature: Carbon and beyond.",
+    readingLength: "2 hours",
+  },
+  {
     id: 1,
     title: "Trees as Infrastructure Report 1",
     href: "https://provocations.darkmatterlabs.org/trees-as-infrastructure-1dd94e1cfedf",
