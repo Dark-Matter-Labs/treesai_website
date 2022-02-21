@@ -136,6 +136,13 @@ const blogPosts = [
 
 const posts = [
   {
+    title: "Glasgow Green Deal",
+    href: "https://www.glasgow.gov.uk/councillorsandcommittees/viewSelectedDocument.asp?c=P62AFQDNZLDNNTDNDN",
+    description: "Glasgow city council",
+    date: "December 20, 2021",
+    datetime: "2021-12-20",
+  },
+  {
     title: "Three innovative solutions for rewilding our cities",
     href: "https://twitter.com/wef/status/1466452246724587520",
     description: "World Economic Forum",
