@@ -61,7 +61,7 @@ export default class NavBar extends Component {
             </div>
 
             <Transition
-              show={close}
+              show={true}
               as={Fragment}
               enter="duration-150 ease-out"
               enterFrom="opacity-0 scale-95"
