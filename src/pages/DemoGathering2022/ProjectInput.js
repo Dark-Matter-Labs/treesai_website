@@ -58,6 +58,8 @@ export default function ProjectInput() {
   const [minDBH, setMinDBH] = useState(6);
   const [maxDBH, setMaxDBH] = useState(8);
 
+  const [outputImage, setOutputImage] = useState("");
+
   const [query, setQuery] = useState("");
   const [selectedPerson, setSelectedPerson] = useState();
 
@@ -72,6 +74,7 @@ export default function ProjectInput() {
     let myHeaders = new Headers();
     myHeaders.append("accept", "application/json");
     myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Access-Control-Allow-Origin", "*");
 
     let raw = JSON.stringify({
       name: projectName,
@@ -100,6 +103,10 @@ export default function ProjectInput() {
       .then((response) => response.json())
       .then((result) => {
         // show output
+
+        console.log(result)
+        setOutputImage(result.avgCarbonReleasePlot)
+        
       })
       .catch((error) => console.log("error", error));
   }
@@ -652,6 +659,9 @@ export default function ProjectInput() {
             Run scenario
           </button>
         </div>
+
+        <img src={outputImage} />
+        
       </div>
     </>
   );
