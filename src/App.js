@@ -12,6 +12,10 @@ import FAQ from "./pages/FAQ";
 import StewardMain from "./pages/StewardMain";
 import Gift from "./pages/Gift";
 
+import ImpactPlanner from "./pages/DemoGathering2022/ImpactPlanner";
+import SelectCity from "./pages/DemoGathering2022/SelectCity";
+import ProjectInput from "./pages/DemoGathering2022/ProjectInput";
+
 import "./App.css";
 
 export default function TreesAIWebsite() {
@@ -19,6 +23,15 @@ export default function TreesAIWebsite() {
     <HashRouter>
       <ScrollToTop />
       <Switch>
+        <Route exact path="/project-input">
+          <ProjectInput />
+        </Route>
+        <Route exact path="/select-city">
+          <SelectCity />
+        </Route>
+        <Route exact path="/impact-planner-2022">
+          <ImpactPlanner />
+        </Route>
         <Route exact path="/invest-in-nature/glasgow/invest">
           <Invest />
         </Route>
