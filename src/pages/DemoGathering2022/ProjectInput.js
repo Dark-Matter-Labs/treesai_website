@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RadioGroup, Combobox } from "@headlessui/react";
 import {
   CheckCircleIcon,
   CheckIcon,
   SelectorIcon,
 } from "@heroicons/react/solid";
+import LoadingSpinner from "./Loader";
 
 const typologies = [
   {
@@ -74,6 +75,9 @@ export default function ProjectInput() {
   // eslint-disable-next-line 
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => {
+  }, [avgCarbonReleasePlot, avgCarbonSequestPlot, treeHealthPlot, cumAnalysisPlot, compAnalysisPlot]);
+
   const filteredPeople =
     query === ""
       ? time_horizons
@@ -81,7 +85,7 @@ export default function ProjectInput() {
           return person.name.toLowerCase().includes(query.toLowerCase());
         });
 
-  function getSAFOutput() {
+  const getSAFOutput = () => {
     setIsLoading(true);
     let myHeaders = new Headers();
     myHeaders.append("accept", "application/json");
@@ -112,21 +116,28 @@ export default function ProjectInput() {
     fetch("http://127.0.0.1:8000/saf/run", requestOptions)
       .then((response) => response.json())
       .then((result) => {
-     setIsLoading(false);
-        setOutputCalculated(true);
+        setIsLoading(false);
         setAvgCarbonReleasePlot(result.avgCarbonReleasePlot);
         setAvgCarbonSequestPlot(result.avgCarbonSequestPlot);
         setTreeHealthPlot(result.treeHealthPlot);
         setCumAnalysisPlot(result.cumAnalysisPlot);
         setCompAnalysisPlot(result.compAnalysisPlot);
+
+        
         // setCSVLink(result.downloadLink);
       })
       .catch((error) => console.log("error", error));
+
+      setOutputCalculated(true);
   }
 
   return (
     <>
+
       <div className="bg-white">
+      {isLoading && (
+  <LoadingSpinner/>
+)}
         {!outputCalculated && (
           <>
             <h2 className="font-grotesk mt-2 lg:text-5xl md:text-4xl text-gray-900 sm:text-4xl ml-10 mt-10">
@@ -679,7 +690,9 @@ export default function ProjectInput() {
             </div>
           </>
         )}
+
         {outputCalculated && (
+
           <>
             <h2 className="font-grotesk mt-2 lg:text-5xl md:text-4xl text-gray-900 sm:text-4xl ml-10 mt-10">
               Glasgow project SAF output
@@ -690,7 +703,7 @@ export default function ProjectInput() {
                 <h3 className="text-lg text-gray-700 ml-20">
                   Average Carbon Release
                 </h3>
-                <img className="object-cover " src={avgCarbonReleasePlot} alt="output" />
+                <img className="object-cover " src={avgCarbonReleasePlot} key={avgCarbonReleasePlot} alt="output" />
                 <p className="ml-20 text-sm font-small text-gray-500 ">
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
@@ -702,7 +715,7 @@ export default function ProjectInput() {
                 <h3 className="text-lg text-gray-700 ml-20">
                   Average Carbon Sequestration
                 </h3>
-                <img className="object-cover " src={avgCarbonSequestPlot} alt="output" />
+                <img className="object-cover " src={avgCarbonSequestPlot} key={avgCarbonSequestPlot} alt="output" />
                 <p className="ml-20 text-sm font-small text-gray-500 ">
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
@@ -714,7 +727,7 @@ export default function ProjectInput() {
                 <h3 className="text-lg text-gray-700 ml-20">
                   Tree health plots
                 </h3>
-                <img className="object-cover " src={treeHealthPlot} alt="output" />
+                <img className="object-cover " src={treeHealthPlot} key={treeHealthPlot} alt="output" />
                 <p className="ml-20 text-sm font-small text-gray-500 ">
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
@@ -726,7 +739,7 @@ export default function ProjectInput() {
                 <h3 className="text-lg text-gray-700 ml-20">
                   Cumulative Analysis
                 </h3>
-                <img className="object-cover " src={cumAnalysisPlot} alt="output" />
+                <img className="object-cover " src={cumAnalysisPlot} key={cumAnalysisPlot} alt="output" />
                 <p className="ml-20 text-sm font-small text-gray-500 ">
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
@@ -738,7 +751,7 @@ export default function ProjectInput() {
                 <h3 className="text-lg text-gray-700 ml-20">
                   Comparative Analysis
                 </h3>
-                <img className="object-cover" src={compAnalysisPlot} alt="output" />
+                <img className="object-cover" src={compAnalysisPlot} key={compAnalysisPlot} alt="output" />
                 <p className="ml-20 text-sm font-small text-gray-500 ">
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
