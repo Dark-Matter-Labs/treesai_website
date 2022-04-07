@@ -71,6 +71,9 @@ export default function ProjectInput() {
   const [cumAnalysisPlot, setCumAnalysisPlot] = useState("");
   const [compAnalysisPlot, setCompAnalysisPlot] = useState("");
 
+  // eslint-disable-next-line 
+  const [isLoading, setIsLoading] = useState(false);
+
   const filteredPeople =
     query === ""
       ? time_horizons
@@ -79,6 +82,7 @@ export default function ProjectInput() {
         });
 
   function getSAFOutput() {
+    setIsLoading(true);
     let myHeaders = new Headers();
     myHeaders.append("accept", "application/json");
     myHeaders.append("Content-Type", "application/json");
@@ -108,6 +112,7 @@ export default function ProjectInput() {
     fetch("http://127.0.0.1:8000/saf/run", requestOptions)
       .then((response) => response.json())
       .then((result) => {
+     setIsLoading(false);
         setOutputCalculated(true);
         setAvgCarbonReleasePlot(result.avgCarbonReleasePlot);
         setAvgCarbonSequestPlot(result.avgCarbonSequestPlot);
@@ -686,6 +691,11 @@ export default function ProjectInput() {
                   Average Carbon Release
                 </h3>
                 <img className="object-cover " src={avgCarbonReleasePlot} alt="output" />
+                <p className="ml-20 text-sm font-small text-gray-500 ">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s,
+                </p>
               </div>
 
               <div className="m-10">
@@ -693,6 +703,11 @@ export default function ProjectInput() {
                   Average Carbon Sequestration
                 </h3>
                 <img className="object-cover " src={avgCarbonSequestPlot} alt="output" />
+                <p className="ml-20 text-sm font-small text-gray-500 ">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s,
+                </p>
               </div>
 
               <div className="m-10">
@@ -700,6 +715,11 @@ export default function ProjectInput() {
                   Tree health plots
                 </h3>
                 <img className="object-cover " src={treeHealthPlot} alt="output" />
+                <p className="ml-20 text-sm font-small text-gray-500 ">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s,
+                </p>
               </div>
 
               <div className="m-10">
@@ -707,6 +727,11 @@ export default function ProjectInput() {
                   Cumulative Analysis
                 </h3>
                 <img className="object-cover " src={cumAnalysisPlot} alt="output" />
+                <p className="ml-20 text-sm font-small text-gray-500 ">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s,
+                </p>
               </div>
 
               <div className="m-10">
@@ -714,6 +739,11 @@ export default function ProjectInput() {
                   Comparative Analysis
                 </h3>
                 <img className="object-cover" src={compAnalysisPlot} alt="output" />
+                <p className="ml-20 text-sm font-small text-gray-500 ">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s,
+                </p>
               </div>
             </div>
           </>
