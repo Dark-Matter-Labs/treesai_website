@@ -680,45 +680,40 @@ export default function ProjectInput() {
               Glasgow project SAF output
             </h2>
 
-            <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-2 gap-x-2 sm:grid-cols-1">
-              <div class="m-10">
-                <img
-                  class="object-cover h-48 w-96"
-                  src={avgCarbonReleasePlot}
-                  alt="output"
-                />
+            <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
+              <div className="m-10">
+                <h3 className="text-lg text-gray-700 ml-20">
+                  Average Carbon Release
+                </h3>
+                <img className="object-cover " src={avgCarbonReleasePlot} alt="output" />
               </div>
 
-              <div class="m-10">
-                <img
-                  class="object-cover h-48 w-96"
-                  src={avgCarbonSequestPlot}
-                  alt="output"
-                />
+              <div className="m-10">
+                <h3 className="text-lg text-gray-700 ml-20">
+                  Average Carbon Sequestration
+                </h3>
+                <img className="object-cover " src={avgCarbonSequestPlot} alt="output" />
               </div>
 
-              <div class="m-10">
-                <img
-                  class="object-cover h-48 w-96"
-                  src={treeHealthPlot}
-                  alt="output"
-                />
+              <div className="m-10">
+                <h3 className="text-lg text-gray-700 ml-20">
+                  Tree health plots
+                </h3>
+                <img className="object-cover " src={treeHealthPlot} alt="output" />
               </div>
 
-              <div class="m-10">
-                <img
-                  class="object-cover h-48 w-96"
-                  src={cumAnalysisPlot}
-                  alt="output"
-                />
+              <div className="m-10">
+                <h3 className="text-lg text-gray-700 ml-20">
+                  Cumulative Analysis
+                </h3>
+                <img className="object-cover " src={cumAnalysisPlot} alt="output" />
               </div>
 
-              <div class="m-10">
-                <img
-                  class="object-cover h-48 w-96"
-                  src={compAnalysisPlot}
-                  alt="output"
-                />
+              <div className="m-10">
+                <h3 className="text-lg text-gray-700 ml-20">
+                  Comparative Analysis
+                </h3>
+                <img className="object-cover" src={compAnalysisPlot} alt="output" />
               </div>
             </div>
           </>
