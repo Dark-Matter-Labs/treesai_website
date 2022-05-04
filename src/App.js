@@ -11,6 +11,7 @@ import Portfolio from "./pages/Portfolio";
 import FAQ from "./pages/FAQ";
 import StewardMain from "./pages/StewardMain";
 import Gift from "./pages/Gift";
+import GISMap from "./pages/GISMap";
 
 import "./App.css";
 
@@ -19,6 +20,9 @@ export default function TreesAIWebsite() {
     <HashRouter>
       <ScrollToTop />
       <Switch>
+      <Route exact path="/impact-planner">
+          <GISMap />
+        </Route>
         <Route exact path="/invest-in-nature/glasgow/invest">
           <Invest />
         </Route>
