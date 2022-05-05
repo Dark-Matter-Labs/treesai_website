@@ -11,7 +11,7 @@ import Portfolio from "./pages/Portfolio";
 import FAQ from "./pages/FAQ";
 import StewardMain from "./pages/StewardMain";
 import Gift from "./pages/Gift";
-import GISMap from "./pages/GISMap";
+import GISMap from "./pages/GISMapEmbed";
 
 import "./App.css";
 
