@@ -1,8 +1,8 @@
 const people = [
   {
-    name: "Aaron Gillett",
-    role: "Service and interaction design",
-    imageUrl: "assets/team/Aaron.jpg",
+    name: "Arianna Smaron",
+    role: "Product and visual design",
+    imageUrl: "assets/team/Arianna.jpg",
   },
   {
     name: "Axel Nilsson",
@@ -25,9 +25,14 @@ const people = [
     imageUrl: "assets/team/Carolina.JPG",
   },
   {
+    name: "Chloe Treger",
+    role: "Natural capital innovation research",
+    imageUrl: "assets/team/Chloe.JPG",
+  },
+  {
     name: "Gurden Batra",
     role: "Full stack development",
-    imageUrl: "assets/team/Gurden.png",
+    imageUrl: "assets/team/Gurden.jpg",
   },
   {
     name: "Konstantina Koulouri",
@@ -42,12 +47,17 @@ const people = [
   {
     name: "Oguzhan Yayla",
     role: "Data infrastructure",
-    imageUrl: "assets/team/Oz.png",
+    imageUrl: "assets/team/Oz.jpg",
   },
   {
     name: "Raj Kalia",
     role: "Financial structuring",
-    imageUrl: "assets/team/Raj.png",
+    imageUrl: "assets/team/Raj.jpg",
+  },
+  {
+    name: "Sofia Valentini",
+    role: "Portfolio structuring and GIS expert",
+    imageUrl: "assets/team/Sofia.jpg",
   },
 ];
 
