@@ -18,11 +18,11 @@ export default class Vision extends Component {
               <div className="pr-16 sm:text-center sm:px-16">
                 <p className="font-medium text-white">
                   <span className="md:hidden">
-                    TreesAI is a proud recipient of Google.org’s Impact
-                    Challenge on Climate
+                  TreesAI is partnering with Glasgow City Council to help meet the city’s climate targets.
                   </span>
                   <span className="hidden md:inline">
-                    TreesAI is delighted to share our demo launched at COP26
+                  TreesAI is partnering with Glasgow City Council to launch its
+                first pilot, helping to meet the city’s climate targets.
                   </span>
                   <span className="block sm:ml-2 sm:inline-block">
                     <a
