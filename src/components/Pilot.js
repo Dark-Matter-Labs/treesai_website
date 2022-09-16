@@ -28,8 +28,7 @@ export default function Pilot() {
           <div className="relative bg-green4 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:grid lg:grid-cols-10 lg:items-center">
             <div className="relative max-w-md mx-auto py-8 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:p-0 lg:col-start-4 lg:col-span-6">
               <h2 className="font-grotesk text-3xl text-gray" id="join-heading">
-                TreesAI Pilot with <br />
-                Glasgow City Council
+              TreesAI is partnering with Glasgow City Council to help meet the city’s climate targets.
               </h2>
               <p className="text-lg text-green1">
                 TreesAI is partnering with Glasgow City Council to launch its
@@ -37,6 +36,14 @@ export default function Pilot() {
               </p>
               <a
                 className="block w-full py-3 px-5 text-center bg-white border border-transparent rounded-md shadow-md text-base font-medium text-primary hover:text-green2 sm:inline-block sm:w-auto"
+                href="https://treesai.org/glasgow-nbs-portfolio"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Link to pilot portfolio
+              </a>
+              <a
+                className="ml-10 block w-full py-3 px-5 text-center bg-white border border-transparent rounded-md shadow-md text-base font-medium text-primary hover:text-green2 sm:inline-block sm:w-auto"
                 href="https://drive.google.com/file/d/127XlBUlQ-9_llwJawalifxWoqbBxG8ha/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer noopener"
