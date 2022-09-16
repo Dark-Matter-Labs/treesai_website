@@ -68,13 +68,11 @@ export default class Vision extends Component {
                 <div className="lg:py-24">
                   <h1 className="font-grotesk mt-4 text-4xl tracking-tight font-bold text-white sm:mt-5 sm:text-5xl lg:mt-6 xl:text-6xl">
                     <span className="block">
-                      A platform to value and invest in nature beyond carbon.
+                    Revaluing nature as urban infrastructure
                     </span>
                   </h1>
                   <p className="text-base text-white sm:text-lg lg:text-lg xl:text-xl pt-5">
-                    Trees as Infrastructure establishes nature as a critical
-                    part of urban infrastructure, alongside bridges, roads and
-                    rail, enabling investment, profitability and sustainability.
+                  TreesAI provides the impact assessment and investment tools to fund, manage and maintain portfolios of nature-based solutions.
                   </p>
                   <div className="mt-10 sm:mt-12 sm:mb-12">
                     <a
