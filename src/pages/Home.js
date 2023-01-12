@@ -1,5 +1,5 @@
-import Vision from '../components/Vision';
-import ValueProp from '../components/ValueProp';
+import Header from '../components/Header';
+import ContentSections from '../components/ContentSections';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 
@@ -9,8 +9,8 @@ export default function Home() {
       <div className='relative overflow-hidden'>
         <NavBar />
         <main>
-          <Vision />
-          <ValueProp />
+          <Header />
+          <ContentSections />
           <Footer />
         </main>
       </div>

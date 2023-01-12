@@ -6,7 +6,7 @@ import pdIcon from '../images/PD-icon.png';
 import investorIcon from '../images/investor-icon.png';
 import glasgowImg from '../images/glasgow.jpg';
 
-export default function ValueProp() {
+export default function ContentSections() {
   const logos = [
     { name: 'EIT Climate-KIC', url: 'assets/partner_logos/eit-climatekic.png' },
     { name: 'NatureScot', url: 'assets/partner_logos/NatureScot.png' },
@@ -19,8 +19,8 @@ export default function ValueProp() {
   ];
 
   return (
-    <>
-      <div className='rounded-b-[140px] bg-dark-wood-800 global-margin'>
+    <div className='global-margin'>
+      <div className='rounded-b-[140px] bg-dark-wood-800'>
         <div className='py-16 '>
           <div className=''>
             <div className='text-center pb-4 border-b border-white-200'>
@@ -43,7 +43,7 @@ export default function ValueProp() {
           </div>
         </div>
       </div>
-      <div className='global-margin'>
+      <div className=''>
         <div className='my-10 grid'>
           <div className='place-self-center text-center max-w-3xl '>
             <h3 className='text-dark-wood-800'>TreesAI Solution</h3>
@@ -82,7 +82,7 @@ export default function ValueProp() {
         </div>
       </div>
 
-      <div className='global-margin'>
+      <div className=''>
         <div className='my-10 grid'>
           <div className='place-self-center text-center max-w-3xl '>
             <h2 className='text-dark-wood-800'>Why us</h2>
@@ -115,7 +115,7 @@ export default function ValueProp() {
         </div>
       </div>
 
-      <div className='global-margin my-20'>
+      <div className='my-20'>
         <div className='bg-white border border-black rounded-[60px] grid grid-cols-1 sm:grid-cols-3 py-10 px-10'>
           <div>
             <h2 className='text-dark-wood-800'>
@@ -139,7 +139,7 @@ export default function ValueProp() {
         </div>
       </div>
 
-      <div className='global-margin my-20'>
+      <div className='my-20'>
         <div className='grid grid-cols-1 sm:grid-cols-2'>
           <div className='bg-pd py-10 max-w-2xl'>
             <div className='grid grid-cols-3'>
@@ -192,7 +192,7 @@ export default function ValueProp() {
         </div>
       </div>
 
-      <div className='global-margin my-20'>
+      <div className='my-20'>
         <div className='rounded-[60px] mt-4 bg-dark-wood-800 py-20 px-20 mt-10'>
           <div className='grid grid-cols-1 sm:grid-cols-3'>
             <div className='max-w-sm'>
@@ -218,7 +218,7 @@ export default function ValueProp() {
         </div>
       </div>
 
-      <div className='global-margin my-20'>
+      <div className='my-20'>
         <div className='my-10 grid'>
           <div className='place-self-center text-center max-w-3xl '>
             <h2 className='text-dark-wood-800'>Contact us</h2>
@@ -254,6 +254,6 @@ export default function ValueProp() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

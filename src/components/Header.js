@@ -1,4 +1,4 @@
-export default function Vision() {
+export default function Header() {
   return (
     <>
       <div className='bg-header py-64 flex flex-col items-center justify-center global-margin'>
