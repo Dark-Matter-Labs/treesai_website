@@ -1,7 +1,6 @@
 import naturePortfolioImage from '../images/nature-portfolios.png';
 import natureTokenImage from '../images/nature-tokens.png';
 import aiModelImage from '../images/ai-models.png';
-import peopleImage from '../images/people.png';
 import interfaceImage from '../images/interface.png';
 import pdIcon from '../images/PD-icon.png';
 import investorIcon from '../images/investor-icon.png';
@@ -133,7 +132,6 @@ export default function ValueProp() {
             >
               Registry
             </button>
-            <img src={peopleImage} alt='people illustration' />
           </div>
           <div className='col-span-2 mx-auto'>
             <img src={interfaceImage} alt='TreesAI interface' />
