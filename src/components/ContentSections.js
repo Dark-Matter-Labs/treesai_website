@@ -46,7 +46,7 @@ export default function ContentSections() {
       <div className=''>
         <div className='my-10 grid'>
           <div className='place-self-center text-center max-w-3xl '>
-            <h3 className='text-dark-wood-800'>TreesAI Solution</h3>
+            <p className='text-dark-wood-800 book-intro-lg'>TreesAI Solution</p>
             <h2 className='text-dark-wood-800 py-4'>
               TreesAI enables investments in Nature-based Solutions, driving resilience in our
               cities.
@@ -92,14 +92,14 @@ export default function ContentSections() {
           <div className='flex flex-col items-center justify-center'>
             <img className='pb-2' src={naturePortfolioImage} alt='' />
             <h3 className='text-dark-wood-800 pb-2'>Nature Portfolios</h3>
-            <p className='book-intro-lg text-dark-wood-800'>
+            <p className='book-intro-lg text-dark-wood-800 max-w-sm'>
               We aggregate projects into portfolios to multiply the impacts of your investment.
             </p>
           </div>
           <div className='flex flex-col items-center justify-center'>
             <img className='pb-2' src={natureTokenImage} alt='' />
             <h3 className='text-dark-wood-800 pb-2'>Nature-positive tokens</h3>
-            <p className='book-intro-lg text-dark-wood-800'>
+            <p className='book-intro-lg text-dark-wood-800 max-w-sm'>
               We verify the delivery of positive impacts via our novel and open Proof of Impact
               methodology.
             </p>
@@ -107,7 +107,7 @@ export default function ContentSections() {
           <div className='flex flex-col items-center justify-center'>
             <img className='pb-2' src={aiModelImage} alt='' />
             <h3 className='text-dark-wood-800 pb-2'>AI Impact models</h3>
-            <p className='book-intro-lg text-dark-wood-800'>
+            <p className='book-intro-lg text-dark-wood-800 max-w-sm'>
               We run scenarios to assess the performance of projects and portfolios helping you with
               investment decisions.
             </p>
@@ -117,11 +117,11 @@ export default function ContentSections() {
 
       <div className='my-20'>
         <div className='bg-white border border-black rounded-[60px] grid grid-cols-1 sm:grid-cols-3 py-10 px-10'>
-          <div>
+          <div className='py-40 px-10'>
             <h2 className='text-dark-wood-800'>
               A Registry to evaluate the impact of your projects
             </h2>
-            <p className='text-dark-wood-800 book-intro-sm pt-5'>
+            <p className='text-dark-wood-800 book-intro-sm pt-10'>
               TreesAI is working with project developers, local authorities and environmental
               institutions to help them understand the impacts of their Nature-based Solution
               projects and access investment opportunities.
@@ -139,8 +139,8 @@ export default function ContentSections() {
         </div>
       </div>
 
-      <div className='my-20'>
-        <div className='grid grid-cols-1 sm:grid-cols-2'>
+      <div className='my-20 mx-auto max-w-max'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 gap-x-10'>
           <div className='bg-pd py-10 max-w-2xl'>
             <div className='grid grid-cols-3'>
               <div className='pl-10'>

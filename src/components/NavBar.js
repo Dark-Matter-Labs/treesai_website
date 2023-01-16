@@ -14,7 +14,7 @@ export default function NavBar() {
     <Popover as='header' className=''>
       {() => (
         <>
-          <div className='bg-black py-2 rounded-full'>
+          <div className='bg-black py-4 rounded-full'>
             <nav className='relative max-w-7xl mx-auto px-4 sm:px-6' aria-label='Global'>
               <div className='flex items-center justify-center'>
                 <div className=''>
