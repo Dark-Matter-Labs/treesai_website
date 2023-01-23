@@ -21,7 +21,7 @@ export default function NavBar() {
                   <div className='ml-0 mr-auto'>
                     <img className='h-8 w-auto' src='assets/TreesAI_logo.svg' alt='TreesAI logo' />
                   </div>
-                  <div className='-mr-2 flex items-center md:hidden'>
+                  <div className='-mr-2 flex items-center hidden'>
                     <Popover.Button className='bg-gray-900  p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white'>
                       <span className='sr-only'>Open main menu</span>
                       <MenuIcon className='h-6 w-6' aria-hidden='true' />
@@ -57,7 +57,7 @@ export default function NavBar() {
             <Popover.Panel
               focus
               static
-              className='absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden'
+              className='absolute top-0 inset-x-0 p-2 transition transform origin-top hidden'
             >
               <div className='rounded-full shadow-md bg-black ring-1 ring-black ring-opacity-5 overflow-hidden'>
                 <div className='px-5 pt-4 flex items-center justify-between'>
