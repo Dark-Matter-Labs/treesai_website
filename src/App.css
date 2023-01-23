@@ -63,7 +63,8 @@
     @apply max-w-screen-2xl;
     @apply mx-7;
     @apply md:mx-10;
-    @apply xl:mx-auto;
+    @apply xl:mx-20;
+    @apply 2xl:mx-auto;
   }
 }
 
@@ -79,6 +80,7 @@ html {
 .bg-header {
   background-image: url('./images/header.svg');
   background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .bg-problemSolution {
