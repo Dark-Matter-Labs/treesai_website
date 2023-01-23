@@ -126,12 +126,14 @@ export default function ContentSections() {
               institutions to help them understand the impacts of their Nature-based Solution
               projects and access investment opportunities.
             </p>
-            <button
-              type='button'
-              className='bold-intro-sm inline-flex justify-center rounded-full border border-transparent bg-dark-wood-800 my-10 py-2 px-8 text-white-200 shadow-sm hover:bg-dark-wood-700 '
-            >
-              Registry
-            </button>
+            <a href='https://treesai.org/'>
+              <button
+                type='button'
+                className='bold-intro-sm inline-flex justify-center rounded-full border border-transparent bg-dark-wood-800 my-10 py-2 px-8 text-white-200 shadow-sm hover:bg-dark-wood-700 '
+              >
+                Registry
+              </button>
+            </a>
           </div>
           <div className='col-span-2 mx-auto'>
             <img src={interfaceImage} alt='TreesAI interface' />
@@ -156,12 +158,14 @@ export default function ContentSections() {
                 <p className='medium-intro-lg text-dark-wood-800 pt-10'>
                   Fund your Nature-based Solutions projects
                 </p>
-                <button
-                  type='button'
-                  className='bold-intro-sm inline-flex justify-center rounded-full border border-transparent bg-dark-wood-800 my-10 py-2 px-8 text-white-200 shadow-sm hover:bg-dark-wood-700 '
-                >
-                  Registry
-                </button>
+                <a href='https://treesai.org/'>
+                  <button
+                    type='button'
+                    className='bold-intro-sm inline-flex justify-center rounded-full border border-transparent bg-dark-wood-800 my-10 py-2 px-8 text-white-200 shadow-sm hover:bg-dark-wood-700 '
+                  >
+                    Registry
+                  </button>
+                </a>
               </div>
             </div>
           </div>
@@ -180,12 +184,14 @@ export default function ContentSections() {
                 <p className='medium-intro-lg text-dark-wood-800 pt-10'>
                   Invest in Nature to reduce your climate risks
                 </p>
-                <button
-                  type='button'
-                  className='bold-intro-sm inline-flex justify-center rounded-full border border-transparent bg-dark-wood-800 mt-14 py-2 px-8 text-white-200 shadow-sm hover:bg-dark-wood-700 '
-                >
-                  Discover more
-                </button>
+                <a href='https://treesai.org/invest'>
+                  <button
+                    type='button'
+                    className='bold-intro-sm inline-flex justify-center rounded-full border border-transparent bg-dark-wood-800 mt-14 py-2 px-8 text-white-200 shadow-sm hover:bg-dark-wood-700 '
+                  >
+                    Discover more
+                  </button>
+                </a>
               </div>
             </div>
           </div>
@@ -204,12 +210,14 @@ export default function ContentSections() {
                 Public agencies, corporates and financial institutions are launching a pilot to
                 co-finance the delivery of projects that reduce Glasgow’s flood risks.
               </p>
-              <button
-                type='button'
-                className='bold-intro-sm inline-flex justify-center rounded-full border border-transparent bg-white-200 my-10 py-2 px-8 text-dark-wood-800 shadow-sm hover:bg-dark-wood-700 '
-              >
-                Learn More
-              </button>
+              <a href='https://treesai.org/glasgow-nbs-portfolio'>
+                <button
+                  type='button'
+                  className='bold-intro-sm inline-flex justify-center rounded-full border border-transparent bg-white-200 my-10 py-2 px-8 text-dark-wood-800 shadow-sm hover:bg-dark-wood-700 '
+                >
+                  Learn More
+                </button>
+              </a>
             </div>
             <div className='col-span-2'>
               <img className='rounded-r-[60px]' src={glasgowImg} alt='Glasgow city' />
@@ -231,12 +239,16 @@ export default function ContentSections() {
                 Want to know more about registering your projects on TreesAI Registry?
               </h3>
             </div>
-            <button
-              type='button'
-              className='m-auto bold-intro-sm inline-flex justify-center rounded-full border border-transparent bg-gradient-to-r from-indigo-600 to-green-500 my-10 py-2 px-8 text-white shadow-sm hover:bg-dark-wood-700 '
-            >
-              Get in touch
-            </button>
+            <div className='mx-auto'>
+              <a href='https://treesai.org/contact'>
+                <button
+                  type='button'
+                  className='m-auto bold-intro-sm inline-flex justify-center rounded-full border border-transparent bg-gradient-to-r from-indigo-600 to-green-500 my-10 py-2 px-8 text-white shadow-sm hover:bg-dark-wood-700 '
+                >
+                  Get in touch
+                </button>
+              </a>
+            </div>
           </div>
           <div className='flex justify-center flex-col'>
             <div className='bg-invest-contact py-28 max-w-[70%] ml-[20%] flex justify-center'>
@@ -245,12 +257,16 @@ export default function ContentSections() {
                 Solutions?
               </h3>
             </div>
-            <button
-              type='button'
-              className='m-auto bold-intro-sm inline-flex justify-center rounded-full border border-transparent bg-dark-wood-800 my-10 py-2 px-8 text-white shadow-sm hover:bg-dark-wood-700 '
-            >
-              Be the next pilot
-            </button>
+            <div className='mx-auto'>
+              <a href='https://treesai.org/contact'>
+                <button
+                  type='button'
+                  className='m-auto bold-intro-sm inline-flex justify-center rounded-full border border-transparent bg-dark-wood-800 my-10 py-2 px-8 text-white shadow-sm hover:bg-dark-wood-700 '
+                >
+                  Be the next pilot
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
