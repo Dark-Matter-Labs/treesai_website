@@ -90,14 +90,14 @@ export default function ContentSections() {
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-3 gap-x-0'>
           <div className='flex flex-col items-center justify-center'>
-            <img className='pb-2' src={naturePortfolioImage} alt='' />
+            <img className='pb-2 h-48 ' src={naturePortfolioImage} alt='' />
             <h3 className='text-dark-wood-800 pb-2'>Nature Portfolios</h3>
             <p className='book-intro-lg text-dark-wood-800 max-w-sm'>
               We aggregate projects into portfolios to multiply the impacts of your investment.
             </p>
           </div>
           <div className='flex flex-col items-center justify-center'>
-            <img className='pb-2' src={natureTokenImage} alt='' />
+            <img className='pb-2 h-48' src={natureTokenImage} alt='' />
             <h3 className='text-dark-wood-800 pb-2'>Nature-positive tokens</h3>
             <p className='book-intro-lg text-dark-wood-800 max-w-sm'>
               We verify the delivery of positive impacts via our novel and open Proof of Impact
@@ -105,7 +105,7 @@ export default function ContentSections() {
             </p>
           </div>
           <div className='flex flex-col items-center justify-center'>
-            <img className='pb-2' src={aiModelImage} alt='' />
+            <img className='pb-2 h-48' src={aiModelImage} alt='' />
             <h3 className='text-dark-wood-800 pb-2'>AI Impact models</h3>
             <p className='book-intro-lg text-dark-wood-800 max-w-sm'>
               We run scenarios to assess the performance of projects and portfolios helping you with
@@ -146,7 +146,7 @@ export default function ContentSections() {
           <div className='bg-pd py-10 max-w-2xl'>
             <div className='grid grid-cols-3'>
               <div className='pl-10'>
-                <img src={pdIcon} alt='project developer icon'></img>
+                <img className='h-48 ' src={pdIcon} alt='project developer icon'></img>
               </div>
               <div className='col-span-2 max-w-sm ml-5'>
                 <h1 className='text-white-200'>Project developers</h1>
@@ -172,7 +172,7 @@ export default function ContentSections() {
           <div className='bg-investor py-10 max-w-2xl'>
             <div className='grid grid-cols-3'>
               <div className='pl-10'>
-                <img src={investorIcon} alt='investor icon'></img>
+                <img className='h-48 ' src={investorIcon} alt='investor icon'></img>
               </div>
               <div className='col-span-2 max-w-sm ml-5'>
                 <h1 className='text-white-200'>Green Urban investors</h1>
@@ -199,7 +199,7 @@ export default function ContentSections() {
       </div>
 
       <div className='my-20'>
-        <div className='rounded-[60px] mt-4 bg-dark-wood-800 py-20 px-20 mt-10'>
+        <div className='rounded-[60px] bg-dark-wood-800 py-20 px-20 mt-10'>
           <div className='grid grid-cols-1 sm:grid-cols-3'>
             <div className='max-w-sm'>
               <h2 className='text-white-200 pt-4'>
