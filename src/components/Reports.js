@@ -3,6 +3,17 @@ import { useState } from 'react';
 const videos = [
   {
     id: 0,
+    title: 'TreesAI in Glasgow 2022',
+    href: 'https://vimeo.com/761604792',
+    date: 'Oct 18, 2022',
+    datetime: '2022-10-18',
+    category: { name: '1:35' },
+    imageUrl: 'assets/GlasgowVid.png',
+    preview: '',
+    readingLength: 'Dark Matter Labs',
+  },
+  {
+    id: 1,
     title: 'Carlotta Conte presenting at COP26',
     href: 'https://youtu.be/pfVScBgCU9A',
     date: 'Nov 6, 2021',
@@ -13,7 +24,7 @@ const videos = [
     readingLength: 'Dark Matter Labs',
   },
   {
-    id: 1,
+    id: 2,
     title: 'TreesAI presenting at Mayday C4 events: Deforestation and Carbon Offsets',
     href: 'https://www.youtube.com/watch?v=j9HotCSqh_M',
     date: 'Mar 16, 2020',
@@ -24,7 +35,7 @@ const videos = [
     readingLength: 'Mayday C4',
   },
   {
-    id: 2,
+    id: 3,
     title: 'What technology can do for sustainability - The Google.org Impact Challenge on Climate',
     href: 'https://www.youtube.com/watch?t=75&v=Y1X3BzuNgdA&feature=youtu.be',
     date: 'Jul 6, 2021',
@@ -36,7 +47,7 @@ const videos = [
     readingLength: 'Euractiv',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Interview with Kate Raworth at Trees as Infrastructure Workshop',
     href: 'https://vimeo.com/showcase/6628565/video/377023491',
     date: '2019',
@@ -48,7 +59,7 @@ const videos = [
     readingLength: 'Dark Matter Labs',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Interview with Mathias Disney at Trees as Infrastructure Workshop',
     href: 'https://vimeo.com/showcase/6628565/video/377020523',
     date: '2019',
@@ -59,7 +70,7 @@ const videos = [
     readingLength: 'Dark Matter Labs',
   },
   {
-    id: 5,
+    id: 6,
     title: 'Interview with Michelle Zucker at Trees as Infrastructure Workshop',
     href: 'https://vimeo.com/showcase/6628565/video/379088421',
     date: '2019',
@@ -70,7 +81,7 @@ const videos = [
     readingLength: 'Dark Matter Labs',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Interview with Jim C. Smith at Trees as Infrastructure Workshop',
     href: 'https://vimeo.com/showcase/6628565/video/381168491',
     date: '2019',
@@ -85,6 +96,28 @@ const videos = [
 const blogPosts = [
   {
     id: 0,
+    title: 'TreesAI: Unlocking system barriers to finance Nature-based Solutions',
+    href: 'https://provocations.darkmatterlabs.org/treesai-unlocking-system-barriers-to-finance-nature-based-solutions-398e9d618623',
+    date: 'April 18, 2023',
+    datetime: '2023-04-18',
+    category: { name: 'Report' },
+    imageUrl: 'assets/barriers.png',
+    preview: 'How can we overcome existing structural challenges to reach investment readiness for the long-term stewardship of Nature-based Solutions in cities?',
+    readingLength: '18 mins',
+  },
+  {
+    id: 1,
+    title: 'Green Urban Scenarios: Change in Complexity',
+    href: 'https://lucidmindsai.medium.com/green-urban-scenarios-298d75b100b4',
+    date: 'Sep 15, 2022',
+    datetime: '2022-09-15',
+    category: { name: 'Report' },
+    imageUrl: 'assets/GUS.png',
+    preview: 'A series of posts on a framework and software that we have built within the TreesAI project.',
+    readingLength: '5 mins',
+  },
+  {
+    id: 2,
     title: 'TreesAI - Blue Paper',
     href: 'https://drive.google.com/file/d/127XlBUlQ-9_llwJawalifxWoqbBxG8ha/view?usp=sharing',
     date: 'Dec 17, 2021',
@@ -95,7 +128,7 @@ const blogPosts = [
     readingLength: '2 hours',
   },
   {
-    id: 1,
+    id: 3,
     title: 'Trees as Infrastructure Report 1',
     href: 'https://provocations.darkmatterlabs.org/trees-as-infrastructure-1dd94e1cfedf',
     date: 'Feb 10, 2020',
@@ -106,7 +139,7 @@ const blogPosts = [
     readingLength: '15 min',
   },
   {
-    id: 2,
+    id: 4,
     title: 'Trees as Infrastructure Report 2',
     href: 'https://provocations.darkmatterlabs.org/trees-as-infrastructure-aa141acdf227',
     date: 'Mar 6, 2020',
@@ -118,7 +151,7 @@ const blogPosts = [
     readingLength: '15 min',
   },
   {
-    id: 3,
+    id: 5,
     title:
       'Delivering urban Nature-based Solutions in Scotland at Scale: Growing regenerative cities',
     href: 'https://drive.google.com/file/d/1OdtF45v59Zh7TDDrNRifnp4e6Cl4OIK0/view',
@@ -132,6 +165,27 @@ const blogPosts = [
 ];
 
 const posts = [
+  {
+    title: 'TreesAI Shows Communities How to Maintain and Grow Their Urban Forests',
+    href: 'https://www.architectmagazine.com/technology/treesai-shows-communities-how-to-maintain-and-grow-their-urban-forests_o',
+    description: 'Architect Magazine',
+    date: 'Oct 17, 2022',
+    datetime: '2022-10-17',
+  },
+  {
+    title: 'Trees as infrastructure in the new Glasgow plan',
+    href: 'https://www.domusweb.it/en/speciali/domus-air/2022/treesare-infrastructure.html',
+    description: 'Domus',
+    date: 'March 31, 2022',
+    datetime: '2022-03-31',
+  },
+  {
+    title: 'Turning COP26’s energy and enthusiasm into citywide change',
+    href: 'https://www.weforum.org/agenda/2022/01/turning-cop26-s-energy-and-enthusiasm-into-citywide-change',
+    description: 'World Economic Forum',
+    date: 'Jan 19, 2022',
+    datetime: '2022-01-19',
+  },
   {
     title: "Beyond Carbon: Why We Can't Plant Our Way Out Of Climate Change",
     href: 'https://www.nadinagalle.com/podcasts/s3e7-beyond-carbon-why-we-cant-plant-our-way-out-of-climate-change-with-carlotta-conte-of-dark-matter-labs',
