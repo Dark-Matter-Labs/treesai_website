@@ -96,6 +96,17 @@ const videos = [
 const blogPosts = [
   {
     id: 0,
+    title: 'TreesAI Glasgow Pilot Learning Report',
+    href: 'https://darkmatterlabs.notion.site/darkmatterlabs/TreesAI-Glasgow-Pilot-Learning-report-16-10-bd46c620542d4159af830ae6b3a943ed',
+    date: 'October 16, 2023',
+    datetime: '2023-10-16',
+    category: { name: 'Report' },
+    imageUrl: 'assets/Frame.png',
+    preview: 'TreesAI provides a series of tools to help establish nature as a critical, and investable, part of urban infrastructure. Over the past two years, we’ve been building the TreesAI Pilot in Glasgow, Scotland.',
+    readingLength: '30 mins',
+  },
+  {
+    id: 1,
     title: 'TreesAI: Unlocking system barriers to finance Nature-based Solutions',
     href: 'https://provocations.darkmatterlabs.org/treesai-unlocking-system-barriers-to-finance-nature-based-solutions-398e9d618623',
     date: 'April 18, 2023',
@@ -106,7 +117,7 @@ const blogPosts = [
     readingLength: '18 mins',
   },
   {
-    id: 1,
+    id: 2,
     title: 'Green Urban Scenarios: Change in Complexity',
     href: 'https://lucidmindsai.medium.com/green-urban-scenarios-298d75b100b4',
     date: 'Sep 15, 2022',
@@ -117,7 +128,7 @@ const blogPosts = [
     readingLength: '5 mins',
   },
   {
-    id: 2,
+    id: 3,
     title: 'TreesAI - Blue Paper',
     href: 'https://drive.google.com/file/d/127XlBUlQ-9_llwJawalifxWoqbBxG8ha/view?usp=sharing',
     date: 'Dec 17, 2021',
@@ -128,7 +139,7 @@ const blogPosts = [
     readingLength: '2 hours',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Trees as Infrastructure Report 1',
     href: 'https://provocations.darkmatterlabs.org/trees-as-infrastructure-1dd94e1cfedf',
     date: 'Feb 10, 2020',
@@ -139,7 +150,7 @@ const blogPosts = [
     readingLength: '15 min',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Trees as Infrastructure Report 2',
     href: 'https://provocations.darkmatterlabs.org/trees-as-infrastructure-aa141acdf227',
     date: 'Mar 6, 2020',
@@ -151,7 +162,7 @@ const blogPosts = [
     readingLength: '15 min',
   },
   {
-    id: 5,
+    id: 6,
     title:
       'Delivering urban Nature-based Solutions in Scotland at Scale: Growing regenerative cities',
     href: 'https://drive.google.com/file/d/1OdtF45v59Zh7TDDrNRifnp4e6Cl4OIK0/view',
