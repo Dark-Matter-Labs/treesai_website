@@ -411,7 +411,7 @@ export default function Reports() {
                           </div>
                           <div className='flex-1 bg-white p-6 flex flex-col justify-between'>
                             <div className='flex-1'>
-                              <p className='text-sm font-medium text-blue2'>
+                              <p className='book-info-sm'>
                                 <a
                                   href={post.href}
                                   target='_blank'
@@ -427,8 +427,8 @@ export default function Reports() {
                                 rel='noreferrer noopener'
                                 className='block mt-2'
                               >
-                                <p className='text-xl font-semibold text-gray-900'>{post.title}</p>
-                                <p className='mt-3 text-base text-gray-500 text-dark'>
+                                <p className='bold-intro-sm text-gray-900'>{post.title}</p>
+                                <p className='book-intro-sm text-gray-500 text-dark'>
                                   {post.preview}
                                 </p>
                               </a>
@@ -436,10 +436,10 @@ export default function Reports() {
                             <div className='mt-6 flex items-center'>
                               <div className='ml-3 text-gray-500'>
                                 <div className='flex space-x-1'>
-                                  <p className='text-sm text-gray-900'>{post.readingLength}</p>
+                                  <p className='book-info-sm text-gray-900'>{post.readingLength}</p>
                                 </div>
                                 <div className='flex space-x-1'>
-                                  <p className='text-sm text-dark'>{post.date}</p>
+                                  <p className='book-info-sm text-dark'>{post.date}</p>
                                 </div>
                               </div>
                             </div>
@@ -466,7 +466,7 @@ export default function Reports() {
                           </div>
                           <div className='flex-1 bg-white p-6 flex flex-col justify-between'>
                             <div className='flex-1'>
-                              <p className='text-sm font-medium text-blue2'>
+                              <p className='book-info-sm text-blue2'>
                                 <a
                                   href={post.href}
                                   target='_blank'
@@ -482,19 +482,18 @@ export default function Reports() {
                                 rel='noreferrer noopener'
                                 className='block mt-2'
                               >
-                                <p className='text-xl font-semibold text-gray-900'>{post.title}</p>
-                                <p className='mt-3 text-base text-gray-500 text-dark'>
+                                <p className='bold-intro-sm text-gray-900'>{post.title}</p>
+                                <p className='mt-3 book-intro-sm text-gray-500 text-dark'>
                                   {post.preview}
                                 </p>
                               </a>
                             </div>
                             <div className='mt-6 flex items-center'>
                               <div className='ml-3'>
-                                <span className='text-sm'>Trees as Infrastructure</span>
-                                <div className='flex space-x-1 text-sm text-dark'>
+                                <div className='flex space-x-1 book-info-sm text-dark'>
                                   <time dateTime={post.datetime}>{post.date}</time>
                                   <span aria-hidden='true'>&middot;</span>
-                                  <div className='text-gray-500'>
+                                  <div className='text-gray-500 book-info-sm'>
                                     <span>{post.readingLength} read</span>
                                   </div>
                                 </div>
@@ -509,7 +508,7 @@ export default function Reports() {
                     <div className='mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl'>
                       {posts.map((post) => (
                         <div key={post.title}>
-                          <p className='text-sm text-gray-500'>
+                          <p className='book-info-sm text-gray-500'>
                             <time dateTime={post.datetime}>{post.date}</time>
                           </p>
                           <a
@@ -518,15 +517,15 @@ export default function Reports() {
                             rel='noreferrer noopener'
                             className='mt-2 block'
                           >
-                            <p className='text-xl font-semibold text-gray-900'>{post.title}</p>
-                            <p className='mt-3 text-base text-gray-500'>{post.description}</p>
+                            <p className='bold-intro-sm text-gray-900'>{post.title}</p>
+                            <p className='mt-3 book-intro-sm text-gray-500'>{post.description}</p>
                           </a>
                           <div className='mt-3'>
                             <a
                               href={post.href}
                               target='_blank'
                               rel='noreferrer noopener'
-                              className='text-base font-semibold text-blue2 hover:text-blue1'
+                              className='bold-info-sm text-blue2 hover:text-indigo-600'
                             >
                               Read full story
                             </a>
