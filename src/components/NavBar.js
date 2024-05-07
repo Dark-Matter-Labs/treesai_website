@@ -4,9 +4,8 @@ import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 const navigation = [
-  { name: 'Product', href: 'products' },
-  { name: 'Pilot', href: 'pilot' },
-  { name: 'Testimonials', href: 'testimonials' },
+  { name: 'Services', href: 'pilot' },
+  { name: 'Current Work', href: 'testimonials' },
   { name: 'Resources', href: 'reports' },
   { name: 'Get in touch', href: 'contact' },
 ];
@@ -19,10 +18,10 @@ export default class NavBar extends Component {
 
   render() {
     return (
-      <Popover as='header' className='relative video-overlay'>
+      <Popover as='header' className='relative '>
         {({ close }) => (
           <>
-            <div className='bg-transparent lg:pt-6 md:pt-2 sm:pt-2'>
+            <div className='bg-black py-5 mb-4 rounded-b-[60px]'>
               <nav
                 className='relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6'
                 aria-label='Global'
@@ -43,13 +42,13 @@ export default class NavBar extends Component {
                       </Popover.Button>
                     </div>
                   </div>
-                  <div className='hidden md:hidden lg:block space-x-8 md:flex right-float'>
+                  <div className='hidden lg:block space-x-8 md:flex right-float'>
                     {navigation.map((item) => (
                       <Link
                         to={item.href}
                         smooth={true}
                         key={item.name}
-                        className='text-base font-medium text-white hover:text-light pointer-cursor'
+                        className='book-intro-sm text-white hover:font-bold pointer-cursor'
                       >
                         {item.name}
                       </Link>
