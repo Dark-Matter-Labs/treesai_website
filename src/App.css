@@ -88,41 +88,9 @@ iframe {
   height: 100%;
 }
 
-.map-container {
-  height: 100vh;
-}
 
-.map-container-portfolio {
-  height: 80vh;
-}
 
-#marker {
-  background-image: url('https://docs.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg');
-  background-size: cover;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-}
 
-.mapboxgl-popup {
-  max-width: 200px;
-}
-
-.mapboxgl-popup-content {
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.input-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.input-inside {
-  width: 80%;
-}
 
 .add-to-market {
   background: url(images/Banner-image.jpg);
@@ -133,10 +101,6 @@ iframe {
   height: 100%;
 }
 
-#map {
-  width: 100vw;
-  height: 100vh;
-}
 
 .outcomes-panel {
   background: url(images/outcomes-panel.png);
@@ -184,4 +148,141 @@ iframe {
   background-position: center center;
   width: 100%;
   height: 100%;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  h1 {
+    @apply font-favorit text-5xl font-medium leading-6;
+  }
+
+  h2 {
+    @apply font-favorit text-4xl font-medium leading-6;
+  }
+
+  h3 {
+    @apply font-favorit text-3xl font-medium leading-5;
+  }
+
+  .book-info-sm {
+    @apply font-favoritBook text-sm font-book leading-4;
+  }
+
+  .book-info-md {
+    @apply font-favoritBook text-base font-book leading-4;
+  }
+
+  .book-intro-sm {
+    @apply font-favoritBook font-book text-md leading-4;
+  }
+
+  .book-intro-md {
+    @apply font-favoritBook font-book text-xl font-book leading-4;
+  }
+
+  .book-intro-lg {
+    @apply font-favoritBook font-book text-2xl font-book leading-5;
+  }
+
+  .medium-intro-sm {
+    @apply font-favorit text-md font-medium leading-4;
+  }
+
+  .medium-intro-md {
+    @apply font-favorit text-xl font-medium leading-4;
+  }
+
+  .medium-intro-lg {
+    @apply font-favorit text-2xl font-medium leading-5;
+  }
+
+  .bold-intro-sm {
+    @apply font-favorit text-md font-bold leading-4;
+  }
+
+  .bold-intro-md {
+    @apply font-favorit text-4xl font-bold leading-4;
+  }
+
+  .bold-intro-lg {
+    @apply font-favorit text-5xl font-bold leading-5;
+  }
+
+  .global-margin {
+    @apply max-w-screen-2xl;
+    @apply mx-7;
+    @apply md:mx-10;
+    @apply xl:mx-20;
+    @apply 2xl:mx-auto;
+  }
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-pattern {
+  background-image: url('./images/patter_treesAI_01.svg');
+  background-repeat: no-repeat;
+  background-size: 90%;
+}
+
+.bg-header {
+  background-image: url('./images/header.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.bg-problemSolution {
+  background-image: url('./images/bg-statement.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-pd {
+  background-image: url('./images/pd-shape.svg');
+  background-repeat: no-repeat;
+}
+
+.bg-investor {
+  background-image: url('./images/invest-shape.svg');
+  background-repeat: no-repeat;
+}
+
+.bg-registry {
+  background-image: url('./images/registry.svg');
+  background-repeat: no-repeat;
+}
+
+.bg-invest-contact {
+  background-image: url('./images/invest-with-us.svg');
+  background-repeat: no-repeat;
+}
+
+.title-box-info {
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+}
+
+.title-text-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.measure-background-shape {
+  background: url('./images/upload.svg') top no-repeat;
+}
+
+.list-background-shape {
+  background: url('./images/explore.svg') top no-repeat;
+}
+
+.plan-background-shape {
+  background: url('./images/demo.svg') top no-repeat;
 }
