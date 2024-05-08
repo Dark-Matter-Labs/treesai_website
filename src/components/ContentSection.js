@@ -20,7 +20,7 @@ export default function ContentSections() {
               <div className='py-20'>
         <div className='my-10 grid'>
           <div className='place-self-center text-center max-w-3xl '>
-            <h2 className='text-dark-wood-800'>TreesAI can provide multiple benefits</h2>
+            <h2 className='text-dark-wood-800'>Trees can provide multiple benefits</h2>
           </div>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0'>
