@@ -137,7 +137,7 @@ export default function ContentSections() {
             <hr className='sm:col-span-3 my-8 border-indigo-600' />
 
             <div>
-                <h3 className='text-black'>Baseline and Scenario Valuation</h3>
+                <h3 className='text-black max-w-sm'>Baseline and Scenario Valuation</h3>
             </div>
             <div className='sm:col-span-2'>
                 <p className='book-intro-md'>Assessing the cost and benefits of green infrastructure projects; enabling informed decision-making about adaptation strategies.</p>
