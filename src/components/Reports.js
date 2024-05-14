@@ -112,7 +112,7 @@ const blogPosts = [
     href: 'https://provocations.darkmatterlabs.org/treesai-is-implementing-location-based-scoring-in-stuttgart-c54c752bdaaf',
     date: 'April 10, 2024',
     datetime: '2024-04-10',
-    category: { name: 'Report' },
+    category: { name: 'Blog' },
     imageUrl: 'assets/StuttgartMedium.png',
     preview:
       'In this blog we summarise how one of our tools, the TreesAI Location-based Scoring, has been applied in Stuttgart to assess climate risks spatially and support the design and prioritisation of different urban nature-based solutions.',
@@ -125,7 +125,7 @@ const blogPosts = [
     href: 'https://auf.isa-arbor.com/content/50/1/109',
     date: 'January 1, 2024',
     datetime: '2024-1-1',
-    category: { name: 'Report' },
+    category: { name: 'Academic Paper' },
     imageUrl: 'assets/1.cover-source.jpg',
     preview:
       'The paper presents the Green Urban Scenarios (GUS) framework for designing and monitoring green infrastructures. GUS considers weather, maintenance, tree species, diseases, and spatial distributions of trees to forecast their impacts.',
@@ -149,7 +149,7 @@ const blogPosts = [
     href: 'https://aws.amazon.com/blogs/hpc/accelerating-green-urban-planning-simulations-with-aws-batch/',
     date: 'November 1, 2023',
     datetime: '2023-11-1',
-    category: { name: 'Report' },
+    category: { name: 'Blog' },
     imageUrl: 'assets/GUS2.png',
     preview:
       'In this blog post, we’ll explore how the Netherlands-based organization Lucidminds AI is addressing this challenge through their Green Urban Scenarios simulator (GUS).',

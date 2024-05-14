@@ -8,8 +8,6 @@ html {
 }
 
 .vimeo-container {
-  width: 100%;
-  height: 100vh;
   position: relative;
   background-color: black;
 }
@@ -95,7 +93,7 @@ iframe {
   }
 
   .bold-intro-lg {
-    @apply font-favorit text-5xl font-bold leading-5;
+    @apply font-favorit text-2xl font-bold leading-5;
   }
 
   .global-margin {

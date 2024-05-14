@@ -4,8 +4,8 @@ import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 const navigation = [
-  { name: 'Services', href: 'pilot' },
-  { name: 'Current Work', href: 'testimonials' },
+  { name: 'Services', href: 'services' },
+  { name: 'Current Work', href: 'work' },
   { name: 'Resources', href: 'reports' },
   { name: 'Get in touch', href: 'contact' },
 ];
@@ -42,13 +42,13 @@ export default class NavBar extends Component {
                       </Popover.Button>
                     </div>
                   </div>
-                  <div className='hidden lg:block space-x-8 md:flex right-float'>
+                  <div className='hidden sm:block space-x-8 md:flex right-float'>
                     {navigation.map((item) => (
                       <Link
                         to={item.href}
                         smooth={true}
                         key={item.name}
-                        className='book-intro-sm text-white hover:font-bold pointer-cursor'
+                        className='book-intro-sm text-white hover:font-bold cursor-pointer'
                       >
                         {item.name}
                       </Link>
@@ -71,7 +71,7 @@ export default class NavBar extends Component {
               <Popover.Panel
                 focus
                 static
-                className='absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden'
+                className='absolute top-0 inset-x-0 p-2 transition transform origin-top sm:hidden'
               >
                 <div className='rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden'>
                   <div className='px-5 pt-4 flex items-center justify-between'>

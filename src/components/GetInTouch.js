@@ -1,9 +1,10 @@
 export default function GetInTouch() {
   return (
-    <div className='my-20'>
+    <div id='contact' className='my-20'>
       <div className='my-10 grid'>
         <div className='place-self-center text-center max-w-3xl '>
           <h2 className='text-dark-wood-800'>Contact us</h2>
+          <h3>treesai@darkmatterlabs.org</h3>
         </div>
       </div>
       <div className='grid grid-col-1 sm:grid-cols-2 '>

@@ -1,6 +1,9 @@
-import naturePortfolioImage from '../images/nature-portfolios.png';
-import natureTokenImage from '../images/nature-tokens.png';
-import aiModelImage from '../images/ai-models.png';
+import airIcon from '../images/air.png';
+import heatIcon from '../images/heat.png';
+import floodIcon from '../images/flood.png';
+import healthIcon from '../images/health.png';
+import energyIcon from '../images/energy.png';
+import wasteIcon from '../images/waste.png';
 import SectionHeader from './SectionHeader';
 
 export default function ContentSections() {
@@ -13,6 +16,18 @@ export default function ContentSections() {
       url: 'assets/partner_logos/world_economic_forum.png',
     },
     { name: 'Google.org', url: 'assets/partner_logos/google.org_logo.png' },
+    { name: 'Stuttgart Innovations Fonds', url: 'assets/partner_logos/inno.png' },
+    { name: 'The Nature Conservancy', url: 'assets/partner_logos/TNC.png' },
+    { name: 'Woodland Trust', url: 'assets/partner_logos/WT.png' },
+    { name: 'EU Commission', url: 'assets/partner_logos/EU.png' },
+    { name: 'Esmee Fairbairn Foundation', url: 'assets/partner_logos/EFF.png' },
+    { name: 'Glasgow City Council', url: 'assets/partner_logos/GCC.png' },
+    { name: 'Madrid City Council', url: 'assets/partner_logos/Madrid.png' },
+    { name: 'Stuttgart City Council', url: 'assets/partner_logos/Stuttgart.png' },
+    { name: 'VAIV', url: 'assets/partner_logos/VAIV.png' },
+    { name: 'IBM', url: 'assets/partner_logos/IBM.png' },
+    { name: 'Lucidminds', url: 'assets/partner_logos/LM.png' },
+    { name: 'Evergreen', url: 'assets/partner_logos/Evergreen.png' },
   ];
 
   return (
@@ -20,28 +35,32 @@ export default function ContentSections() {
       <div className='py-20'>
         <div className='my-10 grid'>
           <div className='place-self-center text-center max-w-3xl '>
-            <h2 className='text-dark-wood-800'>Trees can provide multiple benefits</h2>
+            <h2 className='text-dark-wood-800'>
+              <span className='text-green-700'>Trees can</span> provide multiple benefits
+            </h2>
           </div>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0'>
           <div className='flex flex-col items-center justify-center'>
-            <img className='pb-2 h-48 ' src={naturePortfolioImage} alt='' />
-            <h3 className='text-dark-wood-800 pb-2'>Improving air quality</h3>
-            <p className='book-intro-lg text-dark-wood-800 max-w-sm'>
+            <img className='pb-8 h-48 ' src={airIcon} alt='' />
+            <p className='text-dark-wood-800 medium-intro-lg pb-2'>Improving air quality</p>
+            <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
               Removing pollutants from the air
             </p>
           </div>
           <div className='flex flex-col items-center justify-center'>
-            <img className='pb-2 h-48' src={natureTokenImage} alt='' />
-            <h3 className='text-dark-wood-800 pb-2'>Reducing heat island effects</h3>
-            <p className='book-intro-lg text-dark-wood-800 max-w-sm'>
+            <img className='pb-8 h-48' src={heatIcon} alt='' />
+            <p className='text-dark-wood-800  medium-intro-lg pb-2'>Reducing heat island effects</p>
+            <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
               Reducing summer temperatures by 5 degrees
             </p>
           </div>
           <div className='flex flex-col items-center justify-center'>
-            <img className='pb-2 h-48' src={aiModelImage} alt='' />
-            <h3 className='text-dark-wood-800 pb-2'>Reducing flooding</h3>
-            <p className='book-intro-lg text-dark-wood-800 max-w-sm'>Absorbing rainwater</p>
+            <img className='pb-8 h-48' src={floodIcon} alt='' />
+            <p className='text-dark-wood-800  medium-intro-lg pb-2'>Reducing flooding</p>
+            <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
+              Absorbing rainwater
+            </p>
           </div>
         </div>
       </div>
@@ -49,38 +68,39 @@ export default function ContentSections() {
         <div className='my-10 grid'>
           <div className='place-self-center text-center max-w-4xl '>
             <h2 className='text-dark-wood-800'>
-              TreesAI can support existing urban infrastructures
+              <span className='text-indigo-700'>Trees can</span> support existing urban
+              infrastructures
             </h2>
           </div>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0'>
           <div className='flex flex-col items-center justify-center'>
-            <img className='pb-2 h-48 ' src={naturePortfolioImage} alt='' />
-            <h3 className='text-dark-wood-800 pb-2'>Health services</h3>
-            <p className='book-intro-lg text-dark-wood-800 max-w-sm'>
+            <img className='pb-8 h-48 ' src={healthIcon} alt='' />
+            <p className='text-dark-wood-800 medium-intro-lg pb-2'>Health services</p>
+            <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
               Alleviating acute and chronic respiratory issues
             </p>
           </div>
           <div className='flex flex-col items-center justify-center'>
-            <img className='pb-2 h-48' src={natureTokenImage} alt='' />
-            <h3 className='text-dark-wood-800 pb-2'>Energy Services</h3>
-            <p className='book-intro-lg text-dark-wood-800 max-w-sm'>
+            <img className='pb-8 h-48' src={energyIcon} alt='' />
+            <p className='text-dark-wood-800 medium-intro-lg pb-2'>Energy Services</p>
+            <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
               Reducing the need for air conditioning in surrounding buildings
             </p>
           </div>
           <div className='flex flex-col items-center justify-center'>
-            <img className='pb-2 h-48' src={aiModelImage} alt='' />
-            <h3 className='text-dark-wood-800 pb-2'>Waste water services</h3>
-            <p className='book-intro-lg text-dark-wood-800 max-w-sm'>
+            <img className='pb-8 h-48' src={wasteIcon} alt='' />
+            <p className='text-dark-wood-800  medium-intro-lg pb-2'>Waste water services</p>
+            <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
               Providing carbon-positive alternatives to sewerage facilities
             </p>
           </div>
         </div>
       </div>
       <div className=''>
-        <div className='bg-problemSolution h-[40rem] my-20'>
+        <div className='bg-problemSolution h-[40rem] my-20 flex flex-col items-center justify-center'>
           <div>
-            <div className='mx-auto max-w-2xl align-middle pt-40'>
+            <div className='mx-auto max-w-3xl '>
               <h2 className='text-white '>
                 We’re creating the required infrastructure to help cities and local communities
                 secure funding for urban trees and green spaces.
@@ -114,20 +134,23 @@ export default function ContentSections() {
       </div>
 
       <SectionHeader title='Data Services' />
-      <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-20 py-10 '>
+      <div
+        id='services'
+        className='bg-white-200 rounded-[50px] border border-indigo-600 px-20 py-10 '
+      >
         <div className='px-4'>
           <div className=' rounded-lg'>
-            <h2>
+            <h3 className='text-indigo-700'>
               Using existing data to create actionable insights; allowing cities to prioritise and
               implement Nature-based Solutions (NbS)
-            </h2>
+            </h3>
           </div>
         </div>
       </div>
-      <hr className='mx-20 border-8 border-green-600' />
+      <hr className='mx-20 border-8 border-indigo-600' />
       <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-20 py-10 grid grid-cols-1 sm:grid-cols-3 mb-20'>
         <div>
-          <h3 className='text-black'>Spatial Analysis</h3>
+          <p className='text-black bold-intro-lg'>Spatial Analysis</p>
         </div>
         <div className='sm:col-span-2'>
           <p className='book-intro-md'>
@@ -138,7 +161,7 @@ export default function ContentSections() {
         <hr className='sm:col-span-3 my-8 border-indigo-600' />
 
         <div>
-          <h3 className='text-black max-w-sm'>Baseline and Scenario Valuation</h3>
+          <p className='text-black bold-intro-lg max-w-sm'>Baseline and Scenario Valuation</p>
         </div>
         <div className='sm:col-span-2'>
           <p className='book-intro-md'>
@@ -148,7 +171,7 @@ export default function ContentSections() {
         </div>
         <hr className='sm:col-span-3 my-8 border-indigo-600' />
         <div>
-          <h3 className='text-black'>Innovative Interfaces</h3>
+          <p className='text-black bold-intro-lg'>Innovative Interfaces</p>
         </div>
         <div className='sm:col-span-2'>
           <p className='book-intro-md'>
@@ -158,7 +181,7 @@ export default function ContentSections() {
         </div>
         <hr className='sm:col-span-3 my-8 border-indigo-600' />
         <div>
-          <h3 className='text-black'>Impact Modelling </h3>
+          <p className='text-black bold-intro-lg'>Impact Modelling </p>
         </div>
         <div className='sm:col-span-2'>
           <p className='book-intro-md pb-2'>
@@ -171,7 +194,7 @@ export default function ContentSections() {
             >
               Lucidminds
             </a>
-            , we've developed the{' '}
+            , we’ve developed the{' '}
             <a
               className='text-indigo-600'
               target='_blank'
@@ -183,27 +206,27 @@ export default function ContentSections() {
             model to predict the impact of proposed changes
           </p>
           <p className='book-intro-md'>
-            Project Example: Seoul, South KoreaOngoing Project: Stuttgart, Germany
+            Project Example: Seoul, South Korea Ongoing Project: Stuttgart, Germany
           </p>
         </div>
       </div>
 
       <SectionHeader title='Management Services' />
-      <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-20 py-10 '>
+      <div className='bg-white-200 rounded-[50px] border border-green-600 px-20 py-10 '>
         <div className='px-4'>
           <div className=' rounded-lg'>
-            <h2>
+            <h3 className='text-green-600'>
               Supporting urban actors in crafting a portfolio of Nature-Based Solutions (NbS);
               exploring innovative and collective financing strategies, that help greener cities
               become a reality
-            </h2>
+            </h3>
           </div>
         </div>
       </div>
       <hr className='mx-20 border-8 border-green-600' />
-      <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-20 py-10 grid grid-cols-1 sm:grid-cols-3 mb-20'>
+      <div className='bg-white-200 rounded-[50px] border border-green-600 px-20 py-10 grid grid-cols-1 sm:grid-cols-3 mb-20'>
         <div>
-          <h3 className='text-black'>Crafting a City-Wide NbS Databases</h3>
+          <p className='text-black bold-intro-lg max-w-sm'>Crafting a City-Wide NbS Databases</p>
         </div>
         <div className='sm:col-span-2'>
           <p className='book-intro-md'>
@@ -211,17 +234,19 @@ export default function ContentSections() {
             Nature-Based Solutions 
           </p>
         </div>
-        <hr className='sm:col-span-3 my-8 border-indigo-600' />
+        <hr className='sm:col-span-3 my-8 border-green-600' />
 
         <div>
-          <h3 className='text-black max-w-sm'>Evaluating and Scoring Projects </h3>
+          <p className='text-black max-w-sm bold-intro-lg'>Evaluating and Scoring Projects </p>
         </div>
         <div className='sm:col-span-2'>
           <p className='book-intro-md'>Based on our spatial analysis methodology</p>
         </div>
-        <hr className='sm:col-span-3 my-8 border-indigo-600' />
+        <hr className='sm:col-span-3 my-8 border-green-600' />
         <div>
-          <h3 className='text-black'>Developing fit-for-purpose financial instruments</h3>
+          <p className='text-black bold-intro-lg max-w-xs'>
+            Developing fit-for-purpose financial instruments
+          </p>
         </div>
         <div className='sm:col-span-2'>
           <p className='book-intro-md'>
@@ -229,9 +254,9 @@ export default function ContentSections() {
             transition portfolios that allow trees to become an investable asset class.
           </p>
         </div>
-        <hr className='sm:col-span-3 my-8 border-indigo-600' />
+        <hr className='sm:col-span-3 my-8 border-green-600' />
         <div>
-          <h3 className='text-black'>Connecting cities with Opportunities</h3>
+          <p className='text-black bold-intro-lg max-w-xs'>Connecting cities with Opportunities</p>
         </div>
         <div className='sm:col-span-2'>
           <p className='book-intro-md pb-2'>
@@ -247,18 +272,18 @@ export default function ContentSections() {
       <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-20 py-10 '>
         <div className='px-4'>
           <div className=' rounded-lg'>
-            <h2>
+            <h3 className='text-indigo-600'>
               {' '}
               The success of a city’s Nature-based Solutions (NbS) depends on the people and
               communities making and implementing decisions
-            </h2>
+            </h3>
           </div>
         </div>
       </div>
-      <hr className='mx-20 border-8 border-green-600' />
+      <hr className='mx-20 border-8 border-indigo-600' />
       <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-20 py-10 grid grid-cols-1 sm:grid-cols-3 mb-20'>
         <div>
-          <h3 className='text-black'>Metric and indicator design</h3>
+          <p className='text-black bold-intro-lg max-w-xs'>Metric and indicator design</p>
         </div>
         <div className='sm:col-span-2'>
           <p className='book-intro-md'>
@@ -269,7 +294,9 @@ export default function ContentSections() {
         <hr className='sm:col-span-3 my-8 border-indigo-600' />
 
         <div>
-          <h3 className='text-black max-w-sm'>People-centred, data-enabled process design </h3>
+          <p className='text-black max-w-xs bold-intro-lg'>
+            People-centred, data-enabled process design 
+          </p>
         </div>
         <div className='sm:col-span-2'>
           <p className='book-intro-md'>
@@ -279,7 +306,9 @@ export default function ContentSections() {
         </div>
         <hr className='sm:col-span-3 my-8 border-indigo-600' />
         <div>
-          <h3 className='text-black max-w-sm'>Recognising and rewarding civic stewardship</h3>
+          <p className='text-black bold-intro-lg max-w-xs'>
+            Recognising and rewarding civic stewardship
+          </p>
         </div>
         <div className='sm:col-span-2'>
           <p className='book-intro-md'>
@@ -288,14 +317,14 @@ export default function ContentSections() {
         </div>
       </div>
 
-      <div className='my-10 grid'>
-        <div className='place-self-center text-center max-w-3xl '>
+      <div id='work' className='my-10 grid'>
+        <div className='place-self-center text-center max-w-3xl pb-10'>
           <h2 className='text-dark-wood-800'>Right now, we are working on:</h2>
         </div>
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-12 justify-items-center'>
-        <div className=''>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-20 justify-items-center'>
+        <div className='grid grid-cols-1 justify-items-stretch'>
           <div className='title-text-container plan-background-shape py-28 px-28'>
             <h3 className='text-center text-white-200'>TreesAI Stuttgart</h3>
           </div>
@@ -319,7 +348,7 @@ export default function ContentSections() {
           </div>
         </div>
 
-        <div className=''>
+        <div className='grid grid-cols-1 justify-items-stretch'>
           <div className='title-text-container measure-background-shape py-28 px-28'>
             <h3 className='text-center text-white-200'>TreesAI Seoul</h3>
           </div>
@@ -342,7 +371,7 @@ export default function ContentSections() {
           </div>
         </div>
 
-        <div className=''>
+        <div className='grid grid-cols-1 justify-items-stretch'>
           <div className='title-text-container list-background-shape py-28 px-28'>
             <h3 className='text-center text-white-200'>TreesAI Glasgow</h3>
           </div>
@@ -368,7 +397,7 @@ export default function ContentSections() {
           </div>
         </div>
 
-        <div className=''>
+        <div className='grid grid-cols-1 justify-items-stretch'>
           <div className='title-text-container list-background-shape py-28 px-28'>
             <h3 className='text-center text-white-200'>Nature Demo</h3>
           </div>
@@ -376,9 +405,14 @@ export default function ContentSections() {
             As part of the Horizon 2020, we’re supporting the 20-partner consortium with expertise
             on green financing and innovative governance.
           </p>
+          <div className='pt-4 text-center'>
+            <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-600'>
+              Coming soon
+            </button>
+          </div>
         </div>
 
-        <div className=''>
+        <div className='grid grid-cols-1 justify-items-stretch'>
           <div className='title-text-container plan-background-shape py-28 px-28'>
             <h3 className='text-center text-white-200'>UR-Breath, Madrid</h3>
           </div>
@@ -397,7 +431,7 @@ export default function ContentSections() {
           </div>
         </div>
 
-        <div className=''>
+        <div className='grid grid-cols-1 justify-items-stretch'>
           <div className='title-text-container measure-background-shape py-28 px-28'>
             <h3 className='text-center text-white-200'>Equitable Urban Forestry, UK</h3>
           </div>
@@ -407,6 +441,11 @@ export default function ContentSections() {
             prioritise often-marginalised communities.
           </p>
           <p className='book-intro-sm max-w-xs mx-auto pt-2'>Partner: Urban Forest Accelerator</p>
+          <div className='pt-4 text-center'>
+            <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-600'>
+              Coming soon
+            </button>
+          </div>
         </div>
       </div>
     </div>

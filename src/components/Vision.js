@@ -4,7 +4,7 @@ export default class Vision extends Component {
   render() {
     return (
       <>
-        <div className='global-margin pt-10 px-10 bg-black overflow-hidden vimeo-container rounded-tl-[120px] rounded-r-[120px] heightFull'>
+        <div className='global-margin pt-10  bg-black overflow-hidden vimeo-container rounded-tl-[120px] rounded-r-[120px] '>
           <iframe
             title='banner video'
             className=''
@@ -12,8 +12,8 @@ export default class Vision extends Component {
             allowFullScreen
           ></iframe>
           <div className=' video-overlay'>
-            <div className='lg:grid lg:grid-cols-2 lg:gap-8 '>
-              <div className='mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center'>
+            <div className='grid grid-cols-2 gap-8 '>
+              <div className='mx-auto max-w-2xl pl-6 pt-4 lg:text-left lg:flex lg:items-center'>
                 <div className='lg:py-24'>
                   <div className=''>
                     <img className='h-8 sm:h-20' src='assets/TreesAI_logo.svg' alt='TreesAI logo' />

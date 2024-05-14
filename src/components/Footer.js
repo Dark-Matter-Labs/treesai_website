@@ -64,23 +64,29 @@ export default function Footer() {
               />
             </div>
           </div>
-          <div className='md:grid md:grid-cols-2 md:gap-8 sm:place-self-end'>
-            <div>
+          <div className='sm:grid sm:grid-cols-2 '>
+            <div className='place-self-end'>
               <ul className='mt-4 space-y-4'>
                 {navigation.support.map((item) => (
                   <li key={item.name}>
-                    <a href={item.href} className='text-base text-dark-wood-300 hover:text-white'>
+                    <a
+                      href={item.href}
+                      className='book-info-md text-dark-wood-300 hover:text-white'
+                    >
                       {item.name}
                     </a>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className='mt-12 md:mt-0'>
+            <div className='mt-12 md:mt-0 place-self-end'>
               <ul className='mt-4 space-y-4'>
                 {navigation.legal.map((item) => (
                   <li key={item.name}>
-                    <a href={item.href} className='text-base text-dark-wood-300 hover:text-white'>
+                    <a
+                      href={item.href}
+                      className='book-info-md text-dark-wood-300 hover:text-white'
+                    >
                       {item.name}
                     </a>
                   </li>
