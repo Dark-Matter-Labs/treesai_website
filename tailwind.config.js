@@ -3,8 +3,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        favorit: ["ABCFavorit", "sans-serif"],
-        favoritBook: ["ABCFavorit Book", "sans-serif"],
+        favorit: ['"ABCFavorit"', "sans-serif"],
+        favoritBook: ['"ABCFavorit Book"', "sans-serif"],
       },
       colors: {
         "white-200": "#FCFCFC",
@@ -59,7 +59,6 @@ module.exports = {
     },
   },
   plugins: [
-    require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/forms"),
   ],
 };

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
 .vimeo-container {
   width: 100%;
   height: 100vh;
@@ -101,7 +106,6 @@ iframe {
     @apply 2xl:mx-auto;
   }
 }
-
 
 
 .bg-pattern {
