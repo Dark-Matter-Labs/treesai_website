@@ -64,7 +64,7 @@ export default function ContentSections() {
           </div>
         </div>
       </div>
-      <div className=' pb-20'>
+      <div className=' pb-12'>
         <div className='my-10 grid'>
           <div className='place-self-center text-center max-w-4xl '>
             <h2 className='text-dark-wood-800'>
@@ -98,7 +98,7 @@ export default function ContentSections() {
         </div>
       </div>
       <div className=''>
-        <div className='bg-problemSolution h-[40rem] my-20 flex flex-col items-center justify-center'>
+        <div className='bg-problemSolution h-[40rem] mb-20 flex flex-col items-center justify-center'>
           <div>
             <div className='mx-auto max-w-3xl '>
               <h2 className='text-white '>
@@ -109,7 +109,7 @@ export default function ContentSections() {
           </div>
         </div>
       </div>
-      <div className='rounded-b-[140px] bg-dark-wood-800 mb-40 '>
+      <div className='rounded-b-[140px] bg-dark-wood-800 my-20 '>
         <div className='py-16 '>
           <div className=''>
             <div className='text-center pb-4 border-b border-white-200'>
@@ -226,7 +226,7 @@ export default function ContentSections() {
       <hr className='mx-20 border-8 border-green-600' />
       <div className='bg-white-200 rounded-[50px] border border-green-600 px-20 py-10 grid grid-cols-1 sm:grid-cols-3 mb-20'>
         <div>
-          <p className='text-black bold-intro-lg max-w-sm'>Crafting a City-Wide NbS Databases</p>
+          <p className='text-black bold-intro-lg max-w-sm'>Crafting a City-Wide NbS Database</p>
         </div>
         <div className='sm:col-span-2'>
           <p className='book-intro-md'>
