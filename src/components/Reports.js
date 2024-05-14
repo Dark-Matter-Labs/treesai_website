@@ -114,18 +114,21 @@ const blogPosts = [
     datetime: '2024-04-10',
     category: { name: 'Report' },
     imageUrl: 'assets/StuttgartMedium.png',
-    preview: 'In this blog we summarise how one of our tools, the TreesAI Location-based Scoring, has been applied in Stuttgart to assess climate risks spatially and support the design and prioritisation of different urban nature-based solutions.',
+    preview:
+      'In this blog we summarise how one of our tools, the TreesAI Location-based Scoring, has been applied in Stuttgart to assess climate risks spatially and support the design and prioritisation of different urban nature-based solutions.',
     readingLength: '8 mins',
   },
   {
     id: 1,
-    title: 'Green Urban Scenarios: A Framework for Digital Twin Representation and Simulation for Urban Forests and Their Impact Analysis',
+    title:
+      'Green Urban Scenarios: A Framework for Digital Twin Representation and Simulation for Urban Forests and Their Impact Analysis',
     href: 'https://auf.isa-arbor.com/content/50/1/109',
     date: 'January 1, 2024',
     datetime: '2024-1-1',
     category: { name: 'Report' },
     imageUrl: 'assets/1.cover-source.jpg',
-    preview: 'The paper presents the Green Urban Scenarios (GUS) framework for designing and monitoring green infrastructures. GUS considers weather, maintenance, tree species, diseases, and spatial distributions of trees to forecast their impacts.',
+    preview:
+      'The paper presents the Green Urban Scenarios (GUS) framework for designing and monitoring green infrastructures. GUS considers weather, maintenance, tree species, diseases, and spatial distributions of trees to forecast their impacts.',
     readingLength: '1 hour',
   },
   {
@@ -136,7 +139,8 @@ const blogPosts = [
     datetime: '2023-11-30',
     category: { name: 'Report' },
     imageUrl: 'assets/NASA_2_Banner.jpg',
-    preview: 'IBM continues to advance its AI model strategy in part through the creation, training, fine-tuning and open-sourcing of foundation models – models that can be used for different tasks and apply information from one situation to another – designed for domains beyond natural language, including geospatial applications.',
+    preview:
+      'IBM continues to advance its AI model strategy in part through the creation, training, fine-tuning and open-sourcing of foundation models – models that can be used for different tasks and apply information from one situation to another – designed for domains beyond natural language, including geospatial applications.',
     readingLength: '10 mins',
   },
   {
@@ -147,7 +151,8 @@ const blogPosts = [
     datetime: '2023-11-1',
     category: { name: 'Report' },
     imageUrl: 'assets/GUS2.png',
-    preview: 'In this blog post, we’ll explore how the Netherlands-based organization Lucidminds AI is addressing this challenge through their Green Urban Scenarios simulator (GUS).',
+    preview:
+      'In this blog post, we’ll explore how the Netherlands-based organization Lucidminds AI is addressing this challenge through their Green Urban Scenarios simulator (GUS).',
     readingLength: '30 mins',
   },
   {
@@ -158,7 +163,8 @@ const blogPosts = [
     datetime: '2023-10-16',
     category: { name: 'Report' },
     imageUrl: 'assets/Frame.png',
-    preview: 'TreesAI provides a series of tools to help establish nature as a critical, and investable, part of urban infrastructure. Over the past two years, we’ve been building the TreesAI Pilot in Glasgow, Scotland.',
+    preview:
+      'TreesAI provides a series of tools to help establish nature as a critical, and investable, part of urban infrastructure. Over the past two years, we’ve been building the TreesAI Pilot in Glasgow, Scotland.',
     readingLength: '30 mins',
   },
   {
@@ -169,7 +175,8 @@ const blogPosts = [
     datetime: '2023-04-18',
     category: { name: 'Report' },
     imageUrl: 'assets/barriers.png',
-    preview: 'How can we overcome existing structural challenges to reach investment readiness for the long-term stewardship of Nature-based Solutions in cities?',
+    preview:
+      'How can we overcome existing structural challenges to reach investment readiness for the long-term stewardship of Nature-based Solutions in cities?',
     readingLength: '18 mins',
   },
   {
@@ -180,7 +187,8 @@ const blogPosts = [
     datetime: '2022-09-15',
     category: { name: 'Report' },
     imageUrl: 'assets/GUS.png',
-    preview: 'A series of posts on a framework and software that we have built within the TreesAI project.',
+    preview:
+      'A series of posts on a framework and software that we have built within the TreesAI project.',
     readingLength: '5 mins',
   },
   {
@@ -331,8 +339,11 @@ export default function Reports() {
   return (
     <div className='relative global-margin py-16 sm:py-24 lg:py-20' id='reports'>
       <div className='relative'>
-        <SectionHeader title='Resources'/>
-        <div className='flex flex-wrap space-x-4 border rounded-[50px] border-indigo-600' aria-label='Tabs'>
+        <SectionHeader title='Resources' />
+        <div
+          className='flex flex-wrap space-x-4 border rounded-[50px] border-indigo-600'
+          aria-label='Tabs'
+        >
           <div className='w-full'>
             <ul
               className='flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row border-b border-gray3 mx-auto mt-4 max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl'

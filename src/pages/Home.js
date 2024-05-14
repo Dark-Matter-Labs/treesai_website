@@ -10,7 +10,7 @@ export default function Home() {
     <div className='bg-white'>
       <div className='relative overflow-hidden'>
         <main>
-        <NavBar />
+          <NavBar />
           <Vision />
           <ContentSections />
           <Reports />

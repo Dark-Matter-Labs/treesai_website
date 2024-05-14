@@ -50,71 +50,74 @@ const navigation = {
 export default function Footer() {
   return (
     <footer className='rounded-t-[60px] bg-dark-wood-800 ' aria-labelledby='footer-heading'>
-    <h2 id='footer-heading' className='sr-only'>
-      Footer
-    </h2>
-    <div className='mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8'>
-      <div className='grid grid-cols-1 sm:grid-cols-2 sm:gap-x-4 sm:place-content-around'>
-        <div className='md:grid md:grid-cols-2 md:gap-8'>
-          <div className='mt-12 md:mt-0 flex'>
-            <img className='h-8 w-auto pr-4' src='assets/TreesAI_logo.svg' alt='TreesAI Impact Planner logo' />
-            
+      <h2 id='footer-heading' className='sr-only'>
+        Footer
+      </h2>
+      <div className='mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 sm:gap-x-4 sm:place-content-around'>
+          <div className='md:grid md:grid-cols-2 md:gap-8'>
+            <div className='mt-12 md:mt-0 flex'>
+              <img
+                className='h-8 w-auto pr-4'
+                src='assets/TreesAI_logo.svg'
+                alt='TreesAI Impact Planner logo'
+              />
+            </div>
+          </div>
+          <div className='md:grid md:grid-cols-2 md:gap-8 sm:place-self-end'>
+            <div>
+              <ul className='mt-4 space-y-4'>
+                {navigation.support.map((item) => (
+                  <li key={item.name}>
+                    <a href={item.href} className='text-base text-dark-wood-300 hover:text-white'>
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className='mt-12 md:mt-0'>
+              <ul className='mt-4 space-y-4'>
+                {navigation.legal.map((item) => (
+                  <li key={item.name}>
+                    <a href={item.href} className='text-base text-dark-wood-300 hover:text-white'>
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-        <div className='md:grid md:grid-cols-2 md:gap-8 sm:place-self-end'>
-          <div>
-            <ul className='mt-4 space-y-4'>
-              {navigation.support.map((item) => (
-                <li key={item.name}>
-                  <a href={item.href} className='text-base text-dark-wood-300 hover:text-white'>
-                    {item.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+        <div className='mt-8 border-t border-dark-wood-300 pt-8 grid grid-cols-1 sm:grid-cols-4 gap-8 sm:place-content-around'>
+          <div className='sm:col-span-2'>
+            <p className='mt-8 book-info-md text-dark-wood-300 md:order-1 md:mt-0'>
+              Trees as Infrastructure, part of{' '}
+              <a href='https://darkmatterlabs.org/'>Dark Matter Labs</a>
+            </p>
           </div>
-          <div className='mt-12 md:mt-0'>
-            <ul className='mt-4 space-y-4'>
-              {navigation.legal.map((item) => (
-                <li key={item.name}>
-                  <a href={item.href} className='text-base text-dark-wood-300 hover:text-white'>
-                    {item.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className='flex space-x-6'>
+            {navigation.social.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className='text-dark-wood-300 hover:text-gray-300'
+              >
+                <span className='sr-only'>{item.name}</span>
+                <item.icon className='h-6 w-6' aria-hidden='true' />
+              </a>
+            ))}
+          </div>
+          <div className='sm:place-self-end'>
+            <p className='mt-8 book-info-md text-dark-wood-300 md:mt-0'>
+              Typeface by{' '}
+              <a href='https://abcdinamo.com/' target='_blank' rel='noopener noreferrer'>
+                Dinamo
+              </a>
+            </p>
           </div>
         </div>
       </div>
-      <div className='mt-8 border-t border-dark-wood-300 pt-8 grid grid-cols-1 sm:grid-cols-4 gap-8 sm:place-content-around'>
-        <div className='sm:col-span-2'>
-          <p className='mt-8 book-info-md text-dark-wood-300 md:order-1 md:mt-0'>
-             Trees as Infrastructure, part of{' '}
-            <a href='https://darkmatterlabs.org/'>Dark Matter Labs</a>
-          </p>
-        </div>
-        <div className='flex space-x-6'>
-          {navigation.social.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className='text-dark-wood-300 hover:text-gray-300'
-            >
-              <span className='sr-only'>{item.name}</span>
-              <item.icon className='h-6 w-6' aria-hidden='true' />
-            </a>
-          ))}
-        </div>
-        <div className='sm:place-self-end'>
-          <p className='mt-8 book-info-md text-dark-wood-300 md:mt-0'>
-            Typeface by{' '}
-            <a href='https://abcdinamo.com/' target='_blank' rel='noopener noreferrer'>
-              Dinamo
-            </a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
   );
 }
