@@ -176,7 +176,7 @@ export default function ContentSections() {
         <div className='sm:col-span-2'>
           <p className='book-intro-md'>
             Platforms or systems designed to facilitate interaction between stakeholders, increasing
-            participation in urban forestry
+            participation in urban forestry.
           </p>
         </div>
         <hr className='sm:col-span-3 my-8 border-indigo-600' />
@@ -203,7 +203,7 @@ export default function ContentSections() {
             >
               Green Unified Scenarios (GUS)
             </a>{' '}
-            model to predict the impact of proposed changes
+            model to predict the impact of proposed changes.
           </p>
           <p className='book-intro-md'>
             Project Example: Seoul, South Korea Ongoing Project: Stuttgart, Germany
@@ -231,7 +231,7 @@ export default function ContentSections() {
         <div className='sm:col-span-2'>
           <p className='book-intro-md'>
             Compiling a comprehensive list of projects, creating a one-stop database for all
-            Nature-Based Solutions 
+            Nature-Based Solutions.
           </p>
         </div>
         <hr className='sm:col-span-3 my-8 border-green-600' />
@@ -240,7 +240,7 @@ export default function ContentSections() {
           <p className='text-black max-w-sm bold-intro-lg'>Evaluating and Scoring Projects </p>
         </div>
         <div className='sm:col-span-2'>
-          <p className='book-intro-md'>Based on our spatial analysis methodology</p>
+          <p className='book-intro-md'>Based on our spatial analysis methodology.</p>
         </div>
         <hr className='sm:col-span-3 my-8 border-green-600' />
         <div>
@@ -419,7 +419,7 @@ export default function ContentSections() {
           <p className='book-intro-sm max-w-xs mx-auto'>
             {' '}
             We’re developing design guideline and processes for the nature-positive regeneration of
-            Villaverde, Madrid
+            Villaverde, Madrid.
           </p>
           <p className='book-intro-sm max-w-xs mx-auto pt-2'>Partner: City of Madrid</p>
           <div className='pt-4 text-center'>
