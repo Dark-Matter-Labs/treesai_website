@@ -1,46 +1,15 @@
-.tree-services {
-  background: url(images/tree-services.png) no-repeat center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 0;
-  padding: 40%;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
 }
 
-.heading-padd {
-  padding-top: 40px;
-}
-
-.py-12-edit {
-  padding-top: 3em;
-}
-
-.pointer-cursor {
-  cursor: pointer;
-}
-
-.lets-invest {
-  background: url(images/letsinvest.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-  padding: 40%;
-}
-
-.lets-invest p {
-  display: inline;
-  padding: 0.5rem;
-
-  /* Needs prefixing */
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
-
-.grid-center {
-  place-items: center;
+.vimeo-container {
+  position: relative;
+  background-color: black;
 }
 
 .right-float {
@@ -48,16 +17,6 @@
   margin-right: 0;
 }
 
-.mobile-image {
-  margin: 0 auto;
-}
-
-.vimeo-container {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  background-color: black;
-}
 iframe {
   position: absolute;
   left: 50%;
@@ -76,112 +35,133 @@ iframe {
   z-index: 3;
 }
 
-.text-start {
-  text-align: left;
-}
-
-.flex-space {
-  justify-content: center;
-}
-
 .heightFull {
   height: 100%;
 }
 
-.map-container {
-  height: 100vh;
+@layer components {
+  h1 {
+    @apply font-favorit text-5xl font-medium leading-6;
+  }
+
+  h2 {
+    @apply font-favorit text-4xl font-medium leading-6;
+  }
+
+  h3 {
+    @apply font-favorit text-3xl font-medium leading-5;
+  }
+
+  .book-info-sm {
+    @apply font-favoritBook text-sm font-book leading-4;
+  }
+
+  .book-info-md {
+    @apply font-favoritBook text-base font-book leading-4;
+  }
+
+  .book-intro-sm {
+    @apply font-favoritBook font-book text-md leading-4;
+  }
+
+  .book-intro-md {
+    @apply font-favoritBook font-book text-xl leading-4;
+  }
+
+  .book-intro-lg {
+    @apply font-favoritBook font-book text-2xl leading-5;
+  }
+
+  .medium-intro-sm {
+    @apply font-favorit text-md font-medium leading-4;
+  }
+
+  .medium-intro-md {
+    @apply font-favorit text-xl font-medium leading-4;
+  }
+
+  .medium-intro-lg {
+    @apply font-favorit text-2xl font-medium leading-5;
+  }
+
+  .bold-intro-sm {
+    @apply font-favorit text-md font-bold leading-4;
+  }
+
+  .bold-intro-md {
+    @apply font-favorit text-xl font-bold leading-4;
+  }
+
+  .bold-intro-lg {
+    @apply font-favorit text-2xl font-bold leading-5;
+  }
+
+  .global-margin {
+    @apply max-w-screen-2xl;
+    @apply mx-7;
+    @apply md:mx-10;
+    @apply xl:mx-20;
+    @apply 2xl:mx-auto;
+  }
 }
 
-.map-container-portfolio {
-  height: 80vh;
+.bg-pattern {
+  background-image: url('./images/patter_treesAI_01.svg');
+  background-repeat: no-repeat;
+  background-size: 90%;
 }
 
-#marker {
-  background-image: url('https://docs.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg');
+.bg-header {
+  background-image: url('./images/header.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.bg-problemSolution {
+  background-image: url('./images/bg-statement.png');
+  background-repeat: no-repeat;
   background-size: cover;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
 }
 
-.mapboxgl-popup {
-  max-width: 200px;
+.bg-pd {
+  background-image: url('./images/pd-shape.svg');
+  background-repeat: no-repeat;
 }
 
-.mapboxgl-popup-content {
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
+.bg-investor {
+  background-image: url('./images/invest-shape.svg');
+  background-repeat: no-repeat;
 }
 
-.input-section {
+.bg-registry {
+  background-image: url('./images/registry.svg');
+  background-repeat: no-repeat;
+}
+
+.bg-invest-contact {
+  background-image: url('./images/invest-with-us.svg');
+  background-repeat: no-repeat;
+}
+
+.title-box-info {
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+}
+
+.title-text-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
-.input-inside {
-  width: 80%;
+.measure-background-shape {
+  background: url('./images/upload.svg') top no-repeat;
 }
 
-.add-to-market {
-  background: url(images/Banner-image.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
+.list-background-shape {
+  background: url('./images/explore.svg') top no-repeat;
 }
 
-#map {
-  width: 100vw;
-  height: 100vh;
-}
-
-.outcomes-panel {
-  background: url(images/outcomes-panel.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100vh;
-}
-
-.gift {
-  background: url(images/Gift.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-  padding: 40%;
-}
-
-.steward {
-  background: url(images/StewardPanel.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-}
-
-.image-blur {
-  filter: opacity(50%);
-}
-
-.right {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  box-sizing: border-box;
-}
-
-.carbon-card {
-  background: url(images/carboncard.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
+.plan-background-shape {
+  background: url('./images/demo.svg') top no-repeat;
 }

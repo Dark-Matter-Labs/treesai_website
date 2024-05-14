@@ -3,10 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Founders Grotesk Bold';
-  src: local('Founders Grotesk Bold'), local('FoundersGrotesk-Bold'),
-    url('./fonts/FoundersGrotesk-Bold.woff2') format('woff2'),
-    url('./fonts/FoundersGrotesk-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
+  font-family: 'ABCFavorit';
+  src: local('ABCFavorit'), local('ABCFavorit'),
+    url('./fonts/ABCFavoritVariable.woff2') format('woff2'),
+    url('./fonts/ABCFavoritVariable.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ABCFavorit Book';
+  src: local('ABCFavorit Book'), local('ABCFavorit-Book'),
+    url('./fonts/ABCFavoritVariable.woff2') format('woff2'),
+    url('./fonts/ABCFavoritVariable.woff') format('woff');
 }

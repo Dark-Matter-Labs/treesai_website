@@ -1,62 +1,47 @@
-import { MailIcon } from '@heroicons/react/outline';
-
 export default function GetInTouch() {
   return (
-    <div className='relative bg-gray' id='contact'>
-      <div className='relative max-w-7xl mx-auto md:grid-cols-2 lg:grid lg:grid-cols-2 sm:grid-cols-1'>
-        <div className='bg-gray-50 py-16 px-4'>
-          <div className='max-w-lg mx-auto'>
-            <h2 className='font-grotesk text-3xl text-gray-900 sm:text-4xl'>Get in touch</h2>
-            <div className='pt-2 pb-2'>
-              <p className='mt-3 text-lg font-semibold leading-6 text-gray-500'>
-                Are you a municipality?
-              </p>
-              <p className='text-lg leading-6 text-dark'>
-                TreesAI can help solve your urban infrastructure issues.
-              </p>
-            </div>
-            <div className='pt-2 pb-2'>
-              <p className='mt-3 text-lg font-semibold leading-6 text-gray-500'>
-                Do you have talent or resources to help us?
-              </p>
-              <p className='text-lg leading-6 text-dark'>Become a partner of TreesAI.</p>
-            </div>
-
-            <div className='pt-2 pb-2'>
-              <p className='mt-3 text-lg font-semibold leading-6 text-gray-500'>
-                Are you a beneficiary of green infrastructure?
-              </p>
-              <p className='text-lg leading-6 text-dark'>
-                We are currently developing the tools to help you invest in trees as assets and can
-                answer your questions.
-              </p>
-            </div>
-
-            <dl className='mt-8 text-base text-gray-500'>
-              <div className='mt-3'>
-                <dt className='sr-only'>Email</dt>
-                <dd className='flex'>
-                  <MailIcon className='flex-shrink-0 h-6 w-6 text-dark' aria-hidden='true' />
-                  <span className='ml-3 text-dark font-semibold'>
-                    <a href='mailto:treesai@darkmatterlabs.org'>treesai@darkmatterlabs.org</a>
-                  </span>
-                </dd>
-              </div>
-            </dl>
+    <div id='contact' className='my-20'>
+      <div className='my-10 grid'>
+        <div className='place-self-center text-center max-w-3xl '>
+          <h2 className='text-dark-wood-800'>Contact us</h2>
+          <h3>treesai@darkmatterlabs.org</h3>
+        </div>
+      </div>
+      <div className='grid grid-col-1 sm:grid-cols-2 '>
+        <div className='flex justify-center flex-col'>
+          <div className='bg-registry py-28 max-w-[70%] ml-[20%] flex justify-center'>
+            <h3 className='text-white-200 max-w-sm'>
+              If you think our work sounds interesting, then send us an email.
+            </h3>
+          </div>
+          <div className='mx-auto'>
+            <a href='mailto:treesai@darkmatterlabs.org'>
+              <button
+                type='button'
+                className='m-auto bold-intro-sm inline-flex justify-center rounded-full border border-transparent bg-gradient-to-r from-indigo-600 to-green-500 my-10 py-2 px-8 text-white shadow-sm hover:bg-dark-wood-700 '
+              >
+                Get in touch
+              </button>
+            </a>
           </div>
         </div>
-        <div className='lets-invest'></div>
-        <p className='text-sm text-black'></p>
-        <p className='text-sm text-black pt-2 sm:pl-4 md:pl-4 lg:pl-0'>
-          Image from{' '}
-          <a
-            href='https://www.facebook.com/likenprojekt/'
-            target='_blank'
-            rel='noreferrer noopener'
-          >
-            LIKEN project
-          </a>
-        </p>
+        <div className='flex justify-center flex-col'>
+          <div className='bg-invest-contact py-28 max-w-[70%] ml-[20%] flex justify-center'>
+            <h3 className='text-white-200 max-w-sm'>
+              Want to understand how we develop co-investment strategies for Nature-based Solutions?
+            </h3>
+          </div>
+          <div className='mx-auto'>
+            <a href='mailto:treesai@darkmatterlabs.org'>
+              <button
+                type='button'
+                className='m-auto bold-intro-sm inline-flex justify-center rounded-full border border-transparent bg-dark-wood-800 my-10 py-2 px-8 text-white shadow-sm hover:bg-dark-wood-700 '
+              >
+                Be the next pilot
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
