@@ -32,7 +32,7 @@ export default function ContentSections() {
 
   return (
     <div className='global-margin'>
-      <div className='py-20'>
+      <div className='pt-20 pb-8'>
         <div className='my-10 grid'>
           <div className='place-self-center text-center max-w-3xl '>
             <h2 className='text-dark-wood-800'>
@@ -64,7 +64,7 @@ export default function ContentSections() {
           </div>
         </div>
       </div>
-      <div className='py-20'>
+      <div className=' pb-20'>
         <div className='my-10 grid'>
           <div className='place-self-center text-center max-w-4xl '>
             <h2 className='text-dark-wood-800'>
