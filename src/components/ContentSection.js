@@ -211,7 +211,7 @@ export default function ContentSections() {
         </div>
       </div>
 
-      <SectionHeader title='Management Services' />
+      <SectionHeader type='typology' title='Management Services' />
       <div className='bg-white-200 rounded-[50px] border border-green-600 px-20 py-10 '>
         <div className='px-4'>
           <div className=' rounded-lg'>
