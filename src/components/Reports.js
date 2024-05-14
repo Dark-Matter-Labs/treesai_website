@@ -129,7 +129,7 @@ const blogPosts = [
     imageUrl: 'assets/1.cover-source.jpg',
     preview:
       'The paper presents the Green Urban Scenarios (GUS) framework for designing and monitoring green infrastructures. GUS considers weather, maintenance, tree species, diseases, and spatial distributions of trees to forecast their impacts.',
-    readingLength: '1 hour',
+    readingLength: '2 hours',
   },
   {
     id: 2,
