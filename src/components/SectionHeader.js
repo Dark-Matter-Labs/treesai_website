@@ -11,10 +11,11 @@ export default function SectionHeader(props) {
           : props.type === 'account'
           ? 'bg-dark-wood-800 '
           : 'bg-indigo-600',
-        'title-box-info mx-auto flex max-w-2xl justify-center p-5',
+        'title-box-info mx-10 sm:mx-auto flex max-w-2xl justify-center p-5 ',
       )}
     >
-      <h2 className='text-white-200'>{props.title}</h2>
+      <h2 className='text-white-200 hidden sm:block'>{props.title}</h2>
+      <p className='bold-intro-md text-center text-white-200 block sm:hidden'>{props.title}</p>
     </div>
   );
 }

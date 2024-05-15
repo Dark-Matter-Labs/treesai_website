@@ -40,7 +40,7 @@ export default function ContentSections() {
             </h2>
           </div>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-10'>
           <div className='flex flex-col items-center justify-center'>
             <img className='pb-8 h-48 ' src={airIcon} alt='' />
             <p className='text-dark-wood-800 medium-intro-lg pb-2'>Improving air quality</p>
@@ -73,7 +73,7 @@ export default function ContentSections() {
             </h2>
           </div>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-10'>
           <div className='flex flex-col items-center justify-center'>
             <img className='pb-8 h-48 ' src={healthIcon} alt='' />
             <p className='text-dark-wood-800 medium-intro-lg pb-2'>Health services</p>
@@ -98,13 +98,17 @@ export default function ContentSections() {
         </div>
       </div>
       <div className=''>
-        <div className='bg-problemSolution h-[40rem] mb-20 flex flex-col items-center justify-center'>
+        <div className='bg-problemSolution h-[40rem] mb-20 pl-4 sm:pl-0 flex flex-col items-center justify-center'>
           <div>
-            <div className='mx-auto max-w-3xl '>
-              <h2 className='text-white '>
+            <div className='mx-auto max-w-xs sm:max-w-3xl '>
+              <h2 className='text-white hidden sm:block'>
                 We’re creating the required infrastructure to help cities and local communities
                 secure funding for urban trees and green spaces.
               </h2>
+              <h3 className='text-white block sm:hidden px-4'>
+                We’re creating the required infrastructure to help cities and local communities
+                secure funding for urban trees and green spaces.
+              </h3>
             </div>
           </div>
         </div>
@@ -136,7 +140,7 @@ export default function ContentSections() {
       <SectionHeader title='Data Services' />
       <div
         id='services'
-        className='bg-white-200 rounded-[50px] border border-indigo-600 px-20 py-10 '
+        className='bg-white-200 rounded-[50px] border border-indigo-600 px-4 sm:px-20 py-10 '
       >
         <div className='px-4'>
           <div className=' rounded-lg'>
@@ -148,7 +152,7 @@ export default function ContentSections() {
         </div>
       </div>
       <hr className='mx-20 border-8 border-indigo-600' />
-      <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-20 py-10 grid grid-cols-1 sm:grid-cols-3 mb-20'>
+      <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-4 sm:px-20 py-10 grid grid-cols-1 sm:grid-cols-3 mb-20'>
         <div>
           <p className='text-black bold-intro-lg'>Spatial Analysis</p>
         </div>
@@ -212,7 +216,7 @@ export default function ContentSections() {
       </div>
 
       <SectionHeader type='typology' title='Management Services' />
-      <div className='bg-white-200 rounded-[50px] border border-green-600 px-20 py-10 '>
+      <div className='bg-white-200 rounded-[50px] border border-green-600 px-4 sm:px-20 py-10 '>
         <div className='px-4'>
           <div className=' rounded-lg'>
             <h3 className='text-green-600'>
@@ -224,7 +228,7 @@ export default function ContentSections() {
         </div>
       </div>
       <hr className='mx-20 border-8 border-green-600' />
-      <div className='bg-white-200 rounded-[50px] border border-green-600 px-20 py-10 grid grid-cols-1 sm:grid-cols-3 mb-20'>
+      <div className='bg-white-200 rounded-[50px] border border-green-600 px-4 sm:px-20 py-10 grid grid-cols-1 sm:grid-cols-3 mb-20'>
         <div>
           <p className='text-black bold-intro-lg max-w-sm'>Crafting a City-Wide NbS Database</p>
         </div>
@@ -269,7 +273,7 @@ export default function ContentSections() {
       </div>
 
       <SectionHeader title='Citizen-centred Design Services' />
-      <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-20 py-10 '>
+      <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-4 sm:px-20 py-10 '>
         <div className='px-4'>
           <div className=' rounded-lg'>
             <h3 className='text-indigo-600'>
@@ -281,7 +285,7 @@ export default function ContentSections() {
         </div>
       </div>
       <hr className='mx-20 border-8 border-indigo-600' />
-      <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-20 py-10 grid grid-cols-1 sm:grid-cols-3 mb-20'>
+      <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-4 sm:px-20 py-10 grid grid-cols-1 sm:grid-cols-3 mb-20'>
         <div>
           <p className='text-black bold-intro-lg max-w-xs'>Metric and indicator design</p>
         </div>
