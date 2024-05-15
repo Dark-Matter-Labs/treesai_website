@@ -16,7 +16,7 @@ export default class Vision extends Component {
               <div className='mx-auto max-w-2xl pl-6 pt-4 lg:text-left lg:flex lg:items-center'>
                 <div className='lg:py-24'>
                   <div className=''>
-                    <img className='h-8 sm:h-20' src='assets/TreesAI_logo.svg' alt='TreesAI logo' />
+                    <img className='h-8 sm:h-20' src='assets/TAI.svg' alt='TreesAI logo' />
                   </div>
                   <h1 className='mt-4  text-white hidden sm:block'>
                     <span className='block'>Revaluing nature as urban infrastructure.</span>
