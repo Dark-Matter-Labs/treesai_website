@@ -28,6 +28,7 @@ export default function ContentSections() {
     { name: 'IBM', url: 'assets/partner_logos/IBM.png' },
     { name: 'Lucidminds', url: 'assets/partner_logos/LM.png' },
     { name: 'Evergreen', url: 'assets/partner_logos/Evergreen.png' },
+    { name: 'Politics for Tomorrow', url: 'assets/partner_logos/p4t.png' },
   ];
 
   return (
