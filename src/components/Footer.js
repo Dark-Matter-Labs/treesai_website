@@ -99,7 +99,23 @@ export default function Footer() {
           <div className='sm:col-span-2'>
             <p className='mt-8 book-info-md text-dark-wood-300 md:order-1 md:mt-0'>
               Trees as Infrastructure, part of{' '}
-              <a href='https://darkmatterlabs.org/'>Dark Matter Labs</a>
+              <a target='_blank' rel='noopener noreferrer' href='https://darkmatterlabs.org/'>
+                Dark Matter Labs
+              </a>
+            </p>
+            <p className='mt-8 book-info-md text-dark-wood-300 md:order-1 md:mt-0'>
+              Co-development partners:{' '}
+              <a target='_blank' rel='noopener noreferrer' href='https://lucidminds.ai/'>
+                Lucidminds
+              </a>{' '}
+              &{' '}
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://www.politicsfortomorrow.eu/'
+              >
+                Politics for Tomorrow
+              </a>
             </p>
           </div>
           <div className='flex space-x-6'>

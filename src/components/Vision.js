@@ -39,8 +39,8 @@ export default class Vision extends Component {
             </div>
             <div className='pt-20 sm:pt-40 px-4 pb-4'>
               <p className='book-info-sm text-dark-wood-500'>
-                Video: By our partners: Phil Wilkes and Mat Disney, UCL
-                Geography and NERC National Centre for Earth Observation.
+                Video: By our partners: Phil Wilkes and Mat Disney, UCL Geography and NERC National
+                Centre for Earth Observation.
               </p>
             </div>
           </div>
