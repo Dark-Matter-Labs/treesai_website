@@ -198,7 +198,7 @@ export default function ContentSections() {
             >
               Lucidminds
             </a>
-            , we’ve developed the{' '}
+            , we’re exploring implementing their {' '}
             <a
               className='text-indigo-600'
               target='_blank'
