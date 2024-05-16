@@ -211,7 +211,7 @@ export default function ContentSections() {
             model to predict the impact of proposed changes.
           </p>
           <p className='book-intro-md'>
-            Project example: Seoul, South Korea; Ongoing Project: Stuttgart, Germany
+            Project example: Seoul, South Korea; Ongoing project: Stuttgart, Germany
           </p>
         </div>
       </div>
@@ -268,7 +268,7 @@ export default function ContentSections() {
             With DmCS, we link cities to opportunities and funding for projects.
           </p>
           <p className='book-intro-md'>
-            Project example: Glasgow, Scotland; Ongoing projects: Nature-Demo
+            Project example: Glasgow, Scotland; Ongoing project: Nature-Demo
           </p>
         </div>
       </div>
