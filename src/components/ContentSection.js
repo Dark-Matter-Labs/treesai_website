@@ -84,7 +84,7 @@ export default function ContentSections() {
           </div>
           <div className='flex flex-col items-center justify-center'>
             <img className='pb-8 h-48' src={energyIcon} alt='' />
-            <p className='text-dark-wood-800 medium-intro-lg pb-2'>Energy Services</p>
+            <p className='text-dark-wood-800 medium-intro-lg pb-2'>Energy services</p>
             <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
               Reducing the need for air conditioning in surrounding buildings
             </p>
