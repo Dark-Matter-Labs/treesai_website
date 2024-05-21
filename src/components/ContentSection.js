@@ -5,6 +5,9 @@ import healthIcon from '../images/health.png';
 import energyIcon from '../images/energy.png';
 import wasteIcon from '../images/waste.png';
 import SectionHeader from './SectionHeader';
+import dataIcon from '../images/data.png';
+import mgmtIcon from '../images/mgmt.png';
+import citizenIcon from '../images/citi.png';
 
 export default function ContentSections() {
   const logos = [
@@ -32,7 +35,7 @@ export default function ContentSections() {
   ];
 
   return (
-    <div className='global-margin'>
+    <div className='global-margin scroll-smooth'>
       <div className='pt-20 pb-8'>
         <div className='my-10 grid'>
           <div className='place-self-center text-center max-w-3xl '>
@@ -137,12 +140,60 @@ export default function ContentSections() {
           </div>
         </div>
       </div>
+      <div id='services' className=' pb-20'>
+        <div className='my-10 grid'>
+          <div className='place-self-center text-center max-w-4xl '>
+            <h2 className='text-dark-wood-800'>Our services</h2>
+          </div>
+        </div>
+        <div className='lg:flex justify-center '>
+          <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-20 py-8 lg:w-3/5'>
+            <h3 className='text-indigo-600 pb-2 text-center'>
+              Data <br /> Services
+            </h3>
+            <img className='py-4 h-48 ' src={dataIcon} alt='' />
+            <div className='text-center'>
+              <a href='#data' className=''>
+                <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
+                  Find out more
+                </button>
+              </a>
+            </div>
+          </div>
+          <hr className='w-8 py-32 my-10 bg-indigo-600 hidden lg:block' />
+          <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-20 py-8 lg:w-3/5'>
+            <h3 className='text-green-600 pb-2 text-center'>
+              Management <br /> Services
+            </h3>
+            <img className='py-4 h-48 ' src={mgmtIcon} alt='' />
+            <div className='text-center'>
+              <a href='#mgmt'>
+                <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
+                  Find out more
+                </button>
+              </a>
+            </div>
+          </div>
+          <hr className='w-8 py-32 my-10 bg-indigo-600 hidden lg:block' />
+          <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-20 py-8 lg:w-3/5'>
+            <h3 className='text-indigo-600 pb-2 text-center'>
+              Citizen-centred <br />
+              Design Services
+            </h3>
+            <img className='py-4 h-48 ' src={citizenIcon} alt='' />
+            <div className='text-center'>
+              <a href='#citi'>
+                <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
+                  Find out more
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <SectionHeader title='Data Services' />
-      <div
-        id='services'
-        className='bg-white-200 rounded-[50px] border border-indigo-600 px-4 sm:px-20 py-10 '
-      >
+      <SectionHeader title='Data Services' id='data' />
+      <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-4 sm:px-20 py-10 '>
         <div className='px-4'>
           <div className=' rounded-lg'>
             <h3 className='text-indigo-700'>
@@ -216,7 +267,7 @@ export default function ContentSections() {
         </div>
       </div>
 
-      <SectionHeader type='typology' title='Management Services' />
+      <SectionHeader type='typology' title='Management Services' id='mgmt' />
       <div className='bg-white-200 rounded-[50px] border border-green-600 px-4 sm:px-20 py-10 '>
         <div className='px-4'>
           <div className=' rounded-lg'>
@@ -273,7 +324,7 @@ export default function ContentSections() {
         </div>
       </div>
 
-      <SectionHeader title='Citizen-centred Design Services' />
+      <SectionHeader title='Citizen-centred Design Services' id='citi' />
       <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-4 sm:px-20 py-10 '>
         <div className='px-4'>
           <div className=' rounded-lg'>

@@ -5,6 +5,7 @@ function classNames(...classes) {
 export default function SectionHeader(props) {
   return (
     <div
+      id={props.id}
       className={classNames(
         props.type === 'typology'
           ? 'bg-green-600 '
