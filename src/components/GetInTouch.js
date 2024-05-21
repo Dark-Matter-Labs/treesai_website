@@ -12,10 +12,12 @@ export default function GetInTouch() {
         <div className='flex justify-center flex-col'>
           <div className='bg-registry py-28 max-w-[70%] ml-[20%] flex justify-center'>
             <h3 className='text-white-200 max-w-sm hidden sm:block'>
-            Ready to turn over a new leaf in urban nature financing? Get in touch to grow a greener future together. 
+              Ready to turn over a new leaf in urban nature financing? Get in touch to grow a
+              greener future together.
             </h3>
             <p className='text-white-200 max-w-sm block sm:hidden bold-intro-sm px-4'>
-            Ready to turn over a new leaf in urban nature financing? Get in touch to grow a greener future together. 
+              Ready to turn over a new leaf in urban nature financing? Get in touch to grow a
+              greener future together.
             </p>
           </div>
           <div className='mx-auto'>
