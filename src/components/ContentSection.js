@@ -389,7 +389,7 @@ export default function ContentSections() {
             prioritisation of urban Nature-based Solutions.
           </p>
           <p className='book-intro-sm max-w-xs mx-auto pt-2'>
-            Partners: City of Stuttgart and Lucidminds
+            Partners: City of Stuttgart, The Nature Conservancy and Lucidminds
           </p>
           <div className='pt-4 text-center'>
             <a
@@ -462,9 +462,15 @@ export default function ContentSections() {
             on green financing and innovative governance.
           </p>
           <div className='pt-4 text-center'>
-            <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-600'>
-              Coming soon
+          <a
+              target='_blank'
+              rel='noreferrer'
+              href='https://nature-demo.eu/'
+            >
+            <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800'>
+             Read more
             </button>
+            </a>
           </div>
         </div>
 
