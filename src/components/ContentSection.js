@@ -379,12 +379,12 @@ export default function ContentSections() {
         </div>
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-20 justify-items-center'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-20 justify-items-stretch'>
         <div className='grid grid-cols-1 justify-items-stretch'>
-          <div className='title-text-container plan-background-shape py-28 px-28'>
-            <h3 className='text-center text-white-200'>TreesAI Stuttgart</h3>
+          <div className='plan-background-shape h-[243px] flex items-center justify-center'>
+            <h3 className='text-white-200'>TreesAI Stuttgart</h3>
           </div>
-          <p className='book-intro-sm max-w-xs mx-auto'>
+          <p className='book-intro-sm max-w-xs mx-auto pt-8'>
             We’re implementing our Location-Based Scoring tool to support the municipality in the
             prioritisation of urban Nature-based Solutions.
           </p>
@@ -405,10 +405,10 @@ export default function ContentSections() {
         </div>
 
         <div className='grid grid-cols-1 justify-items-stretch'>
-          <div className='title-text-container measure-background-shape py-28 px-28'>
-            <h3 className='text-center text-white-200'>TreesAI Seoul</h3>
+          <div className='measure-background-shape h-[243px] flex items-center justify-center'>
+            <h3 className=' text-white-200'>TreesAI Seoul</h3>
           </div>
-          <p className='book-intro-sm max-w-xs mx-auto'>
+          <p className='book-intro-sm max-w-xs mx-auto pt-8'>
             We’re developing a data framework to assess the climate risks of heat island effect and
             running various canopy scenarios to assess the potential cooling effect of trees as a
             climate adaptation and mitigation strategy.
@@ -428,10 +428,10 @@ export default function ContentSections() {
         </div>
 
         <div className='grid grid-cols-1 justify-items-stretch'>
-          <div className='title-text-container list-background-shape py-28 px-28'>
+          <div className='list-background-shape h-[243px] flex items-center justify-center'>
             <h3 className='text-center text-white-200'>TreesAI Glasgow</h3>
           </div>
-          <p className='book-intro-sm max-w-xs mx-auto'>
+          <p className='book-intro-sm max-w-xs mx-auto pt-8'>
             We’re quantifying the capacity of Glasgow’s existing tree stocks to mitigate against
             flooding. We’re working with project developers and outcome buyers to justify and fund a
             portfolio of nature-based solutions.
@@ -454,10 +454,10 @@ export default function ContentSections() {
         </div>
 
         <div className='grid grid-cols-1 justify-items-stretch'>
-          <div className='title-text-container list-background-shape py-28 px-28'>
+          <div className='list-background-shape h-[243px] flex items-center justify-center'>
             <h3 className='text-center text-white-200'>Nature Demo</h3>
           </div>
-          <p className='book-intro-sm max-w-xs mx-auto'>
+          <p className='book-intro-sm max-w-xs mx-auto pt-8'>
             As part of the Horizon 2020, we’re supporting the 20-partner consortium with expertise
             on green financing and innovative governance.
           </p>
@@ -475,10 +475,10 @@ export default function ContentSections() {
         </div>
 
         <div className='grid grid-cols-1 justify-items-stretch'>
-          <div className='title-text-container plan-background-shape py-28 px-28'>
+          <div className='plan-background-shape h-[243px] flex items-center justify-center'>
             <h3 className='text-center text-white-200'>UR-Breath, Madrid</h3>
           </div>
-          <p className='book-intro-sm max-w-xs mx-auto'>
+          <p className='book-intro-sm max-w-xs mx-auto pt-8'>
             {' '}
             We’re developing design guideline and processes for the nature-positive regeneration of
             Villaverde, Madrid.
@@ -494,10 +494,10 @@ export default function ContentSections() {
         </div>
 
         <div className='grid grid-cols-1 justify-items-stretch'>
-          <div className='title-text-container measure-background-shape py-28 px-28'>
+          <div className='measure-background-shape h-[243px] flex items-center justify-center mx-auto max-w-xs'>
             <h3 className='text-center text-white-200'>Equitable Urban Forestry, UK</h3>
           </div>
-          <p className='book-intro-sm max-w-xs mx-auto'>
+          <p className='book-intro-sm max-w-xs mx-auto pt-8'>
             We’ve developed a framework and a database to assist local authorities and project
             developers in the long-term implementation of data-enabled urban forests, which
             prioritise often-marginalised communities.
