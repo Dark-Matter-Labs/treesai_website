@@ -4,6 +4,18 @@ import SectionHeader from './SectionHeader';
 const videos = [
   {
     id: 0,
+    title:
+      'Chloe Treger, TreesAI | Local authority investment in trees and green infrastructure for multiple benefits',
+    href: 'https://www.youtube.com/watch?v=NkdAFWScH-Q&t=2662s',
+    date: 'Sep 25, 2024',
+    datetime: '2024-09-25',
+    category: { name: '20:00' },
+    imageUrl: 'assets/TreesDesignGroup.jpg',
+    preview: '',
+    readingLength: 'Trees and Design Action Group',
+  },
+  {
+    id: 0,
     title: 'Sebastian Klemm, TreesAI | Greentech.LIVE 2023 Fall Editon',
     href: 'https://www.youtube.com/watch?v=tyK-SvzjuiU',
     date: 'Nov 28, 2023',

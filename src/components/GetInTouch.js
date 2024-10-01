@@ -8,9 +8,9 @@ export default function GetInTouch() {
           <p className='block sm:hidden bold-intro-sm '>treesai@darkmatterlabs.org</p>
         </div>
       </div>
-      <div className='grid grid-col-1 sm:grid-cols-2 '>
-        <div className='flex justify-center flex-col'>
-          <div className='bg-registry py-28 max-w-[70%] ml-[20%] flex justify-center'>
+      <div className='sm:flex justify-around'>
+        <div className=' flex justify-center flex-col'>
+          <div className='bg-registry h-[323px] w-[534px] flex justify-center items-center'>
             <h3 className='text-white-200 max-w-sm hidden sm:block'>
               Ready to turn over a new leaf in urban nature financing? Get in touch to grow a
               greener future together.
@@ -31,8 +31,8 @@ export default function GetInTouch() {
             </a>
           </div>
         </div>
-        <div className='flex justify-center flex-col'>
-          <div className='bg-invest-contact py-28 max-w-[70%] ml-[20%] flex justify-center'>
+        <div className=' flex justify-center flex-col'>
+          <div className='bg-invest-contact h-[323px] w-[534px]  flex justify-center items-center'>
             <h3 className='text-white-200 max-w-sm hidden sm:block'>
               Want to understand how we develop co-investment strategies for Nature-based Solutions?
             </h3>

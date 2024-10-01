@@ -45,21 +45,21 @@ export default function ContentSections() {
           </div>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-10'>
-          <div className='flex flex-col items-center justify-center'>
+          <div className='flex flex-col items-center '>
             <img className='pb-8 h-48 ' src={airIcon} alt='' />
             <p className='text-dark-wood-800 medium-intro-lg pb-2'>Improving air quality</p>
             <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
               Removing pollutants from the air
             </p>
           </div>
-          <div className='flex flex-col items-center justify-center'>
+          <div className='flex flex-col items-center '>
             <img className='pb-8 h-48' src={heatIcon} alt='' />
             <p className='text-dark-wood-800  medium-intro-lg pb-2'>Reducing heat island effects</p>
             <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
               Reducing summer temperatures by 5 degrees
             </p>
           </div>
-          <div className='flex flex-col items-center justify-center'>
+          <div className='flex flex-col items-center '>
             <img className='pb-8 h-48' src={floodIcon} alt='' />
             <p className='text-dark-wood-800  medium-intro-lg pb-2'>Reducing flooding</p>
             <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
@@ -78,21 +78,21 @@ export default function ContentSections() {
           </div>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-10'>
-          <div className='flex flex-col items-center justify-center'>
+          <div className='flex flex-col items-center'>
             <img className='pb-8 h-48 ' src={healthIcon} alt='' />
             <p className='text-dark-wood-800 medium-intro-lg pb-2'>Health services</p>
             <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
               Alleviating acute and chronic respiratory issues
             </p>
           </div>
-          <div className='flex flex-col items-center justify-center'>
+          <div className='flex flex-col items-center '>
             <img className='pb-8 h-48' src={energyIcon} alt='' />
             <p className='text-dark-wood-800 medium-intro-lg pb-2'>Energy services</p>
             <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
               Reducing the need for air conditioning in surrounding buildings
             </p>
           </div>
-          <div className='flex flex-col items-center justify-center'>
+          <div className='flex flex-col items-center '>
             <img className='pb-8 h-48' src={wasteIcon} alt='' />
             <p className='text-dark-wood-800  medium-intro-lg pb-2'>Waste water services</p>
             <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
@@ -462,14 +462,10 @@ export default function ContentSections() {
             on green financing and innovative governance.
           </p>
           <div className='pt-4 text-center'>
-          <a
-              target='_blank'
-              rel='noreferrer'
-              href='https://nature-demo.eu/'
-            >
-            <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800'>
-             Read more
-            </button>
+            <a target='_blank' rel='noreferrer' href='https://nature-demo.eu/'>
+              <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800'>
+                Read more
+              </button>
             </a>
           </div>
         </div>
