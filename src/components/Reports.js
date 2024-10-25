@@ -120,6 +120,18 @@ const videos = [
 const blogPosts = [
   {
     id: 0,
+    title: 'TreesAI’s Heat-sensing collaboration',
+    href: 'https://provocations.darkmatterlabs.org/treesais-heat-sensing-collaboration-c69588a8ba28',
+    date: 'October 8, 2024',
+    datetime: '2024-10-08',
+    category: { name: 'Blog' },
+    imageUrl: 'assets/HeatSense.png',
+    preview:
+      'In this blog we launch our Heat-Sensing collaboration, with Vaiv Company and the Information Systems Intelligence Lab at Yonsei University, made possible thanks to Innovate UK’s UK and South Korea data driven urban innovation Bi-Lateral CR&D competition.',
+    readingLength: '8 mins',
+  },
+  {
+    id: 1,
     title: 'TreesAI is implementing location-based scoring in Stuttgart',
     href: 'https://provocations.darkmatterlabs.org/treesai-is-implementing-location-based-scoring-in-stuttgart-c54c752bdaaf',
     date: 'April 10, 2024',
@@ -131,7 +143,7 @@ const blogPosts = [
     readingLength: '8 mins',
   },
   {
-    id: 1,
+    id: 2,
     title:
       'Green Urban Scenarios: A Framework for Digital Twin Representation and Simulation for Urban Forests and Their Impact Analysis',
     href: 'https://auf.isa-arbor.com/content/50/1/109',
@@ -144,7 +156,7 @@ const blogPosts = [
     readingLength: '2 hours',
   },
   {
-    id: 2,
+    id: 3,
     title: 'IBM Advances Geospatial AI to Address Climate Challenges',
     href: 'https://newsroom.ibm.com/2023-11-30-IBM-Advances-Geospatial-AI-to-Address-Climate-Challenges',
     date: 'November 30, 2023',
@@ -156,7 +168,7 @@ const blogPosts = [
     readingLength: '10 mins',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Accelerating green-urban planning simulations with AWS Batch',
     href: 'https://aws.amazon.com/blogs/hpc/accelerating-green-urban-planning-simulations-with-aws-batch/',
     date: 'November 1, 2023',
@@ -168,7 +180,7 @@ const blogPosts = [
     readingLength: '30 mins',
   },
   {
-    id: 4,
+    id: 5,
     title: 'TreesAI Glasgow Pilot Learning Report',
     href: 'https://darkmatterlabs.notion.site/darkmatterlabs/TreesAI-Glasgow-Pilot-Learning-report-16-10-bd46c620542d4159af830ae6b3a943ed',
     date: 'October 16, 2023',
@@ -180,7 +192,7 @@ const blogPosts = [
     readingLength: '30 mins',
   },
   {
-    id: 5,
+    id: 6,
     title: 'TreesAI: Unlocking system barriers to finance Nature-based Solutions',
     href: 'https://provocations.darkmatterlabs.org/treesai-unlocking-system-barriers-to-finance-nature-based-solutions-398e9d618623',
     date: 'April 18, 2023',
@@ -192,7 +204,7 @@ const blogPosts = [
     readingLength: '18 mins',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Green Urban Scenarios: Change in Complexity',
     href: 'https://lucidmindsai.medium.com/green-urban-scenarios-298d75b100b4',
     date: 'Sep 15, 2022',
@@ -204,7 +216,7 @@ const blogPosts = [
     readingLength: '5 mins',
   },
   {
-    id: 7,
+    id: 8,
     title: 'TreesAI - Blue Paper',
     href: 'https://drive.google.com/file/d/127XlBUlQ-9_llwJawalifxWoqbBxG8ha/view?usp=sharing',
     date: 'Dec 17, 2021',
@@ -215,7 +227,7 @@ const blogPosts = [
     readingLength: '2 hours',
   },
   {
-    id: 8,
+    id: 9,
     title: 'Trees as Infrastructure Report 1',
     href: 'https://provocations.darkmatterlabs.org/trees-as-infrastructure-1dd94e1cfedf',
     date: 'Feb 10, 2020',
@@ -226,7 +238,7 @@ const blogPosts = [
     readingLength: '15 min',
   },
   {
-    id: 9,
+    id: 10,
     title: 'Trees as Infrastructure Report 2',
     href: 'https://provocations.darkmatterlabs.org/trees-as-infrastructure-aa141acdf227',
     date: 'Mar 6, 2020',
@@ -238,7 +250,7 @@ const blogPosts = [
     readingLength: '15 min',
   },
   {
-    id: 10,
+    id: 11,
     title:
       'Delivering urban Nature-based Solutions in Scotland at Scale: Growing regenerative cities',
     href: 'https://drive.google.com/file/d/1OdtF45v59Zh7TDDrNRifnp4e6Cl4OIK0/view',
