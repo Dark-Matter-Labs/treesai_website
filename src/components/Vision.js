@@ -24,16 +24,16 @@ export default class Vision extends Component {
                   <h2 className='mt-4  text-white block sm:hidden'>
                     <span className='block'>Revaluing nature as urban infrastructure.</span>
                   </h2>
-                  {/* <div className='mt-10 sm:mt-12 sm:mb-12'>
+                  <div className='mt-10 sm:pt-20'>
                     <a
                       href='https://lbs-interface.netlify.app/'
                       target='_blank'
                       rel='noreferrer noopener'
-                      className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-md text-white bg-green-800 hover:bg-green-600'
+                      className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-green-800 hover:bg-green-600'
                     >
-                      Check the LBS app
+                      Try the LBS app
                     </a>
-                  </div> */}
+                  </div>
                 </div>
               </div>
             </div>
