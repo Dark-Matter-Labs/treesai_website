@@ -24,7 +24,7 @@ export default class Vision extends Component {
                   <h2 className='mt-4  text-white block sm:hidden'>
                     <span className='block'>Revaluing nature as urban infrastructure.</span>
                   </h2>
-                  <div className='mt-10 sm:pt-20'>
+                  <div className='pt-10'>
                     <a
                       href='https://lbs-interface.netlify.app/'
                       target='_blank'
