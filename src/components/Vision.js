@@ -34,6 +34,16 @@ export default class Vision extends Component {
                       Try the LBS app
                     </a>
                   </div>
+                  <div className='pt-4'>
+                    <a
+                      href='https://share-eu1.hsforms.com/2wvSO0M7gS6Wuii4vjk1drwfeq73'
+                      target='_blank'
+                      rel='noreferrer noopener'
+                      className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-green-800 hover:bg-green-600'
+                    >
+                      Join mailing list
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
