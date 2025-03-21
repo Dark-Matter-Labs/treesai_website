@@ -26,7 +26,7 @@ export default class Vision extends Component {
                   </h2>
                   <div className='pt-10'>
                     <a
-                      href='https://lbs-interface.netlify.app/'
+                      href='https://lbs.treesai.org/'
                       target='_blank'
                       rel='noreferrer noopener'
                       className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-green-800 hover:bg-green-600'
