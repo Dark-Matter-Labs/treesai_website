@@ -5,6 +5,18 @@ const videos = [
   {
     id: 0,
     title:
+      'Location Based Scoring App Demo',
+    href: 'https://www.loom.com/share/6bd73b45454f4b4e907e1081bdb050a4',
+    date: 'Jan 28, 2025',
+    datetime: '2025-01-28',
+    category: { name: '09:00' },
+    imageUrl: 'assets/LBS.png',
+    preview: '',
+    readingLength: 'Dark Matter Labs',
+  },
+  {
+    id: 1,
+    title:
       'Chloe Treger, TreesAI | Local authority investment in trees and green infrastructure for multiple benefits',
     href: 'https://www.youtube.com/watch?v=NkdAFWScH-Q&t=2662s',
     date: 'Sep 25, 2024',
@@ -15,7 +27,7 @@ const videos = [
     readingLength: 'Trees and Design Action Group',
   },
   {
-    id: 0,
+    id: 2,
     title: 'Sebastian Klemm, TreesAI | Greentech.LIVE 2023 Fall Editon',
     href: 'https://www.youtube.com/watch?v=tyK-SvzjuiU',
     date: 'Nov 28, 2023',
@@ -26,7 +38,7 @@ const videos = [
     readingLength: 'GreentechLive',
   },
   {
-    id: 1,
+    id: 3,
     title: 'TreesAI in Glasgow 2022',
     href: 'https://vimeo.com/761604792',
     date: 'Oct 18, 2022',
@@ -37,7 +49,7 @@ const videos = [
     readingLength: 'Dark Matter Labs',
   },
   {
-    id: 2,
+    id: 4,
     title: 'Carlotta Conte presenting at COP26',
     href: 'https://youtu.be/pfVScBgCU9A',
     date: 'Nov 6, 2021',
@@ -48,7 +60,7 @@ const videos = [
     readingLength: 'Dark Matter Labs',
   },
   {
-    id: 3,
+    id: 5,
     title: 'TreesAI presenting at Mayday C4 events: Deforestation and Carbon Offsets',
     href: 'https://www.youtube.com/watch?v=j9HotCSqh_M',
     date: 'Mar 16, 2020',
@@ -59,7 +71,7 @@ const videos = [
     readingLength: 'Mayday C4',
   },
   {
-    id: 4,
+    id: 6,
     title: 'What technology can do for sustainability - The Google.org Impact Challenge on Climate',
     href: 'https://www.youtube.com/watch?t=75&v=Y1X3BzuNgdA&feature=youtu.be',
     date: 'Jul 6, 2021',
@@ -71,7 +83,7 @@ const videos = [
     readingLength: 'Euractiv',
   },
   {
-    id: 5,
+    id: 7,
     title: 'Interview with Kate Raworth at Trees as Infrastructure Workshop',
     href: 'https://vimeo.com/showcase/6628565/video/377023491',
     date: '2019',
@@ -83,7 +95,7 @@ const videos = [
     readingLength: 'Dark Matter Labs',
   },
   {
-    id: 6,
+    id: 8,
     title: 'Interview with Mathias Disney at Trees as Infrastructure Workshop',
     href: 'https://vimeo.com/showcase/6628565/video/377020523',
     date: '2019',
@@ -94,7 +106,7 @@ const videos = [
     readingLength: 'Dark Matter Labs',
   },
   {
-    id: 8,
+    id: 9,
     title: 'Interview with Michelle Zucker at Trees as Infrastructure Workshop',
     href: 'https://vimeo.com/showcase/6628565/video/379088421',
     date: '2019',
@@ -105,7 +117,7 @@ const videos = [
     readingLength: 'Dark Matter Labs',
   },
   {
-    id: 9,
+    id: 10,
     title: 'Interview with Jim C. Smith at Trees as Infrastructure Workshop',
     href: 'https://vimeo.com/showcase/6628565/video/381168491',
     date: '2019',
