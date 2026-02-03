@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import airIcon from '../images/air.png';
 import heatIcon from '../images/heat.png';
 import floodIcon from '../images/flood.png';
@@ -59,14 +60,12 @@ export default function ContentSections() {
               Used in: Stuttgart 2023, Croydon 2025
             </p>
             <div className='pt-4'>
-              <a
-                href='https://lbs.treesai.org/'
-                target='_blank'
-                rel='noreferrer noopener'
-                className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-green-800 hover:bg-green-600'
+              <Link
+                to='/tools/lbs'
+                className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
               >
-                Open LBS tool
-              </a>
+                More details
+              </Link>
             </div>
           </div>
           <div className='border border-indigo-600 rounded-[30px] bg-white shadow-md p-6 flex flex-col'>
@@ -79,14 +78,12 @@ export default function ContentSections() {
               Used in: Berlin 2024, Glasgow 2021
             </p>
             <div className='pt-4'>
-              <a
-                href='https://ecosystem-services.treesai.org/?lang=en'
-                target='_blank'
-                rel='noreferrer noopener'
-                className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-green-800 hover:bg-green-600'
+              <Link
+                to='/tools/ecosystem-services'
+                className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
               >
-                Open valuation dashboard
-              </a>
+                More details
+              </Link>
             </div>
           </div>
           <div className='border border-indigo-600 rounded-[30px] bg-white shadow-md p-6 flex flex-col'>
@@ -98,6 +95,14 @@ export default function ContentSections() {
             <p className='book-info-sm text-dark-wood-500 pt-4'>
               Used in: UK research pilots, community workshops
             </p>
+            <div className='pt-4'>
+              <Link
+                to='/tools/resilience-compass'
+                className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
+              >
+                More details
+              </Link>
+            </div>
           </div>
           <div className='border border-indigo-600 rounded-[30px] bg-white shadow-md p-6 flex flex-col'>
             <p className='bold-intro-lg text-indigo-700 pb-2'>Registry & Portfolio Platform</p>
@@ -108,6 +113,14 @@ export default function ContentSections() {
             <p className='book-info-sm text-dark-wood-500 pt-4'>
               Built through pilots in Glasgow and with international partners.
             </p>
+            <div className='pt-4'>
+              <Link
+                to='/tools/registry-portfolio'
+                className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
+              >
+                More details
+              </Link>
+            </div>
           </div>
         </div>
       </div>
