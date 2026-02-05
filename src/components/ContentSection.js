@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import airIcon from '../images/air.png';
 import heatIcon from '../images/heat.png';
 import floodIcon from '../images/flood.png';
@@ -36,6 +37,188 @@ export default function ContentSections() {
 
   return (
     <div className='global-margin scroll-smooth'>
+      {/* Tools – we built these; they are used in real projects and build trust */}
+      <div id='tools' className='pt-20 pb-20'>
+        <div className='my-10 grid'>
+          <div className='place-self-center text-center max-w-4xl '>
+            <h2 className='text-dark-wood-800'>Our tools</h2>
+            <p className='book-intro-md mt-4 text-dark-wood-800'>
+              We’ve built data-enabled tools that are used in real projects worldwide. They help
+              cities, NGOs, and private partners understand risks, value benefits, and coordinate
+              investment in urban nature.
+            </p>
+          </div>
+        </div>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+          <div className='border border-indigo-600 rounded-[30px] bg-white shadow-md p-6 flex flex-col'>
+            <p className='bold-intro-lg text-indigo-700 pb-2'>Location-Based Scoring</p>
+            <p className='book-intro-md text-dark-wood-800 flex-1'>
+              Maps climate and social risks across the city to prioritise where nature-based
+              solutions can have the greatest impact.
+            </p>
+            <p className='book-info-sm text-dark-wood-500 pt-4'>
+              Used in: Stuttgart 2023, Croydon 2025
+            </p>
+            <div className='pt-4'>
+              <Link
+                to='/tools/lbs'
+                className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
+              >
+                More details
+              </Link>
+            </div>
+          </div>
+          <div className='border border-indigo-600 rounded-[30px] bg-white shadow-md p-6 flex flex-col'>
+            <p className='bold-intro-lg text-indigo-700 pb-2'>Ecosystem Services Valuation</p>
+            <p className='book-intro-md text-dark-wood-800 flex-1'>
+              Quantifies benefits like cooling, flood mitigation, and health to build robust
+              economic cases for investment in trees and green space.
+            </p>
+            <p className='book-info-sm text-dark-wood-500 pt-4'>
+              Used in: Berlin 2024, Glasgow 2021
+            </p>
+            <div className='pt-4'>
+              <Link
+                to='/tools/ecosystem-services'
+                className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
+              >
+                More details
+              </Link>
+            </div>
+          </div>
+          <div className='border border-indigo-600 rounded-[30px] bg-white shadow-md p-6 flex flex-col'>
+            <p className='bold-intro-lg text-indigo-700 pb-2'>Resilience Compass</p>
+            <p className='book-intro-md text-dark-wood-800 flex-1'>
+              Supports stakeholders to explore scenarios, surface trade-offs, and co-design
+              resilient place-based portfolios of NbS.
+            </p>
+            <p className='book-info-sm text-dark-wood-500 pt-4'>
+              Used in: UK research pilots, community workshops
+            </p>
+            <div className='pt-4'>
+              <Link
+                to='/tools/resilience-compass'
+                className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
+              >
+                More details
+              </Link>
+            </div>
+          </div>
+          <div className='border border-indigo-600 rounded-[30px] bg-white shadow-md p-6 flex flex-col'>
+            <p className='bold-intro-lg text-indigo-700 pb-2'>Registry & Portfolio Platform</p>
+            <p className='book-intro-md text-dark-wood-800 flex-1'>
+              Tracks projects, outcomes, and finance flows so cities and investors can steward
+              long-term, people-centred nature portfolios.
+            </p>
+            <p className='book-info-sm text-dark-wood-500 pt-4'>
+              Built through pilots in Glasgow and with international partners.
+            </p>
+            <div className='pt-4'>
+              <Link
+                to='/tools/registry-portfolio'
+                className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
+              >
+                More details
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Services – we provide these, drawing on our tools */}
+      <div id='services' className='pb-20'>
+        <div className='my-10 grid'>
+          <div className='place-self-center text-center max-w-4xl '>
+            <h2 className='text-dark-wood-800'>Our services</h2>
+            <p className='book-intro-md mt-4 text-dark-wood-800'>
+              We provide the following services, drawing on our tools and methods to support cities,
+              NGOs, and private partners.
+            </p>
+          </div>
+        </div>
+        <div className='lg:flex justify-center '>
+          <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-20 py-8 lg:w-3/5'>
+            <h3 className='text-indigo-600 pb-2 text-center'>
+              Data <br /> Services
+            </h3>
+            <img className='py-4 h-48 ' src={dataIcon} alt='' />
+            <div className='text-center'>
+              <a href='#data' className=''>
+                <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
+                  Find out more
+                </button>
+              </a>
+            </div>
+          </div>
+          <hr className='w-8 py-32 my-10 bg-indigo-600 hidden lg:block' />
+          <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-20 py-8 lg:w-3/5'>
+            <h3 className='text-green-600 pb-2 text-center'>
+              Management <br /> Services
+            </h3>
+            <img className='py-4 h-48 ' src={mgmtIcon} alt='' />
+            <div className='text-center'>
+              <a href='#mgmt'>
+                <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
+                  Find out more
+                </button>
+              </a>
+            </div>
+          </div>
+          <hr className='w-8 py-32 my-10 bg-indigo-600 hidden lg:block' />
+          <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-20 py-8 lg:w-3/5'>
+            <h3 className='text-indigo-600 pb-2 text-center'>
+              Citizen-centred <br />
+              Design Services
+            </h3>
+            <img className='py-4 h-48 ' src={citizenIcon} alt='' />
+            <div className='text-center'>
+              <a href='#citi'>
+                <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
+                  Find out more
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* How we work – how to engage with us */}
+      <div id='how-we-work' className='pb-20'>
+        <div className='my-10 grid'>
+          <div className='place-self-center text-center max-w-4xl '>
+            <h2 className='text-dark-wood-800'>How we work with you</h2>
+            <p className='book-intro-md mt-4 text-dark-wood-800'>
+              We work with cities, NGOs, and private organisations. Here’s how we typically engage
+              with partners—from understanding location to crystallising benefits and coordinating
+              action.
+            </p>
+          </div>
+        </div>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
+          <div className='bg-white-200 rounded-[40px] border border-indigo-600 px-6 py-8'>
+            <p className='bold-intro-lg text-indigo-700 pb-2'>1. Understand location</p>
+            <p className='book-intro-md text-dark-wood-800'>
+              We assess place-based risks and opportunities using spatial analysis and heat, flood,
+              and air-quality data to identify priority areas.
+            </p>
+          </div>
+          <div className='bg-white-200 rounded-[40px] border border-indigo-600 px-6 py-8'>
+            <p className='bold-intro-lg text-indigo-700 pb-2'>2. Crystallise benefits</p>
+            <p className='book-intro-md text-dark-wood-800'>
+              We quantify ecosystem services and model scenarios to build the evidence base for
+              investment and policy decisions.
+            </p>
+          </div>
+          <div className='bg-white-200 rounded-[40px] border border-indigo-600 px-6 py-8'>
+            <p className='bold-intro-lg text-indigo-700 pb-2'>3. Engage & coordinate</p>
+            <p className='book-intro-md text-dark-wood-800'>
+              We design governance, contracts, and funding mechanisms that bring stakeholders
+              together to deliver and steward projects over time.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className='pt-20 pb-8'>
         <div className='my-10 grid'>
           <div className='place-self-center text-center max-w-3xl '>
@@ -106,12 +289,12 @@ export default function ContentSections() {
           <div>
             <div className='mx-auto max-w-xs sm:max-w-3xl '>
               <h2 className='text-white hidden sm:block'>
-                We’re creating the required infrastructure to help cities and local communities
-                secure funding for urban trees and green spaces.
+                We’re creating the required infrastructure to help cities, NGOs, and private
+                partners secure funding for urban trees and green spaces.
               </h2>
               <h3 className='text-white block sm:hidden px-4'>
-                We’re creating the required infrastructure to help cities and local communities
-                secure funding for urban trees and green spaces.
+                We’re creating the required infrastructure to help cities, NGOs, and private
+                partners secure funding for urban trees and green spaces.
               </h3>
             </div>
           </div>
@@ -140,65 +323,14 @@ export default function ContentSections() {
           </div>
         </div>
       </div>
-      <div id='services' className=' pb-20'>
-        <div className='my-10 grid'>
-          <div className='place-self-center text-center max-w-4xl '>
-            <h2 className='text-dark-wood-800'>Our services</h2>
-          </div>
-        </div>
-        <div className='lg:flex justify-center '>
-          <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-20 py-8 lg:w-3/5'>
-            <h3 className='text-indigo-600 pb-2 text-center'>
-              Data <br /> Services
-            </h3>
-            <img className='py-4 h-48 ' src={dataIcon} alt='' />
-            <div className='text-center'>
-              <a href='#data' className=''>
-                <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
-                  Find out more
-                </button>
-              </a>
-            </div>
-          </div>
-          <hr className='w-8 py-32 my-10 bg-indigo-600 hidden lg:block' />
-          <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-20 py-8 lg:w-3/5'>
-            <h3 className='text-green-600 pb-2 text-center'>
-              Management <br /> Services
-            </h3>
-            <img className='py-4 h-48 ' src={mgmtIcon} alt='' />
-            <div className='text-center'>
-              <a href='#mgmt'>
-                <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
-                  Find out more
-                </button>
-              </a>
-            </div>
-          </div>
-          <hr className='w-8 py-32 my-10 bg-indigo-600 hidden lg:block' />
-          <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-20 py-8 lg:w-3/5'>
-            <h3 className='text-indigo-600 pb-2 text-center'>
-              Citizen-centred <br />
-              Design Services
-            </h3>
-            <img className='py-4 h-48 ' src={citizenIcon} alt='' />
-            <div className='text-center'>
-              <a href='#citi'>
-                <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
-                  Find out more
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <SectionHeader title='Data Services' id='data' />
       <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-4 sm:px-20 py-10 '>
         <div className='px-4'>
           <div className=' rounded-lg'>
             <h3 className='text-indigo-700'>
-              Using existing data to create actionable insights; allowing cities to prioritise and
-              implement Nature-based Solutions (NbS)
+              Using existing data to create actionable insights; allowing cities, NGOs, and private
+              partners to prioritise and implement Nature-based Solutions (NbS)
             </h3>
           </div>
         </div>
@@ -312,11 +444,12 @@ export default function ContentSections() {
         </div>
         <hr className='sm:col-span-3 my-8 border-green-600' />
         <div>
-          <p className='text-black bold-intro-lg max-w-xs'>Connecting cities with Opportunities</p>
+            <p className='text-black bold-intro-lg max-w-xs'>Connecting partners with opportunities</p>
         </div>
         <div className='sm:col-span-2'>
           <p className='book-intro-md pb-2'>
-            With DmCS, we link cities to opportunities and funding for projects.
+            With DmCS, we link cities, NGOs, and other partners to opportunities and funding for
+            projects.
           </p>
           <p className='book-intro-md'>
             Project example: Glasgow, Scotland; Ongoing project: Nature-Demo
@@ -373,16 +506,21 @@ export default function ContentSections() {
         </div>
       </div>
 
-      <div id='work' className='my-10 grid'>
+      {/* Project stories */}
+      <div id='project-stories' className='my-10 grid'>
         <div className='place-self-center text-center max-w-3xl pb-10'>
-          <h2 className='text-dark-wood-800'>Right now, we are working on:</h2>
+          <h2 className='text-dark-wood-800'>Project stories</h2>
+          <p className='book-intro-md mt-4 text-dark-wood-800'>
+            We test and grow our tools in real places, with cities, NGOs, and private partners who
+            are reimagining how urban nature is valued and financed.
+          </p>
         </div>
       </div>
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-20 justify-items-stretch'>
         <div className='grid grid-cols-1 justify-items-stretch'>
           <div className='plan-background-shape h-[243px] flex items-center justify-center'>
-            <h3 className='text-white-200'>TreesAI Stuttgart</h3>
+            <h3 className='text-white-200'>Stuttgart, Germany</h3>
           </div>
           <p className='book-intro-sm max-w-xs mx-auto pt-8'>
             We’re implementing our Location-Based Scoring tool to support the municipality in the
@@ -406,7 +544,31 @@ export default function ContentSections() {
 
         <div className='grid grid-cols-1 justify-items-stretch'>
           <div className='measure-background-shape h-[243px] flex items-center justify-center'>
-            <h3 className=' text-white-200'>TreesAI Seoul</h3>
+            <h3 className=' text-white-200'>Croydon, London</h3>
+          </div>
+          <p className='book-intro-sm max-w-xs mx-auto pt-8'>
+            We co-created the Croydon Climate Adaptation Plan, using spatial data and scoring to
+            identify priority neighbourhoods for cooling and nature-based interventions.
+          </p>
+          <p className='book-intro-sm max-w-xs mx-auto pt-2'>
+            Partners: London Borough of Croydon and local stakeholders
+          </p>
+          <div className='pt-4 text-center'>
+            <a
+              target='_blank'
+              rel='noreferrer'
+              href='https://github.com/Dark-Matter-Labs/croydon_adaptation_plan'
+            >
+              <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
+                Explore adaptation data
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div className='grid grid-cols-1 justify-items-stretch'>
+          <div className='measure-background-shape h-[243px] flex items-center justify-center'>
+            <h3 className=' text-white-200'>Seoul, South Korea</h3>
           </div>
           <p className='book-intro-sm max-w-xs mx-auto pt-8'>
             We’re developing a data framework to assess the climate risks of heat island effect and
@@ -428,8 +590,32 @@ export default function ContentSections() {
         </div>
 
         <div className='grid grid-cols-1 justify-items-stretch'>
+          <div className='plan-background-shape h-[243px] flex items-center justify-center'>
+            <h3 className='text-center text-white-200'>Berlin, Germany</h3>
+          </div>
+          <p className='book-intro-sm max-w-xs mx-auto pt-8'>
+            We valued the ecosystem services of Berlin&apos;s street trees to inform decisions on
+            preserving canopy while extending the M10 tram line.
+          </p>
+          <p className='book-intro-sm max-w-xs mx-auto pt-2'>
+            Partner: The Nature Conservancy and local stakeholders
+          </p>
+          <div className='pt-4 text-center'>
+            <a
+              target='_blank'
+              rel='noreferrer'
+              href='https://provocations.darkmatterlabs.org/unlocking-the-value-for-urban-nature-an-economic-case-for-street-tree-preservation-in-berlin-af0714bdd9f3'
+            >
+              <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
+                Read Berlin story
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div className='grid grid-cols-1 justify-items-stretch'>
           <div className='list-background-shape h-[243px] flex items-center justify-center'>
-            <h3 className='text-center text-white-200'>TreesAI Glasgow</h3>
+            <h3 className='text-center text-white-200'>Glasgow, Scotland</h3>
           </div>
           <p className='book-intro-sm max-w-xs mx-auto pt-8'>
             We’re quantifying the capacity of Glasgow’s existing tree stocks to mitigate against
@@ -455,7 +641,7 @@ export default function ContentSections() {
 
         <div className='grid grid-cols-1 justify-items-stretch'>
           <div className='list-background-shape h-[243px] flex items-center justify-center'>
-            <h3 className='text-center text-white-200'>Nature Demo</h3>
+            <h3 className='text-center text-white-200'>Nature Demo (EU)</h3>
           </div>
           <p className='book-intro-sm max-w-xs mx-auto pt-8'>
             As part of the Horizon 2020, we’re supporting the 20-partner consortium with expertise
