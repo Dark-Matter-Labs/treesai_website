@@ -567,6 +567,29 @@ export default function ContentSections() {
         </div>
 
         <div className='grid grid-cols-1 justify-items-stretch'>
+          <div className='plan-background-shape h-[243px] flex items-center justify-center'>
+            <h3 className='text-center text-white-200'>Outcomes-Based Public Realm</h3>
+          </div>
+          <p className='book-intro-sm max-w-xs mx-auto pt-8'>
+            Building Better Public Space Outcomes: A Data Driven Approach to Public Realm Decision Making: Exploring how public space can be planned, governed and stewarded through more transparent, outcomes based digital tools that connect community priorities, ecological value and long term benefits.
+          </p>
+          <p className='book-intro-sm max-w-xs mx-auto pt-2'>
+            Partner: Connected Place Catapult
+          </p>
+          <div className='pt-4 text-center'>
+            <a
+              target='_blank'
+              rel='noreferrer'
+              href='https://cp.catapult.org.uk/report/pathways-to-outcomes-based-public-space/'
+            >
+              <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
+                Project report
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div className='grid grid-cols-1 justify-items-stretch'>
           <div className='measure-background-shape h-[243px] flex items-center justify-center'>
             <h3 className=' text-white-200'>Seoul, South Korea</h3>
           </div>
