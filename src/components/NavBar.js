@@ -4,8 +4,10 @@ import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 const navigation = [
+  { name: 'Tools', href: 'tools' },
   { name: 'Services', href: 'services' },
-  { name: 'Current Work', href: 'work' },
+  { name: 'How we work', href: 'how-we-work' },
+  { name: 'Project stories', href: 'project-stories' },
   { name: 'Resources', href: 'reports' },
   { name: 'Get in touch', href: 'contact' },
 ];
