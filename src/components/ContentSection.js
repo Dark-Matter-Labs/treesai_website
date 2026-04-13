@@ -568,7 +568,7 @@ export default function ContentSections() {
 
         <div className='grid grid-cols-1 justify-items-stretch'>
           <div className='plan-background-shape h-[243px] flex items-center justify-center'>
-            <h3 className='text-center text-white-200'>Outcomes-Based Public Realm</h3>
+            <h3 className='text-center text-white-200'>Outcomes-Based <br/> Public Realm</h3>
           </div>
           <p className='book-intro-sm max-w-xs mx-auto pt-8'>
             Building Better Public Space Outcomes: A Data Driven Approach to Public Realm Decision Making: Exploring how public space can be planned, governed and stewarded through more transparent, outcomes based digital tools that connect community priorities, ecological value and long term benefits.
