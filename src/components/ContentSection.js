@@ -77,14 +77,10 @@ export default function ContentSections() {
               and strengthening urban resilience.
             </p>
           </div>
-          <div className='lg:col-span-2'>
-            <div className='bg-dark-wood-800 rounded-[40px] px-10 py-12'>
-              <p className='book-intro-lg text-white-200 leading-5'>
-                “The value is recognised,
-                <br />
-                but not resourced.”
-              </p>
-            </div>
+          <div className='lg:col-span-2 flex items-center'>
+            <p className='font-favorit font-bold text-4xl leading-6 text-indigo-600'>
+              &ldquo;The value is recognised, but not resourced.&rdquo;
+            </p>
           </div>
         </div>
       </div>
