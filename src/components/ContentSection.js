@@ -160,85 +160,92 @@ export default function ContentSections() {
       {/* Tools – we built these; they are used in real projects and build trust */}
       <div id='tools' className='pt-20 pb-20'>
         <div className='my-10 grid'>
-          <div className='place-self-center text-center max-w-4xl '>
+          <div className='place-self-center text-center max-w-4xl'>
             <h2 className='text-dark-wood-800'>Our tools</h2>
             <p className='book-intro-md mt-4 text-dark-wood-800'>
-              We’ve built data-enabled tools that are used in real projects worldwide. They help
-              cities, NGOs, and private partners understand risks, value benefits, and coordinate
-              investment in urban nature.
+              TreesAI tools combine spatial data, ecosystem service valuation and decision-support
+              methods to help cities understand the role of trees and urban nature as
+              infrastructure. They help cities identify where nature creates value, where it is most
+              needed, who benefits, and what risks or opportunities should shape future investment.
             </p>
           </div>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
           <div className='border border-indigo-600 rounded-[30px] bg-white shadow-md p-6 flex flex-col'>
-            <p className='bold-intro-lg text-indigo-700 pb-2'>Location-Based Scoring</p>
+            <p className='book-info-sm text-indigo-500 pb-2 uppercase tracking-widest'>
+              01 · Location-Based Scoring
+            </p>
+            <p className='bold-intro-lg text-dark-wood-800 pb-3'>Map risks and needs</p>
             <p className='book-intro-md text-dark-wood-800 flex-1'>
-              Maps climate and social risks across the city to prioritise where nature-based
-              solutions can have the greatest impact.
+              Identify where heat, flooding, social vulnerability, and gaps in green space overlap,
+              so cities can prioritise where urban nature can create the greatest public value.
             </p>
-            <p className='book-info-sm text-dark-wood-500 pt-4'>
-              Used in: Stuttgart 2023, Croydon 2025
-            </p>
-            <div className='pt-4'>
+            <div className='pt-6'>
               <Link
                 to='/tools/lbs'
                 className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
               >
-                More details
+                Explore this capability
               </Link>
             </div>
           </div>
           <div className='border border-indigo-600 rounded-[30px] bg-white shadow-md p-6 flex flex-col'>
-            <p className='bold-intro-lg text-indigo-700 pb-2'>Ecosystem Services Valuation</p>
+            <p className='book-info-sm text-indigo-500 pb-2 uppercase tracking-widest'>
+              02 · Ecosystem Services Calculator
+            </p>
+            <p className='bold-intro-lg text-dark-wood-800 pb-3'>Value ecosystem benefits</p>
             <p className='book-intro-md text-dark-wood-800 flex-1'>
-              Quantifies benefits like cooling, flood mitigation, and health to build robust
-              economic cases for investment in trees and green space.
+              Quantify the benefits of trees and urban nature — cooling, stormwater management, air
+              quality, health, biodiversity, and avoided costs.
             </p>
-            <p className='book-info-sm text-dark-wood-500 pt-4'>
-              Used in: Berlin 2024, Glasgow 2021
-            </p>
-            <div className='pt-4'>
+            <div className='pt-6'>
               <Link
                 to='/tools/ecosystem-services'
                 className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
               >
-                More details
+                Explore this capability
               </Link>
             </div>
           </div>
           <div className='border border-indigo-600 rounded-[30px] bg-white shadow-md p-6 flex flex-col'>
-            <p className='bold-intro-lg text-indigo-700 pb-2'>Resilience Compass</p>
+            <p className='book-info-sm text-indigo-500 pb-2 uppercase tracking-widest'>
+              03 · Open Space Evaluation Tool
+            </p>
+            <p className='bold-intro-lg text-dark-wood-800 pb-3'>
+              Evaluate spaces with communities
+            </p>
             <p className='book-intro-md text-dark-wood-800 flex-1'>
-              Supports stakeholders to explore scenarios, surface trade-offs, and co-design
-              resilient place-based portfolios of NbS.
+              Assess open public spaces across climate resilience, community wellbeing and inclusive
+              stewardship — weaving spatial data, Indigenous land stewardship knowledge and
+              community-led surveys around the principle that those who tend to nature are essential
+              guides in how it is valued and cared for.
             </p>
-            <p className='book-info-sm text-dark-wood-500 pt-4'>
-              Used in: UK research pilots, community workshops
-            </p>
-            <div className='pt-4'>
+            <div className='pt-6'>
               <Link
-                to='/tools/resilience-compass'
+                to='/tools/open-space-evaluation'
                 className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
               >
-                More details
+                Explore this capability
               </Link>
             </div>
           </div>
           <div className='border border-indigo-600 rounded-[30px] bg-white shadow-md p-6 flex flex-col'>
-            <p className='bold-intro-lg text-indigo-700 pb-2'>Registry & Portfolio Platform</p>
+            <p className='book-info-sm text-indigo-500 pb-2 uppercase tracking-widest'>
+              04 · Registry & Portfolio Platform
+            </p>
+            <p className='bold-intro-lg text-dark-wood-800 pb-3'>
+              Track portfolios and stewardship
+            </p>
             <p className='book-intro-md text-dark-wood-800 flex-1'>
-              Tracks projects, outcomes, and finance flows so cities and investors can steward
-              long-term, people-centred nature portfolios.
+              Monitor projects, outcomes, funding flows, and responsibilities over time, so cities
+              and partners can coordinate long-term care.
             </p>
-            <p className='book-info-sm text-dark-wood-500 pt-4'>
-              Built through pilots in Glasgow and with international partners.
-            </p>
-            <div className='pt-4'>
+            <div className='pt-6'>
               <Link
                 to='/tools/registry-portfolio'
                 className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
               >
-                More details
+                Explore this capability
               </Link>
             </div>
           </div>
@@ -248,19 +255,25 @@ export default function ContentSections() {
       {/* Services – we provide these, drawing on our tools */}
       <div id='services' className='pb-20'>
         <div className='my-10 grid'>
-          <div className='place-self-center text-center max-w-4xl '>
+          <div className='place-self-center text-center max-w-4xl'>
             <h2 className='text-dark-wood-800'>Our services</h2>
             <p className='book-intro-md mt-4 text-dark-wood-800'>
-              We provide the following services, drawing on our tools and methods to support cities,
-              NGOs, and private partners.
+              TreesAI services support cities and partners to apply the tools in real planning,
+              governance and finance contexts.
+            </p>
+            <p className='book-intro-md mt-3 text-dark-wood-800'>
+              We help translate evidence into priorities, business cases, institutional models,
+              stakeholder alignment and practical pathways for long-term care.
             </p>
           </div>
         </div>
         <div className='lg:flex justify-center '>
           <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-20 py-8 lg:w-3/5'>
-            <h3 className='text-indigo-600 pb-2 text-center'>
-              Data <br /> Services
-            </h3>
+            <h3 className='text-indigo-600 pb-2 text-center'>Build the evidence base</h3>
+            <p className='book-intro-md text-dark-wood-800 text-center pb-2'>
+              Data sourcing, spatial analysis, ecosystem service modelling, benefit mapping, and
+              dashboard development.
+            </p>
             <img className='py-4 h-48 ' src={dataIcon} alt='' />
             <div className='text-center'>
               <a href='#data' className=''>
@@ -272,9 +285,11 @@ export default function ContentSections() {
           </div>
           <hr className='w-8 py-32 my-10 bg-indigo-600 hidden lg:block' />
           <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-20 py-8 lg:w-3/5'>
-            <h3 className='text-green-600 pb-2 text-center'>
-              Management <br /> Services
-            </h3>
+            <h3 className='text-green-600 pb-2 text-center'>Shape strategy and investment</h3>
+            <p className='book-intro-md text-dark-wood-800 text-center pb-2'>
+              Prioritisation, business case development, finance logic, governance design, and
+              portfolio planning.
+            </p>
             <img className='py-4 h-48 ' src={mgmtIcon} alt='' />
             <div className='text-center'>
               <a href='#mgmt'>
@@ -286,10 +301,11 @@ export default function ContentSections() {
           </div>
           <hr className='w-8 py-32 my-10 bg-indigo-600 hidden lg:block' />
           <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-20 py-8 lg:w-3/5'>
-            <h3 className='text-indigo-600 pb-2 text-center'>
-              Citizen-centred <br />
-              Design Services
-            </h3>
+            <h3 className='text-indigo-600 pb-2 text-center'>Design with communities</h3>
+            <p className='book-intro-md text-dark-wood-800 text-center pb-2'>
+              Citizen-centred research, stakeholder engagement, co-design workshops, pilot design,
+              and learning processes.
+            </p>
             <img className='py-4 h-48 ' src={citizenIcon} alt='' />
             <div className='text-center'>
               <a href='#citi'>
@@ -308,7 +324,7 @@ export default function ContentSections() {
           <div className='place-self-center text-center max-w-4xl '>
             <h2 className='text-dark-wood-800'>How we work with you</h2>
             <p className='book-intro-md mt-4 text-dark-wood-800'>
-              We work with cities, NGOs, and private organisations. Here’s how we typically engage
+              We work with cities, NGOs, and private organisations. Here's how we typically engage
               with partners—from understanding location to crystallising benefits and coordinating
               action.
             </p>
@@ -409,11 +425,11 @@ export default function ContentSections() {
           <div>
             <div className='mx-auto max-w-xs sm:max-w-3xl '>
               <h2 className='text-white hidden sm:block'>
-                We’re creating the required infrastructure to help cities, NGOs, and private
+                We're creating the required infrastructure to help cities, NGOs, and private
                 partners secure funding for urban trees and green spaces.
               </h2>
               <h3 className='text-white block sm:hidden px-4'>
-                We’re creating the required infrastructure to help cities, NGOs, and private
+                We're creating the required infrastructure to help cities, NGOs, and private
                 partners secure funding for urban trees and green spaces.
               </h3>
             </div>
@@ -502,7 +518,7 @@ export default function ContentSections() {
             >
               Lucidminds
             </a>
-            , we’re exploring implementing their{' '}
+            , we're exploring implementing their{' '}
             <a
               className='text-indigo-600'
               target='_blank'
@@ -558,7 +574,7 @@ export default function ContentSections() {
         </div>
         <div className='sm:col-span-2'>
           <p className='book-intro-md'>
-            With Dark Matter Capital Systems, we’re exploring tree canopy funds and whole-city
+            With Dark Matter Capital Systems, we're exploring tree canopy funds and whole-city
             transition portfolios that allow trees to become an investable asset class.
           </p>
         </div>
@@ -585,7 +601,7 @@ export default function ContentSections() {
           <div className=' rounded-lg'>
             <h3 className='text-indigo-600'>
               {' '}
-              The success of a city’s Nature-based Solutions (NbS) depends on the people and
+              The success of a city's Nature-based Solutions (NbS) depends on the people and
               communities making and implementing decisions
             </h3>
           </div>
@@ -645,7 +661,7 @@ export default function ContentSections() {
             <h3 className='text-white-200'>Stuttgart, Germany</h3>
           </div>
           <p className='book-intro-sm max-w-xs mx-auto pt-8'>
-            We’re implementing our Location-Based Scoring tool to support the municipality in the
+            We're implementing our Location-Based Scoring tool to support the municipality in the
             prioritisation of urban Nature-based Solutions.
           </p>
           <p className='book-intro-sm max-w-xs mx-auto pt-2'>
@@ -719,7 +735,7 @@ export default function ContentSections() {
             <h3 className=' text-white-200'>Seoul, South Korea</h3>
           </div>
           <p className='book-intro-sm max-w-xs mx-auto pt-8'>
-            We’re developing a data framework to assess the climate risks of heat island effect and
+            We're developing a data framework to assess the climate risks of heat island effect and
             running various canopy scenarios to assess the potential cooling effect of trees as a
             climate adaptation and mitigation strategy.
           </p>
@@ -766,8 +782,8 @@ export default function ContentSections() {
             <h3 className='text-center text-white-200'>Glasgow, Scotland</h3>
           </div>
           <p className='book-intro-sm max-w-xs mx-auto pt-8'>
-            We’re quantifying the capacity of Glasgow’s existing tree stocks to mitigate against
-            flooding. We’re working with project developers and outcome buyers to justify and fund a
+            We're quantifying the capacity of Glasgow's existing tree stocks to mitigate against
+            flooding. We're working with project developers and outcome buyers to justify and fund a
             portfolio of nature-based solutions.
           </p>
           <p className='book-intro-sm max-w-xs mx-auto pt-2'>
@@ -792,7 +808,7 @@ export default function ContentSections() {
             <h3 className='text-center text-white-200'>Nature Demo (EU)</h3>
           </div>
           <p className='book-intro-sm max-w-xs mx-auto pt-8'>
-            As part of the Horizon 2020, we’re supporting the 20-partner consortium with expertise
+            As part of the Horizon 2020, we're supporting the 20-partner consortium with expertise
             on green financing and innovative governance.
           </p>
           <div className='pt-4 text-center'>
@@ -810,7 +826,7 @@ export default function ContentSections() {
           </div>
           <p className='book-intro-sm max-w-xs mx-auto pt-8'>
             {' '}
-            We’re developing design guideline and processes for the nature-positive regeneration of
+            We're developing design guideline and processes for the nature-positive regeneration of
             Villaverde, Madrid.
           </p>
           <p className='book-intro-sm max-w-xs mx-auto pt-2'>Partner: City of Madrid</p>
@@ -828,7 +844,7 @@ export default function ContentSections() {
             <h3 className='text-center text-white-200'>Equitable Urban Forestry, UK</h3>
           </div>
           <p className='book-intro-sm max-w-xs mx-auto pt-8'>
-            We’ve developed a framework and a database to assist local authorities and project
+            We've developed a framework and a database to assist local authorities and project
             developers in the long-term implementation of data-enabled urban forests, which
             prioritise often-marginalised communities.
           </p>

@@ -6,6 +6,7 @@ import LBSToolPage from './pages/tools/LBSToolPage';
 import EcosystemServicesToolPage from './pages/tools/EcosystemServicesToolPage';
 import ResilienceCompassToolPage from './pages/tools/ResilienceCompassToolPage';
 import RegistryPortfolioToolPage from './pages/tools/RegistryPortfolioToolPage';
+import OpenSpaceEvaluationToolPage from './pages/tools/OpenSpaceEvaluationToolPage';
 import ScrollToTop from './components/ScrollToTop';
 
 import './App.css';
@@ -26,6 +27,9 @@ export default function TreesAIWebsite() {
         </Route>
         <Route path='/tools/resilience-compass'>
           <ResilienceCompassToolPage />
+        </Route>
+        <Route path='/tools/open-space-evaluation'>
+          <OpenSpaceEvaluationToolPage />
         </Route>
         <Route path='/tools/registry-portfolio'>
           <RegistryPortfolioToolPage />
