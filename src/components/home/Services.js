@@ -114,9 +114,9 @@ const accents = {
 
 function ServiceCard({ service }) {
   return (
-    <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-6 sm:px-12 lg:px-10 py-8 lg:w-3/5'>
+    <div className='flex flex-col items-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-6 sm:px-12 lg:px-10 py-8 lg:w-3/5'>
       <h3 className={`${accents[service.accent].text} pb-2 text-center`}>{service.title}</h3>
-      <p className='book-intro-md text-dark-wood-800 text-center pb-2'>{service.summary}</p>
+      <p className='book-intro-md text-dark-wood-800 text-center pb-2 flex-1'>{service.summary}</p>
       <img className='py-4 h-48' src={service.icon} alt='' />
       <a href={`#${service.id}`} className='btn btn-dark'>
         Find out more

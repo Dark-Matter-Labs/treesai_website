@@ -99,8 +99,10 @@ function StoryCard({ story }) {
       <div className={`${shapes[story.shape]} h-[243px] flex items-center justify-center`}>
         <h3 className='px-4 text-center text-white-200'>{story.title}</h3>
       </div>
-      <p className='book-intro-sm max-w-xs mx-auto pt-8'>{story.body}</p>
-      {story.partners && <p className='book-intro-sm max-w-xs mx-auto pt-2'>{story.partners}</p>}
+      <p className='book-intro-sm w-full max-w-xs mx-auto pt-8'>{story.body}</p>
+      {story.partners && (
+        <p className='book-intro-sm w-full max-w-xs mx-auto pt-2'>{story.partners}</p>
+      )}
       <div className='pt-4 text-center'>
         {story.link ? (
           <a target='_blank' rel='noreferrer' href={story.link.href} className='btn btn-dark'>
