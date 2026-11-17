@@ -31,7 +31,7 @@ export default function Supporters() {
             key={logo.name}
             className='flex flex-shrink-0 flex-grow justify-center lg:flex-grow-0'
           >
-            <img className='h-40' src={`assets/partner_logos/${logo.file}`} alt={logo.name} />
+            <img className='h-24 sm:h-40' src={`assets/partner_logos/${logo.file}`} alt={logo.name} />
           </li>
         ))}
       </ul>
