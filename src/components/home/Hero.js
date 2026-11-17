@@ -34,7 +34,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className='pt-20 sm:pt-40 px-4 pb-4'>
+        <div className='pt-20 sm:pt-40 pl-4 pr-16 lg:pr-4 pb-4'>
           <p className='book-info-sm text-dark-wood-500'>
             Video: By our partners: Phil Wilkes and Mat Disney, UCL Geography and NERC National
             Centre for Earth Observation.
