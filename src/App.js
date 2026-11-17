@@ -9,8 +9,6 @@ import RegistryPortfolioToolPage from './pages/tools/RegistryPortfolioToolPage';
 import OpenSpaceEvaluationToolPage from './pages/tools/OpenSpaceEvaluationToolPage';
 import ScrollToTop from './components/ScrollToTop';
 
-import './App.css';
-
 export default function TreesAIWebsite() {
   return (
     <Router>
