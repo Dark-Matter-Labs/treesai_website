@@ -12,13 +12,13 @@ export default function RegistryPortfolioToolPage() {
           <p className='book-intro-md text-dark-wood-800 mb-4'>
             The TreesAI Platform &amp; Registry supports urban actors to build and manage a
             portfolio of Nature-based Solutions (NbS). It compiles projects into a one-stop
-            database, evaluates and scores them using our spatial analysis methodology, and
-            connects projects to outcome buyers and fit-for-purpose financial instruments.
+            database, evaluates and scores them using our spatial analysis methodology, and connects
+            projects to outcome buyers and fit-for-purpose financial instruments.
           </p>
           <p className='book-intro-md text-dark-wood-800'>
-            The goal is to make trees and green infrastructure an investable asset class—with
-            clear reporting, transparent outcomes, and governance that allows cities, funds,
-            and communities to align around long-term stewardship.
+            The goal is to make trees and green infrastructure an investable asset class—with clear
+            reporting, transparent outcomes, and governance that allows cities, funds, and
+            communities to align around long-term stewardship.
           </p>
         </section>
 
@@ -28,23 +28,24 @@ export default function RegistryPortfolioToolPage() {
             <li className='rounded-[20px] border border-green-600 px-6 py-4 bg-white-200'>
               <p className='bold-intro-lg text-green-800'>City-wide NbS database</p>
               <p className='book-intro-md text-dark-wood-800 mt-1'>
-                A comprehensive list of projects and interventions, creating a single view for
-                all Nature-based Solutions in a place.
+                A comprehensive list of projects and interventions, creating a single view for all
+                Nature-based Solutions in a place.
               </p>
             </li>
             <li className='rounded-[20px] border border-green-600 px-6 py-4 bg-white-200'>
               <p className='bold-intro-lg text-green-800'>Evaluating and scoring projects</p>
               <p className='book-intro-md text-dark-wood-800 mt-1'>
-                Based on our spatial analysis and risk/benefit methodology so that priorities
-                are evidence-based.
+                Based on our spatial analysis and risk/benefit methodology so that priorities are
+                evidence-based.
               </p>
             </li>
             <li className='rounded-[20px] border border-green-600 px-6 py-4 bg-white-200'>
-              <p className='bold-intro-lg text-green-800'>Financial instruments &amp; connections</p>
+              <p className='bold-intro-lg text-green-800'>
+                Financial instruments &amp; connections
+              </p>
               <p className='book-intro-md text-dark-wood-800 mt-1'>
                 With Dark Matter Capital Systems we explore tree canopy funds and whole-city
-                transition portfolios, and link cities and partners to opportunities and
-                funding.
+                transition portfolios, and link cities and partners to opportunities and funding.
               </p>
             </li>
           </ul>
@@ -55,8 +56,8 @@ export default function RegistryPortfolioToolPage() {
           <p className='book-intro-md text-dark-wood-800 mb-6'>
             The platform has been piloted in Glasgow with Clyde Climate Forest, Glasgow City
             Council, FloodRe, Nationwide, Scottish Water, SEPA, and others—quantifying flood
-            mitigation capacity and working with outcome buyers to fund NbS portfolios. It is
-            also part of international consortia such as Nature-Demo.
+            mitigation capacity and working with outcome buyers to fund NbS portfolios. It is also
+            part of international consortia such as Nature-Demo.
           </p>
           <div className='rounded-[30px] border border-indigo-600 overflow-hidden bg-white-200'>
             <img

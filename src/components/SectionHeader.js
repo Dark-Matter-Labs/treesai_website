@@ -1,22 +1,19 @@
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
-}
+const backgrounds = {
+  typology: 'bg-green-700',
+};
 
-export default function SectionHeader(props) {
+// Rounded-top tab that labels the box below it.
+export default function SectionHeader({ id, title, type }) {
   return (
     <div
-      id={props.id}
-      className={classNames(
-        props.type === 'typology'
-          ? 'bg-green-600 '
-          : props.type === 'account'
-          ? 'bg-dark-wood-800 '
-          : 'bg-indigo-600',
-        'title-box-info mx-10 sm:mx-auto flex max-w-2xl justify-center p-5 ',
-      )}
+      id={id}
+      className={`${
+        backgrounds[type] || 'bg-indigo-600'
+      } title-box-info mx-10 sm:mx-auto flex max-w-2xl justify-center p-5`}
     >
-      <h2 className='text-white-200 hidden sm:block'>{props.title}</h2>
-      <p className='bold-intro-md text-center text-white-200 block sm:hidden'>{props.title}</p>
+      <h2 className='text-white-200 text-center bold-intro-md sm:text-4xl sm:font-medium sm:leading-6'>
+        {title}
+      </h2>
     </div>
   );
 }

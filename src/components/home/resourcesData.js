@@ -1,11 +1,9 @@
-import { useState } from 'react';
-import SectionHeader from './SectionHeader';
-
-const videos = [
+// Resources listed in the homepage tabs. For videos, `category.name` is the running time and
+// `readingLength` the publisher; for blog posts they are the format and the reading time.
+export const videos = [
   {
     id: 0,
-    title:
-      'Location Based Scoring App Demo',
+    title: 'Location Based Scoring App Demo',
     href: 'https://www.loom.com/share/6bd73b45454f4b4e907e1081bdb050a4',
     date: 'Jan 28, 2025',
     datetime: '2025-01-28',
@@ -129,7 +127,7 @@ const videos = [
   },
 ];
 
-const blogPosts = [
+export const blogPosts = [
   {
     id: 0,
     title: 'Building Climate Resilience in Croydon: A Data-Driven Approach to Adaptation',
@@ -144,7 +142,8 @@ const blogPosts = [
   },
   {
     id: 1,
-    title: 'Unlocking the Value for Urban Nature: An Economic Case for Street Tree Preservation in Berlin',
+    title:
+      'Unlocking the Value for Urban Nature: An Economic Case for Street Tree Preservation in Berlin',
     href: 'https://provocations.darkmatterlabs.org/unlocking-the-value-for-urban-nature-an-economic-case-for-street-tree-preservation-in-berlin-af0714bdd9f3',
     date: 'July 25, 2025',
     datetime: '2025-07-25',
@@ -299,7 +298,7 @@ const blogPosts = [
   },
 ];
 
-const posts = [
+export const pressItems = [
   {
     title: 'TreesAI Shows Communities How to Maintain and Grow Their Urban Forests',
     href: 'https://www.architectmagazine.com/technology/treesai-shows-communities-how-to-maintain-and-grow-their-urban-forests_o',
@@ -393,224 +392,3 @@ const posts = [
     datetime: '2020-09-30',
   },
 ];
-
-export default function Reports() {
-  const [openTab, setOpenTab] = useState(1);
-  return (
-    <div className='relative global-margin py-16 sm:py-24 lg:py-20' id='reports'>
-      <div className='relative'>
-        <SectionHeader title='Resources' />
-        <div
-          className='flex flex-wrap space-x-4 border rounded-[50px] border-indigo-600'
-          aria-label='Tabs'
-        >
-          <div className='w-full'>
-            <ul
-              className='flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row border-b border-gray3 mx-auto mt-4 max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl'
-              role='tablist'
-            >
-              <li className='-mb-px lg:mr-8 md:mr-8 sm:mr-2 last:mr-0'>
-                <a
-                  className={
-                    'px-3 py-2 book-intro-md rounded-md block ' +
-                    (openTab === 1 ? 'text-indigo-600' : 'text-dark-wood-800 hover:text-indigo-600')
-                  }
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setOpenTab(1);
-                  }}
-                  data-toggle='tab'
-                  href='#link2'
-                  role='tablist'
-                >
-                  Reports
-                </a>
-              </li>
-              <li className='-mb-px lg:mr-8 md:mr-8 sm:mr-2 last:mr-0'>
-                <a
-                  className={
-                    'px-3 py-2 book-intro-md rounded-md block ' +
-                    (openTab === 2 ? 'text-indigo-600' : 'text-dark-wood-800 hover:text-indigo-600')
-                  }
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setOpenTab(2);
-                  }}
-                  data-toggle='tab'
-                  href='#link1'
-                  role='tablist'
-                >
-                  Videos
-                </a>
-              </li>
-              <li className='-mb-px lg:mr-8 md:mr-8 sm:mr-2  last:mr-0'>
-                <a
-                  className={
-                    'px-3 py-2 book-intro-md rounded-md block ' +
-                    (openTab === 3 ? 'text-indigo-600' : 'text-dark-wood-800 hover:text-indigo-600')
-                  }
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setOpenTab(3);
-                  }}
-                  data-toggle='tab'
-                  href='#link3'
-                  role='tablist'
-                >
-                  Press
-                </a>
-              </li>
-            </ul>
-            <div className='relative flex flex-col min-w-0 break-words w-full mb-6 rounded'>
-              <div className='px-4 py-5 flex-auto'>
-                <div className='tab-content tab-space'>
-                  <div className={openTab === 2 ? 'block' : 'hidden'} id='link1'>
-                    <div className='mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl'>
-                      {videos.map((post) => (
-                        <div
-                          key={post.id}
-                          className='flex flex-col rounded-lg shadow-lg overflow-hidden'
-                        >
-                          <div className='flex-shrink-0'>
-                            <a target='_blank' rel='noreferrer noopener' href={post.href}>
-                              <img
-                                className='h-48 w-full object-cover'
-                                src={post.imageUrl}
-                                alt=''
-                              />
-                            </a>
-                          </div>
-                          <div className='flex-1 bg-white p-6 flex flex-col justify-between'>
-                            <div className='flex-1'>
-                              <p className='book-info-sm'>
-                                <a
-                                  href={post.href}
-                                  target='_blank'
-                                  rel='noreferrer noopener'
-                                  className='hover:underline'
-                                >
-                                  {post.category.name}
-                                </a>
-                              </p>
-                              <a
-                                href={post.href}
-                                target='_blank'
-                                rel='noreferrer noopener'
-                                className='block mt-2'
-                              >
-                                <p className='bold-intro-sm text-gray-900'>{post.title}</p>
-                                <p className='book-intro-sm text-gray-500 text-dark'>
-                                  {post.preview}
-                                </p>
-                              </a>
-                            </div>
-                            <div className='mt-6 flex items-center'>
-                              <div className='ml-3 text-gray-500'>
-                                <div className='flex space-x-1'>
-                                  <p className='book-info-sm text-gray-900'>{post.readingLength}</p>
-                                </div>
-                                <div className='flex space-x-1'>
-                                  <p className='book-info-sm text-dark'>{post.date}</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className={openTab === 1 ? 'block' : 'hidden'} id='link2'>
-                    <div className='mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl'>
-                      {blogPosts.map((post) => (
-                        <div
-                          key={post.id}
-                          className='flex flex-col rounded-lg shadow-lg overflow-hidden'
-                        >
-                          <div className='flex-shrink-0'>
-                            <a target='_blank' rel='noreferrer noopener' href={post.href}>
-                              <img
-                                className='h-48 w-full object-cover'
-                                src={post.imageUrl}
-                                alt=''
-                              />
-                            </a>
-                          </div>
-                          <div className='flex-1 bg-white p-6 flex flex-col justify-between'>
-                            <div className='flex-1'>
-                              <p className='book-info-sm text-blue2'>
-                                <a
-                                  href={post.href}
-                                  target='_blank'
-                                  rel='noreferrer noopener'
-                                  className='hover:underline'
-                                >
-                                  {post.category.name}
-                                </a>
-                              </p>
-                              <a
-                                href={post.href}
-                                target='_blank'
-                                rel='noreferrer noopener'
-                                className='block mt-2'
-                              >
-                                <p className='bold-intro-sm text-gray-900'>{post.title}</p>
-                                <p className='mt-3 book-intro-sm text-gray-500 text-dark'>
-                                  {post.preview}
-                                </p>
-                              </a>
-                            </div>
-                            <div className='mt-6 flex items-center'>
-                              <div className='ml-3'>
-                                <div className='flex space-x-1 book-info-sm text-dark'>
-                                  <time dateTime={post.datetime}>{post.date}</time>
-                                  <span aria-hidden='true'>&middot;</span>
-                                  <div className='text-gray-500 book-info-sm'>
-                                    <span>{post.readingLength} read</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className={openTab === 3 ? 'block' : 'hidden'} id='link4'>
-                    <div className='mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl'>
-                      {posts.map((post) => (
-                        <div key={post.title}>
-                          <p className='book-info-sm text-gray-500'>
-                            <time dateTime={post.datetime}>{post.date}</time>
-                          </p>
-                          <a
-                            href={post.href}
-                            target='_blank'
-                            rel='noreferrer noopener'
-                            className='mt-2 block'
-                          >
-                            <p className='bold-intro-sm text-gray-900'>{post.title}</p>
-                            <p className='mt-3 book-intro-sm text-gray-500'>{post.description}</p>
-                          </a>
-                          <div className='mt-3'>
-                            <a
-                              href={post.href}
-                              target='_blank'
-                              rel='noreferrer noopener'
-                              className='bold-info-sm text-blue2 hover:text-indigo-600'
-                            >
-                              Read full story
-                            </a>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}

@@ -4,8 +4,7 @@
 
 @font-face {
   font-family: 'ABCFavorit';
-  src: local('ABCFavorit'), local('ABCFavorit'),
-    url('./fonts/ABCFavoritVariable.woff2') format('woff2'),
+  src: local('ABCFavorit'), url('./fonts/ABCFavoritVariable.woff2') format('woff2'),
     url('./fonts/ABCFavoritVariable.woff') format('woff');
 }
 
@@ -14,4 +13,143 @@
   src: local('ABCFavorit Book'), local('ABCFavorit-Book'),
     url('./fonts/ABCFavoritVariable.woff2') format('woff2'),
     url('./fonts/ABCFavoritVariable.woff') format('woff');
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 3px;
+}
+
+/* Hero background video: the iframe fills the rounded hero box behind its text. */
+.vimeo-container {
+  position: relative;
+  background-color: black;
+}
+
+.vimeo-container iframe {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  min-width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.video-overlay {
+  position: relative;
+  z-index: 3;
+}
+
+@layer components {
+  h1 {
+    @apply font-favorit text-5xl font-medium leading-6;
+  }
+
+  h2 {
+    @apply font-favorit text-4xl font-medium leading-6;
+  }
+
+  h3 {
+    @apply font-favorit text-3xl font-medium leading-5;
+  }
+
+  .book-info-sm {
+    @apply font-favoritBook text-sm font-book leading-4;
+  }
+
+  .book-info-md {
+    @apply font-favoritBook text-base font-book leading-4;
+  }
+
+  .book-intro-sm {
+    @apply font-favoritBook font-book text-md leading-4;
+  }
+
+  .book-intro-md {
+    @apply font-favoritBook font-book text-xl leading-4;
+  }
+
+  .bold-intro-sm {
+    @apply font-favorit text-md font-bold leading-4;
+  }
+
+  .bold-intro-md {
+    @apply font-favorit text-xl font-bold leading-4;
+  }
+
+  .bold-intro-lg {
+    @apply font-favorit text-2xl font-bold leading-5;
+  }
+
+  .global-margin {
+    @apply max-w-screen-2xl mx-7 md:mx-10 xl:mx-20 2xl:mx-auto;
+  }
+
+  /* Pill buttons. Pair .btn with one colour variant. */
+  .btn {
+    @apply inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] cursor-pointer;
+  }
+
+  .btn-dark {
+    @apply text-white bg-dark-wood-800 hover:bg-dark-wood-600;
+  }
+
+  .btn-green {
+    @apply text-white bg-green-800 hover:bg-green-700;
+  }
+
+  .btn-indigo {
+    @apply text-white bg-indigo-600 hover:bg-indigo-700;
+  }
+
+  .btn-outline-light {
+    @apply text-white border border-white hover:bg-white hover:text-black;
+  }
+}
+
+.bg-problemSolution {
+  background-image: url('./images/bg-statement.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-registry {
+  background-image: url('./images/registry.svg');
+  background-repeat: no-repeat;
+}
+
+.bg-invest-contact {
+  background-image: url('./images/invest-with-us.svg');
+  background-repeat: no-repeat;
+}
+
+.title-box-info {
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+}
+
+.measure-background-shape {
+  background: url('./images/upload.svg') top no-repeat;
+}
+
+.list-background-shape {
+  background: url('./images/explore.svg') top no-repeat;
+}
+
+.plan-background-shape {
+  background: url('./images/demo.svg') top no-repeat;
 }
