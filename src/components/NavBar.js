@@ -49,7 +49,8 @@ export default function NavBar() {
                       to={item.href}
                       smooth={true}
                       key={item.name}
-                      className='book-intro-sm text-white hover:font-bold cursor-pointer'
+                      href={`#${item.href}`}
+                      className='book-intro-sm text-white hover:underline underline-offset-4 cursor-pointer'
                     >
                       {item.name}
                     </Link>
@@ -92,8 +93,10 @@ export default function NavBar() {
                       <Link
                         key={item.name}
                         to={item.href}
+                        href={`#${item.href}`}
                         smooth={true}
-                        className='block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-extraLight'
+                        onClick={() => setShow(false)}
+                        className='block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-white-300'
                       >
                         {item.name}
                       </Link>

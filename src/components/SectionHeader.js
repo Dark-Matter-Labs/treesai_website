@@ -8,7 +8,7 @@ export default function SectionHeader(props) {
       id={props.id}
       className={classNames(
         props.type === 'typology'
-          ? 'bg-green-600 '
+          ? 'bg-green-700 '
           : props.type === 'account'
           ? 'bg-dark-wood-800 '
           : 'bg-indigo-600',

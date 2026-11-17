@@ -7,6 +7,12 @@ html {
   -moz-osx-font-smoothing: grayscale !important;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 3px;
+}
+
 .vimeo-container {
   position: relative;
   background-color: black;

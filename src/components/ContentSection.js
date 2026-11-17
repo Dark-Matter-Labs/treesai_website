@@ -1,10 +1,4 @@
 import { Link } from 'react-router-dom';
-import airIcon from '../images/air.png';
-import heatIcon from '../images/heat.png';
-import floodIcon from '../images/flood.png';
-import healthIcon from '../images/health.png';
-import energyIcon from '../images/energy.png';
-import wasteIcon from '../images/waste.png';
 import SectionHeader from './SectionHeader';
 import dataIcon from '../images/data.png';
 import mgmtIcon from '../images/mgmt.png';
@@ -117,7 +111,7 @@ export default function ContentSections() {
         {/* VALUE BEYOND CARBON sub-section */}
         <div className='bg-white-300 border border-green-600 rounded-[40px] px-8 sm:px-14 py-10'>
           <div className='mb-2'>
-            <span className='book-info-sm text-green-600 uppercase tracking-widest'>
+            <span className='book-info-sm text-green-700 uppercase tracking-widest'>
               Value Beyond Carbon
             </span>
           </div>
@@ -135,7 +129,7 @@ export default function ContentSections() {
               </p>
             </div>
             <div className='lg:col-span-2'>
-              <p className='book-info-sm text-dark-wood-500 uppercase tracking-widest mb-4'>
+              <p className='book-info-sm text-dark-wood-700 uppercase tracking-widest mb-4'>
                 Benefits we measure
               </p>
               <div className='flex flex-wrap gap-2'>
@@ -168,7 +162,7 @@ export default function ContentSections() {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
           <div className='border border-indigo-600 rounded-[30px] bg-white shadow-md p-6 flex flex-col'>
-            <p className='book-info-sm text-indigo-500 pb-2 uppercase tracking-widest'>
+            <p className='book-info-sm text-indigo-600 pb-2 uppercase tracking-widest'>
               01 · Location-Based Scoring
             </p>
             <p className='bold-intro-lg text-dark-wood-800 pb-3'>Map risks and needs</p>
@@ -186,7 +180,7 @@ export default function ContentSections() {
             </div>
           </div>
           <div className='border border-indigo-600 rounded-[30px] bg-white shadow-md p-6 flex flex-col'>
-            <p className='book-info-sm text-indigo-500 pb-2 uppercase tracking-widest'>
+            <p className='book-info-sm text-indigo-600 pb-2 uppercase tracking-widest'>
               02 · Ecosystem Services Calculator
             </p>
             <p className='bold-intro-lg text-dark-wood-800 pb-3'>Value ecosystem benefits</p>
@@ -204,7 +198,7 @@ export default function ContentSections() {
             </div>
           </div>
           <div className='border border-indigo-600 rounded-[30px] bg-white shadow-md p-6 flex flex-col'>
-            <p className='book-info-sm text-indigo-500 pb-2 uppercase tracking-widest'>
+            <p className='book-info-sm text-indigo-600 pb-2 uppercase tracking-widest'>
               03 · Open Space Evaluation Tool
             </p>
             <p className='bold-intro-lg text-dark-wood-800 pb-3'>
@@ -226,7 +220,7 @@ export default function ContentSections() {
             </div>
           </div>
           <div className='border border-indigo-600 rounded-[30px] bg-white shadow-md p-6 flex flex-col'>
-            <p className='book-info-sm text-indigo-500 pb-2 uppercase tracking-widest'>
+            <p className='book-info-sm text-indigo-600 pb-2 uppercase tracking-widest'>
               04 · Registry & Portfolio Platform
             </p>
             <p className='bold-intro-lg text-dark-wood-800 pb-3'>
@@ -263,8 +257,8 @@ export default function ContentSections() {
             </p>
           </div>
         </div>
-        <div className='lg:flex justify-center '>
-          <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-20 py-8 lg:w-3/5'>
+        <div className='lg:flex justify-center gap-8 space-y-8 lg:space-y-0'>
+          <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-6 sm:px-12 lg:px-10 py-8 lg:w-3/5'>
             <h3 className='text-indigo-600 pb-2 text-center'>Build the evidence base</h3>
             <p className='book-intro-md text-dark-wood-800 text-center pb-2'>
               Data sourcing, spatial analysis, ecosystem service modelling, benefit mapping, and
@@ -272,31 +266,31 @@ export default function ContentSections() {
             </p>
             <img className='py-4 h-48 ' src={dataIcon} alt='' />
             <div className='text-center'>
-              <a href='#data' className=''>
-                <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
-                  Find out more
-                </button>
+              <a
+                href='#data'
+                className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
+              >
+                Find out more
               </a>
             </div>
           </div>
-          <hr className='w-8 py-32 my-10 bg-indigo-600 hidden lg:block' />
-          <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-20 py-8 lg:w-3/5'>
-            <h3 className='text-green-600 pb-2 text-center'>Shape strategy and investment</h3>
+          <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-6 sm:px-12 lg:px-10 py-8 lg:w-3/5'>
+            <h3 className='text-green-700 pb-2 text-center'>Shape strategy and investment</h3>
             <p className='book-intro-md text-dark-wood-800 text-center pb-2'>
               Prioritisation, business case development, finance logic, governance design, and
               portfolio planning.
             </p>
             <img className='py-4 h-48 ' src={mgmtIcon} alt='' />
             <div className='text-center'>
-              <a href='#mgmt'>
-                <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
-                  Find out more
-                </button>
+              <a
+                href='#mgmt'
+                className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
+              >
+                Find out more
               </a>
             </div>
           </div>
-          <hr className='w-8 py-32 my-10 bg-indigo-600 hidden lg:block' />
-          <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-20 py-8 lg:w-3/5'>
+          <div className='flex flex-col items-center justify-center border border-indigo-600 rounded-[30px] bg-white shadow-md px-6 sm:px-12 lg:px-10 py-8 lg:w-3/5'>
             <h3 className='text-indigo-600 pb-2 text-center'>Design with communities</h3>
             <p className='book-intro-md text-dark-wood-800 text-center pb-2'>
               Citizen-centred research, stakeholder engagement, co-design workshops, pilot design,
@@ -304,13 +298,189 @@ export default function ContentSections() {
             </p>
             <img className='py-4 h-48 ' src={citizenIcon} alt='' />
             <div className='text-center'>
-              <a href='#citi'>
-                <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
-                  Find out more
-                </button>
+              <a
+                href='#citi'
+                className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
+              >
+                Find out more
               </a>
             </div>
           </div>
+        </div>
+      </div>
+
+      <SectionHeader title='Data services' id='data' />
+      <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-4 sm:px-20 py-10 '>
+        <div className='px-4'>
+          <div className=' rounded-lg'>
+            <h3 className='text-indigo-700'>
+              We turn existing data into evidence that helps cities, NGOs and private partners
+              choose and deliver Nature-based Solutions (NbS).
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div className='mt-6 bg-white-200 rounded-[50px] border border-indigo-600 px-4 sm:px-20 py-10 grid grid-cols-1 sm:grid-cols-3 sm:gap-x-8 mb-20'>
+        <div>
+          <p className='text-black bold-intro-lg'>Spatial analysis</p>
+        </div>
+        <div className='sm:col-span-2'>
+          <p className='book-intro-md'>
+            Where Nature-based Solutions can help a place adapt to and mitigate climate change.
+          </p>
+        </div>
+        <hr className='sm:col-span-3 my-8 border-indigo-600' />
+
+        <div>
+          <p className='text-black bold-intro-lg max-w-sm'>Baseline and scenario valuation</p>
+        </div>
+        <div className='sm:col-span-2'>
+          <p className='book-intro-md'>
+            The costs and benefits of green infrastructure projects, measured against a baseline, so
+            adaptation choices rest on evidence.
+          </p>
+        </div>
+        <hr className='sm:col-span-3 my-8 border-indigo-600' />
+        <div>
+          <p className='text-black bold-intro-lg'>Participation platforms</p>
+        </div>
+        <div className='sm:col-span-2'>
+          <p className='book-intro-md'>
+            Digital tools that let residents and partners take part in decisions about urban
+            forests.
+          </p>
+        </div>
+        <hr className='sm:col-span-3 my-8 border-indigo-600' />
+        <div>
+          <p className='text-black bold-intro-lg'>Impact modelling</p>
+        </div>
+        <div className='sm:col-span-2'>
+          <p className='book-intro-md pb-2'>
+            With{' '}
+            <a
+              className='text-indigo-600'
+              target='_blank'
+              rel='noreferrer'
+              href='https://lucidminds.ai/'
+            >
+              Lucidminds
+            </a>
+            , we are testing their{' '}
+            <a
+              className='text-indigo-600'
+              target='_blank'
+              rel='noreferrer'
+              href='https://gus.earth/'
+            >
+              Green Urban Scenarios (GUS)
+            </a>{' '}
+            model to predict the effect of proposed changes.
+          </p>
+          <p className='book-intro-md'>
+            Project example: Seoul, South Korea; Ongoing project: Stuttgart, Germany
+          </p>
+        </div>
+      </div>
+
+      <SectionHeader type='typology' title='Management services' id='mgmt' />
+      <div className='bg-white-200 rounded-[50px] border border-green-600 px-4 sm:px-20 py-10 '>
+        <div className='px-4'>
+          <div className=' rounded-lg'>
+            <h3 className='text-green-700'>
+              We help cities and partners build a portfolio of Nature-based Solutions (NbS) and find
+              shared ways to pay for it.
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div className='mt-6 bg-white-200 rounded-[50px] border border-green-600 px-4 sm:px-20 py-10 grid grid-cols-1 sm:grid-cols-3 sm:gap-x-8 mb-20'>
+        <div>
+          <p className='text-black bold-intro-lg max-w-sm'>City-wide NbS database</p>
+        </div>
+        <div className='sm:col-span-2'>
+          <p className='book-intro-md'>
+            One database of every Nature-based Solutions project in the city.
+          </p>
+        </div>
+        <hr className='sm:col-span-3 my-8 border-green-600' />
+
+        <div>
+          <p className='text-black max-w-sm bold-intro-lg'>Project scoring</p>
+        </div>
+        <div className='sm:col-span-2'>
+          <p className='book-intro-md'>
+            We score and rank projects using our spatial analysis method.
+          </p>
+        </div>
+        <hr className='sm:col-span-3 my-8 border-green-600' />
+        <div>
+          <p className='text-black bold-intro-lg max-w-xs'>Financial instruments</p>
+        </div>
+        <div className='sm:col-span-2'>
+          <p className='book-intro-md'>
+            With Dark Matter Capital Systems (DmCS), we are exploring tree canopy funds and
+            whole-city transition portfolios that make trees an investable asset class.
+          </p>
+        </div>
+        <hr className='sm:col-span-3 my-8 border-green-600' />
+        <div>
+          <p className='text-black bold-intro-lg max-w-xs'>
+            Connecting partners with opportunities
+          </p>
+        </div>
+        <div className='sm:col-span-2'>
+          <p className='book-intro-md pb-2'>
+            With DmCS, we link cities, NGOs and other partners to opportunities and funding for
+            projects.
+          </p>
+          <p className='book-intro-md'>
+            Project example: Glasgow, Scotland; Ongoing project: Nature-Demo
+          </p>
+        </div>
+      </div>
+
+      <SectionHeader title='Citizen-centred design services' id='citi' />
+      <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-4 sm:px-20 py-10 '>
+        <div className='px-4'>
+          <div className=' rounded-lg'>
+            <h3 className='text-indigo-600'>
+              A city's Nature-based Solutions (NbS) depend on the people and communities who decide
+              on them and carry them out.
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div className='mt-6 bg-white-200 rounded-[50px] border border-indigo-600 px-4 sm:px-20 py-10 grid grid-cols-1 sm:grid-cols-3 sm:gap-x-8 mb-20'>
+        <div>
+          <p className='text-black bold-intro-lg max-w-xs'>Metric and indicator design</p>
+        </div>
+        <div className='sm:col-span-2'>
+          <p className='book-intro-md'>
+            Measures that track both the city's health and its residents' wellbeing.
+          </p>
+        </div>
+        <hr className='sm:col-span-3 my-8 border-indigo-600' />
+
+        <div>
+          <p className='text-black max-w-xs bold-intro-lg'>People-centred process design</p>
+        </div>
+        <div className='sm:col-span-2'>
+          <p className='book-intro-md'>
+            Processes built around what residents need and say, using data to strengthen the
+            relationship between people and urban nature.
+          </p>
+        </div>
+        <hr className='sm:col-span-3 my-8 border-indigo-600' />
+        <div>
+          <p className='text-black bold-intro-lg max-w-xs'>
+            Recognising and rewarding civic stewardship
+          </p>
+        </div>
+        <div className='sm:col-span-2'>
+          <p className='book-intro-md'>
+            Encouraging and rewarding residents who care for trees, such as watering them or
+            reporting disease.
+          </p>
         </div>
       </div>
 
@@ -321,7 +491,7 @@ export default function ContentSections() {
             <h2 className='text-dark-wood-800'>How we work with you</h2>
             <p className='book-intro-md mt-4 text-dark-wood-800'>
               We work with cities, NGOs, and private organisations. Here's how we typically engage
-              with partners—from understanding location to crystallising benefits and coordinating
+              with partners — from understanding location to crystallising benefits and coordinating
               action.
             </p>
           </div>
@@ -351,71 +521,6 @@ export default function ContentSections() {
         </div>
       </div>
 
-      <div className='pt-20 pb-8'>
-        <div className='my-10 grid'>
-          <div className='place-self-center text-center max-w-3xl '>
-            <h2 className='text-dark-wood-800'>
-              <span className='text-green-700'>Trees can</span> provide multiple benefits
-            </h2>
-          </div>
-        </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-10'>
-          <div className='flex flex-col items-center '>
-            <img className='pb-8 h-48 ' src={airIcon} alt='' />
-            <p className='text-dark-wood-800 medium-intro-lg pb-2'>Improving air quality</p>
-            <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
-              Removing pollutants from the air
-            </p>
-          </div>
-          <div className='flex flex-col items-center '>
-            <img className='pb-8 h-48' src={heatIcon} alt='' />
-            <p className='text-dark-wood-800  medium-intro-lg pb-2'>Reducing heat island effects</p>
-            <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
-              Reducing summer temperatures by 5 degrees
-            </p>
-          </div>
-          <div className='flex flex-col items-center '>
-            <img className='pb-8 h-48' src={floodIcon} alt='' />
-            <p className='text-dark-wood-800  medium-intro-lg pb-2'>Reducing flooding</p>
-            <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
-              Absorbing rainwater
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className=' pb-12'>
-        <div className='my-10 grid'>
-          <div className='place-self-center text-center max-w-4xl '>
-            <h2 className='text-dark-wood-800'>
-              <span className='text-indigo-700'>Trees can</span> support existing urban
-              infrastructures
-            </h2>
-          </div>
-        </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-10'>
-          <div className='flex flex-col items-center'>
-            <img className='pb-8 h-48 ' src={healthIcon} alt='' />
-            <p className='text-dark-wood-800 medium-intro-lg pb-2'>Health services</p>
-            <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
-              Alleviating acute and chronic respiratory issues
-            </p>
-          </div>
-          <div className='flex flex-col items-center '>
-            <img className='pb-8 h-48' src={energyIcon} alt='' />
-            <p className='text-dark-wood-800 medium-intro-lg pb-2'>Energy services</p>
-            <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
-              Reducing the need for air conditioning in surrounding buildings
-            </p>
-          </div>
-          <div className='flex flex-col items-center '>
-            <img className='pb-8 h-48' src={wasteIcon} alt='' />
-            <p className='text-dark-wood-800  medium-intro-lg pb-2'>Waste water services</p>
-            <p className='book-intro-md text-dark-wood-800 max-w-xs text-center'>
-              Providing carbon-positive alternatives to sewerage facilities
-            </p>
-          </div>
-        </div>
-      </div>
       <div className=''>
         <div className='bg-problemSolution h-[40rem] mb-20 pl-4 sm:pl-0 flex flex-col items-center justify-center'>
           <div>
@@ -456,190 +561,6 @@ export default function ContentSections() {
         </div>
       </div>
 
-      <SectionHeader title='Data Services' id='data' />
-      <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-4 sm:px-20 py-10 '>
-        <div className='px-4'>
-          <div className=' rounded-lg'>
-            <h3 className='text-indigo-700'>
-              Using existing data to create actionable insights; allowing cities, NGOs, and private
-              partners to prioritise and implement Nature-based Solutions (NbS)
-            </h3>
-          </div>
-        </div>
-      </div>
-      <hr className='mx-20 border-8 border-indigo-600' />
-      <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-4 sm:px-20 py-10 grid grid-cols-1 sm:grid-cols-3 mb-20'>
-        <div>
-          <p className='text-black bold-intro-lg'>Spatial Analysis</p>
-        </div>
-        <div className='sm:col-span-2'>
-          <p className='book-intro-md'>
-            Understanding a location's potential for harnessing Nature-Based Solutions as a means of
-            climate adaptation and mitigation.
-          </p>
-        </div>
-        <hr className='sm:col-span-3 my-8 border-indigo-600' />
-
-        <div>
-          <p className='text-black bold-intro-lg max-w-sm'>Baseline and Scenario Valuation</p>
-        </div>
-        <div className='sm:col-span-2'>
-          <p className='book-intro-md'>
-            Assessing the cost and benefits of green infrastructure projects; enabling informed
-            decision-making about adaptation strategies.
-          </p>
-        </div>
-        <hr className='sm:col-span-3 my-8 border-indigo-600' />
-        <div>
-          <p className='text-black bold-intro-lg'>Innovative Interfaces</p>
-        </div>
-        <div className='sm:col-span-2'>
-          <p className='book-intro-md'>
-            Platforms or systems designed to facilitate interaction between stakeholders, increasing
-            participation in urban forestry.
-          </p>
-        </div>
-        <hr className='sm:col-span-3 my-8 border-indigo-600' />
-        <div>
-          <p className='text-black bold-intro-lg'>Impact Modelling </p>
-        </div>
-        <div className='sm:col-span-2'>
-          <p className='book-intro-md pb-2'>
-            Working with{' '}
-            <a
-              className='text-indigo-600'
-              target='_blank'
-              rel='noreferrer'
-              href='https://lucidminds.ai/'
-            >
-              Lucidminds
-            </a>
-            , we're exploring implementing their{' '}
-            <a
-              className='text-indigo-600'
-              target='_blank'
-              rel='noreferrer'
-              href='https://gus.earth/'
-            >
-              Green Unified Scenarios (GUS)
-            </a>{' '}
-            model to predict the impact of proposed changes.
-          </p>
-          <p className='book-intro-md'>
-            Project example: Seoul, South Korea; Ongoing project: Stuttgart, Germany
-          </p>
-        </div>
-      </div>
-
-      <SectionHeader type='typology' title='Management Services' id='mgmt' />
-      <div className='bg-white-200 rounded-[50px] border border-green-600 px-4 sm:px-20 py-10 '>
-        <div className='px-4'>
-          <div className=' rounded-lg'>
-            <h3 className='text-green-600'>
-              Supporting urban actors in crafting a portfolio of Nature-Based Solutions (NbS);
-              exploring innovative and collective financing strategies, that help greener cities
-              become a reality
-            </h3>
-          </div>
-        </div>
-      </div>
-      <hr className='mx-20 border-8 border-green-600' />
-      <div className='bg-white-200 rounded-[50px] border border-green-600 px-4 sm:px-20 py-10 grid grid-cols-1 sm:grid-cols-3 mb-20'>
-        <div>
-          <p className='text-black bold-intro-lg max-w-sm'>Crafting a City-Wide NbS Database</p>
-        </div>
-        <div className='sm:col-span-2'>
-          <p className='book-intro-md'>
-            Compiling a comprehensive list of projects, creating a one-stop database for all
-            Nature-Based Solutions.
-          </p>
-        </div>
-        <hr className='sm:col-span-3 my-8 border-green-600' />
-
-        <div>
-          <p className='text-black max-w-sm bold-intro-lg'>Evaluating and Scoring Projects </p>
-        </div>
-        <div className='sm:col-span-2'>
-          <p className='book-intro-md'>Based on our spatial analysis methodology.</p>
-        </div>
-        <hr className='sm:col-span-3 my-8 border-green-600' />
-        <div>
-          <p className='text-black bold-intro-lg max-w-xs'>
-            Developing fit-for-purpose financial instruments
-          </p>
-        </div>
-        <div className='sm:col-span-2'>
-          <p className='book-intro-md'>
-            With Dark Matter Capital Systems, we're exploring tree canopy funds and whole-city
-            transition portfolios that allow trees to become an investable asset class.
-          </p>
-        </div>
-        <hr className='sm:col-span-3 my-8 border-green-600' />
-        <div>
-          <p className='text-black bold-intro-lg max-w-xs'>
-            Connecting partners with opportunities
-          </p>
-        </div>
-        <div className='sm:col-span-2'>
-          <p className='book-intro-md pb-2'>
-            With DmCS, we link cities, NGOs, and other partners to opportunities and funding for
-            projects.
-          </p>
-          <p className='book-intro-md'>
-            Project example: Glasgow, Scotland; Ongoing project: Nature-Demo
-          </p>
-        </div>
-      </div>
-
-      <SectionHeader title='Citizen-centred Design Services' id='citi' />
-      <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-4 sm:px-20 py-10 '>
-        <div className='px-4'>
-          <div className=' rounded-lg'>
-            <h3 className='text-indigo-600'>
-              {' '}
-              The success of a city's Nature-based Solutions (NbS) depends on the people and
-              communities making and implementing decisions
-            </h3>
-          </div>
-        </div>
-      </div>
-      <hr className='mx-20 border-8 border-indigo-600' />
-      <div className='bg-white-200 rounded-[50px] border border-indigo-600 px-4 sm:px-20 py-10 grid grid-cols-1 sm:grid-cols-3 mb-20'>
-        <div>
-          <p className='text-black bold-intro-lg max-w-xs'>Metric and indicator design</p>
-        </div>
-        <div className='sm:col-span-2'>
-          <p className='book-intro-md'>
-            Creating comprehensive measures that reflect both the city's overall health and the
-            well-being of its inhabitants.
-          </p>
-        </div>
-        <hr className='sm:col-span-3 my-8 border-indigo-600' />
-
-        <div>
-          <p className='text-black max-w-xs bold-intro-lg'>
-            People-centred, data-enabled process design 
-          </p>
-        </div>
-        <div className='sm:col-span-2'>
-          <p className='book-intro-md'>
-            Prioritising the needs and input of individuals, leveraging data; aiming to improve the
-            relationship between people and urban nature.
-          </p>
-        </div>
-        <hr className='sm:col-span-3 my-8 border-indigo-600' />
-        <div>
-          <p className='text-black bold-intro-lg max-w-xs'>
-            Recognising and rewarding civic stewardship
-          </p>
-        </div>
-        <div className='sm:col-span-2'>
-          <p className='book-intro-md'>
-            Promoting sustainable activities such as watering trees, or detecting diseases.
-          </p>
-        </div>
-      </div>
-
       {/* Project stories */}
       <div id='project-stories' className='my-10 grid'>
         <div className='place-self-center text-center max-w-3xl pb-10'>
@@ -668,10 +589,9 @@ export default function ContentSections() {
               target='_blank'
               rel='noreferrer'
               href='https://provocations.darkmatterlabs.org/treesai-is-implementing-location-based-scoring-in-stuttgart-c54c752bdaaf'
+              className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
             >
-              <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
-                Read our blog
-              </button>
+              Read our blog
             </a>
           </div>
         </div>
@@ -692,10 +612,9 @@ export default function ContentSections() {
               target='_blank'
               rel='noreferrer'
               href='https://github.com/Dark-Matter-Labs/croydon_adaptation_plan'
+              className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
             >
-              <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
-                Explore adaptation data
-              </button>
+              Explore adaptation data
             </a>
           </div>
         </div>
@@ -707,10 +626,9 @@ export default function ContentSections() {
             </h3>
           </div>
           <p className='book-intro-sm max-w-xs mx-auto pt-8'>
-            Building Better Public Space Outcomes: A Data Driven Approach to Public Realm Decision
-            Making: Exploring how public space can be planned, governed and stewarded through more
-            transparent, outcomes based digital tools that connect community priorities, ecological
-            value and long term benefits.
+            We explored how public space can be planned, governed and stewarded with more
+            transparent, outcomes-based digital tools that connect community priorities, ecological
+            value and long-term benefits.
           </p>
           <p className='book-intro-sm max-w-xs mx-auto pt-2'>Partner: Connected Place Catapult</p>
           <div className='pt-4 text-center'>
@@ -718,10 +636,9 @@ export default function ContentSections() {
               target='_blank'
               rel='noreferrer'
               href='https://cp.catapult.org.uk/report/pathways-to-outcomes-based-public-space/'
+              className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
             >
-              <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
-                Project report
-              </button>
+              Project report
             </a>
           </div>
         </div>
@@ -741,10 +658,9 @@ export default function ContentSections() {
               target='_blank'
               rel='noreferrer'
               href='https://lucidmindsai.medium.com/gus-in-action-quantifying-cooling-effect-of-trees-23a59a75fe60'
+              className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
             >
-              <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
-                Read our blog
-              </button>
+              Read our blog
             </a>
           </div>
         </div>
@@ -758,17 +674,16 @@ export default function ContentSections() {
             preserving canopy while extending the M10 tram line.
           </p>
           <p className='book-intro-sm max-w-xs mx-auto pt-2'>
-            Partner: The Nature Conservancy and local stakeholders
+            Partners: The Nature Conservancy and local stakeholders
           </p>
           <div className='pt-4 text-center'>
             <a
               target='_blank'
               rel='noreferrer'
               href='https://provocations.darkmatterlabs.org/unlocking-the-value-for-urban-nature-an-economic-case-for-street-tree-preservation-in-berlin-af0714bdd9f3'
+              className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
             >
-              <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
-                Read Berlin story
-              </button>
+              Read Berlin story
             </a>
           </div>
         </div>
@@ -778,9 +693,9 @@ export default function ContentSections() {
             <h3 className='text-center text-white-200'>Glasgow, Scotland</h3>
           </div>
           <p className='book-intro-sm max-w-xs mx-auto pt-8'>
-            We're quantifying the capacity of Glasgow's existing tree stocks to mitigate against
-            flooding. We're working with project developers and outcome buyers to justify and fund a
-            portfolio of nature-based solutions.
+            We're quantifying the capacity of Glasgow's existing tree stocks to mitigate flooding.
+            We're working with project developers and outcome buyers to justify and fund a portfolio
+            of Nature-based Solutions.
           </p>
           <p className='book-intro-sm max-w-xs mx-auto pt-2'>
             Partners: Clyde Climate Forest, Glasgow City Council, FloodRe, Nationwide, Scottish
@@ -791,10 +706,9 @@ export default function ContentSections() {
               target='_blank'
               rel='noreferrer'
               href='https://darkmatterlabs.notion.site/darkmatterlabs/TreesAI-Glasgow-Pilot-Learning-report-16-10-bd46c620542d4159af830ae6b3a943ed'
+              className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
             >
-              <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
-                Read our report
-              </button>
+              Read our report
             </a>
           </div>
         </div>
@@ -804,14 +718,17 @@ export default function ContentSections() {
             <h3 className='text-center text-white-200'>Nature Demo (EU)</h3>
           </div>
           <p className='book-intro-sm max-w-xs mx-auto pt-8'>
-            As part of the Horizon 2020, we're supporting the 20-partner consortium with expertise
-            on green financing and innovative governance.
+            As part of Horizon 2020, we're supporting the 20-partner consortium with expertise on
+            green financing and innovative governance.
           </p>
           <div className='pt-4 text-center'>
-            <a target='_blank' rel='noreferrer' href='https://nature-demo.eu/'>
-              <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800'>
-                Read more
-              </button>
+            <a
+              target='_blank'
+              rel='noreferrer'
+              href='https://nature-demo.eu/'
+              className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800'
+            >
+              Read more
             </a>
           </div>
         </div>
@@ -822,15 +739,18 @@ export default function ContentSections() {
           </div>
           <p className='book-intro-sm max-w-xs mx-auto pt-8'>
             {' '}
-            We're developing design guideline and processes for the nature-positive regeneration of
+            We're developing design guidelines and processes for the nature-positive regeneration of
             Villaverde, Madrid.
           </p>
           <p className='book-intro-sm max-w-xs mx-auto pt-2'>Partner: City of Madrid</p>
           <div className='pt-4 text-center'>
-            <a target='_blank' rel='noreferrer' href='https://urbreath.eu/'>
-              <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'>
-                Read more
-              </button>
+            <a
+              target='_blank'
+              rel='noreferrer'
+              href='https://urbreath.eu/'
+              className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-800 hover:bg-dark-wood-600'
+            >
+              Read more
             </a>
           </div>
         </div>
@@ -846,9 +766,9 @@ export default function ContentSections() {
           </p>
           <p className='book-intro-sm max-w-xs mx-auto pt-2'>Partner: Urban Forest Accelerator</p>
           <div className='pt-4 text-center'>
-            <button className=' inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-white bg-dark-wood-600'>
+            <span className='inline-flex items-center px-4 py-2 bold-intro-sm rounded-[30px] text-dark-wood-700 border border-dark-wood-500'>
               Coming soon
-            </button>
+            </span>
           </div>
         </div>
       </div>
