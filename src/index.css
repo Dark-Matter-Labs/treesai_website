@@ -121,12 +121,6 @@ button:focus-visible {
   }
 }
 
-.bg-problemSolution {
-  background-image: url('./images/bg-statement.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .bg-registry {
   background-image: url('./images/registry.svg');
   background-repeat: no-repeat;
